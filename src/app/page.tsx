@@ -26,13 +26,16 @@ export default function Home() {
           className={styles.logoImages}
         />
         <div className={styles.aboutSegment}>
-          <h3>Dom Metal</h3>
+          <h1>Dom Metal</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse
             officia incidunt necessitatibus reprehenderit ex quidem! Temporibus
             natus quisquam illo, impedit commodi nobis dolore quaerat at culpa
             aspernatur ab ea excepturi.
           </p>
+          <Button type="button" width="l" disabled={true}>
+            Loja em breve!
+          </Button>
         </div>
       </section>
       <section className={styles.duferroSection}>
@@ -42,13 +45,16 @@ export default function Home() {
           className={styles.logoImages}
         />
         <div className={styles.aboutSegment}>
-          <h3>Dom Metal</h3>
+          <h1>DuFerro</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse
             officia incidunt necessitatibus reprehenderit ex quidem! Temporibus
             natus quisquam illo, impedit commodi nobis dolore quaerat at culpa
             aspernatur ab ea excepturi.
           </p>
+          <Button type="button" width="l" disabled={true}>
+            Loja em breve!
+          </Button>
         </div>
       </section>
       <section className={styles.carbuiltSection}>
@@ -58,13 +64,16 @@ export default function Home() {
           className={styles.logoImages}
         />
         <div className={styles.aboutSegment}>
-          <h3>Dom Metal</h3>
+          <h1>Carbuilt</h1>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse
             officia incidunt necessitatibus reprehenderit ex quidem! Temporibus
             natus quisquam illo, impedit commodi nobis dolore quaerat at culpa
             aspernatur ab ea excepturi.
           </p>
+          <Button type="button" width="l" disabled={true}>
+            Loja em breve!
+          </Button>
         </div>
       </section>
     </div>
