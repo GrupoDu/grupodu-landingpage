@@ -17,6 +17,8 @@
     flex: 1;
     display: flex;
     align-items: center;
+    justify-content: end;
+    user-select: none;
     gap: 2em;
 
     .carrinhoIcon {
@@ -32,6 +34,12 @@
         padding: 0 .5em;
         border-radius: 20px;
       }
+    }
+
+    .actualPage {
+      color: var(--blue-light);
+      font-weight: 600;
+      cursor: default;
     }
 
     span {

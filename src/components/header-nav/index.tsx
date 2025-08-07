@@ -1,12 +1,29 @@
+"use client";
 // import Link from "next/link";
 import styles from "./styles.module.scss";
 import LogoGrupo from "../../../public/logo-grupodu.png";
 import Image from "next/image";
 import { ShoppingCart } from "lucide-react";
 import Search from "../search";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const HeaderNav = () => {
-  const numeroItemsCarrinho: number = 2;
+  // const numeroItemsCarrinho: number = 2;
+  const [actualPage, setActualPage] = useState("inicio");
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (pathname.includes("produtos")) {
+      setActualPage("produtos");
+    } else if (pathname.includes("sobre")) {
+      setActualPage("sobre");
+    } else if (pathname.includes("contato")) {
+      setActualPage("contatos");
+    } else {
+      setActualPage("inicio");
+    }
+  }, [pathname]);
 
   return (
     <nav className={styles.ContainerHeaderNav}>
@@ -15,15 +32,33 @@ const HeaderNav = () => {
         <h3>Grupo Du Car</h3>
       </div>
       <div className={styles.pagesLinks}>
-        <span>Início</span>
-        <span>Produtos</span>
-        <span>Sobre</span>
-        <span>Entre em Contato</span>
+        <span className={actualPage === "inicio" ? styles.actualPage : ""}>
+          Início
+        </span>
+        <span
+          style={{ opacity: 0.2, cursor: "not-allowed" }}
+          className={actualPage === "produtos" ? styles.actualPage : ""}
+        >
+          Produtos
+        </span>
+        <span
+          style={{ opacity: 0.2, cursor: "not-allowed" }}
+          className={actualPage === "sobre" ? styles.actualPage : ""}
+        >
+          Sobre
+        </span>
+        <span
+          style={{ opacity: 0.2, cursor: "not-allowed" }}
+          className={actualPage === "contatos" ? styles.actualPage : ""}
+        >
+          Entre em Contato
+        </span>
+        {/* V--- OFF POR ENQUANTO ---V
         <div className={styles.carrinhoIcon}>
           <ShoppingCart color="black" className={styles.shoppingCart} />
           <div className={styles.itemsNumber}>{numeroItemsCarrinho}</div>
-        </div>
-        <Search />
+        </div> */}
+        {/* <Search /> */}
       </div>
     </nav>
   );

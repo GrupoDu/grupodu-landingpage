@@ -28,12 +28,12 @@ export default function Home() {
         <div className={styles.aboutSegment}>
           <h1>Dom Metal</h1>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse
-            officia incidunt necessitatibus reprehenderit ex quidem! Temporibus
-            natus quisquam illo, impedit commodi nobis dolore quaerat at culpa
-            aspernatur ab ea excepturi.
+            Especialista na produção de equipamentos voltados para a construção
+            civil, a Dom Metal fabrica carrinhos de mão, bandejas, masseiras e
+            diversos produtos para obras, garantindo robustez, praticidade e
+            eficiência para o dia a dia dos profissionais da área.
           </p>
-          <Button type="button" width="l" disabled={true}>
+          <Button type="button" width="--l" disabled={true}>
             Loja em breve!
           </Button>
         </div>
@@ -47,12 +47,12 @@ export default function Home() {
         <div className={styles.aboutSegment}>
           <h1>DuFerro</h1>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse
-            officia incidunt necessitatibus reprehenderit ex quidem! Temporibus
-            natus quisquam illo, impedit commodi nobis dolore quaerat at culpa
-            aspernatur ab ea excepturi.
+            A DuFerro é referência na fabricação de móveis planejados em
+            metalon, unindo resistência, funcionalidade e design moderno. Cada
+            peça é pensada sob medida, oferecendo soluções elegantes e duráveis
+            para residências, comércios e espaços corporativos.
           </p>
-          <Button type="button" width="l" disabled={true}>
+          <Button type="button" width="--l" disabled={true}>
             Loja em breve!
           </Button>
         </div>
@@ -66,12 +66,12 @@ export default function Home() {
         <div className={styles.aboutSegment}>
           <h1>Carbuilt</h1>
           <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse
-            officia incidunt necessitatibus reprehenderit ex quidem! Temporibus
-            natus quisquam illo, impedit commodi nobis dolore quaerat at culpa
-            aspernatur ab ea excepturi.
+            Com foco em performance e tecnologia, a Carbuilt desenvolve
+            equipamentos de musculação com alto padrão de engenharia, ideais
+            para academias e espaços fitness que buscam excelência em ergonomia,
+            durabilidade e desempenho. aspernatur ab ea excepturi.
           </p>
-          <Button type="button" width="l" disabled={true}>
+          <Button type="button" width="--l" disabled={true}>
             Loja em breve!
           </Button>
         </div>

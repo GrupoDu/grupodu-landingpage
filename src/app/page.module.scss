@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: center;
     gap: 0.4em;
+    box-sizing: border-box;
 
     h1 {
       font-size: 2.8em;
@@ -27,12 +28,18 @@
   section {
     display: flex;
     padding: 2em;
+    align-items: center;
+    justify-content: space-around;
     margin: 1em;
     border-radius: var(--border-sm);
     border: 2px solid var(--gray-border);
 
-    h1 {
+    .aboutSegment {
+      width: 60%;
+
+      h1 {
         font-size: 2.4em;
+      }
     }
   }
 }
