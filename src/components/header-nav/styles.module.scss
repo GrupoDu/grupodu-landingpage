@@ -1,0 +1,42 @@
+.ContainerHeaderNav {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 6px 2px rgba($color: #b6b6b6, $alpha: .2);
+
+  .logoContainer {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .pagesLinks {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+
+    .carrinhoIcon {
+      position: relative;
+
+      .itemsNumber {
+        text-align: center;
+        position: absolute;
+        top: -14px;
+        left: 12px;
+        background-color: var(--blue-light);
+        color: white;
+        padding: 0 .5em;
+        border-radius: 20px;
+      }
+    }
+
+    span {
+      width: fit-content;
+      text-wrap: nowrap;
+    }
+  }
+}

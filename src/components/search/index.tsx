@@ -5,7 +5,7 @@ const Search = () => {
   return (
     <div className={styles.searchContainer}>
         <SearchIcon className={styles.searchIcon} />
-        <input type="search" name="" />
+        <input type="search" name="inputSearch" placeholder="Procure no site" />
     </div>
   )
 }
