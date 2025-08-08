@@ -3,7 +3,7 @@
 import styles from "./styles.module.scss";
 import LogoGrupo from "../../../public/logo-grupodu.png";
 import Image from "next/image";
-import { ShoppingCart } from "lucide-react";
+import { HamburgerIcon, Menu, ShoppingCart } from "lucide-react";
 import Search from "../search";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -59,6 +59,9 @@ const HeaderNav = () => {
           <div className={styles.itemsNumber}>{numeroItemsCarrinho}</div>
         </div> */}
         {/* <Search /> */}
+      </div>
+      <div className={styles.menuIcon}>
+        <Menu color="black" width={40} height={40} />
       </div>
     </nav>
   );

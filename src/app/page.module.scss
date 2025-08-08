@@ -17,7 +17,6 @@
     }
 
     p {
-      width: 30%;
       text-align: center;
     }
   }
@@ -34,11 +33,70 @@
     border-radius: var(--border-sm);
     border: 2px solid var(--gray-border);
 
+    .imageTitleSegment {
+      h1 {
+        display: none;
+      }
+    }
+
     .aboutSegment {
       width: 60%;
 
       h1 {
         font-size: 2.4em;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 380px) and (max-width: 420px) {
+  .homePage {
+    .welcome {
+      width: 100%;
+
+      h1 {
+        font-size: 2em;
+      }
+
+      p {
+      }
+    }
+
+    section {
+      flex-direction: column;
+
+      .imageTitleSegment {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 1em;
+        text-wrap: nowrap;
+
+        .logoImages {
+          object-fit: contain;
+          width: 6em;
+          height: fit-content;
+        }
+        
+        h1 {
+          display: flex;
+          font-weight: 600;
+          font-size: 2.2em;
+        }
+      }
+
+      .aboutSegment {
+        width: 100%;
+
+        h1 {
+          display: none;
+        }
+
+        p {
+          width: 100%;
+          text-align: justify;
+        }
       }
     }
   }

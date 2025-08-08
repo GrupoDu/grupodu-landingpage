@@ -1,4 +1,5 @@
-import React, { ReactNode } from "react";
+"use client";
+import React, { ReactNode, useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 
 type Props = {
@@ -6,18 +7,26 @@ type Props = {
   type: "button" | "submit";
   bgColor?: "--blue-dark" | "--blue-light";
   disabled?: boolean;
-  width?: "--sm" | "--m" | "--l";
+  width: "--sm" | "--m" | "--l" | "--full-width";
   align?: "left" | "center" | "right";
 };
 
 const Button = (props: Props) => {
+  const [width, setWidth] = useState(0);
+  const computedWidth =
+    width <= 420 ? "var(--full-width)" : `var(${props.width})`;
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
+
   return (
     <button
       type={props.type}
       className={styles.button}
       style={{
         backgroundColor: `var(${props.bgColor})`,
-        width: `var(${props.width ?? "--sm"})`,
+        width: computedWidth,
         textAlign: props.align || "center",
       }}
       disabled={props.disabled ?? false}
