@@ -14,11 +14,11 @@ type Props = {
 const Button = (props: Props) => {
   const [width, setWidth] = useState(0);
   const computedWidth =
-    width <= 420 ? "var(--full-width)" : `var(${props.width})`;
+    width <= 480 ? "var(--full-width)" : `var(${props.width})`;
 
   useEffect(() => {
     setWidth(window.innerWidth);
-  }, []);
+  }, [width]);
 
   return (
     <button
