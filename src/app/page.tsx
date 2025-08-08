@@ -14,17 +14,20 @@ export default function Home() {
           Eficiênca na sua obra, estilo no seu lar, e desempenho na sua
           evolução!
         </p>
-        <Button disabled={true} type="button">
+        <Button width="--sm" disabled={true} type="button">
           Loja em breve!
         </Button>
       </div>
       <div className={styles.slideImages}></div>
       <section className={styles.domMetalSection}>
-        <Image
-          src={DomMetalLogo}
-          alt="Logo Dom Metal"
-          className={styles.logoImages}
-        />
+        <div className={styles.imageTitleSegment}>
+          <Image
+            src={DomMetalLogo}
+            alt="Logo Dom Metal"
+            className={styles.logoImages}
+          />
+          <h1>Dom Metal</h1>
+        </div>
         <div className={styles.aboutSegment}>
           <h1>Dom Metal</h1>
           <p>
@@ -39,11 +42,14 @@ export default function Home() {
         </div>
       </section>
       <section className={styles.duferroSection}>
-        <Image
-          src={DuFerroLogo}
-          alt="Logo DuFerro"
-          className={styles.logoImages}
-        />
+        <div className={styles.imageTitleSegment}>
+          <Image
+            src={DuFerroLogo}
+            alt="Logo DuFerro"
+            className={styles.logoImages}
+          />
+          <h1>DuFerro</h1>
+        </div>
         <div className={styles.aboutSegment}>
           <h1>DuFerro</h1>
           <p>
@@ -58,11 +64,14 @@ export default function Home() {
         </div>
       </section>
       <section className={styles.carbuiltSection}>
-        <Image
-          src={CarbuiltLogo}
-          alt="Logo Carbuilt"
-          className={styles.logoImages}
-        />
+        <div className={styles.imageTitleSegment}>
+          <Image
+            src={CarbuiltLogo}
+            alt="Logo Carbuilt"
+            className={styles.logoImages}
+          />
+          <h1>Carbuilt</h1>
+        </div>
         <div className={styles.aboutSegment}>
           <h1>Carbuilt</h1>
           <p>
