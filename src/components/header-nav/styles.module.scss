@@ -55,6 +55,14 @@
 
 @media screen and (min-width: 380px) and (max-width: 420px) {
   .ContainerHeaderNav {
+    .logoContainer {
+      .logoImage {
+        object-fit: contain;
+        height: fit-content;
+        width: 5em;
+      }
+    }
+    
     .pagesLinks {
       display: none;
     }
