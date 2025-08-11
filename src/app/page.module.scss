@@ -3,21 +3,52 @@
 
   .welcome {
     width: 100%;
+    height: 100dvh;
     padding: 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.4em;
+    gap: 0.8em;
     box-sizing: border-box;
+    background: #030916;
+    background: linear-gradient(
+      126deg,
+      rgba(3, 9, 22, 1) 0%,
+      rgba(89, 114, 167, 1) 64%,
+      rgba(17, 51, 124, 1) 100%
+    );
+
+    .title {
+      display: flex;
+      gap: 0.4em;
+
+      h1 {
+        color: white;
+      }
+
+      .titleGradient {
+        background: #4b58da;
+        background: linear-gradient(
+          100deg,
+          rgba(75, 88, 218, 1) 0%,
+          rgba(52, 129, 135, 1) 100%
+        );
+        background-clip: text;
+        color: transparent;
+      }
+    }
 
     h1 {
-      font-size: 2.8em;
+      font-size: 3em;
       text-align: center;
     }
 
     p {
       text-align: center;
+      color: #dedede;
+      width: 70%;
+      font-size: 1.2em;
     }
   }
 
@@ -78,7 +109,7 @@
           width: 6em;
           height: fit-content;
         }
-        
+
         h1 {
           display: flex;
           font-weight: 600;

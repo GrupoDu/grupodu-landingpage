@@ -9,10 +9,14 @@ export default function Home() {
   return (
     <div className={styles.homePage}>
       <div className={styles.welcome}>
-        <h1>Bem vindo(a) ao Grupo Du Car</h1>
+        <div className={styles.title}>
+          <h1>Grupo Du: </h1>
+          <h1 className={styles.titleGradient}>Inovação em Ação</h1>
+        </div>
         <p>
-          Eficiênca na sua obra, estilo no seu lar, e desempenho na sua
-          evolução!
+          Somos um grupo empresarial consolidado no mercado, com atuação
+          estratégica em diferentes segmentos, sempre mantendo o foco na
+          qualidade, inovação e na satisfação completa dos nossos clientes.
         </p>
         <Button width="--sm" disabled={true} type="button">
           Loja em breve!
