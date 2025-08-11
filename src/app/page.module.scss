@@ -52,6 +52,64 @@
     }
   }
 
+  .sobreSections {
+    display: flex;
+    padding: 4em 8em;
+    gap: 0.8em;
+    box-sizing: border-box;
+
+    .sobreText {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+
+      h1 {
+        color: var(--dark-blue);
+      }
+
+      p {
+        color: #696969;
+        font-size: 18px;
+      }
+    }
+
+    .valores {
+      box-shadow: 0 0 10px 2px rgba($color: #000000, $alpha: 0.2);
+      border-radius: 2em;
+      flex: 1;
+      padding: 2em;
+      gap: 1.8em;
+      display: flex;
+      flex-direction: column;
+      background: #0e284e;
+      background: linear-gradient(
+        139deg,
+        rgba(14, 40, 78, 1) 0%,
+        rgba(58, 94, 172, 1) 65%,
+        rgba(79, 107, 162, 1) 80%,
+        rgba(14, 40, 78, 1) 100%
+      );
+      transition: all 0.2s ease-in-out;
+
+      h2 {
+        color: white;
+        text-align: center;
+        width: 100%;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+      }
+
+      &:hover {
+        box-shadow: 0 0 10px 6px rgba($color: #000000, $alpha: 0.2);
+      }
+    }
+  }
+
   .slideImages {
   }
 

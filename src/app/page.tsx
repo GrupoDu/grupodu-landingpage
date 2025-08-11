@@ -4,6 +4,7 @@ import DomMetalLogo from "../../public/Logo dom metal.png";
 import DuFerroLogo from "../../public/DuFerro.png";
 import CarbuiltLogo from "../../public/Carbuilt.png";
 import Button from "@/components/button";
+import ValorElement from "@/components/valorElement";
 
 export default function Home() {
   return (
@@ -22,7 +23,56 @@ export default function Home() {
           Loja em breve!
         </Button>
       </div>
-      <div className={styles.slideImages}></div>
+      <div className={styles.sobreSections}>
+        <div className={styles.sobreText}>
+          <h1>Nossa História e Propósito</h1>
+          <p>
+            O Grupo Du nasceu da visão de criar um conglomerado empresarial
+            sólido e diversificado, capaz de atender diferentes necessidades do
+            mercado com excelência e inovação.
+          </p>
+          <p>
+            Ao longo dos anos, expandimos nossa atuação através da criação de
+            empresas especializadas: Dom Metal em estruturas metálicas, DuFerro
+            em soluções e carrinhos, e CarBuilt em soluções automotivas.
+          </p>
+          <p>
+            Nossa força está na diversificação estratégica e na capacidade de
+            oferecer soluções integradas que geram valor real para nossos
+            clientes e parceiros, sempre mantendo nossa essência de qualidade e
+            compromisso com resultados excepcionais.
+          </p>
+        </div>
+        <div className={styles.valores}>
+          <h2>Nossos valores fundamentais</h2>
+          <ul>
+            <li>
+              <ValorElement
+                title="Excelência Operacional"
+                description="Busca constante pela perfeição em cada processo, projeto e entrega."
+              />
+            </li>
+            <li>
+              <ValorElement
+                title="Inovação Contínua"
+                description="Investimento em tecnologia e metodologias para superar expectativas."
+              />
+            </li>
+            <li>
+              <ValorElement
+                title="Relacionamentos Duradouros"
+                description="Construção de parcerias baseadas em confiança e transparência."
+              />
+            </li>
+            <li>
+              <ValorElement
+                title="Responsabilidade Social"
+                description="Compromisso com impacto positivo na sociedade e meio ambiente."
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
       <section className={styles.domMetalSection}>
         <div className={styles.imageTitleSegment}>
           <Image
