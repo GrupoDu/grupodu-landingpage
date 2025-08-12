@@ -1,8 +1,4 @@
-import Image from "next/image";
 import styles from "./page.module.scss";
-import DomMetalLogo from "../../public/Logo dom metal.png";
-import DuFerroLogo from "../../public/DuFerro.png";
-import CarbuiltLogo from "../../public/Carbuilt.png";
 import Button from "@/components/button";
 import ValorElement from "@/components/valorElement";
 import SectionTitle from "@/components/sectionTitle";
@@ -13,6 +9,7 @@ import DomMetal from "../../public/Logo dom metal.png";
 import DuFerro from "../../public/DuFerro.png";
 import Carbuilt from "../../public/Carbuilt.png";
 import { carbuilt, domMetal, duFerro } from "@/constants/textos";
+import Estados from "@/components/estados";
 
 export default function Home() {
   return (
@@ -81,6 +78,9 @@ export default function Home() {
             </li>
           </ul>
         </div>
+      </div>
+      <div className={styles.estadosSection}>
+        <Estados />
       </div>
       <div className={styles.segmentsSection}>
         <SectionTitle>Nossas Empresas</SectionTitle>
