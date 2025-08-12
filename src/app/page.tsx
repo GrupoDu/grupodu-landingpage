@@ -3,13 +3,14 @@ import Button from "@/components/button";
 import ValorElement from "@/components/valorElement";
 import SectionTitle from "@/components/sectionTitle";
 import Segmento from "@/components/segmento";
+import Card from "@/components/card";
+import Estados from "@/components/estados";
 
 // Imagens
 import DomMetal from "../../public/Logo dom metal.png";
 import DuFerro from "../../public/DuFerro.png";
 import Carbuilt from "../../public/Carbuilt.png";
-import { carbuilt, domMetal, duFerro } from "@/constants/textos";
-import Estados from "@/components/estados";
+import { carbuilt, cards, domMetal, duFerro } from "@/constants/textos";
 
 export default function Home() {
   return (
@@ -115,6 +116,23 @@ export default function Home() {
             description={carbuilt.descricao}
             especialidades={carbuilt.especialidades}
           />
+        </div>
+      </div>
+      <div className={styles.motivoEscolha}>
+        <h1>Por quê Escolher o Grupo Du Car?</h1>
+        <h2>
+          Nossa experiência e compromisso com a excelência fazem toda a
+          diferença no resultado final.
+        </h2>
+        <div className={styles.cardsContainer}>
+          {cards.map((card, index) => (
+            <Card
+              key={index}
+              icon={card.icon}
+              title={card.title}
+              description={card.description}
+            />
+          ))}
         </div>
       </div>
     </div>

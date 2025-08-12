@@ -1,0 +1,31 @@
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  border-left: 8px solid #004aad;
+  border-radius: 32px;
+  box-shadow: 0 0 6px 0 rgba($color: #000000, $alpha: 0.2);
+  flex: 1;
+  gap: 0.4em;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+
+  .titleCard {
+    display: flex;
+    gap: 0.4em;
+    align-items: center;
+
+    .iconContainer {
+      background-color: #004aad;
+      padding: 0.6em;
+      display: flex;
+      border-radius: 12px;
+      align-items: center;
+    }
+  }
+
+  &:hover {
+    border-left: 14px solid #004aad;
+    box-shadow: 0 0 8px 0 rgba($color: #000000, $alpha: 0.6);
+  }
+}
