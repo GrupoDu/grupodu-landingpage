@@ -5,6 +5,14 @@ import DuFerroLogo from "../../public/DuFerro.png";
 import CarbuiltLogo from "../../public/Carbuilt.png";
 import Button from "@/components/button";
 import ValorElement from "@/components/valorElement";
+import SectionTitle from "@/components/sectionTitle";
+import Segmento from "@/components/segmento";
+
+// Imagens
+import DomMetal from "../../public/Logo dom metal.png";
+import DuFerro from "../../public/DuFerro.png";
+import Carbuilt from "../../public/Carbuilt.png";
+import { carbuilt, domMetal, duFerro } from "@/constants/textos";
 
 export default function Home() {
   return (
@@ -33,8 +41,9 @@ export default function Home() {
           </p>
           <p>
             Ao longo dos anos, expandimos nossa atuação através da criação de
-            empresas especializadas: Dom Metal em estruturas metálicas, DuFerro
-            em soluções e carrinhos, e CarBuilt em soluções automotivas.
+            empresas especializadas: Dom Metal em soluções e carrinhos, DuFerro
+            em soluções em estruturas metálicas, e CarBuilt em soluções em
+            maquinas de musculação.
           </p>
           <p>
             Nossa força está na diversificação estratégica e na capacidade de
@@ -73,72 +82,41 @@ export default function Home() {
           </ul>
         </div>
       </div>
-      <section className={styles.domMetalSection}>
-        <div className={styles.imageTitleSegment}>
-          <Image
-            src={DomMetalLogo}
-            alt="Logo Dom Metal"
-            className={styles.logoImages}
+      <div className={styles.segmentsSection}>
+        <SectionTitle>Nossas Empresas</SectionTitle>
+        <div className={styles.titleSegments}>
+          <h1>Três Empresas, </h1>
+          <h1 className={styles.titleColorido}>Uma Visão</h1>
+        </div>
+        <p className={styles.sobreSegmentos}>
+          Cada empresa do nosso grupo representa excelência em seu segmento,
+          unidas por valores compartilhados de inovação, qualidade e compromisso
+          com resultados excepcionais.
+        </p>
+        <div className={styles.segments}>
+          <Segmento
+            src={DomMetal}
+            title={domMetal.nome}
+            subtitle={domMetal.subtitulo}
+            description={domMetal.descricao}
+            especialidades={domMetal.especialidades}
           />
-          <h1>Dom Metal</h1>
-        </div>
-        <div className={styles.aboutSegment}>
-          <h1>Dom Metal</h1>
-          <p>
-            Especialista na produção de equipamentos voltados para a construção
-            civil, a Dom Metal fabrica carrinhos de mão, bandejas, masseiras e
-            diversos produtos para obras, garantindo robustez, praticidade e
-            eficiência para o dia a dia dos profissionais da área.
-          </p>
-          <Button type="button" width="--l" disabled={true}>
-            Loja em breve!
-          </Button>
-        </div>
-      </section>
-      <section className={styles.duferroSection}>
-        <div className={styles.imageTitleSegment}>
-          <Image
-            src={DuFerroLogo}
-            alt="Logo DuFerro"
-            className={styles.logoImages}
+          <Segmento
+            src={DuFerro}
+            title={duFerro.nome}
+            subtitle={duFerro.subtitulo}
+            description={duFerro.descricao}
+            especialidades={duFerro.especialidades}
           />
-          <h1>DuFerro</h1>
-        </div>
-        <div className={styles.aboutSegment}>
-          <h1>DuFerro</h1>
-          <p>
-            A DuFerro é referência na fabricação de móveis planejados em
-            metalon, unindo resistência, funcionalidade e design moderno. Cada
-            peça é pensada sob medida, oferecendo soluções elegantes e duráveis
-            para residências, comércios e espaços corporativos.
-          </p>
-          <Button type="button" width="--l" disabled={true}>
-            Loja em breve!
-          </Button>
-        </div>
-      </section>
-      <section className={styles.carbuiltSection}>
-        <div className={styles.imageTitleSegment}>
-          <Image
-            src={CarbuiltLogo}
-            alt="Logo Carbuilt"
-            className={styles.logoImages}
+          <Segmento
+            src={Carbuilt}
+            title={carbuilt.nome}
+            subtitle={carbuilt.subtitulo}
+            description={carbuilt.descricao}
+            especialidades={carbuilt.especialidades}
           />
-          <h1>Carbuilt</h1>
         </div>
-        <div className={styles.aboutSegment}>
-          <h1>Carbuilt</h1>
-          <p>
-            Com foco em performance e tecnologia, a Carbuilt desenvolve
-            equipamentos de musculação com alto padrão de engenharia, ideais
-            para academias e espaços fitness que buscam excelência em ergonomia,
-            durabilidade e desempenho. aspernatur ab ea excepturi.
-          </p>
-          <Button type="button" width="--l" disabled={true}>
-            Loja em breve!
-          </Button>
-        </div>
-      </section>
+      </div>
     </div>
   );
 }

@@ -110,7 +110,38 @@
     }
   }
 
-  .slideImages {
+  .segmentsSection {
+    margin: 4em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+
+    .titleSegments {
+      display: flex;
+      gap: 0.4em;
+
+      h1 {
+        font-size: 48px;
+      }
+
+      .titleColorido {
+        color: #4b58da;
+      }
+    }
+
+    .sobreSegmentos {
+      font-size: 20px;
+      color: #4b4b4b;
+      text-align: center;
+      width: 80%;
+    }
+
+    .segments {
+      display: flex;
+      justify-content: space-evenly;
+    }
   }
 
   section {
