@@ -1,0 +1,52 @@
+.estadosContainer {
+  background: #0b1326;
+  background: linear-gradient(
+    121deg,
+    rgba(11, 19, 38, 1) 0%,
+    rgba(64, 97, 168, 1) 26%,
+    rgba(11, 19, 38, 1) 100%
+  );
+  padding: 2em;
+  border-radius: 16px;
+  display: flex;
+  box-shadow: 0 0 6px 0 rgba($color: #000000, $alpha: 1.0);
+
+  .mapaEstados {
+    object-fit: contain;
+    width: 40%;
+    height: fit-content;
+  }
+
+  .listContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10%;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        color: white;
+        font-size: 40px;
+    }
+
+    ul {
+        width: 100%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: .4em;
+        cursor: default;
+        
+        li {
+            transition: all .1s ease-in;
+            width: fit-content;
+
+            &:hover {
+                transform: translateX(20);
+                list-style: circle;
+                color: rgb(155, 202, 255);
+            }
+        }
+    }
+  }
+}
