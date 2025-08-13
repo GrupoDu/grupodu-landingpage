@@ -1,0 +1,63 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  padding: 1em;
+  border-radius: 10px;
+  
+  h1 {
+    width: 100%;
+    text-align: start;
+  }
+
+  form {
+    display: grid;
+    grid-template-areas:
+      "nome" "nome"
+      "email" "email"
+      "telefone" "empresa"
+      "assunto" "assunto"
+      "mensagem" "mensagem";
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6em;
+
+    input {
+      outline: none;
+    }
+  }
+
+  .nome {
+    grid-area: "nome";
+  }
+
+  .email {
+    grid-area: "email";
+  }
+
+  .telefone {
+    grid-area: "telefone";
+  }
+
+  .empresa {
+    grid-area: "empresa";
+  }
+
+  .assunto {
+    grid-area: "assunto";
+  }
+
+  .mensagem {
+    grid-area: "mensagem";
+
+    textarea {
+      width: 100%;
+      height: 200px;
+      outline: none;
+    }
+  }
+}

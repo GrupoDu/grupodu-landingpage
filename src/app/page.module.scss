@@ -192,7 +192,7 @@
       }
 
       p {
-        color: #AFAFAF;
+        color: #afafaf;
       }
     }
 
@@ -221,6 +221,12 @@
         }
       }
     }
+  }
+
+  .contatoSection {
+    display: flex;
+    padding: 2em;
+    box-sizing: border-box;
   }
 }
 

@@ -9,6 +9,7 @@ type Props = {
   disabled?: boolean;
   width: "--sm" | "--m" | "--l" | "--full-width";
   align?: "left" | "center" | "right";
+  color?: "white" | "var(--blue-dark)";
 };
 
 const Button = (props: Props) => {
@@ -28,6 +29,7 @@ const Button = (props: Props) => {
         backgroundColor: `var(${props.bgColor})`,
         width: computedWidth,
         textAlign: props.align || "center",
+        color: props.color || "var(--blue-dark)",
       }}
       disabled={props.disabled ?? false}
     >
