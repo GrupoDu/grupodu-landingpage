@@ -1,0 +1,64 @@
+.infoContatosContainer {
+  flex: 1;
+  padding: 2em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  .contatos {
+    flex-direction: column;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    .contato {
+      display: flex;
+      gap: 0.6em;
+      align-items: center;
+
+      .icons {
+        padding: 0.8em;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        background-color: #dbeafe;
+      }
+
+      .textInfos {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4em;
+      }
+    }
+
+    .social {
+      .iconsSocials {
+        display: flex;
+        gap: 0.6em;
+
+        .iconSocial {
+          padding: 1em;
+          border-radius: 8px;
+        }
+
+        .linkedin {
+          background-color: #2563eb;
+        }
+
+        .instagram {
+          background-color: #ec4899;
+        }
+
+        .whatsapp {
+          background-color: #22c55e;
+        }
+
+        .email {
+          background-color: #ef4444;
+        }
+      }
+    }
+  }
+}

@@ -18,6 +18,8 @@ import {
   duFerro,
 } from "@/constants/textos";
 import { CircleCheckBig } from "lucide-react";
+import InfoContatos from "@/components/infosContatos";
+import Form from "@/components/form";
 
 export default function Home() {
   return (
@@ -153,7 +155,12 @@ export default function Home() {
             que superam expectativas. Nossa abordagem integrada permite oferecer
             soluções completas e eficientes.
           </p>
-          <Button type="button" width="--m" bgColor="--blue-light">
+          <Button
+            type="button"
+            width="--m"
+            bgColor="--blue-light"
+            color="white"
+          >
             Solicitar Orçamento
           </Button>
         </div>
@@ -165,6 +172,14 @@ export default function Home() {
             </li>
           ))}
         </ul>
+      </div>
+      <div className={styles.contatoSection}>
+        <h1>Entre em Contato</h1>
+        <p>Estamos aqui para ajudar você. Entre em contato conosco!</p>
+        <div className={styles.formInfos}>
+          <InfoContatos />
+          <Form />
+        </div>
       </div>
     </div>
   );
