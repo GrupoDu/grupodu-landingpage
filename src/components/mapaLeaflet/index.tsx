@@ -5,7 +5,6 @@ import { LatLngExpression } from "leaflet";
 import styles from "./styles.module.scss";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import markerIcon from "leaflet/";
 
 const customMarkerIcon = L.icon({
   iconUrl: "/marker-icon.png",

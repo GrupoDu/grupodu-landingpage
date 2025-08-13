@@ -6,7 +6,7 @@ import { Send } from "lucide-react";
 const Form = () => {
   return (
     <div className={styles.formContainer}>
-      <h1>Envie sua Mensagem</h1>
+      <h2>Envie sua Mensagem</h2>
       <form>
         <label htmlFor="nome" className={styles.nome}>
           <span>Nome completo</span>
@@ -38,9 +38,17 @@ const Form = () => {
         </label>
         <label htmlFor="mensagem" className={styles.mensagem}>
           <span>Mensagem</span>
-          <textarea name="mensage"></textarea>
+          <textarea
+            name="mensage"
+            placeholder="Digite sua mensagem aqui"
+          ></textarea>
         </label>
-        <Button type="submit" width="--full-width" bgColor="--blue-light" color="white">
+        <Button
+          type="submit"
+          width="--full-width"
+          bgColor="--blue-light"
+          color="white"
+        >
           Enviar Mensagem <Send color="white" />
         </Button>
       </form>

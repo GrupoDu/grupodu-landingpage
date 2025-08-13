@@ -174,8 +174,12 @@ export default function Home() {
         </ul>
       </div>
       <div className={styles.contatoSection}>
-        <InfoContatos />
-        <Form />
+        <h1>Entre em Contato</h1>
+        <p>Estamos aqui para ajudar você. Entre em contato conosco!</p>
+        <div className={styles.formInfos}>
+          <InfoContatos />
+          <Form />
+        </div>
       </div>
     </div>
   );
