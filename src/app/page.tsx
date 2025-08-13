@@ -10,16 +10,23 @@ import Estados from "@/components/estados";
 import DomMetal from "../../public/Logo dom metal.png";
 import DuFerro from "../../public/DuFerro.png";
 import Carbuilt from "../../public/Carbuilt.png";
-import { carbuilt, cards, domMetal, duFerro } from "@/constants/textos";
+import {
+  carbuilt,
+  cards,
+  diferencas,
+  domMetal,
+  duFerro,
+} from "@/constants/textos";
+import { CircleCheckBig } from "lucide-react";
 
 export default function Home() {
   return (
     <div className={styles.homePage}>
       <div className={styles.welcome}>
-        <div className={styles.title}>
-          <h1>Grupo Du: </h1>
-          <h1 className={styles.titleGradient}>Inovação em Ação</h1>
-        </div>
+        <h1>
+          Grupo Du:{" "}
+          <span className={styles.textoDestaque}>Inovação em Ação</span>
+        </h1>
         <p>
           Somos um grupo empresarial consolidado no mercado, com atuação
           estratégica em diferentes segmentos, sempre mantendo o foco na
@@ -134,6 +141,30 @@ export default function Home() {
             />
           ))}
         </div>
+      </div>
+      <div className={styles.diferenciacoesSection}>
+        <div className={styles.texts}>
+          <h1>
+            O que nos torna{" "}
+            <span className={styles.textoDestaque}>únicos no mercado</span>
+          </h1>
+          <p>
+            Combinamos tradição, inovação e expertise para entregar resultados
+            que superam expectativas. Nossa abordagem integrada permite oferecer
+            soluções completas e eficientes.
+          </p>
+          <Button type="button" width="--m" bgColor="--blue-light">
+            Solicitar Orçamento
+          </Button>
+        </div>
+        <ul>
+          {diferencas.map((diferenca, index) => (
+            <li key={index}>
+              <CircleCheckBig color="white" />
+              <span>{diferenca}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

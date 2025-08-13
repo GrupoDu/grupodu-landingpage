@@ -160,7 +160,7 @@
       width: 70%;
       text-align: center;
     }
-    
+
     .cardsContainer {
       margin-bottom: 4em;
       justify-content: space-evenly;
@@ -171,6 +171,68 @@
       grid-template-rows: 50% 50%;
     }
   }
+
+  .diferenciacoesSection {
+    display: flex;
+    padding: 8em 4em;
+    width: 100%;
+    background-color: #030916;
+    box-sizing: border-box;
+    align-items: center;
+    gap: 1em;
+
+    .texts {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+
+      h1 {
+        color: white;
+      }
+
+      p {
+        color: #AFAFAF;
+      }
+    }
+
+    ul {
+      flex: 1;
+      background: #275899;
+      background: linear-gradient(
+        121deg,
+        rgba(39, 88, 153, 1) 0%,
+        rgba(13, 29, 51, 1) 68%,
+        rgba(39, 88, 153, 1) 100%
+      );
+      display: flex;
+      flex-direction: column;
+      padding: 2em 3em;
+      gap: 1em;
+      border-radius: 30px;
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 0.8em;
+
+        span {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.textoDestaque {
+  background: #4b58da;
+  background: linear-gradient(
+    100deg,
+    rgba(75, 88, 218, 1) 0%,
+    rgba(52, 129, 135, 1) 100%
+  );
+  background-clip: text;
+  color: transparent;
 }
 
 @media screen and (min-width: 380px) and (max-width: 420px) {
