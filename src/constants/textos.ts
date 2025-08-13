@@ -84,3 +84,14 @@ export const cards = [
     icon: TrendingUp,
   },
 ];
+
+export const diferencas = [
+  "Mais de 10 anos de experiência consolidada no mercado",
+  "Equipe técnica especializada e certificada",
+  "Atendimento personalizado para cada cliente",
+  "Tecnologia de ponta em todos os processos",
+  "Garantia de qualidade em todos os serviços",
+  "Suporte contínuo e relacionamento duradouro",
+  "Soluções customizadas para cada necessidade",
+  "Transparência total nos processos e custos",
+];
