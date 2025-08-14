@@ -1,4 +1,4 @@
-import { Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import Whatsapp from "../../../public/whatsapp.svg";
 import Image from "next/image";
 import styles from "./styles.module.scss";
@@ -29,20 +29,90 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles.segmentos}>
-          <h4>Segmentos</h4>
-          <span>Dom Metal</span>
-          <span>Duferro</span>
-          <span>Carbuilt</span>
+          <h3>Segmentos</h3>
+          <ul>
+            <li>
+              <Link href={"#"} className={styles.links}>
+                Dom Metal
+              </Link>
+            </li>
+            <li>
+              <Link href={"#"} className={styles.links}>
+                DuFerro
+              </Link>
+            </li>
+            <li>
+              <Link href={"#"} className={styles.links}>
+                Carbuilt
+              </Link>
+            </li>
+          </ul>
         </div>
         <div className={styles.servicos}>
-          <h4>Serviços</h4>
-          <span>Sobre nós</span>
-          <span>Produtos</span>
+          <h3>Serviços</h3>
+          <ul>
+            <li>
+              <Link href={"#"} className={styles.links}>
+                Sobre nós
+              </Link>
+            </li>
+            <li>
+              <Link href={"#"} className={styles.links}>
+                Produtos
+              </Link>
+            </li>
+          </ul>
         </div>
-        <div className={styles.contatos}>
-          <h4>Contatos</h4>
-          <span>(81) 99904-0919</span>
-          <span>duferrom@gmail.com</span>
+      </div>
+      <hr />
+      <div className={styles.middle}>
+        <div className={styles.infosContatos}>
+          <h3>Informações de Contato</h3>
+          <div className={styles.contato}>
+            <Phone color="#6592f1ff" className={styles.icon} />
+            <span>(81) 99904-0919</span>
+          </div>
+          <div className={styles.contato}>
+            <Mail color="#6592f1ff" className={styles.icon} />
+            <span>duferrom@gmail.com</span>
+          </div>
+          <div className={styles.contato}>
+            <MapPin color="#6592f1ff" className={styles.icon} />
+            <span>Av. Pan Nordestina, 655</span>
+          </div>
+        </div>
+        <div className={styles.linksRapidos}>
+          <h3>Links Rápidos</h3>
+          <ul>
+            <li>
+              <Link href={"/"} className={styles.links}>
+                Início
+              </Link>
+            </li>
+            <li>
+              <Link href={"#"} className={styles.links}>
+                Segmentos
+              </Link>
+            </li>
+            <li>
+              <Link href={"#"} className={styles.links}>
+                contato
+              </Link>
+            </li>
+            <li>
+              <Link href={"#"} className={styles.links}>
+                Sobre
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className={styles.emailNovidade}>
+          <h3>Novidades</h3>
+          <p>Receba atualizações sobre nossos projetos e novidades do grupo</p>
+          <div className={styles.inputEmail}>
+            <input type="email" name="email" placeholder="Seu e-mail" />
+            <button>Inscrever</button>
+          </div>
         </div>
       </div>
       <div className={styles.down}>
