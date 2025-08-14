@@ -244,7 +244,23 @@
         gap: 0.8em;
 
         span {
+          user-select: none;
           color: white;
+          transition: all 0.2s ease-in-out;
+        }
+
+        .checkIcon {
+          transition: all 0.2s ease-in-out;
+        }
+
+        &:hover {
+          span {
+            color: rgb(155, 202, 255);
+          }
+
+          .checkIcon {
+            stroke: rgb(155, 202, 255);
+          }
         }
       }
     }

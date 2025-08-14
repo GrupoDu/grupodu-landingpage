@@ -168,7 +168,7 @@ export default function Home() {
         <ul>
           {diferencas.map((diferenca, index) => (
             <li key={index}>
-              <CircleCheckBig color="white" />
+              <CircleCheckBig color="white" className={styles.checkIcon} />
               <span>{diferenca}</span>
             </li>
           ))}
