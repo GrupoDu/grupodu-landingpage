@@ -59,13 +59,8 @@
       height: fit-content;
       width: 2em;
       transition: all 1s ease-in-out;
-      cursor: pointer;
       stroke-width: 5px;
       stroke: white;
-
-      &:hover {
-        animation: none;
-      }
     }
 
     @keyframes pulando {
