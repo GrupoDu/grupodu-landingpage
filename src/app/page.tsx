@@ -17,7 +17,7 @@ import {
   domMetal,
   duFerro,
 } from "@/constants/textos";
-import { CircleCheckBig } from "lucide-react";
+import { ArrowDown, CircleCheckBig } from "lucide-react";
 import InfoContatos from "@/components/infosContatos";
 import Form from "@/components/form";
 
@@ -37,6 +37,7 @@ export default function Home() {
         <Button width="--sm" disabled={true} type="button">
           Loja em breve!
         </Button>
+        <ArrowDown className={styles.arrowDown} />
       </div>
       <div className={styles.sobreSections}>
         <div className={styles.sobreText}>
