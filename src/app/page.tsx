@@ -129,7 +129,7 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.motivoEscolha}>
-        <h1>Por quê Escolher o Grupo Du Car?</h1>
+        <h1>Por quê Escolher o Grupo Du?</h1>
         <h2>
           Nossa experiência e compromisso com a excelência fazem toda a
           diferença no resultado final.
