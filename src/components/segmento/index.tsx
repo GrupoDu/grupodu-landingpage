@@ -8,11 +8,14 @@ type Props = {
   subtitle: string;
   description: string;
   especialidades: string[];
+  variantClass: string;
 };
 
 const Segmento = (props: Props) => {
   return (
-    <div className={styles.segmentoContainer}>
+    <div
+      className={`${styles.segmentoContainer} ${props.variantClass}`}
+    >
       <Image
         loading="lazy"
         src={props.src}

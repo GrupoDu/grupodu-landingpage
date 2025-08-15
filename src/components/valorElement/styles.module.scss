@@ -1,7 +1,10 @@
 .valorContainer {
   display: flex;
   gap: 0.2em;
-
+  transform: translateX(-10px);
+  transition: all .8s;
+  opacity: 0;
+  
   .texts {
     display: flex;
     flex-direction: column;
@@ -27,4 +30,9 @@
       }
     }
   }
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
 }

@@ -1,25 +1,17 @@
 import styles from "./page.module.scss";
 import Button from "@/components/button";
-import ValorElement from "@/components/valorElement";
 import SectionTitle from "@/components/sectionTitle";
-import Segmento from "@/components/segmento";
 import Card from "@/components/card";
 import Estados from "@/components/estados";
-
-// Imagens
-import DomMetal from "../../public/Logo dom metal.png";
-import DuFerro from "../../public/DuFerro.png";
-import Carbuilt from "../../public/Carbuilt.png";
 import {
-  carbuilt,
   cards,
   diferencas,
-  domMetal,
-  duFerro,
 } from "@/constants/textos";
 import { ArrowDown, CircleCheckBig } from "lucide-react";
 import InfoContatos from "@/components/infosContatos";
 import Form from "@/components/form";
+import Valores from "@/components/valores";
+import Segmentos from "@/components/segmentos";
 
 export default function Home() {
   return (
@@ -60,35 +52,7 @@ export default function Home() {
             compromisso com resultados excepcionais.
           </p>
         </div>
-        <div className={styles.valores}>
-          <h2>Nossos valores fundamentais</h2>
-          <ul>
-            <li>
-              <ValorElement
-                title="Excelência Operacional"
-                description="Busca constante pela perfeição em cada processo, projeto e entrega."
-              />
-            </li>
-            <li>
-              <ValorElement
-                title="Inovação Contínua"
-                description="Investimento em tecnologia e metodologias para superar expectativas."
-              />
-            </li>
-            <li>
-              <ValorElement
-                title="Relacionamentos Duradouros"
-                description="Construção de parcerias baseadas em confiança e transparência."
-              />
-            </li>
-            <li>
-              <ValorElement
-                title="Responsabilidade Social"
-                description="Compromisso com impacto positivo na sociedade e meio ambiente."
-              />
-            </li>
-          </ul>
-        </div>
+        <Valores />
       </div>
       <div className={styles.estadosSection}>
         <Estados />
@@ -104,29 +68,7 @@ export default function Home() {
           unidas por valores compartilhados de inovação, qualidade e compromisso
           com resultados excepcionais.
         </p>
-        <div className={styles.segments}>
-          <Segmento
-            src={DomMetal}
-            title={domMetal.nome}
-            subtitle={domMetal.subtitulo}
-            description={domMetal.descricao}
-            especialidades={domMetal.especialidades}
-          />
-          <Segmento
-            src={DuFerro}
-            title={duFerro.nome}
-            subtitle={duFerro.subtitulo}
-            description={duFerro.descricao}
-            especialidades={duFerro.especialidades}
-          />
-          <Segmento
-            src={Carbuilt}
-            title={carbuilt.nome}
-            subtitle={carbuilt.subtitulo}
-            description={carbuilt.descricao}
-            especialidades={carbuilt.especialidades}
-          />
-        </div>
+        <Segmentos />
       </div>
       <div className={styles.motivoEscolha}>
         <h1>Por quê Escolher o Grupo Du?</h1>
