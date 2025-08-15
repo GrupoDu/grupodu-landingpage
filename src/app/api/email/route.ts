@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import Mailgun from "mailgun.js";
 import FormData from "form-data";
 
-export const POST = async (req: Request, res: NextResponse) => {
+export const POST = async (req: Request ) => {
   const mailgun = new Mailgun(FormData);
   const mg = mailgun.client({
     username: "api",
