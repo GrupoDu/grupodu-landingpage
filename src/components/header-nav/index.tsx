@@ -3,17 +3,29 @@
 import styles from "./styles.module.scss";
 import LogoGrupo from "../../../public/logo-grupodu.png";
 import Image from "next/image";
-import { HamburgerIcon, ShoppingCart, Menu } from "lucide-react";
+import { HamburgerIcon, ShoppingCart, Menu, Download } from "lucide-react";
 import Search from "../search";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import MenuMobile from "@/components/menu";
-
+import { useScrollOpacity } from "@/hooks/useScrollOpacity";
 const HeaderNav = () => {
-  // const numeroItemsCarrinho: number = 2;
   const [actualPage, setActualPage] = useState("inicio");
+  const [scrollDown, setScrollDown] = useState(false);
+  const ref = useRef(null);
+  const opacity = useScrollOpacity();
   const [menu, setMenu] = useState(false);
   const pathname = usePathname();
+
+  const handleDownload = () => {
+    const baseUrl = window.location.origin;
+    const link = document.createElement("a");
+    link.href = `${baseUrl}/catalogo.pdf`;
+    link.download = "Catálogo Grupo Du.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const openMenu = () => {
     setMenu(true);
@@ -37,7 +49,13 @@ const HeaderNav = () => {
 
   return (
     <>
-      <nav className={styles.ContainerHeaderNav}>
+      <nav
+        ref={ref}
+        style={{ opacity, transition: "opacity 0.3s ease-in-out" }}
+        className={`${styles.ContainerHeaderNav} ${
+          scrollDown ? styles.scrollDown : ""
+        }`}
+      >
         <div className={styles.logoContainer}>
           <Image src={LogoGrupo} alt="Logo GD" className={styles.logoImage} />
           <h3>Grupo Du Car</h3>
@@ -64,6 +82,10 @@ const HeaderNav = () => {
           >
             Entre em Contato
           </span>
+          <div className={styles.catalogo} onClick={handleDownload}>
+            <span>Nosso Catalogo</span>
+            <Download color="black" />
+          </div>
           {/* V--- OFF POR ENQUANTO ---V
         <div className={styles.carrinhoIcon}>
           <ShoppingCart color="black" className={styles.shoppingCart} />
@@ -75,7 +97,7 @@ const HeaderNav = () => {
           <Menu color="black" width={40} height={40} />
         </div>
       </nav>
-      <MenuMobile menu={menu} closeFunc={closeMenu}/>
+      <MenuMobile menu={menu} closeFunc={closeMenu} />
     </>
   );
 };
