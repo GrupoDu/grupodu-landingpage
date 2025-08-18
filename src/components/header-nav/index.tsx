@@ -11,7 +11,6 @@ import MenuMobile from "@/components/menu";
 import { useScrollOpacity } from "@/hooks/useScrollOpacity";
 const HeaderNav = () => {
   const [actualPage, setActualPage] = useState("inicio");
-  const [scrollDown, setScrollDown] = useState(false);
   const ref = useRef(null);
   const opacity = useScrollOpacity();
   const [menu, setMenu] = useState(false);
@@ -52,9 +51,7 @@ const HeaderNav = () => {
       <nav
         ref={ref}
         style={{ opacity, transition: "opacity 0.3s ease-in-out" }}
-        className={`${styles.ContainerHeaderNav} ${
-          scrollDown ? styles.scrollDown : ""
-        }`}
+        className={styles.ContainerHeaderNav}
       >
         <div className={styles.logoContainer}>
           <Image src={LogoGrupo} alt="Logo GD" className={styles.logoImage} />
