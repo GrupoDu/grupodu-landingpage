@@ -291,6 +291,24 @@
       }
     }
 
+    .estadosSection {
+      flex-direction: column;
+      width: 100%;
+      padding: 1em;
+      box-sizing: border-box;
+    }
+
+    .segmentsSection {
+      padding: 0;
+      width: 100%;
+
+      .titleSegments {
+        h1 {
+          font-size: 40px;
+        }
+      }
+    }
+
     section {
       flex-direction: column;
 
