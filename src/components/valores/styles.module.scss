@@ -32,3 +32,9 @@
     box-shadow: 0 0 10px 6px rgba($color: #000000, $alpha: 0.2);
   }
 }
+
+@media screen and (max-width: 420px) {
+  .valoresContainer {
+    width: 90%;
+  }
+}

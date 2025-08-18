@@ -31,7 +31,7 @@ export default function Home() {
         </Button>
         <ArrowDown className={styles.arrowDown} />
       </div>
-      <div className={styles.sobreSections}>
+      <div className={styles.sobreSection}>
         <div className={styles.sobreText}>
           <h1>Nossa História e Propósito</h1>
           <p>
