@@ -77,15 +77,19 @@ export default function Home() {
           diferença no resultado final.
         </h2>
         <div className={styles.cardsContainer}>
-          {cards.map((card, index) => (
-            <Card
-              key={index}
-              icon={card.icon}
-              title={card.title}
-              description={card.description}
-            />
-          ))}
-          <SwiperComponent />
+          <div className={styles.cardDesktop}>
+            {cards.map((card, index) => (
+              <Card
+                key={index}
+                icon={card.icon}
+                title={card.title}
+                description={card.description}
+              />
+            ))}
+          </div>
+          <div className={styles.cardMobile}>
+            <SwiperComponent />
+          </div>
         </div>
       </div>
       <div className={styles.diferenciacoesSection}>

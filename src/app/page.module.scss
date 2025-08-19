@@ -149,13 +149,21 @@
     }
 
     .cardsContainer {
-      margin-bottom: 4em;
-      justify-content: space-evenly;
-      gap: 2em;
-      padding: 1em;
-      display: grid;
-      grid-template-columns: 30% 30% 30%;
-      grid-template-rows: 50% 50%;
+      width: 100%;
+
+      .cardDesktop {
+        margin-bottom: 4em;
+        justify-content: space-evenly;
+        gap: 2em;
+        padding: 1em;
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-template-rows: 50% 50%;
+      }
+
+      .cardMobile {
+        display: none;
+      }
     }
   }
 
@@ -327,6 +335,17 @@
         width: 80%;
         text-align: justify;
         font-size: 18px;
+      }
+    }
+
+    .motivoEscolha {
+      .cardsContainer {
+        .cardDesktop {
+          display: none;
+        }
+        .cardMobile {
+          display: flex;
+        }
       }
     }
 
