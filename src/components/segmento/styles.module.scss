@@ -80,6 +80,8 @@
 
 @media screen and (max-width: 420px) {
   .segmentoContainer {
+    transition: all 0.1s ease-in-out;
+
     p {
       text-align: justify;
       width: 90%;
