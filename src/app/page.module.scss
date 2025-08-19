@@ -385,6 +385,23 @@
       }
     }
 
+    .contatoSection {
+      h1 {
+        font-size: 35px;
+      }
+
+      p {
+        width: 100%;
+        text-align: justify;
+      }
+
+      .formInfos {
+        flex-direction: column;
+        gap: 1em;
+        padding: 0;
+      }
+    }
+
     section {
       flex-direction: column;
 
