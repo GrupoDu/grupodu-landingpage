@@ -3,15 +3,13 @@ import Button from "@/components/button";
 import SectionTitle from "@/components/sectionTitle";
 import Card from "@/components/card";
 import Estados from "@/components/estados";
-import {
-  cards,
-  diferencas,
-} from "@/constants/textos";
+import { cards, diferencas } from "@/constants/textos";
 import { ArrowDown, CircleCheckBig } from "lucide-react";
 import InfoContatos from "@/components/infosContatos";
 import Form from "@/components/form";
 import Valores from "@/components/valores";
 import Segmentos from "@/components/segmentos";
+import SwiperComponent from "@/components/swiper";
 
 export default function Home() {
   return (
@@ -60,8 +58,10 @@ export default function Home() {
       <div className={styles.segmentsSection}>
         <SectionTitle>Nossas Empresas</SectionTitle>
         <div className={styles.titleSegments}>
-          <h1>Três Empresas, </h1>
-          <h1 className={styles.titleColorido}>Uma Visão</h1>
+          <h1>
+            Três Empresas,{" "}
+            <span className={styles.textoDestaque}>Uma Visão</span>
+          </h1>
         </div>
         <p className={styles.sobreSegmentos}>
           Cada empresa do nosso grupo representa excelência em seu segmento,
@@ -85,6 +85,7 @@ export default function Home() {
               description={card.description}
             />
           ))}
+          <SwiperComponent />
         </div>
       </div>
       <div className={styles.diferenciacoesSection}>
@@ -98,14 +99,16 @@ export default function Home() {
             que superam expectativas. Nossa abordagem integrada permite oferecer
             soluções completas e eficientes.
           </p>
-          <Button
-            type="button"
-            width="--m"
-            bgColor="--blue-light"
-            color="white"
-          >
-            Solicitar Orçamento
-          </Button>
+          <div className={styles.button}>
+            <Button
+              type="button"
+              width="--m"
+              bgColor="--blue-light"
+              color="white"
+            >
+              Solicitar Orçamento
+            </Button>
+          </div>
         </div>
         <ul>
           {diferencas.map((diferenca, index) => (
@@ -115,6 +118,16 @@ export default function Home() {
             </li>
           ))}
         </ul>
+        <div className={styles.buttonMobile}>
+          <Button
+            type="button"
+            width="--full-width"
+            bgColor="--blue-light"
+            color="white"
+          >
+            Solicitar Orçamento
+          </Button>
+        </div>
       </div>
       <div className={styles.contatoSection}>
         <h1>Entre em Contato</h1>

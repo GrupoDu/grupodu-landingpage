@@ -29,3 +29,10 @@
     box-shadow: 0 0 8px 0 rgba($color: #000000, $alpha: 0.6);
   }
 }
+
+@media screen and (max-width: 420px) {
+  .cardContainer {
+    display: none;
+  }
+  
+}

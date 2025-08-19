@@ -304,8 +304,55 @@
 
       .titleSegments {
         h1 {
+          text-align: center;
           font-size: 40px;
         }
+      }
+
+      .sobreSegmentos {
+        width: 80%;
+        margin-bottom: 2em;
+        text-align: justify;
+      }
+    }
+
+    .motivoEscolha {
+      flex-direction: column;
+      h1 {
+        text-align: center;
+        font-size: 36px;
+      }
+
+      h2 {
+        width: 80%;
+        text-align: justify;
+        font-size: 18px;
+      }
+    }
+
+    .diferenciacoesSection {
+      flex-direction: column;
+      gap: 3em;
+      padding: 2em;
+
+      .texts {
+        h1 {
+          font-size: 34px;
+          text-align: center;
+        }
+
+        p {
+          text-align: justify;
+        }
+      }
+
+      .button {
+        display: none;
+      }
+
+      .buttonMobile {
+        margin-top: 1em;
+        width: 100%;
       }
     }
 
