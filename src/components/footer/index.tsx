@@ -66,7 +66,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <hr />
+      <hr className={styles.hr} />
       <div className={styles.middle}>
         <div className={styles.infosContatos}>
           <h3>Informações de Contato</h3>
