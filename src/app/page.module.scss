@@ -268,8 +268,8 @@
   background: linear-gradient(
     141deg,
     rgba(56, 146, 224, 1) 0%,
-    rgba(99, 37, 110, 1) 59%,
-    rgba(59, 102, 7, 1) 100%
+    rgb(142, 83, 209) 59%,
+    rgb(51, 122, 214) 100%
   );
   background-clip: text;
   color: transparent;
@@ -283,10 +283,11 @@
 
       h1 {
         font-size: 2em;
+        color: white;
       }
 
       p {
-        text-align: justify;
+        text-align: left;
         width: 100%;
       }
     }
@@ -303,7 +304,7 @@
 
         p {
           width: 100%;
-          text-align: justify;
+          text-align: left;
         }
       }
     }
@@ -329,7 +330,7 @@
       .sobreSegmentos {
         width: 80%;
         margin-bottom: 2em;
-        text-align: justify;
+        text-align: left;
       }
     }
 
@@ -344,7 +345,7 @@
 
       h2 {
         width: 80%;
-        text-align: justify;
+        text-align: left;
         font-size: 18px;
       }
     }
@@ -372,7 +373,7 @@
         }
 
         p {
-          text-align: justify;
+          text-align: left;
         }
       }
 
@@ -393,7 +394,7 @@
 
       p {
         width: 100%;
-        text-align: justify;
+        text-align: left;
       }
       
       .formInfos {
@@ -436,7 +437,7 @@
 
         p {
           width: 100%;
-          text-align: justify;
+          text-align: left;
         }
       }
     }
