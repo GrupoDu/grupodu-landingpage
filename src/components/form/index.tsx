@@ -5,6 +5,7 @@ import styles from "./styles.module.scss";
 import Button from "../button";
 import { Send } from "lucide-react";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const Form = () => {
   const [nome, setNome] = useState<string>("");
@@ -33,12 +34,15 @@ const Form = () => {
         }),
       });
 
-      if (!res.ok) throw new Error("Falha ao enviar o email");
-
-      const content = await res.json();
-
-      console.log(content);
+      if (res.ok) {
+        toast.success("Email recebido com sucesso!");
+      } else if (res.status == 400) {
+        toast.error("Ocorreu um erro ao enviar o email.");
+      } else {
+        toast.error("Ocorreu um erro ao enviar o email.");
+      }
     } catch (err) {
+      toast.error("Erro de conexão. Tenta novamente mais tarde.");
       console.log(err);
     }
   };

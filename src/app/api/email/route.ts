@@ -15,7 +15,7 @@ export const POST = async (req: Request ) => {
     const data = await mg.messages.create(
       "sandboxc2b3e1bf05eb40ac91f6e9632d35512f.mailgun.org",
       {
-        from: "Mailgun Sandbox <postmaster@sandboxc2b3e1bf05eb40ac91f6e9632d35512f.mailgun.org>",
+        from: "Mailgun Sandbox <email@grupodu.com.br>",
         to: ["Joao Lucas Bivar de Franca <joao.lubf@gmail.com>"],
         subject: "Entrando em contato pelo site",
         text: `teste de envio`,
