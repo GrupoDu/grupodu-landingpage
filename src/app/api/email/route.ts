@@ -13,10 +13,10 @@ export const POST = async (req: Request) => {
     const { nome, email, telefone, empresa, assunto, mensagem } = body;
 
     const data = await mg.messages.create(
-      "sandboxc2b3e1bf05eb40ac91f6e9632d35512f.mailgun.org",
+      "grupodu.com.br",
       {
-        from: "Grupodu <email@grupodu.com.br>",
-        to: ["Joao Lucas Bivar de Franca <joao.lubf@gmail.com>"],
+        from: "Grupodu Contato<email@grupodu.com.br>",
+        to: ["Dom Metal<dommetalind@gmail.com>"],
         subject: "Email enviado pelo site",
         text: `Solicitação de contato`,
         html: `<h1>Informações do contato</h1>
