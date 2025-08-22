@@ -9,3 +9,24 @@
         color: #424FD8;
     }
 }
+
+@media screen and (min-width: 380px) and (max-width: 420px) {
+    .sectionTitleContainer {
+        width: 35%;
+        border-radius: 30px;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #D3DDFF;
+        border: 2px solid #424FD8;
+    
+        span {
+            color: #424FD8;
+            width: 100%;
+            text-align: center;
+            font-size: small;
+        }
+    }
+    
+}

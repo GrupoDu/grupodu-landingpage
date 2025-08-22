@@ -1,7 +1,7 @@
 .ContainerHeaderNav {
   position: fixed;
   top: 0;
-  width: 95%;
+  width: 95dvw;
   height: fit-content;
   margin: 20px 2.5%;
   border-radius: 5px;
@@ -67,6 +67,10 @@
       gap: 0.4em;
       animation: pulando 1s ease-in-out;
       animation-iteration-count: 3;
+      
+      span {
+        font-size: 14px;
+      }
     }
 
     @keyframes pulando {
@@ -104,20 +108,32 @@
 
 @media screen and (min-width: 380px) and (max-width: 420px) {
   .ContainerHeaderNav {
+    margin-top: 10px;
+
     .logoContainer {
+      flex: 1;
+      gap: 0.2em;
+
+      h3 {
+        width: max-content;
+        font-size: 16px;
+      }
+
       .logoImage {
         object-fit: contain;
         height: fit-content;
-        width: 5em;
+        width: 3em;
       }
     }
 
     .pagesLinks {
-      display: none;
+      .pageLink {
+        display: none;
+      }
     }
 
     .menuIcon {
-      display: flex;
+      // display: flex;
       opacity: 0.2;
     }
   }

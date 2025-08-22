@@ -7,3 +7,11 @@
     transform: translateY(0px);
   }
 }
+
+@media screen and (max-width: 420px) {
+  .segmentosContainer {
+    flex-direction: column;
+    width: 90%;
+    gap: 3em;
+  }
+}

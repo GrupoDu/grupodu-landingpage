@@ -58,24 +58,34 @@ const HeaderNav = () => {
           <h3>Grupo Du Car</h3>
         </div>
         <div className={styles.pagesLinks}>
-          <span className={actualPage === "inicio" ? styles.actualPage : ""}>
+          <span
+            className={`${actualPage === "inicio" ? styles.actualPage : ""} ${
+              styles.pageLink
+            }`}
+          >
             Início
           </span>
           <span
             style={{ opacity: 0.2, cursor: "not-allowed" }}
-            className={actualPage === "produtos" ? styles.actualPage : ""}
+            className={`${actualPage === "produtos" ? styles.actualPage : ""} ${
+              styles.pageLink
+            }`}
           >
             Produtos
           </span>
           <span
             style={{ opacity: 0.2, cursor: "not-allowed" }}
-            className={actualPage === "sobre" ? styles.actualPage : ""}
+            className={`${actualPage === "sobre" ? styles.actualPage : ""} ${
+              styles.pageLink
+            }`}
           >
             Sobre
           </span>
           <span
             style={{ opacity: 0.2, cursor: "not-allowed" }}
-            className={actualPage === "contatos" ? styles.actualPage : ""}
+            className={`${actualPage === "contatos" ? styles.actualPage : ""} ${
+              styles.pageLink
+            }`}
           >
             Entre em Contato
           </span>
