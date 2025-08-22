@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import Mailgun from "mailgun.js";
 import FormData from "form-data";
 
-export const POST = async (req: Request ) => {
+export const POST = async (req: Request) => {
   const mailgun = new Mailgun(FormData);
   const mg = mailgun.client({
     username: "api",
@@ -15,10 +15,10 @@ export const POST = async (req: Request ) => {
     const data = await mg.messages.create(
       "sandboxc2b3e1bf05eb40ac91f6e9632d35512f.mailgun.org",
       {
-        from: "Mailgun Sandbox <email@grupodu.com.br>",
+        from: "Grupodu <email@grupodu.com.br>",
         to: ["Joao Lucas Bivar de Franca <joao.lubf@gmail.com>"],
-        subject: "Entrando em contato pelo site",
-        text: `teste de envio`,
+        subject: "Email enviado pelo site",
+        text: `Solicitação de contato`,
         html: `<h1>Informações do contato</h1>
         <h3>Nome completo</h3>
         <p>${nome}</p>
