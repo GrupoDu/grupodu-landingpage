@@ -19,6 +19,11 @@ const Form = () => {
     e.preventDefault();
 
     try {
+      if (!nome || !email || !telefone || !empresa || !assunto || !mensagem) {
+        toast.error("Por favor, preencha todos os campos.");
+        return;
+      }
+
       const res = await fetch("/api/email", {
         method: "POST",
         headers: {
