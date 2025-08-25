@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: "Grupo Du Car",
   description:
     "O Grupo Du Car é formado por três empresas que atuam em diferentes setores, mas compartilham um mesmo compromisso: qualidade, inovação e solidez.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
