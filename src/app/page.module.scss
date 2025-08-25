@@ -22,6 +22,8 @@
 
     h1 {
       text-align: center;
+      animation: entrando 1s ease-in-out;
+      color: white;
     }
 
     p {
@@ -29,6 +31,7 @@
       color: #dedede;
       width: 70%;
       font-size: 1.2em;
+      animation: entrando 1s ease-in-out;
     }
 
     .arrowDown {
@@ -54,6 +57,18 @@
 
       90% {
         transform: translateY(-10px);
+      }
+    }
+
+    @keyframes entrando {
+      0% {
+        transform: translateY(-10px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0px);
+        opacity: 1;
       }
     }
   }
@@ -377,7 +392,7 @@
         width: 100%;
         text-align: left;
       }
-      
+
       .formInfos {
         flex-direction: column;
         gap: 3em;
