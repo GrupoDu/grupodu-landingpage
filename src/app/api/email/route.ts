@@ -12,14 +12,19 @@ export const POST = async (req: Request) => {
     const body = await req.json();
     const { nome, email, telefone, empresa, assunto, mensagem } = body;
 
-    const data = await mg.messages.create(
-      "grupodu.com.br",
-      {
-        from: "Grupodu Contato<email@grupodu.com.br>",
-        to: ["Dom Metal<dommetalind@gmail.com>"],
-        subject: "Email enviado pelo site",
-        text: `Solicitação de contato`,
-        html: `<h1>Informações do contato</h1>
+    if (!nome || !email || !telefone || !empresa || !assunto || !mensagem) {
+      return NextResponse.json(
+        { error: "Por favor, preencha todos os campos" },
+        { status: 400 }
+      );
+    }
+
+    const data = await mg.messages.create("grupodu.com.br", {
+      from: "Grupodu Contato<email@grupodu.com.br>",
+      to: ["Dom Metal<dommetalind@gmail.com>"],
+      subject: "Email enviado pelo site",
+      text: `Solicitação de contato`,
+      html: `<h1>Informações do contato</h1>
         <h3>Nome completo</h3>
         <p>${nome}</p>
         <hr />
@@ -41,8 +46,7 @@ export const POST = async (req: Request) => {
         <br />
         <h4>Contato enviado pelo site.</h4>
         `,
-      }
-    );
+    });
 
     console.log(data);
 
