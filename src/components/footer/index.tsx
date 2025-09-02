@@ -1,3 +1,5 @@
+"use client";
+
 import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import Whatsapp from "../../../public/whatsapp.svg";
 import Image from "next/image";
