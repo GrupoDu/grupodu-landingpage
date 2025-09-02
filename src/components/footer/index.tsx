@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 import React from "react";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const Footer = () => {
   return (
@@ -116,7 +117,11 @@ const Footer = () => {
           <p>Receba atualizações sobre nossos projetos e novidades do grupo</p>
           <div className={styles.inputEmail}>
             <input type="email" name="email" placeholder="Seu e-mail" />
-            <button>Inscrever</button>
+            <button
+              onClick={() => toast.error("funciolidade em desenvolvimento")}
+            >
+              Inscrever
+            </button>
           </div>
         </div>
       </div>
