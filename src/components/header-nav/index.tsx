@@ -41,6 +41,8 @@ const HeaderNav = () => {
       setActualPage("sobre");
     } else if (pathname.includes("contato")) {
       setActualPage("contatos");
+    } else if (pathname.includes("produtoLanding")) {
+      setActualPage("");
     } else {
       setActualPage("inicio");
     }
