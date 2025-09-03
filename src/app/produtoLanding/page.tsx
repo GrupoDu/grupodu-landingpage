@@ -12,7 +12,7 @@ export default function ProdutoPge() {
       <HeroSection />
       <div className={styles.formularioContato}>
         <div className={styles.contatos}>
-          <h2>Solicite seu carrinho de mão</h2>
+          <h2>Solicite seu Produto</h2>
           <p>
             Preencha seus dados e nossa equipe entrará em contato para garantir
             que você receba exatamente o que procura.
