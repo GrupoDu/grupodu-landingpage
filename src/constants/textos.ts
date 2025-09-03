@@ -1,3 +1,4 @@
+import { textsCategory } from "@/data/types";
 import {
   ChevronUp,
   Headset,
@@ -6,6 +7,10 @@ import {
   TrendingUp,
   UsersRound,
 } from "lucide-react";
+
+// imagens
+import CarroDeMao from "@/assets/produtos/Carro de mão.png";
+import CarroJerica160 from "@/assets/produtos/Carro jerica 160L.png";
 
 export const domMetal = {
   nome: "Dom Metal",
@@ -94,4 +99,26 @@ export const diferencas = [
   "Suporte contínuo e relacionamento duradouro",
   "Soluções customizadas para cada necessidade",
   "Transparência total nos processos e custos",
+];
+
+export const textProductType: textsCategory[] = [
+  {
+    category: "carro-de-mao",
+    title: "Carro de mão",
+    description:
+      "O carrinho de mão que une resistência e praticidade para o dia a dia da sua obra. Fabricado com materiais de alta qualidade, ele garante durabilidade mesmo nas tarefas mais pesadas, oferecendo conforto no manuseio e eficiência no transporte de cargas.",
+    images: [CarroDeMao, CarroJerica160],
+  },
+  {
+    category: "masseiras",
+    title: "Masseiras",
+    description: "",
+    images: [],
+  },
+  {
+    category: "plataformas",
+    title: "Plataformas",
+    description: "",
+    images: [],
+  },
 ];

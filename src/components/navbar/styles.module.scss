@@ -19,10 +19,16 @@
     align-items: center;
     gap: 1em;
 
-    .logoImage {
-      object-fit: contain;
-      height: fit-content;
-      width: 10%;
+    .logoLink {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .logoImage {
+        object-fit: contain;
+        height: fit-content;
+        width: 80%;
+      }
     }
   }
 
@@ -67,7 +73,7 @@
       gap: 0.4em;
       animation: pulando 1s ease-in-out;
       animation-iteration-count: 3;
-      
+
       span {
         font-size: 14px;
       }

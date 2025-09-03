@@ -1,98 +1,6 @@
 .page {
   flex: 1;
 
-  .header {
-    background: #503e9e;
-    background: radial-gradient(
-      circle at 70% 60%,
-      rgba(80, 62, 158, 1) 0%,
-      rgba(75, 19, 102, 1) 41%,
-      rgba(25, 29, 49, 1) 100%
-    );
-    padding: 180px 54px 90px 54px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-
-    h1 {
-      background: linear-gradient(90deg, #ffffff, #cbb9ff);
-      color: transparent;
-      -webkit-background-clip: text;
-      background-clip: text;
-      width: 100%;
-      text-align: center;
-      user-select: none;
-      font-size: 96px;
-    }
-
-    .textImages {
-      flex: 1;
-      display: flex;
-
-      .textHeader {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        flex: 1;
-
-        h3,
-        p {
-          color: white;
-        }
-
-        h3 {
-          font-size: 48px;
-          font-weight: 500;
-        }
-
-        hr {
-          opacity: 0.3;
-          color: white;
-        }
-
-        p {
-          font-size: 20px;
-        }
-      }
-
-      .imagesHeader {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        box-sizing: border-box;
-        user-select: none;
-
-        .imageHeader {
-          position: absolute;
-          object-fit: contain;
-          width: 50%;
-          height: fit-content;
-          right: 4em;
-          animation: entrada 1.2s ease-in-out;
-
-          @keyframes entrada {
-            0% {
-              opacity: 0;
-              transform: translateY(-2em);
-            }
-
-            100% {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-        }
-
-        #jerica {
-          left: 6em;
-        }
-      }
-    }
-  }
-
   .formularioContato {
     display: flex;
     padding: 40px;
@@ -132,13 +40,6 @@
         }
       }
     }
-  }
-
-  .main {
-    padding: 40px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
   }
 }
 

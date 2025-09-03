@@ -9,7 +9,9 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import MenuMobile from "@/components/menu";
 import { useScrollOpacity } from "@/hooks/useScrollOpacity";
-const HeaderNav = () => {
+import Link from "next/link";
+
+const Navbar = () => {
   const [actualPage, setActualPage] = useState("inicio");
   const ref = useRef(null);
   const opacity = useScrollOpacity();
@@ -41,6 +43,8 @@ const HeaderNav = () => {
       setActualPage("sobre");
     } else if (pathname.includes("contato")) {
       setActualPage("contatos");
+    } else if (pathname.includes("produtoLanding")) {
+      setActualPage("");
     } else {
       setActualPage("inicio");
     }
@@ -54,17 +58,20 @@ const HeaderNav = () => {
         className={styles.ContainerHeaderNav}
       >
         <div className={styles.logoContainer}>
-          <Image src={LogoGrupo} alt="Logo GD" className={styles.logoImage} />
+          <Link href={"/"} className={styles.logoLink}>
+            <Image src={LogoGrupo} alt="Logo GD" className={styles.logoImage} />
+          </Link>
           <h3>Grupo Du Car</h3>
         </div>
         <div className={styles.pagesLinks}>
-          <span
+          <Link
+            href={"/"}
             className={`${actualPage === "inicio" ? styles.actualPage : ""} ${
               styles.pageLink
             }`}
           >
             Início
-          </span>
+          </Link>
           <span
             style={{ opacity: 0.2, cursor: "not-allowed" }}
             className={`${actualPage === "produtos" ? styles.actualPage : ""} ${
@@ -109,4 +116,4 @@ const HeaderNav = () => {
   );
 };
 
-export default HeaderNav;
+export default Navbar;

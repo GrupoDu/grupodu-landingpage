@@ -8,3 +8,10 @@ export interface Product {
   images: StaticImageData[];
   imagesAlt: string[];
 }
+
+export interface textsCategory {
+  category: string;
+  title: string;
+  description: string;
+  images: StaticImageData[];
+}
