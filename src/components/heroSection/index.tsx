@@ -3,9 +3,10 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import { products } from "@/data/products";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useSearchParams } from "next/navigation";
 import { textProductType } from "@/constants/textos";
+import { PulseLoader } from "react-spinners";
 import Loading from "../loading";
 
 const HeroSection = () => {
@@ -13,22 +14,28 @@ const HeroSection = () => {
   const [productDescription, setProductDescription] = useState<
     string | undefined
   >();
+  const [productImage, setProductImage] = useState<StaticImageData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const searchParams = useSearchParams();
 
   useEffect(() => {
     if (searchParams.get("produto")) {
       const produto = searchParams.get("produto")?.toLowerCase();
-      const productText = textProductType.find(
-        (text) => text.category === produto
+      setProductTitle(
+        textProductType.filter((text) => text.category === produto)[0].title
       );
-
-      if (productText) {
-        setProductTitle(productText.title);
-        setProductDescription(productText.description);
-      }
-      setLoading(false);
+      setProductDescription(
+        textProductType.filter((text) => text.category === produto)[0]
+          .description
+      );
+      setProductImage(
+        textProductType.filter((text) => text.category === produto)[0].images
+      );
     }
+
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
   }, [searchParams]);
 
   return (
@@ -44,13 +51,13 @@ const HeroSection = () => {
         ) : (
           <div className={styles.imagesHeader}>
             <Image
-              src={products[0].images[0]}
-              alt={products[0].title}
+              src={productImage[0]}
+              alt={productTitle || "image do produto"}
               className={styles.imageHeader}
             />
             <Image
-              src={products[1].images[0]}
-              alt={products[1].title}
+              src={productImage[1]}
+              alt={productTitle || "image do produto"}
               className={styles.imageHeader}
               id={styles.jerica}
             />
