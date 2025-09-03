@@ -82,7 +82,7 @@ const FormProduto = () => {
             defaultValue=""
             required
           >
-            <option value="" disabled selected>
+            <option value="" disabled>
               Escolha o modelo
             </option>
             {products.map((product) => (
