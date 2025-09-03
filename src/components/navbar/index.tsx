@@ -58,7 +58,9 @@ const Navbar = () => {
         className={styles.ContainerHeaderNav}
       >
         <div className={styles.logoContainer}>
-          <Image src={LogoGrupo} alt="Logo GD" className={styles.logoImage} />
+          <Link href={"/"} className={styles.logoLink}>
+            <Image src={LogoGrupo} alt="Logo GD" className={styles.logoImage} />
+          </Link>
           <h3>Grupo Du Car</h3>
         </div>
         <div className={styles.pagesLinks}>
