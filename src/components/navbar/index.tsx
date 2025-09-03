@@ -9,6 +9,8 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import MenuMobile from "@/components/menu";
 import { useScrollOpacity } from "@/hooks/useScrollOpacity";
+import Link from "next/link";
+
 const Navbar = () => {
   const [actualPage, setActualPage] = useState("inicio");
   const ref = useRef(null);
@@ -60,13 +62,14 @@ const Navbar = () => {
           <h3>Grupo Du Car</h3>
         </div>
         <div className={styles.pagesLinks}>
-          <span
+          <Link
+            href={"/"}
             className={`${actualPage === "inicio" ? styles.actualPage : ""} ${
               styles.pageLink
             }`}
           >
             Início
-          </span>
+          </Link>
           <span
             style={{ opacity: 0.2, cursor: "not-allowed" }}
             className={`${actualPage === "produtos" ? styles.actualPage : ""} ${
