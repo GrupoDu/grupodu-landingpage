@@ -1,0 +1,47 @@
+.wsIconContainer {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  background-color: rgb(45, 138, 45);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
+  box-shadow: 0px 0px 10px 0px rgba($color: #000000, $alpha: 0.4);
+  z-index: 11;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  opacity: 0.8;
+  animation: entrada 1s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px 0px rgba($color: #000000, $alpha: 0.6);
+    background-color: #3acc41;
+    opacity: 1;
+  }
+
+  .wsIcon {
+    width: 2em;
+    height: 2em;
+    object-fit: contain;
+  }
+}
+
+@keyframes entrada {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}

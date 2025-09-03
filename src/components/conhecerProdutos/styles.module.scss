@@ -1,0 +1,45 @@
+.conhecerProdutos {
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-top: 1px solid rgba($color: #000000, $alpha: 0.2);
+  border-bottom: 1px solid rgba($color: #000000, $alpha: 0.2);
+
+  h1 {
+    width: 100%;
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      width: 1.6em;
+      object-fit: contain;
+      height: fit-content;
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .conhecerProdutos {
+    padding: 40px 20px;
+    h1 {
+      font-size: 24px;
+    }
+
+    .buttons {
+      flex-direction: column;
+
+      .link {
+        width: 100%;
+      }
+    }
+  }
+  
+}

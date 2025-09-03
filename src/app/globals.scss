@@ -3,6 +3,12 @@
   --blue-light: #004aad;
   --blue-dark: #192642;
   --gray-border: #f2f2f2;
+  --gradient-blue: linear-gradient(
+    90deg,
+    rgba(55, 52, 154, 1) 0%,
+    rgba(71, 66, 228, 1) 61%,
+    rgba(55, 52, 154, 1) 100%
+  );
   --border-sm: 0.6em;
   --border-m: 0.8em;
   --border-l: 1em;
