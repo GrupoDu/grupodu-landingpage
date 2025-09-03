@@ -4,6 +4,7 @@ import "./globals.scss";
 import HeaderNav from "@/components/header-nav";
 import Footer from "@/components/footer";
 import Toast from "@/components/toast";
+import WsIcon from "@/components/wsicon";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body className={`${poppins.variable}`}>
         <Toast />
         <HeaderNav />
+        <WsIcon />
         {children}
         <Footer />
       </body>
