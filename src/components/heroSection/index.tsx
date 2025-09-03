@@ -6,7 +6,6 @@ import { products } from "@/data/products";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { textProductType } from "@/constants/textos";
-import { PulseLoader } from "react-spinners";
 import Loading from "../loading";
 
 const HeroSection = () => {
