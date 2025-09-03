@@ -4,8 +4,8 @@ import { products } from "@/data/products";
 import FormProduto from "@/components/formProduto";
 import { FaWhatsapp } from "react-icons/fa";
 import { LuMail, LuPhone } from "react-icons/lu";
-import Produto from "@/components/produto";
 import ConhecendoProdutos from "@/components/conhecerProdutos";
+import Main from "@/components/main";
 
 export default function ProdutoPge() {
   return (
@@ -63,17 +63,7 @@ export default function ProdutoPge() {
         <FormProduto />
       </div>
       <ConhecendoProdutos />
-      <main className={styles.main}>
-        {products.map((product) => (
-          <Produto
-            key={product.id}
-            nomeProduto={product.title}
-            imagemProduto={product.images[0]}
-            descricaoProduto={product.description}
-            altImagem={product.title}
-          />
-        ))}
-      </main>
+      <Main />
     </div>
   );
 }
