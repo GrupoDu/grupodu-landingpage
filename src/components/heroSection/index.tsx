@@ -20,13 +20,15 @@ const HeroSection = () => {
   useEffect(() => {
     if (searchParams.get("produto")) {
       const produto = searchParams.get("produto")?.toLowerCase();
-      setProductTitle(
-        textProductType.filter((text) => text.category === produto)[0].title
+      const productText = textProductType.find(
+        (text) => text.category === produto
       );
-      setProductDescription(
-        textProductType.filter((text) => text.category === produto)[0]
-          .description
-      );
+
+      if (productText) {
+        setProductTitle(productText.title);
+        setProductDescription(productText.description);
+      }
+      setLoading(false);
     }
   }, [searchParams]);
 
@@ -34,12 +36,12 @@ const HeroSection = () => {
     <div className={styles.heroSection}>
       <div className={styles.textImages}>
         <div className={styles.textHeader}>
-          {loading ? <Loading size={10} /> : <h3>{productTitle}</h3>}
+          {loading ? <Loading /> : <h3>{productTitle}</h3>}
           <hr />
-          {loading ? <Loading size={6} /> : <p>{productDescription}</p>}
+          {loading ? <Loading /> : <p>{productDescription}</p>}
         </div>
         {loading ? (
-          <Loading size={16} />
+          <Loading />
         ) : (
           <div className={styles.imagesHeader}>
             <Image
