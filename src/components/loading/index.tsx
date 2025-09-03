@@ -5,7 +5,7 @@ import styles from "./styles.module.scss";
 const Loading = () => {
   return (
     <div className={styles.loading}>
-      <BarLoader color="white" />
+      <BarLoader color="#8fbcff" />
     </div>
   );
 };
