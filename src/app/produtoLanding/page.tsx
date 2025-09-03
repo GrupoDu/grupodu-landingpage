@@ -5,11 +5,15 @@ import { LuMail, LuPhone } from "react-icons/lu";
 import ConhecendoProdutos from "@/components/conhecerProdutos";
 import Main from "@/components/main";
 import HeroSection from "@/components/heroSection";
+import { Suspense } from "react";
+import Loading from "@/components/loading";
 
 export default function ProdutoPge() {
   return (
     <div className={styles.page}>
-      <HeroSection />
+      <Suspense fallback={<Loading />}>
+        <HeroSection />
+      </Suspense>
       <div className={styles.formularioContato}>
         <div className={styles.contatos}>
           <h2>Solicite seu Produto</h2>
