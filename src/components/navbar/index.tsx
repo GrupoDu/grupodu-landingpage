@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import MenuMobile from "@/components/menu";
 import { useScrollOpacity } from "@/hooks/useScrollOpacity";
-const HeaderNav = () => {
+const Navbar = () => {
   const [actualPage, setActualPage] = useState("inicio");
   const ref = useRef(null);
   const opacity = useScrollOpacity();
@@ -111,4 +111,4 @@ const HeaderNav = () => {
   );
 };
 
-export default HeaderNav;
+export default Navbar;
