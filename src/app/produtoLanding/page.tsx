@@ -39,7 +39,9 @@ export default function ProdutoPge() {
         <FormProduto />
       </div>
       <ConhecendoProdutos />
-      <Main />
+      <Suspense fallback={<Loading />}>
+        <Main />
+      </Suspense>
     </div>
   );
 }
