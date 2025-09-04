@@ -43,7 +43,7 @@ const Navbar = () => {
       setActualPage("sobre");
     } else if (pathname.includes("contato")) {
       setActualPage("contatos");
-    } else if (pathname.includes("produtoLanding")) {
+    } else if (pathname.includes("comprar-carro-de-mao")) {
       setActualPage("");
     } else {
       setActualPage("inicio");
