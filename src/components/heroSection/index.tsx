@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
-import { products } from "@/data/products";
+// import { products } from "@/data/products";
 import Image, { StaticImageData } from "next/image";
 import { useSearchParams } from "next/navigation";
 import { textProductType } from "@/constants/textos";

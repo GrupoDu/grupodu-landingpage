@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 import Produto from "../produto";
 import styles from "./styles.module.scss";
 import { Product } from "@/data/types";
-import { useSearchParams } from "next/navigation";
+// import { useSearchParams } from "next/navigation";
 
 const Main = () => {
   // const searchParams = useSearchParams();
