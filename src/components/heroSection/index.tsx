@@ -6,7 +6,6 @@ import { products } from "@/data/products";
 import Image, { StaticImageData } from "next/image";
 import { useSearchParams } from "next/navigation";
 import { textProductType } from "@/constants/textos";
-import { PulseLoader } from "react-spinners";
 import Loading from "../loading";
 
 const HeroSection = () => {
@@ -19,19 +18,27 @@ const HeroSection = () => {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (searchParams.get("produto")) {
-      const produto = searchParams.get("produto")?.toLowerCase();
-      setProductTitle(
-        textProductType.filter((text) => text.category === produto)[0].title
-      );
-      setProductDescription(
-        textProductType.filter((text) => text.category === produto)[0]
-          .description
-      );
-      setProductImage(
-        textProductType.filter((text) => text.category === produto)[0].images
-      );
-    }
+    // if (searchParams.get("produto")) {
+    //   const produto = searchParams.get("produto")?.toLowerCase();
+    //   setProductTitle(
+    //     textProductType.filter((text) => text.category === produto)[0].title
+    //   );
+    //   setProductDescription(
+    //     textProductType.filter((text) => text.category === produto)[0]
+    //       .description
+    //   );
+    //   setProductImage(
+    //     textProductType.filter((text) => text.category === produto)[0].images
+    //   );
+    // }
+
+    const produto = textProductType.filter(
+      (text) => text.category === "carro-de-mao"
+    );
+
+    setProductTitle(produto[0].title);
+    setProductDescription(produto[0].description);
+    setProductImage(produto[0].images);
 
     setTimeout(() => {
       setLoading(false);
