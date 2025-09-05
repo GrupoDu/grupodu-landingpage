@@ -40,18 +40,34 @@
 
     .inputNome {
       grid-area: nome;
+      span::after {
+        content: " *";
+        color: red;
+      }
     }
 
     .inputEmail {
       grid-area: email;
+      span::after {
+        content: " *";
+        color: red;
+      }
     }
 
     .inputModelo {
       grid-area: modelo;
+      span::after {
+        content: " *";
+        color: red;
+      }
     }
 
     .inputQuantidade {
       grid-area: quantidade;
+      span::after {
+        content: " *";
+        color: red;
+      }
     }
 
     .inputEmpresa {
@@ -60,6 +76,10 @@
 
     .inputNumero {
       grid-area: numero;
+      span::after {
+        content: " *";
+        color: red;
+      }
     }
 
     .inputMensagem {
