@@ -1,22 +1,34 @@
 "use client";
 
-import { products } from "@/data/products";
-import React, { useEffect } from "react";
+// import { products } from "@/data/products";
+import React, { useEffect, useState } from "react";
 import Produto from "../produto";
 import styles from "./styles.module.scss";
-import { Product } from "@/data/types";
+import { ProdutoType } from "@/data/types";
 // import { useSearchParams } from "next/navigation";
 
 const Main = () => {
-  // const searchParams = useSearchParams();
-  const [produtos, setProdutos] = React.useState<Product[]>([]);
+  const [produtos, setProdutos] = useState<ProdutoType[]>([]);
 
   useEffect(() => {
-    const carrosDeMao = products.filter(
-      (product) => product.category === "carro de mao"
-    );
+    // const carrosDeMao = products.filter(
+    //   (product) => product.category === "carro de mao"
+    // );
 
-    setProdutos(carrosDeMao);
+    // setProdutos(carrosDeMao);
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/database?produto=carro-de-mao");
+        const data = await response.json();
+
+        setProdutos(data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    fetchData();
   }, []);
 
   // useEffect(() => {
@@ -35,10 +47,10 @@ const Main = () => {
       {produtos.map((product) => (
         <Produto
           key={product.id}
-          nomeProduto={product.title}
-          imagemProduto={product.images[0]}
-          descricaoProduto={product.description}
-          altImagem={product.title}
+          nomeProduto={product.nome}
+          imagemProduto={product.imagem}
+          descricaoProduto={product.descricao}
+          altImagem={product.tipo_produto}
         />
       ))}
     </main>
