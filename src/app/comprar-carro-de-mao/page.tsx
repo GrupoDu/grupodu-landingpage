@@ -7,6 +7,12 @@ import Main from "@/components/main";
 import HeroSection from "@/components/heroSection";
 import { Suspense } from "react";
 import Loading from "@/components/loading";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Carro de Mão - Grupo Du Car",
+  description: "Há mais de 20 anos no mercado, o Grupo Du Car traz qualidade e inovação em todos os seus segmentos de atuação.",
+};
 
 export default function ProdutoPge() {
   return (
