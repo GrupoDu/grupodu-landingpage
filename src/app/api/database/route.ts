@@ -10,12 +10,13 @@ const normalizandoTexto = (text: string) => {
   return text
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/-/g, " ");
 };
 
 export const GET = async (request: NextRequest) => {
   const searchParams = request.nextUrl.searchParams;
-  const produto = searchParams.get("produto")?.replace(/ /g, "-");
+  const produto = searchParams.get("produto");
 
   if (!produto) {
     return NextResponse.json(
@@ -24,12 +25,16 @@ export const GET = async (request: NextRequest) => {
     );
   }
 
-  const { data, error } = await supabase.from("produtos").select("*");
+  const { data, error } = await supabase
+    .from("produtos")
+    .select("*")
+    .order("id");
 
   if (error) return NextResponse.error();
 
+  const produtoNormalizado = normalizandoTexto(produto);
   const dataFiltrada = data.filter((item) =>
-    normalizandoTexto(item.category).includes(normalizandoTexto(produto))
+    normalizandoTexto(item.tipo_produto).includes(produtoNormalizado)
   );
 
   return NextResponse.json(dataFiltrada);
