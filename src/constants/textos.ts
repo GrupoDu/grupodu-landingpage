@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 
 // imagens
-import CarroDeMao from "@/assets/produtos/Carro de mão.png";
+import CarroDeMao from "@/assets/produtos/Carro de mao.png";
 import CarroJerica160 from "@/assets/produtos/Carro jerica 160L.png";
 
 export const domMetal = {

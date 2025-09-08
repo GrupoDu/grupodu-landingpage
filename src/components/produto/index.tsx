@@ -29,6 +29,8 @@ const Produto = ({
           src={imagemProduto}
           alt={altImagem}
           className={styles.imagemProduto}
+          width={300}
+          height={300}
         />
       </div>
       <h3>{nomeProduto}</h3>

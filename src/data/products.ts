@@ -1,7 +1,7 @@
 import { Product } from "./types";
 
 // Imagens
-import CarroDeMao from "@/assets/produtos/Carro de mão.png";
+import CarroDeMao from "@/assets/produtos/Carro de mao.png";
 import CarroJerica160 from "@/assets/produtos/Carro jerica 160L.png";
 import CarroJerica80 from "@/assets/produtos/carro-jerica-80.png";
 import CarroJerica140 from "@/assets/produtos/carro-jerica-140.png";
