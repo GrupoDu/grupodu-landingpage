@@ -6,9 +6,16 @@ const supabaseKey = process.env.SUPABASE_API_KEY || "SUPABASE_API_KEY";
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+const normalizandoTexto = (text: string) => {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+};
+
 export const GET = async (request: NextRequest) => {
   const searchParams = request.nextUrl.searchParams;
-  const produto = searchParams.get("produto");
+  const produto = searchParams.get("produto")?.replace(/ /g, "-");
 
   if (!produto) {
     return NextResponse.json(
@@ -17,12 +24,13 @@ export const GET = async (request: NextRequest) => {
     );
   }
 
-  const { data, error } = await supabase
-    .from("produtos")
-    .select("*")
-    .eq("tipo_produto", produto);
+  const { data, error } = await supabase.from("produtos").select("*");
 
   if (error) return NextResponse.error();
 
-  return NextResponse.json(data);
+  const dataFiltrada = data.filter((item) =>
+    normalizandoTexto(item.category).includes(normalizandoTexto(produto))
+  );
+
+  return NextResponse.json(dataFiltrada);
 };
