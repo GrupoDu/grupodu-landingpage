@@ -11,7 +11,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Carro de Mão - Grupo Du Car",
-  description: "Há mais de 20 anos no mercado, o Grupo Du Car traz qualidade e inovação em todos os seus segmentos de atuação.",
+  description: "Há mais de 10 anos no mercado, o Grupo Du Car traz qualidade e inovação em todos os seus segmentos de atuação.",
 };
 
 export default function ProdutoPge() {
