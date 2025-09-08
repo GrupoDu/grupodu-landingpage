@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import Produto from "../produto";
 import styles from "./styles.module.scss";
 import { ProdutoType } from "@/data/types";
+import Loading from "../loading";
 // import { useSearchParams } from "next/navigation";
 
 const Main = () => {
@@ -43,17 +44,23 @@ const Main = () => {
   // }, [searchParams]);
 
   return (
-    <main className={styles.main}>
-      {produtos.map((product) => (
-        <Produto
-          key={product.id}
-          nomeProduto={product.nome}
-          imagemProduto={product.imagem}
-          descricaoProduto={product.descricao}
-          altImagem={product.tipo_produto}
-        />
-      ))}
-    </main>
+    <>
+      {produtos.length > 0 ? (
+        <main className={styles.main}>
+          {produtos.map((product) => (
+            <Produto
+              key={product.id}
+              nomeProduto={product.nome}
+              imagemProduto={product.imagem}
+              descricaoProduto={product.descricao}
+              altImagem={product.tipo_produto}
+            />
+          ))}
+        </main>
+      ) : (
+        <Loading />
+      )}
+    </>
   );
 };
 
