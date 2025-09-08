@@ -15,18 +15,7 @@ const Loading = () => {
     // Renderiza um placeholder durante a SSR
     return (
       <div className={styles.loading}>
-        <div
-          style={{
-            width: "57px",
-            height: "15px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            color: "white",
-          }}
-        >
-          Carregando...
-        </div>
+        <div>Carregando...</div>
       </div>
     );
   }
