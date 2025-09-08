@@ -9,6 +9,14 @@ export interface Product {
   imagesAlt: string[];
 }
 
+export interface ProdutoType {
+  id: number;
+  nome: string;
+  descricao: string;
+  tipo_produto: string;
+  imagem: StaticImageData;
+}
+
 export interface textsCategory {
   category: string;
   title: string;
