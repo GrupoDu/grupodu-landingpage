@@ -4,9 +4,10 @@ import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 // import { products } from "@/data/products";
 import Image, { StaticImageData } from "next/image";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { textProductType } from "@/constants/textos";
 import Loading from "../loading";
+import { textsCategory } from "@/data/types";
 
 const HeroSection = () => {
   const [productTitle, setProductTitle] = useState<string | undefined>("");
@@ -16,25 +17,26 @@ const HeroSection = () => {
   const [productImage, setProductImage] = useState<StaticImageData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const searchParams = useSearchParams();
+  const pathname = usePathname();
 
   useEffect(() => {
-    // if (searchParams.get("produto")) {
-    //   const produto = searchParams.get("produto")?.toLowerCase();
-    //   setProductTitle(
-    //     textProductType.filter((text) => text.category === produto)[0].title
-    //   );
-    //   setProductDescription(
-    //     textProductType.filter((text) => text.category === produto)[0]
-    //       .description
-    //   );
-    //   setProductImage(
-    //     textProductType.filter((text) => text.category === produto)[0].images
-    //   );
-    // }
+    let produto: textsCategory[] = [];
 
-    const produto = textProductType.filter(
-      (text) => text.category === "carro-de-mao"
-    );
+    if (pathname.includes("carro-de-mao")) {
+      produto = textProductType.filter(
+        (text) => text.category === "carro-de-mao"
+      );
+    } else if (pathname.includes("masseira")) {
+      produto = textProductType.filter((text) => text.category === "masseiras");
+    } else if (pathname.includes("plataforma")) {
+      produto = textProductType.filter(
+        (text) => text.category === "plataforma"
+      );
+    } else {
+      setProductTitle(undefined);
+      setProductDescription(undefined);
+      setProductImage([]);
+    }
 
     setProductTitle(produto[0].title);
     setProductDescription(produto[0].description);
@@ -43,7 +45,7 @@ const HeroSection = () => {
     setTimeout(() => {
       setLoading(false);
     }, 1000);
-  }, [searchParams]);
+  }, [searchParams, pathname]);
 
   return (
     <div className={styles.heroSection}>
