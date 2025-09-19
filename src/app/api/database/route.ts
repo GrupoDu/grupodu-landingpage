@@ -19,10 +19,9 @@ export const GET = async (request: NextRequest) => {
   const produto = searchParams.get("produto");
 
   if (!produto) {
-    return NextResponse.json(
-      { error: 'Parâmetro "produto" é obrigatório' },
-      { status: 400 }
-    );
+    const { data, error } = await supabase.from("produtos").select("*");
+    if (error) return NextResponse.error();
+    return NextResponse.json(data);
   }
 
   const { data, error } = await supabase
