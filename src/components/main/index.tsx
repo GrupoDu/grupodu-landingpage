@@ -6,10 +6,11 @@ import Produto from "../produto";
 import styles from "./styles.module.scss";
 import { ProdutoType } from "@/data/types";
 import Loading from "../loading";
-// import { useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const Main = () => {
   const [produtos, setProdutos] = useState<ProdutoType[]>([]);
+  const pathname = usePathname();
 
   useEffect(() => {
     // const carrosDeMao = products.filter(
@@ -20,28 +21,26 @@ const Main = () => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/database?produto=carro-de-mao");
-        const data = await response.json();
-
-        setProdutos(data);
+        if (pathname.includes("carro-de-mao")) {
+          const response = await fetch("/api/database?produto=carro-de-mao");
+          const data = await response.json();
+          setProdutos(data);
+        } else if (pathname.includes("masseira")) {
+          const response = await fetch("/api/database?produto=masseira");
+          const data = await response.json();
+          setProdutos(data);
+        } else if (pathname.includes("plataforma")) {
+          const response = await fetch("/api/database?produto=plataforma");
+          const data = await response.json();
+          setProdutos(data);
+        }
       } catch (err) {
         console.log(err);
       }
     };
 
     fetchData();
-  }, []);
-
-  // useEffect(() => {
-  //   if (searchParams.get("produto")) {
-  //     const produto = searchParams
-  //       .get("produto")
-  //       ?.toLowerCase()
-  //       .replace(/-/g, " ");
-  //     setProdutos(products.filter((product) => product.category === produto));
-  //     console.log(produto);
-  //   }
-  // }, [searchParams]);
+  }, [pathname]);
 
   return (
     <>
