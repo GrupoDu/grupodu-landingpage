@@ -30,7 +30,7 @@ const HeroSection = () => {
       produto = textProductType.filter((text) => text.category === "masseiras");
     } else if (pathname.includes("plataforma")) {
       produto = textProductType.filter(
-        (text) => text.category === "plataforma"
+        (text) => text.category === "plataformas"
       );
     } else {
       setProductTitle(undefined);
