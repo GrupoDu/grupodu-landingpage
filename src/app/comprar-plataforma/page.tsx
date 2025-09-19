@@ -35,7 +35,7 @@ export default function ProdutoPge() {
           </div>
           <div className={styles.contatosIcons}>
             <LuPhone color="white" className={styles.icon} />
-            <span>(81) 99904-0919</span>
+            <span>(81) 2011-4432</span>
           </div>
           <div className={styles.contatosIcons}>
             <LuMail color="white" className={styles.icon} />
