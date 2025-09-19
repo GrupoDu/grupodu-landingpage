@@ -11,6 +11,8 @@ import {
 // imagens
 import CarroDeMao from "@/assets/produtos/Carro de mao.png";
 import CarroJerica160 from "@/assets/produtos/Carro jerica 160L.png";
+import CarroMasseiraFixa from "@/assets/produtos/carro-masseira-fixo.png";
+import MasseiraMetalica from "@/assets/produtos/masseira-metalica.png";
 
 export const domMetal = {
   nome: "Dom Metal",
@@ -112,8 +114,9 @@ export const textProductType: textsCategory[] = [
   {
     category: "masseiras",
     title: "Masseiras",
-    description: "",
-    images: [],
+    description:
+      "Para misturas eficientes e sem complicações, nossas masseiras são a solução ideal. Unindo alta resistência e praticidade, são fabricadas em materiais de primeira qualidade como plástico virgem reforçado ou aço carbono com proteção anticorrosiva. Disponíveis em múltiplas capacidades (de 40L a 400L), garantem durabilidade mesmo em uso intensivo e oferecem conforto no manuseio para otimizar o trabalho no canteiro de obras ou na indústria.",
+    images: [CarroMasseiraFixa, MasseiraMetalica],
   },
   {
     category: "plataformas",
