@@ -13,6 +13,8 @@ import CarroDeMao from "@/assets/produtos/Carro de mao.png";
 import CarroJerica160 from "@/assets/produtos/Carro jerica 160L.png";
 import MasseiraMetalica from "@/assets/produtos/masseira-metalica.png";
 import MasseiraMetalica100 from "@/assets/produtos/masseira-metalica-100.png";
+import CarroPlataforma from "@/assets/produtos/carro-plataforma.png";
+import PlataformaBasculante from "@/assets/produtos/carro-plataforma-basculante.png";
 
 export const domMetal = {
   nome: "Dom Metal",
@@ -121,7 +123,8 @@ export const textProductType: textsCategory[] = [
   {
     category: "plataformas",
     title: "Plataformas",
-    description: "",
-    images: [],
+    description:
+      "Desenvolvidas para oferecer suporte onde você precisa, nossas plataformas de trabalho e carros transportadores são sinônimo de robustez e confiabilidade. Com estruturas em aço carbono, metalon e chapas espessas, suportam desde cargas médias até pesos intensos (até 1000kg nos modelos basculantes). Seja para acesso elevado com segurança, transporte interno ou descarga prática de materiais, oferecem estabilidade, mobilidade e a resistência que sua operação exige.",
+    images: [CarroPlataforma, PlataformaBasculante],
   },
 ];
