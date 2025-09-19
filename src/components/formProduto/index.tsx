@@ -1,10 +1,11 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import ButtonAlt from "../buttonAlt";
 import toast from "react-hot-toast";
-import { products } from "@/data/products";
+import { usePathname } from "next/navigation";
+import { ProdutoType } from "@/data/types";
 
 const FormProduto = () => {
   const [email, setEmail] = useState<string>("");
@@ -14,6 +15,34 @@ const FormProduto = () => {
   const [empresa, setEmpresa] = useState<string>("");
   const [modelo, setModelo] = useState<string>("");
   const [quantidade, setQuantidade] = useState<number>(0);
+  const pathname = usePathname();
+  const [products, setProducts] = useState<ProdutoType[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      let produtos: ProdutoType[] = [];
+
+      if (pathname.includes("carro-de-mao")) {
+        const response = await fetch("/api/database?produto=carro-de-mao");
+        const data = await response.json();
+        produtos = data;
+      } else if (pathname.includes("masseira")) {
+        const response = await fetch("/api/database?produto=masseira");
+        const data = await response.json();
+        produtos = data;
+      } else if (pathname.includes("plataforma")) {
+        const response = await fetch("/api/database?produto=plataforma");
+        const data = await response.json();
+        produtos = data;
+      } else {
+        produtos = [];
+      }
+
+      setProducts(produtos);
+    };
+
+    fetchData();
+  }, [pathname]);
 
   const handleEmail = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -86,8 +115,8 @@ const FormProduto = () => {
               Escolha o modelo
             </option>
             {products.map((product) => (
-              <option key={product.title} value={product.title}>
-                {product.title}
+              <option key={product.nome} value={product.nome}>
+                {product.nome}
               </option>
             ))}
           </select>
