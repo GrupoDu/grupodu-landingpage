@@ -10,7 +10,7 @@ import Loading from "@/components/loading";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Masseiras - Grupo Du Car",
+  title: "Carro Plataforma – Plataforma de Trabalho",
   description: "Há mais de 10 anos no mercado, o Grupo Du Car traz qualidade e inovação em todos os seus segmentos de atuação.",
 };
 
