@@ -51,7 +51,7 @@ const HeroSection = () => {
     <div className={styles.heroSection}>
       <div className={styles.textImages}>
         <div className={styles.textHeader}>
-          {loading ? <Loading /> : <h3>{productTitle}</h3>}
+          {loading ? <Loading /> : <h1>{productTitle}</h1>}
           <hr />
           {loading ? <Loading /> : <p>{productDescription}</p>}
         </div>
