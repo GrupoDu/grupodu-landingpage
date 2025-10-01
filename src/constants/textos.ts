@@ -122,7 +122,7 @@ export const textProductType: textsCategory[] = [
   },
   {
     category: "plataformas",
-    title: "Plataformas",
+    title: "Carro Plataforma – Plataforma de Trabalho Segura e Eficiente",
     description:
       "Desenvolvidas para oferecer suporte onde você precisa, nossas plataformas de trabalho e carros transportadores são sinônimo de robustez e confiabilidade. Com estruturas em aço carbono, metalon e chapas espessas, suportam desde cargas médias até pesos intensos (até 1000kg nos modelos basculantes). Seja para acesso elevado com segurança, transporte interno ou descarga prática de materiais, oferecem estabilidade, mobilidade e a resistência que sua operação exige.",
     images: [CarroPlataforma, PlataformaBasculante],
