@@ -18,9 +18,9 @@
     -webkit-background-clip: text;
     background-clip: text;
     width: 100%;
-    text-align: center;
+    text-align: left;
     user-select: none;
-    font-size: 96px;
+    font-size: 36px;
   }
 
   .textImages {
@@ -103,7 +103,8 @@
     gap: 18px;
 
     h1 {
-      font-size: 48px;
+      font-size: 28px;
+      text-align: center;
     }
 
     .textImages {
