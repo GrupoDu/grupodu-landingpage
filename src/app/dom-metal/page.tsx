@@ -5,6 +5,15 @@ import Image from "next/image";
 
 // Import de imagens
 import Logo from "../../../public/Logo dom metal.png";
+import { ImageIcon } from "lucide-react";
+
+const ImageTemplate = () => {
+  return (
+    <div className={styles.imageTemplate}>
+      <ImageIcon opacity={0.4} />
+    </div>
+  );
+};
 
 const ProofPoints = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -30,6 +39,26 @@ const DomMetalPage = () => {
             <div className={styles.proofs}>
               <ProofPoints>+800 Obras atendidas</ProofPoints>
               <ProofPoints>+10 anos de experiência</ProofPoints>
+            </div>
+            <div className={styles.construtorasList}>
+              <span>Construtoras que já colaboramos</span>
+              <ul>
+                <li>
+                  <ImageTemplate />
+                </li>
+                <li>
+                  <ImageTemplate />
+                </li>
+                <li>
+                  <ImageTemplate />
+                </li>
+                <li>
+                  <ImageTemplate />
+                </li>
+                <li>
+                  <ImageTemplate />
+                </li>
+              </ul>
             </div>
           </div>
         </div>
