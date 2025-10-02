@@ -6,6 +6,7 @@ import Image from "next/image";
 // Import de imagens
 import Logo from "../../../public/Logo dom metal.png";
 import { ImageIcon } from "lucide-react";
+import Button from "@/components/newButton";
 
 const ImageTemplate = () => {
   return (
@@ -60,6 +61,12 @@ const DomMetalPage = () => {
                 </li>
               </ul>
             </div>
+          </div>
+          <div className={styles.rightContent}>
+            <Button theme="#040826" borda="#fff" color="#fff">
+              Solicitar Orçamento
+            </Button>
+            <Button>Ver Linha Completa de Produtos</Button>
           </div>
         </div>
       </div>
