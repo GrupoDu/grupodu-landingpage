@@ -6,10 +6,10 @@ import Image from "next/image";
 // Import de imagens
 import Logo from "../../../public/Logo dom metal.png";
 
-const ProofPoints = ({ proof }: { proof: string }) => {
+const ProofPoints = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className={styles.proofPoints}>
-      <p>{proof}</p>
+      <p>{children}</p>
     </div>
   );
 };
@@ -24,6 +24,12 @@ const DomMetalPage = () => {
             Fabricante de Carros de mão, Plataformas de Trabalho e Estruturas
             Metálicas para Construção Civil
           </h1>
+        </div>
+        <div className={styles.bottomContent}>
+            <div className={styles.proofs}>
+              <ProofPoints>+800 Obras atendidas</ProofPoints>
+              <ProofPoints>+10 anos de experiência</ProofPoints>
+            </div>
         </div>
       </div>
     </div>
