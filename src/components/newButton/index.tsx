@@ -10,7 +10,7 @@ type Props = {
 
 const Button = ({ children, theme, borda, color }: Props) => {
   return (
-    <div
+    <button
       className={styles.button}
       style={{
         backgroundColor: theme || "white",
@@ -19,7 +19,7 @@ const Button = ({ children, theme, borda, color }: Props) => {
       }}
     >
       {children}
-    </div>
+    </button>
   );
 };
 
