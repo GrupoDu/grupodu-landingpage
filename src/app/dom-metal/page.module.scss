@@ -43,6 +43,8 @@
       no-repeat;
     background-size: cover;
     background-position: 100% 80%;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
 
     &::after {
@@ -70,7 +72,7 @@
       .logo {
         object-fit: contain;
         height: fit-content;
-        width: 70%;
+        width: 60%;
       }
 
       h1 {
