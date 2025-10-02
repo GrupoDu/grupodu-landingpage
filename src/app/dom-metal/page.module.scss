@@ -25,5 +25,33 @@
         rgba(14, 15, 74, 0.4) 100%
       );
     }
+
+    .topContent {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .logo {
+        object-fit: contain;
+        height: fit-content;
+        width: 70%;
+      }
+
+      h1 {
+        // color: white;
+        background-image: linear-gradient(
+          to right,
+          #ffffff,
+          rgba(255, 255, 255, 0.3)
+        );
+        background-clip: text;
+        text-align: center;
+        -webkit-background-clip: text;
+        color: transparent;
+        user-select: none;
+      }
+    }
   }
 }
