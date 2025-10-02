@@ -1,3 +1,36 @@
+@keyframes entrandoProofs {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.imageTemplate {
+  width: 70px;
+  height: 70px;
+  background-color: #e0daff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proofPoints {
+  padding: 22px;
+  background-color: #e0daff;
+  width: 100%;
+  border-radius: 8px;
+  z-index: 2;
+  box-shadow: 0px 4px 4px 0px rgba($color: #000000, $alpha: 0.2);
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+  animation: entrandoProofs 1s ease-in-out;
+}
+
 .pageContainer {
   flex: 1;
 
@@ -10,6 +43,7 @@
       no-repeat;
     background-size: cover;
     background-position: 100% 80%;
+    justify-content: space-between;
 
     &::after {
       content: "";
@@ -51,6 +85,38 @@
         -webkit-background-clip: text;
         color: transparent;
         user-select: none;
+      }
+    }
+
+    .bottomContent {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .leftContent {
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .proofs {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          width: 60%;
+        }
+
+        .construtorasList {
+          span {
+            color: #EDEDED;
+            font-size: 12px;
+          }
+
+          ul {
+            display: flex;
+            gap: 10px;
+          }
+        }
       }
     }
   }
