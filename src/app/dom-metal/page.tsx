@@ -26,10 +26,12 @@ const DomMetalPage = () => {
           </h1>
         </div>
         <div className={styles.bottomContent}>
+          <div className={styles.leftContent}>
             <div className={styles.proofs}>
               <ProofPoints>+800 Obras atendidas</ProofPoints>
               <ProofPoints>+10 anos de experiência</ProofPoints>
             </div>
+          </div>
         </div>
       </div>
     </div>
