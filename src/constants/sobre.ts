@@ -1,4 +1,4 @@
-const sobreDomMetal = {
+export const sobreDomMetal = {
   titulo: "",
   descricao: [
     "Com mais de 10 anos de atuação, a Dom Metal é referência em equipamentos resistentes e confiáveis para construção civil. Especializada na fabricação, oferece uma linha completa de produtos essenciais para o dia a dia de obra.",
