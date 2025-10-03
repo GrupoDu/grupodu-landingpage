@@ -7,6 +7,7 @@ import Image from "next/image";
 import Logo from "../../../public/Logo dom metal.png";
 import { ImageIcon } from "lucide-react";
 import Button from "@/components/newButton";
+import ListaCatalogo from "@/components/listaCatalogo";
 
 const ImageTemplate = () => {
   return (
@@ -72,7 +73,7 @@ const DomMetalPage = () => {
       </div>
       <div className={styles.catalogo}>
         <h2>Nosso Catálogo Disponível</h2>
-        <ul></ul>
+        <ListaCatalogo />
       </div>
     </div>
   );
