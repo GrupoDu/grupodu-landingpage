@@ -11,6 +11,7 @@ import { sobreDomMetal } from "@/constants/sobre";
 
 // Import de imagens
 import Logo from "../../../public/Logo dom metal.png";
+import ButtonBorder from "@/components/buttonBorder";
 
 const ImageTemplate = () => {
   return (
@@ -114,7 +115,17 @@ const DomMetalPage = () => {
               </li>
             ))}
           </ul>
+          <ButtonBorder
+            href="#"
+            borda="#5D6BFF"
+            color="white"
+            borderRadius="6px"
+            theme="#5D6BFF"
+          >
+            Solicitar Orçamento
+          </ButtonBorder>
         </div>
+        <div className={styles.rightContent}></div>
       </div>
     </div>
   );

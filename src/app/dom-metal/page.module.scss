@@ -31,6 +31,25 @@
   animation: entrandoProofs 1s ease-in-out;
 }
 
+.bulletComponent {
+  background-color: #e4e9ff;
+  padding: 2px 6px;
+  border-radius: 40px;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #707cff;
+  transition: all 0.1s ease-in-out;
+
+  .iconCheck {
+    color: #707cff;
+    width: 1em;
+    transition: all 0.1s ease-in-out;
+  }
+}
+
 .pageContainer {
   flex: 1;
 
@@ -171,6 +190,68 @@
       width: 100%;
       box-sizing: border-box;
       gap: 1em;
+    }
+  }
+
+  .sobre {
+    padding: 4em;
+    display: flex;
+    gap: 8em;
+    background: linear-gradient(180deg, #ebe4ff 0%, #ffffff 100%);
+
+    .leftContent {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      height: 100%;
+
+      p {
+        color: #717183;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        justify-content: center;
+
+        li {
+          display: flex;
+          gap: 0.4em;
+          width: fit-content;
+
+          span {
+            opacity: 0.7;
+            transition: all 0.1s ease-in-out;
+            user-select: none;
+            width: fit-content;
+          }
+
+          &:hover {
+            .bulletComponent {
+              background-color: #707cff;
+
+              .iconCheck {
+                color: #e4e9ff;
+              }
+            }
+
+            span {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    .rightContent {
+      width: 30%;
+
+      h2 {
+        background-color: #000000;
+      }
     }
   }
 }
