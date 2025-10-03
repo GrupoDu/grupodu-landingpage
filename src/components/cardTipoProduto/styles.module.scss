@@ -21,6 +21,10 @@
   transition: all 0.2s ease-in-out;
   box-sizing: border-box;
 
+  &:hover {
+    box-shadow: 0 0 6px 0 rgba($color: #000000, $alpha: 0.4);
+  }
+
   .imageContainer {
     width: 100%;
     flex: 1;
