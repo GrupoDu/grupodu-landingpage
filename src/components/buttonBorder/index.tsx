@@ -18,6 +18,8 @@ const Button = ({ children, theme, borda, color }: Props) => {
 
   return (
     <button
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       className={styles.button}
       style={{
         backgroundColor: isHovered ? theme : "white",
