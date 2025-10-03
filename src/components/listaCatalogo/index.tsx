@@ -1,0 +1,48 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+import styles from "./styles.module.scss";
+import { usePathname } from "next/navigation";
+import { textosCardProdutos } from "@/constants/cards";
+import { StaticImageData } from "next/image";
+import CardTipoProduto from "../cardTipoProduto";
+
+type cardTexts = {
+  titulos: string[];
+  bullets: string[];
+  imagens: StaticImageData[];
+};
+
+const ListaCatalogo = () => {
+  const [catalogo, setCatalogo] = useState<cardTexts[]>([]);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (pathname.includes("dom-metal")) {
+      setCatalogo(textosCardProdutos.segmentos["dom-metal"]);
+    } else if (pathname.includes("duferro")) {
+      setCatalogo(textosCardProdutos.segmentos["duferro"]);
+    } else if (pathname.includes("carbuilt")) {
+      setCatalogo(textosCardProdutos.segmentos["carbuilt"]);
+    } else {
+      setCatalogo([]);
+    }
+  }, [pathname]);
+
+  return (
+    <ul className={styles.container}>
+      {catalogo.map((card, index) => (
+        <li key={index}>
+          <CardTipoProduto
+            titulo={card.titulos[index]}
+            bullets={card.bullets}
+            imagem={card.imagens[index]}
+            buttonScheme="#4347FF"
+          />
+        </li>
+      ))}
+    </ul>
+  );
+};
+
+export default ListaCatalogo;
