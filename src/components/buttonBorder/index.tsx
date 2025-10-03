@@ -8,9 +8,16 @@ type Props = {
   theme?: string;
   borda?: string;
   color?: string;
+  borderRadius?: string;
 };
 
-const ButtonBorder = ({ children, theme, borda, color }: Props) => {
+const ButtonBorder = ({
+  children,
+  theme,
+  borda,
+  color,
+  borderRadius,
+}: Props) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => setIsHovered(true);
@@ -25,6 +32,7 @@ const ButtonBorder = ({ children, theme, borda, color }: Props) => {
         backgroundColor: isHovered ? theme : "white",
         border: borda ? `1px solid ${borda}` : "none",
         color: isHovered ? color : "black",
+        borderRadius: borderRadius ? borderRadius : "0px",
       }}
     >
       {children}
