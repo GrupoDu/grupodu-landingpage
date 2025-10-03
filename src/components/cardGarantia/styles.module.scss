@@ -1,0 +1,33 @@
+.container {
+  background: rgba(255, 255, 255, 10);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 1) 65%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  opacity: 0.5;
+  transition: all 0.2s ease-in-out;
+  padding: 20px;
+  border-radius: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .title {
+    display: flex;
+    display: flex;
+    gap: .4em;
+    user-select: none;
+  }
+
+  p {
+    user-select: none;
+  }
+}
