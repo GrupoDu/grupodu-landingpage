@@ -10,7 +10,7 @@ type Props = {
   color?: string;
 };
 
-const ButtonHover = ({ children, theme, borda, color }: Props) => {
+const ButtonBorder = ({ children, theme, borda, color }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => setIsHovered(true);
@@ -32,4 +32,4 @@ const ButtonHover = ({ children, theme, borda, color }: Props) => {
   );
 };
 
-export default ButtonHover;
+export default ButtonBorder;
