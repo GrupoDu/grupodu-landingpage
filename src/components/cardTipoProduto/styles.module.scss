@@ -1,0 +1,55 @@
+.imageTemplate {
+  width: 100%;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  background-color: #eeeeee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  box-shadow: 0 0 4px 0 rgba($color: #000000, $alpha: 0.2);
+  height: 100%;
+  gap: 1em;
+  min-height: 150px;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+
+  .imageContainer {
+    width: 100%;
+    flex: 1;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+
+    h4 {
+      font-size: 20px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4em;
+
+      li {
+        display: flex;
+        flex-direction: row;
+
+        p {
+          font-size: 14px;
+          width: fit-content;
+        }
+      }
+    }
+  }
+}
