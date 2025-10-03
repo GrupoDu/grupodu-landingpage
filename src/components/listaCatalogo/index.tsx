@@ -4,13 +4,12 @@ import React, { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import { usePathname } from "next/navigation";
 import { textosCardProdutos } from "@/constants/cards";
-import { StaticImageData } from "next/image";
 import CardTipoProduto from "../cardTipoProduto";
 
 type cardTexts = {
-  titulos: string[];
+  titulo: string;
   bullets: string[];
-  imagens: StaticImageData[];
+  imagens: never[];
 };
 
 const ListaCatalogo = () => {
@@ -21,9 +20,9 @@ const ListaCatalogo = () => {
     if (pathname.includes("dom-metal")) {
       setCatalogo(textosCardProdutos.segmentos["dom-metal"]);
     } else if (pathname.includes("duferro")) {
-      setCatalogo(textosCardProdutos.segmentos["duferro"]);
+      //   setCatalogo(textosCardProdutos.segmentos["duferro"]);
     } else if (pathname.includes("carbuilt")) {
-      setCatalogo(textosCardProdutos.segmentos["carbuilt"]);
+      //   setCatalogo(textosCardProdutos.segmentos["carbuilt"]);
     } else {
       setCatalogo([]);
     }
@@ -34,7 +33,7 @@ const ListaCatalogo = () => {
       {catalogo.map((card, index) => (
         <li key={index}>
           <CardTipoProduto
-            titulo={card.titulos[index]}
+            titulo={card.titulo}
             bullets={card.bullets}
             imagem={card.imagens[index]}
             buttonScheme="#4347FF"
