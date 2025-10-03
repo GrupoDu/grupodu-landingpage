@@ -9,6 +9,7 @@ export const textosCardProdutos = {
           "Disponível em diferentes modelos e pronta entrega",
         ],
         imagens: [],
+        href: "comprar-carro-de-mao"
       },
       {
         titulo: "Masseiras",
@@ -18,6 +19,7 @@ export const textosCardProdutos = {
           "Disponível em diferentes modelos e pronta entrega",
         ],
         imagens: [],
+        href: "comprar-masseira-para-obras"
       },
       {
         titulo: "Plataformas de Trabalho",
@@ -27,6 +29,7 @@ export const textosCardProdutos = {
           "Disponível em diferentes modelos e pronta entrega",
         ],
         imagens: [],
+        href: "comprar-plataformas-de-trabalho"
       },
     ],
     duferro: [{ titulos: ["", "", ""], bullets: ["", "", ""], imagens: [] }],
