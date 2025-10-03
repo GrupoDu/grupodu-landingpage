@@ -70,6 +70,10 @@ const DomMetalPage = () => {
           </div>
         </div>
       </div>
+      <div className={styles.catalogo}>
+        <h2>Nosso Catálogo Disponível</h2>
+        <ul></ul>
+      </div>
     </div>
   );
 };
