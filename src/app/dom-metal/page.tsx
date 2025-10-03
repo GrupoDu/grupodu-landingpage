@@ -83,6 +83,7 @@ const DomMetalPage = () => {
           {garantiasDomMetal.map((garantia, index) => (
             <li key={index}>
               <CardGarantia
+                borderColor="#fff"
                 Icon={garantia.icon}
                 titulo={garantia.titulo}
                 descricao={garantia.descricao}
