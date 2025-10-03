@@ -6,11 +6,15 @@ type Props = {
   titulo: string;
   descricao: string;
   Icon: ForwardRefExoticComponent<LucideProps>;
+  borderColor: string;
 };
 
-const CardGarantia = ({ titulo, descricao, Icon }: Props) => {
+const CardGarantia = ({ titulo, descricao, Icon, borderColor }: Props) => {
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{ border: `1px solid ${borderColor}` }}
+    >
       <div className={styles.title}>
         <Icon />
         <h4>{titulo}</h4>
