@@ -40,7 +40,7 @@ const CardTipoProduto = ({ titulo, bullets, imagem, buttonScheme }: Props) => {
             </li>
           ))}
         </ul>
-        <ButtonBorder borda={buttonScheme} color="white" theme={buttonScheme}>
+        <ButtonBorder borda={buttonScheme} color="white" theme={buttonScheme} borderRadius="6px">
           Ver Linha Completa de {titulo} <MdKeyboardArrowRight />
         </ButtonBorder>
       </div>
