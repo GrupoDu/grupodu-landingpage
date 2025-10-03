@@ -2,14 +2,15 @@
 import React from "react";
 import styles from "./page.module.scss";
 import Image from "next/image";
-
-// Import de imagens
-import Logo from "../../../public/Logo dom metal.png";
-import { ImageIcon } from "lucide-react";
+import { Check, ImageIcon } from "lucide-react";
 import Button from "@/components/newButton";
 import ListaCatalogo from "@/components/listaCatalogo";
 import { garantiasDomMetal } from "@/constants/garantias";
 import CardGarantia from "@/components/cardGarantia";
+import { sobreDomMetal } from "@/constants/sobre";
+
+// Import de imagens
+import Logo from "../../../public/Logo dom metal.png";
 
 const ImageTemplate = () => {
   return (
@@ -23,6 +24,14 @@ const ProofPoints = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className={styles.proofPoints}>
       <p>{children}</p>
+    </div>
+  );
+};
+
+const Bullet = () => {
+  return (
+    <div className={styles.bulletComponent}>
+      <Check className={styles.iconCheck} />
     </div>
   );
 };
@@ -91,6 +100,21 @@ const DomMetalPage = () => {
             </li>
           ))}
         </ul>
+      </div>
+      <div className={styles.sobre}>
+        <div className={styles.leftContent}>
+          <h2>{sobreDomMetal.titulo}</h2>
+          <p>{sobreDomMetal.descricao[0]}</p>
+          <p>{sobreDomMetal.descricao[1]}</p>
+          <ul>
+            {sobreDomMetal.bullets.map((bullet, index) => (
+              <li key={index}>
+                <Bullet />
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
