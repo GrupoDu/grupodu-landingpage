@@ -7,6 +7,7 @@ import { ImageIcon } from "lucide-react";
 import Image from "next/image";
 import { Check } from "lucide-react";
 import ButtonBorder from "../buttonBorder";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 type Props = {
   titulo: string;
@@ -40,7 +41,7 @@ const CardTipoProduto = ({ titulo, bullets, imagem, buttonScheme }: Props) => {
           ))}
         </ul>
         <ButtonBorder borda={buttonScheme} color="white" theme={buttonScheme}>
-          Ver Linha Completa de {titulo}
+          Ver Linha Completa de {titulo} <MdKeyboardArrowRight />
         </ButtonBorder>
       </div>
     </div>
