@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import styles from "./styles.module.scss";
 import React, { useState } from "react";
 
@@ -9,6 +10,7 @@ type Props = {
   borda?: string;
   color?: string;
   borderRadius?: string;
+  href: string;
 };
 
 const ButtonBorder = ({
@@ -17,6 +19,7 @@ const ButtonBorder = ({
   borda,
   color,
   borderRadius,
+  href,
 }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -24,7 +27,8 @@ const ButtonBorder = ({
   const handleMouseLeave = () => setIsHovered(false);
 
   return (
-    <button
+    <Link
+      href={href}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={styles.button}
@@ -36,7 +40,7 @@ const ButtonBorder = ({
       }}
     >
       {children}
-    </button>
+    </Link>
   );
 };
 

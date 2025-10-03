@@ -14,6 +14,7 @@ type Props = {
   bullets: string[];
   imagem?: StaticImageData;
   buttonScheme: string;
+  href: string;
 };
 
 const ImageTemplate = () => {
@@ -24,7 +25,13 @@ const ImageTemplate = () => {
   );
 };
 
-const CardTipoProduto = ({ titulo, bullets, imagem, buttonScheme }: Props) => {
+const CardTipoProduto = ({
+  titulo,
+  bullets,
+  imagem,
+  buttonScheme,
+  href,
+}: Props) => {
   return (
     <div className={styles.container}>
       <div className={styles.imagemContainer}>
@@ -40,7 +47,13 @@ const CardTipoProduto = ({ titulo, bullets, imagem, buttonScheme }: Props) => {
             </li>
           ))}
         </ul>
-        <ButtonBorder borda={buttonScheme} color="white" theme={buttonScheme} borderRadius="6px">
+        <ButtonBorder
+          href={href}
+          borda={buttonScheme}
+          color="white"
+          theme={buttonScheme}
+          borderRadius="6px"
+        >
           Ver Linha Completa de {titulo} <MdKeyboardArrowRight />
         </ButtonBorder>
       </div>
