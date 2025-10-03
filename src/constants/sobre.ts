@@ -1,5 +1,5 @@
 export const sobreDomMetal = {
-  titulo: "",
+  titulo: "Sobre a Dom Metal — Fabricante de Equipamentos para Obras",
   descricao: [
     "Com mais de 10 anos de atuação, a Dom Metal é referência em equipamentos resistentes e confiáveis para construção civil. Especializada na fabricação, oferece uma linha completa de produtos essenciais para o dia a dia de obra.",
     "Atendemos todo o Nordeste com agilidade, levando qualidade e durabilidade para quem constrói e impulsionando o desenvolvimento da região.",
