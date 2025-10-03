@@ -8,6 +8,8 @@ import Logo from "../../../public/Logo dom metal.png";
 import { ImageIcon } from "lucide-react";
 import Button from "@/components/newButton";
 import ListaCatalogo from "@/components/listaCatalogo";
+import { garantiasDomMetal } from "@/constants/garantias";
+import CardGarantia from "@/components/cardGarantia";
 
 const ImageTemplate = () => {
   return (
@@ -74,6 +76,20 @@ const DomMetalPage = () => {
       <div className={styles.catalogo}>
         <h2>Nosso Catálogo Disponível</h2>
         <ListaCatalogo />
+      </div>
+      <div className={styles.garantias}>
+        <h2>Garantias Industriais</h2>
+        <ul>
+          {garantiasDomMetal.map((garantia, index) => (
+            <li key={index}>
+              <CardGarantia
+                Icon={garantia.icon}
+                titulo={garantia.titulo}
+                descricao={garantia.descricao}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
