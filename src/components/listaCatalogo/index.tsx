@@ -33,6 +33,7 @@ const ListaCatalogo = () => {
       {catalogo.map((card, index) => (
         <li key={index}>
           <CardTipoProduto
+            href={card.href}
             titulo={card.titulo}
             bullets={card.bullets}
             imagem={card.imagens[index]}
