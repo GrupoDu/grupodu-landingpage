@@ -8,6 +8,8 @@ import ListaCatalogo from "@/components/listaCatalogo";
 import { garantiasDomMetal } from "@/constants/garantias";
 import CardGarantia from "@/components/cardGarantia";
 import { sobreDomMetal } from "@/constants/sobre";
+import Link from "next/link";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 // Import de imagens
 import Logo from "../../../public/Logo dom metal.png";
@@ -16,6 +18,8 @@ import ImgObra from "@/assets/backgrounds/construindo-novas-casas-de-concreto.jp
 import ImgEletricista from "@/assets/backgrounds/instalador-eletricista-com-uma-ferramenta-nas-maos-trabalhando-com-cabo-no-canteiro-de-obras.jpg";
 import InfoContatos from "@/components/infosContatos";
 import Form from "@/components/form";
+import DuFerro from "../../../public/DuFerro.png";
+import Carbuilt from "../../../public/Carbuilt.png";
 
 const ImageTemplate = () => {
   return (
@@ -170,7 +174,38 @@ const DomMetalPage = () => {
           </div>
           <div className={styles.segmentos}>
             <div className={styles.duFerro}>
-              
+              <Image
+                src={DuFerro}
+                alt="Logo DuFerro"
+                className={styles.logoSegmentos}
+              />
+              <div className={styles.content}>
+                <span>
+                  Especialistas em móveis planejados para todos os ambientes,
+                  combinamos design inteligente, materiais de primeira linha e
+                  um acabamento impecável.
+                </span>
+                <Link href={"#"} className={styles.button}>
+                  Conhecer DuFerro <MdKeyboardArrowRight />
+                </Link>
+              </div>
+            </div>
+            <div className={styles.carbuilt}>
+              <Image
+                src={Carbuilt}
+                alt="Logo Carbuilt"
+                className={styles.logoSegmentos}
+              />
+              <div className={styles.content}>
+                <span>
+                  Especialistas em móveis planejados para todos os ambientes,
+                  combinamos design inteligente, materiais de primeira linha e
+                  um acabamento impecável.
+                </span>
+                <Link href={"#"} className={styles.button}>
+                  Conhecer Carbuilt <MdKeyboardArrowRight />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
