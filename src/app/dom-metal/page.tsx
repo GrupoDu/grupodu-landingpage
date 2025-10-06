@@ -64,7 +64,7 @@ const DomMetalPage = () => {
           <div className="imageContainer">
             <Image
               src={BgHero}
-              alt=""
+              alt="background hero section"
               fill
               priority // 🔥 IMPORTANTE: Força carregamento prioritário
               quality={85}
