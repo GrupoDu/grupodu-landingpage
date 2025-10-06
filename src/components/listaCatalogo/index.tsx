@@ -38,6 +38,7 @@ const ListaCatalogo = () => {
             bullets={card.bullets}
             imagem={card.imagens[index]}
             buttonScheme="#4347FF"
+            buttonTxt={card.buttonTxt}
           />
         </li>
       ))}
