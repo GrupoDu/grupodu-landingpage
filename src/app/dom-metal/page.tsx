@@ -14,6 +14,8 @@ import Logo from "../../../public/Logo dom metal.png";
 import ButtonBorder from "@/components/buttonBorder";
 import ImgObra from "@/assets/backgrounds/construindo-novas-casas-de-concreto.jpg";
 import ImgEletricista from "@/assets/backgrounds/instalador-eletricista-com-uma-ferramenta-nas-maos-trabalhando-com-cabo-no-canteiro-de-obras.jpg";
+import InfoContatos from "@/components/infosContatos";
+import Form from "@/components/form";
 
 const ImageTemplate = () => {
   return (
@@ -138,6 +140,39 @@ const DomMetalPage = () => {
             alt="Imagem de obra"
             className={`${styles.imagensSobre} ${styles.imgEletricista}`}
           />
+        </div>
+      </div>
+      <div className={styles.contatoSection}>
+        <h1>Entre em Contato</h1>
+        <p>Estamos aqui para ajudar você. Entre em contato conosco!</p>
+        <div className={styles.formInfos}>
+          <InfoContatos />
+          <Form />
+        </div>
+      </div>
+      <div className={styles.outrosSegmentos}>
+        <h2>Conheça nossos outros segmentos</h2>
+        <div className={styles.segmentosContainer}>
+          <div className={styles.grupodu}>
+            <h2>Grupo Du Car</h2>
+            <p>
+              Somos um grupo empresarial consolidado, com atuação estratégica em
+              diferentes segmentos e compromisso constante com qualidade,
+              inovação e excelência no atendimento.
+            </p>
+            <p>
+              Há mais de 10 anos, o Grupo Du Car se destaca na fabricação de
+              móveis planejados sob medida, transformando ambientes com soluções
+              que unem funcionalidade, estilo e durabilidade. Nossa trajetória é
+              marcada pela confiança de clientes que buscam projetos
+              personalizados e resultados que valorizam cada espaço.
+            </p>
+          </div>
+          <div className={styles.segmentos}>
+            <div className={styles.duFerro}>
+              
+            </div>
+          </div>
         </div>
       </div>
     </div>
