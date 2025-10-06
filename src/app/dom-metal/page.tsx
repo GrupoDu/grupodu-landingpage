@@ -20,6 +20,7 @@ import InfoContatos from "@/components/infosContatos";
 import Form from "@/components/form";
 import DuFerro from "../../../public/DuFerro.png";
 import Carbuilt from "../../../public/Carbuilt.png";
+import { Metadata } from "next";
 
 const ImageTemplate = () => {
   return (
@@ -43,6 +44,15 @@ const Bullet = () => {
       <Check className={styles.iconCheck} />
     </div>
   );
+};
+
+export const metadata: Metadata = {
+  title: "Dom Metal - Grupo Du Car",
+  description:
+    "O Grupo Du Car é formado por três empresas que atuam em diferentes setores, mas compartilham um mesmo compromisso: qualidade, inovação e solidez.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 const DomMetalPage = () => {
