@@ -12,6 +12,8 @@ import { sobreDomMetal } from "@/constants/sobre";
 // Import de imagens
 import Logo from "../../../public/Logo dom metal.png";
 import ButtonBorder from "@/components/buttonBorder";
+import ImgObra from "@/assets/backgrounds/construindo-novas-casas-de-concreto.jpg";
+import ImgEletricista from "@/assets/backgrounds/instalador-eletricista-com-uma-ferramenta-nas-maos-trabalhando-com-cabo-no-canteiro-de-obras.jpg";
 
 const ImageTemplate = () => {
   return (
@@ -125,7 +127,18 @@ const DomMetalPage = () => {
             Solicitar Orçamento
           </ButtonBorder>
         </div>
-        <div className={styles.rightContent}></div>
+        <div className={styles.rightContent}>
+          <Image
+            src={ImgObra}
+            alt="Imagem de obra"
+            className={`${styles.imagensSobre} ${styles.imgObra}`}
+          />
+          <Image
+            src={ImgEletricista}
+            alt="Imagem de obra"
+            className={`${styles.imagensSobre} ${styles.imgEletricista}`}
+          />
+        </div>
       </div>
     </div>
   );
