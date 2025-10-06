@@ -196,11 +196,12 @@
   .sobre {
     padding: 4em;
     display: flex;
-    gap: 8em;
+    gap: 4em;
     background: linear-gradient(180deg, #ebe4ff 0%, #ffffff 100%);
+    height: 580px;
 
     .leftContent {
-      width: 70%;
+      width: 60%;
       display: flex;
       flex-direction: column;
       gap: 2em;
@@ -247,10 +248,21 @@
     }
 
     .rightContent {
-      width: 30%;
+      width: 40%;
 
-      h2 {
-        background-color: #000000;
+      .imagensSobre {
+        object-fit: cover;
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+      }
+
+      .imgObra {
+        height: 40%;
+      }
+
+      .imgEletricista {
+        height: 60%;
       }
     }
   }
