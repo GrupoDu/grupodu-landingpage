@@ -15,6 +15,7 @@ type Props = {
   imagem?: StaticImageData;
   buttonScheme: string;
   href: string;
+  buttonTxt: string;
 };
 
 const ImageTemplate = () => {
@@ -31,6 +32,7 @@ const CardTipoProduto = ({
   imagem,
   buttonScheme,
   href,
+  buttonTxt,
 }: Props) => {
   return (
     <div className={styles.container}>
@@ -54,7 +56,7 @@ const CardTipoProduto = ({
           theme={buttonScheme}
           borderRadius="6px"
         >
-          Ver Linha Completa de {titulo} <MdKeyboardArrowRight />
+          {buttonTxt} <MdKeyboardArrowRight />
         </ButtonBorder>
       </div>
     </div>
