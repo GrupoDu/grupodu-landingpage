@@ -10,6 +10,8 @@ type cardTexts = {
   titulo: string;
   bullets: string[];
   imagens: never[];
+  href: string;
+  buttonTxt: string;
 };
 
 const ListaCatalogo = () => {
