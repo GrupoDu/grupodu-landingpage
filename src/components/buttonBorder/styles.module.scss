@@ -1,0 +1,15 @@
+.button {
+  padding: 10px 30px;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  transition: all 0.1s ease-in-out;
+  user-select: none;
+  font-size: 14px;
+}

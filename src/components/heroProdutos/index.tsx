@@ -9,7 +9,7 @@ import { textProductType } from "@/constants/textos";
 import Loading from "../loading";
 import { textsCategory } from "@/data/types";
 
-const HeroSection = () => {
+const HeroProdutos = () => {
   const [productTitle, setProductTitle] = useState<string | undefined>("");
   const [productDescription, setProductDescription] = useState<
     string | undefined
@@ -77,4 +77,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default HeroProdutos;
