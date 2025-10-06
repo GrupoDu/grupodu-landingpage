@@ -10,6 +10,7 @@ import CardGarantia from "@/components/cardGarantia";
 import { sobreDomMetal } from "@/constants/sobre";
 import Link from "next/link";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { Metadata } from "next";
 
 // Import de imagens
 import Logo from "../../../public/Logo dom metal.png";
@@ -20,7 +21,7 @@ import InfoContatos from "@/components/infosContatos";
 import Form from "@/components/form";
 import DuFerro from "../../../public/DuFerro.png";
 import Carbuilt from "../../../public/Carbuilt.png";
-import { Metadata } from "next";
+import BgHero from "@/assets/backgrounds/shirish-suwal-G3PCD962gXk-unsplash.webp";
 
 const ImageTemplate = () => {
   return (
@@ -59,6 +60,22 @@ const DomMetalPage = () => {
   return (
     <div className={styles.pageContainer}>
       <div className={styles.heroSection}>
+        <div className={styles.bgImage}>
+          <div className="imageContainer">
+            <Image
+              src={BgHero}
+              alt=""
+              fill
+              priority // 🔥 IMPORTANTE: Força carregamento prioritário
+              quality={85}
+              className={styles.heroImage}
+              style={{
+                objectFit: "cover",
+                objectPosition: "100% 80%",
+              }}
+            />
+          </div>
+        </div>
         <div className={styles.topContent}>
           <Image src={Logo} alt={"logo dom metal"} className={styles.logo} />
           <h1>
