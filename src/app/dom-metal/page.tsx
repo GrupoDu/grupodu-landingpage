@@ -50,7 +50,7 @@ const Bullet = () => {
 export const metadata: Metadata = {
   title: "Dom Metal - Grupo Du Car",
   description:
-    "O Grupo Du Car é formado por três empresas que atuam em diferentes setores, mas compartilham um mesmo compromisso: qualidade, inovação e solidez.",
+    "Conheça a Dom Metal do Grupo Du Car: soluções metálicas, carrinhos industriais e equipamentos sob medida com atendimento no Nordeste. Durabilidade, fabricação local e suporte técnico.",
   icons: {
     icon: "/favicon.ico",
   },
