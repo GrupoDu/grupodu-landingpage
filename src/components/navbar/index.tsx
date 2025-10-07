@@ -14,7 +14,7 @@ import Link from "next/link";
 const Navbar = () => {
   const [actualPage, setActualPage] = useState("inicio");
   const ref = useRef(null);
-  const opacity = useScrollOpacity();
+  const [opacity] = useScrollOpacity();
   const [menu, setMenu] = useState(false);
   const pathname = usePathname();
 
