@@ -6,16 +6,18 @@ type Props = {
   theme?: string;
   borda?: string;
   color?: string;
+  width?: string;
 };
 
-const Button = ({ children, theme, borda, color }: Props) => {
+const Button = ({ children, theme, borda, color, width }: Props) => {
   return (
     <button
       className={styles.button}
       style={{
         backgroundColor: theme || "white",
         border: borda ? `1px solid ${borda}` : "none",
-        color: color || "black"
+        color: color || "black",
+        width: width ? width : "100%", 
       }}
     >
       {children}

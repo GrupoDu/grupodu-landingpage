@@ -1,15 +1,15 @@
 // libs
-import React from "react";
+import React, { ForwardRefExoticComponent } from "react";
 import styles from "./page.module.scss";
 import Image from "next/image";
-import { Check, ImageIcon } from "lucide-react";
+import { Check, ImageIcon, LucideProps } from "lucide-react";
 import Button from "@/components/newButton";
 import ListaCatalogo from "@/components/listaCatalogo";
 import { garantiasDomMetal } from "@/constants/garantias";
 import CardGarantia from "@/components/cardGarantia";
 import { sobreDomMetal } from "@/constants/sobre";
 import Link from "next/link";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { Metadata } from "next";
 
 // Import de imagens
@@ -22,6 +22,7 @@ import Form from "@/components/form";
 import DuFerro from "../../../public/DuFerro.png";
 import Carbuilt from "../../../public/Carbuilt.png";
 import BgHero from "@/assets/backgrounds/shirish-suwal-G3PCD962gXk-unsplash.webp";
+import { textosCardDiferenciais } from "@/constants/cards";
 
 const ImageTemplate = () => {
   return (
@@ -47,8 +48,29 @@ const Bullet = () => {
   );
 };
 
+const CardDiferencial = ({
+  titulo,
+  descricao,
+  Icon,
+}: {
+  titulo: string;
+  descricao: string;
+  Icon: ForwardRefExoticComponent<LucideProps>;
+}) => {
+  return (
+    <div className={styles.cardDiferencial}>
+      <div className={styles.titulo}>
+        <Icon />
+        <h4>{titulo}</h4>
+      </div>
+      <p>{descricao}</p>
+    </div>
+  );
+};
+
 export const metadata: Metadata = {
-  title: "Dom Metal - soluções metálicas, carrinhos industriais e equipamentos sob medida com atendimento no Nordeste.",
+  title:
+    "Dom Metal - soluções metálicas, carrinhos industriais e equipamentos sob medida com atendimento no Nordeste.",
   description:
     "Conheça a Dom Metal do Grupo Du Car: soluções metálicas, carrinhos industriais e equipamentos sob medida com atendimento no Nordeste. Durabilidade, fabricação local e suporte técnico.",
 };
@@ -113,6 +135,36 @@ const DomMetalPage = () => {
             </Button>
             <Button>Ver Linha Completa de Produtos</Button>
           </div>
+        </div>
+      </div>
+      <div className={styles.diferencial}>
+        <div className={styles.leftContent}>
+          <h2>Por que escolher a Dom Metal</h2>
+          <p>
+            Na Dom Metal, entendemos que cada obra tem seus desafios — e por
+            isso entregamos soluções metálicas que unem desempenho, praticidade
+            e durabilidade. Com fabricação própria, garantimos qualidade
+            constante e prazos de entrega reduzidos, atendendo construtoras,
+            distribuidores e indústrias em todo o Nordeste.
+          </p>
+          <p>
+            Nosso compromisso é oferecer equipamentos resistentes e suporte
+            técnico próximo, ajudando nossos parceiros a manter ritmo, segurança
+            e eficiência em cada etapa da construção.
+          </p>
+          <Button theme="#040826" color="white">
+            Explorar Catálogo <MdKeyboardArrowDown />
+          </Button>
+        </div>
+        <div className={styles.rightContent}>
+          {textosCardDiferenciais.segmentos["dom-metal"].map((texto) => (
+            <CardDiferencial
+              key={texto.titulo}
+              titulo={texto.titulo}
+              descricao={texto.descricao}
+              Icon={texto.icon}
+            />
+          ))}
         </div>
       </div>
       <div className={styles.catalogo}>
