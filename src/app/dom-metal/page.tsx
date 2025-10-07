@@ -147,6 +147,7 @@ const DomMetalPage = () => {
             </div>
             <div className={styles.rightContent}>
               <Button
+                width="fit-content"
                 href="#formulario"
                 theme="#040826"
                 borda="#fff"
@@ -154,7 +155,7 @@ const DomMetalPage = () => {
               >
                 Solicitar Orçamento
               </Button>
-              <Button href="#catalogo">Ver Linha Completa de Produtos</Button>
+              <Button href="#catalogo" width="fit-content">Explorar Catálogo</Button>
             </div>
           </div>
         </div>
