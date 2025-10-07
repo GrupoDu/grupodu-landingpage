@@ -5,6 +5,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Toast from "@/components/toast";
 import WsIcon from "@/components/wsicon";
+import ArrowUp from "@/components/arrowUp";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className={`${poppins.variable}`}>
         <Toast />
         <Navbar />
+        <ArrowUp />
         <WsIcon />
         {children}
         <Footer />
