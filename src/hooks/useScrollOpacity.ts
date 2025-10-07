@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 export const useScrollOpacity = () => {
   const [opacity, setOpacity] = useState(1);
+  const [opacityUp, setOpacityUp] = useState(0);
   const [result, setResult] = useState("");
 
   useEffect(() => {
@@ -10,8 +11,10 @@ export const useScrollOpacity = () => {
       setResult(scrollPosition.toString());
       if (scrollPosition > 700) {
         setOpacity(0.5);
+        setOpacityUp(0.9)
       } else {
         setOpacity(1);
+        setOpacityUp(0)
       }
     };
 
@@ -20,5 +23,5 @@ export const useScrollOpacity = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return opacity;
+  return [opacity, opacityUp];
 };
