@@ -116,12 +116,7 @@ const DomMetalPage = () => {
             </div>
           </div>
           <div className={styles.topContent}>
-            <Image
-              src={Logo}
-              loading="lazy"
-              alt={"logo dom metal"}
-              className={styles.logo}
-            />
+            <Image src={Logo} alt={"logo dom metal"} className={styles.logo} />
             <h1>
               Fabricante de Carros de mão, Plataformas de Trabalho e Estruturas
               Metálicas para Construção Civil
@@ -250,11 +245,13 @@ const DomMetalPage = () => {
           </div>
           <div className={styles.rightContent}>
             <Image
+              loading="lazy"
               src={ImgObra}
               alt="Imagem de obra"
               className={`${styles.imagensSobre} ${styles.imgObra}`}
             />
             <Image
+              loading="lazy"
               src={ImgEletricista}
               alt="Imagem de obra"
               className={`${styles.imagensSobre} ${styles.imgEletricista}`}
@@ -290,6 +287,7 @@ const DomMetalPage = () => {
             <div className={styles.segmentos}>
               <div className={styles.duFerro}>
                 <Image
+                  loading="lazy"
                   src={DuFerro}
                   alt="Logo DuFerro"
                   className={styles.logoSegmentos}
@@ -307,6 +305,7 @@ const DomMetalPage = () => {
               </div>
               <div className={styles.carbuilt}>
                 <Image
+                  loading="lazy"
                   src={Carbuilt}
                   alt="Logo Carbuilt"
                   className={styles.logoSegmentos}
