@@ -1,8 +1,8 @@
 // libs
-import React from "react";
+import React, { ForwardRefExoticComponent } from "react";
 import styles from "./page.module.scss";
 import Image from "next/image";
-import { Check, ImageIcon } from "lucide-react";
+import { Check, ImageIcon, LucideProps } from "lucide-react";
 import Button from "@/components/newButton";
 import ListaCatalogo from "@/components/listaCatalogo";
 import { garantiasDomMetal } from "@/constants/garantias";
@@ -22,6 +22,7 @@ import Form from "@/components/form";
 import DuFerro from "../../../public/DuFerro.png";
 import Carbuilt from "../../../public/Carbuilt.png";
 import BgHero from "@/assets/backgrounds/shirish-suwal-G3PCD962gXk-unsplash.webp";
+import { textosCardDiferenciais } from "@/constants/cards";
 
 const ImageTemplate = () => {
   return (
@@ -43,6 +44,26 @@ const Bullet = () => {
   return (
     <div className={styles.bulletComponent}>
       <Check className={styles.iconCheck} />
+    </div>
+  );
+};
+
+const CardDiferencial = ({
+  titulo,
+  descricao,
+  Icon,
+}: {
+  titulo: string;
+  descricao: string;
+  Icon: ForwardRefExoticComponent<LucideProps>;
+}) => {
+  return (
+    <div className={styles.cardDiferencial}>
+      <div className={styles.titulo}>
+        <Icon />
+        <h4>{titulo}</h4>
+      </div>
+      <p>{descricao}</p>
     </div>
   );
 };
@@ -136,7 +157,14 @@ const DomMetalPage = () => {
           </Button>
         </div>
         <div className={styles.rightContent}>
-          
+          {textosCardDiferenciais.segmentos["dom-metal"].map((texto) => (
+            <CardDiferencial
+              key={texto.titulo}
+              titulo={texto.titulo}
+              descricao={texto.descricao}
+              Icon={texto.icon}
+            />
+          ))}
         </div>
       </div>
       <div className={styles.catalogo}>
