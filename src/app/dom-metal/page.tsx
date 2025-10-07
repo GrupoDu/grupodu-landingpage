@@ -48,12 +48,9 @@ const Bullet = () => {
 };
 
 export const metadata: Metadata = {
-  title: "Dom Metal - Grupo Du Car",
+  title: "Dom Metal - soluções metálicas, carrinhos industriais e equipamentos sob medida com atendimento no Nordeste.",
   description:
     "Conheça a Dom Metal do Grupo Du Car: soluções metálicas, carrinhos industriais e equipamentos sob medida com atendimento no Nordeste. Durabilidade, fabricação local e suporte técnico.",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 const DomMetalPage = () => {
@@ -156,6 +153,7 @@ const DomMetalPage = () => {
             color="white"
             borderRadius="6px"
             theme="#5D6BFF"
+            type="link"
           >
             Solicitar Orçamento
           </ButtonBorder>
