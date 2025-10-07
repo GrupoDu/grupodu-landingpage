@@ -78,7 +78,7 @@ const jsonLd = {
   url: "https://grupodu.com.br/dom-metal",
   parentOrganization: {
     "@type": "Organization",
-    name: "Grupo DU",
+    name: "Grupo Du Car",
   },
 };
 
