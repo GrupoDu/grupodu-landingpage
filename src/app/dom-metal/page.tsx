@@ -76,6 +76,10 @@ const jsonLd = {
   description:
     "Fabricante de Carros de mão, Plataformas de Trabalho e Estruturas Metálicas para Construção Civil",
   url: "https://grupodu.com.br/dom-metal",
+  parentOrganization: {
+    "@type": "Organization",
+    name: "Grupo DU",
+  },
 };
 
 export const metadata: Metadata = {
@@ -112,7 +116,12 @@ const DomMetalPage = () => {
             </div>
           </div>
           <div className={styles.topContent}>
-            <Image src={Logo} alt={"logo dom metal"} className={styles.logo} />
+            <Image
+              src={Logo}
+              loading="lazy"
+              alt={"logo dom metal"}
+              className={styles.logo}
+            />
             <h1>
               Fabricante de Carros de mão, Plataformas de Trabalho e Estruturas
               Metálicas para Construção Civil
@@ -155,7 +164,9 @@ const DomMetalPage = () => {
               >
                 Solicitar Orçamento
               </Button>
-              <Button href="#catalogo" width="fit-content">Ver Catálogo</Button>
+              <Button href="#catalogo" width="fit-content">
+                Ver Catálogo
+              </Button>
             </div>
           </div>
         </div>
@@ -174,7 +185,12 @@ const DomMetalPage = () => {
               técnico próximo, ajudando nossos parceiros a manter ritmo,
               segurança e eficiência em cada etapa da construção.
             </p>
-            <Button href="#catalogo" theme="#040826" color="white" borda="white">
+            <Button
+              href="#catalogo"
+              theme="#040826"
+              color="white"
+              borda="white"
+            >
               Explorar Catálogo <MdKeyboardArrowDown />
             </Button>
           </div>
