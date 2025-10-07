@@ -23,6 +23,7 @@ import DuFerro from "../../../public/DuFerro.png";
 import Carbuilt from "../../../public/Carbuilt.png";
 import BgHero from "@/assets/backgrounds/shirish-suwal-G3PCD962gXk-unsplash.webp";
 import { textosCardDiferenciais } from "@/constants/cards";
+import Head from "next/head";
 
 const ImageTemplate = () => {
   return (
@@ -75,9 +76,25 @@ export const metadata: Metadata = {
     "Conheça a Dom Metal do Grupo Du Car: soluções metálicas, carrinhos industriais e equipamentos sob medida com atendimento no Nordeste. Durabilidade, fabricação local e suporte técnico.",
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Dom Metal",
+  description:
+    "Fabricante de Carros de mão, Plataformas de Trabalho e Estruturas Metálicas para Construção Civil",
+  url: "https://grupodu.com.br/dom-metal",
+  logo: Logo,
+};
+
 const DomMetalPage = () => {
   return (
     <div className={styles.pageContainer}>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+        />
+      </Head>
       <div className={styles.heroSection}>
         <div className={styles.bgImage}>
           <div className="imageContainer">
