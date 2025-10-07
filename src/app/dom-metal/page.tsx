@@ -85,7 +85,6 @@ export const metadata: Metadata = {
     "Conheça a Dom Metal do Grupo Du Car: soluções metálicas, carrinhos industriais e equipamentos sob medida com atendimento no Nordeste. Durabilidade, fabricação local e suporte técnico.",
 };
 
-
 const DomMetalPage = () => {
   return (
     <>
@@ -95,7 +94,7 @@ const DomMetalPage = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className={styles.pageContainer}>
-        <div className={styles.heroSection}>
+        <div className={styles.heroSection} id="hero">
           <div className={styles.bgImage}>
             <div className="imageContainer">
               <Image
@@ -147,7 +146,12 @@ const DomMetalPage = () => {
               </div>
             </div>
             <div className={styles.rightContent}>
-              <Button href="#formulario" theme="#040826" borda="#fff" color="#fff">
+              <Button
+                href="#formulario"
+                theme="#040826"
+                borda="#fff"
+                color="#fff"
+              >
                 Solicitar Orçamento
               </Button>
               <Button href="#catalogo">Ver Linha Completa de Produtos</Button>
