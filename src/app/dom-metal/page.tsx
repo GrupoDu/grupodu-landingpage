@@ -9,7 +9,7 @@ import { garantiasDomMetal } from "@/constants/garantias";
 import CardGarantia from "@/components/cardGarantia";
 import { sobreDomMetal } from "@/constants/sobre";
 import Link from "next/link";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { Metadata } from "next";
 
 // Import de imagens
@@ -48,7 +48,8 @@ const Bullet = () => {
 };
 
 export const metadata: Metadata = {
-  title: "Dom Metal - soluções metálicas, carrinhos industriais e equipamentos sob medida com atendimento no Nordeste.",
+  title:
+    "Dom Metal - soluções metálicas, carrinhos industriais e equipamentos sob medida com atendimento no Nordeste.",
   description:
     "Conheça a Dom Metal do Grupo Du Car: soluções metálicas, carrinhos industriais e equipamentos sob medida com atendimento no Nordeste. Durabilidade, fabricação local e suporte técnico.",
 };
@@ -116,7 +117,27 @@ const DomMetalPage = () => {
         </div>
       </div>
       <div className={styles.diferencial}>
-        
+        <div className={styles.leftContent}>
+          <h2>Por que escolher a Dom Metal</h2>
+          <p>
+            Na Dom Metal, entendemos que cada obra tem seus desafios — e por
+            isso entregamos soluções metálicas que unem desempenho, praticidade
+            e durabilidade. Com fabricação própria, garantimos qualidade
+            constante e prazos de entrega reduzidos, atendendo construtoras,
+            distribuidores e indústrias em todo o Nordeste.
+          </p>
+          <p>
+            Nosso compromisso é oferecer equipamentos resistentes e suporte
+            técnico próximo, ajudando nossos parceiros a manter ritmo, segurança
+            e eficiência em cada etapa da construção.
+          </p>
+          <Button theme="#040826" color="white">
+            Explorar Catálogo <MdKeyboardArrowDown />
+          </Button>
+        </div>
+        <div className={styles.rightContent}>
+          
+        </div>
       </div>
       <div className={styles.catalogo}>
         <h2>Nosso Catálogo Disponível</h2>

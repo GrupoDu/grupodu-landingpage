@@ -72,7 +72,7 @@
       height: 100%;
       z-index: -2;
     }
-    
+
     &::after {
       content: "";
       position: absolute;
@@ -154,6 +154,32 @@
         padding: 0px;
         height: 3em;
       }
+    }
+  }
+
+  .diferencial {
+    background: linear-gradient(120deg, #222057 0%, #393697 76%, #2d2b6e 100%);
+    padding: 5em;
+    display: flex;
+
+
+    .leftContent {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      flex: 1;
+
+      h2 {
+        color: white;
+      }
+
+      p {
+        color: #BABABA;
+      }
+    }
+
+    .rightContent {
+      flex: 1;
     }
   }
 
