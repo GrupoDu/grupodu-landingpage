@@ -85,6 +85,7 @@ export const metadata: Metadata = {
     "Conheça a Dom Metal do Grupo Du Car: soluções metálicas, carrinhos industriais e equipamentos sob medida com atendimento no Nordeste. Durabilidade, fabricação local e suporte técnico.",
 };
 
+
 const DomMetalPage = () => {
   return (
     <>
@@ -101,7 +102,7 @@ const DomMetalPage = () => {
                 src={BgHero}
                 alt="background hero section"
                 fill
-                priority // 🔥 IMPORTANTE: Força carregamento prioritário
+                priority
                 quality={85}
                 className={styles.heroImage}
                 style={{
@@ -146,10 +147,10 @@ const DomMetalPage = () => {
               </div>
             </div>
             <div className={styles.rightContent}>
-              <Button theme="#040826" borda="#fff" color="#fff">
+              <Button href="#formulario" theme="#040826" borda="#fff" color="#fff">
                 Solicitar Orçamento
               </Button>
-              <Button>Ver Linha Completa de Produtos</Button>
+              <Button href="#catalogo">Ver Linha Completa de Produtos</Button>
             </div>
           </div>
         </div>
@@ -168,7 +169,7 @@ const DomMetalPage = () => {
               técnico próximo, ajudando nossos parceiros a manter ritmo,
               segurança e eficiência em cada etapa da construção.
             </p>
-            <Button theme="#040826" color="white">
+            <Button href="#catalogo" theme="#040826" color="white">
               Explorar Catálogo <MdKeyboardArrowDown />
             </Button>
           </div>
@@ -183,7 +184,7 @@ const DomMetalPage = () => {
             ))}
           </div>
         </div>
-        <div className={styles.catalogo}>
+        <div className={styles.catalogo} id="catalogo">
           <h2>Nosso Catálogo Disponível</h2>
           <ListaCatalogo />
         </div>
@@ -239,7 +240,7 @@ const DomMetalPage = () => {
             />
           </div>
         </div>
-        <div className={styles.contatoSection}>
+        <div className={styles.contatoSection} id="formulario">
           <h1>Entre em Contato</h1>
           <p>Estamos aqui para ajudar você. Entre em contato conosco!</p>
           <div className={styles.formInfos}>
