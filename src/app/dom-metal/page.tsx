@@ -115,6 +115,9 @@ const DomMetalPage = () => {
           </div>
         </div>
       </div>
+      <div className={styles.diferencial}>
+        
+      </div>
       <div className={styles.catalogo}>
         <h2>Nosso Catálogo Disponível</h2>
         <ListaCatalogo />
