@@ -155,7 +155,7 @@ const DomMetalPage = () => {
               >
                 Solicitar Orçamento
               </Button>
-              <Button href="#catalogo" width="fit-content">Explorar Catálogo</Button>
+              <Button href="#catalogo" width="fit-content">Ver Catálogo</Button>
             </div>
           </div>
         </div>
@@ -174,7 +174,7 @@ const DomMetalPage = () => {
               técnico próximo, ajudando nossos parceiros a manter ritmo,
               segurança e eficiência em cada etapa da construção.
             </p>
-            <Button href="#catalogo" theme="#040826" color="white">
+            <Button href="#catalogo" theme="#040826" color="white" borda="white">
               Explorar Catálogo <MdKeyboardArrowDown />
             </Button>
           </div>
