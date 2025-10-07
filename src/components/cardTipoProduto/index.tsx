@@ -50,6 +50,7 @@ const CardTipoProduto = ({
           ))}
         </ul>
         <ButtonBorder
+          type="link"
           href={href}
           borda={buttonScheme}
           color="white"

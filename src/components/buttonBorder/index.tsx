@@ -11,6 +11,8 @@ type Props = {
   color?: string;
   borderRadius?: string;
   href: string;
+  type: "button" | "link";
+  click?: () => void;
 };
 
 const ButtonBorder = ({
@@ -20,28 +22,51 @@ const ButtonBorder = ({
   color,
   borderRadius,
   href,
+  type,
+  click,
 }: Props) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
 
-  return (
-    <Link
-      href={href}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className={styles.button}
-      style={{
-        backgroundColor: isHovered ? theme : "white",
-        border: borda ? `1px solid ${borda}` : "none",
-        color: isHovered ? color : "black",
-        borderRadius: borderRadius ? borderRadius : "0px",
-      }}
-    >
-      {children}
-    </Link>
-  );
+  if (type === "link") {
+    return (
+      <Link
+        href={href}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className={styles.button}
+        style={{
+          backgroundColor: isHovered ? theme : "white",
+          border: borda ? `1px solid ${borda}` : "none",
+          color: isHovered ? color : "black",
+          borderRadius: borderRadius ? borderRadius : "0px",
+        }}
+      >
+        {children}
+      </Link>
+    );
+  }
+
+  if (type === "button") {
+    return (
+      <button
+        onClick={click}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        className={styles.button}
+        style={{
+          backgroundColor: isHovered ? theme : "white",
+          border: borda ? `1px solid ${borda}` : "none",
+          color: isHovered ? color : "black",
+          borderRadius: borderRadius ? borderRadius : "0px",
+        }}
+      >
+        {children}
+      </button>
+    );
+  }
 };
 
 export default ButtonBorder;
