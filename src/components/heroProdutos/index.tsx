@@ -7,7 +7,7 @@ import Image, { StaticImageData } from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
 import { textProductType } from "@/constants/textos";
 import Loading from "../loading";
-import { textsCategory } from "@/data/types";
+import { CategoriaProduto } from "@/@types/categoriaProduto";
 
 const HeroProdutos = () => {
   const [productTitle, setProductTitle] = useState<string | undefined>("");
@@ -20,7 +20,7 @@ const HeroProdutos = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    let produto: textsCategory[] = [];
+    let produto: CategoriaProduto[] = [];
 
     if (pathname.includes("carro-de-mao")) {
       produto = textProductType.filter(
