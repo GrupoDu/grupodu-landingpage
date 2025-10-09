@@ -20,13 +20,14 @@
     width: 100%;
     text-align: left;
     user-select: none;
-    font-size: 36px;
   }
 
+  
   .textImages {
     flex: 1;
     display: flex;
-
+    
+    
     .textHeader {
       display: flex;
       flex-direction: column;
@@ -49,7 +50,7 @@
       }
 
       p {
-        font-size: 20px;
+        font-size: 16px;
       }
     }
 
