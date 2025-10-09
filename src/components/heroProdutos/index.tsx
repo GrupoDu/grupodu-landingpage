@@ -5,7 +5,7 @@ import styles from "./styles.module.scss";
 // import { products } from "@/data/products";
 import Image, { StaticImageData } from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
-import { textProductType } from "@/constants/textos";
+import { textosHero } from "@/constants/textosHero";
 import Loading from "../loading";
 import { CategoriaProduto } from "@/@types/categoriaProduto";
 
@@ -23,14 +23,14 @@ const HeroProdutos = () => {
     let produto: CategoriaProduto[] = [];
 
     if (pathname.includes("carro-de-mao")) {
-      produto = textProductType.filter(
-        (text) => text.category === "carro-de-mao"
+      produto = textosHero.filter(
+        (text) => text.categoria === "carro-de-mao"
       );
     } else if (pathname.includes("masseira")) {
-      produto = textProductType.filter((text) => text.category === "masseiras");
+      produto = textosHero.filter((text) => text.categoria === "masseiras");
     } else if (pathname.includes("plataforma")) {
-      produto = textProductType.filter(
-        (text) => text.category === "plataformas"
+      produto = textosHero.filter(
+        (text) => text.categoria === "plataformas"
       );
     } else {
       setProductTitle(undefined);
@@ -38,9 +38,9 @@ const HeroProdutos = () => {
       setProductImage([]);
     }
 
-    setProductTitle(produto[0].title);
-    setProductDescription(produto[0].description);
-    setProductImage(produto[0].images);
+    setProductTitle(produto[0].titulo);
+    setProductDescription(produto[0].descricao);
+    setProductImage(produto[0].imagens);
 
     setTimeout(() => {
       setLoading(false);
