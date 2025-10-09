@@ -105,26 +105,26 @@ export const diferencas = [
   "Transparência total nos processos e custos",
 ];
 
-export const textProductType: CategoriaProduto[] = [
-  {
-    category: "carro-de-mao",
-    title: "Carro de mão",
-    description:
-      "O carrinho de mão que une resistência e praticidade para o dia a dia da sua obra. Fabricado com materiais de alta qualidade, ele garante durabilidade mesmo nas tarefas mais pesadas, oferecendo conforto no manuseio e eficiência no transporte de cargas.",
-    images: [CarroDeMao, CarroJerica160],
-  },
-  {
-    category: "masseiras",
-    title: "Masseiras",
-    description:
-      "Para misturas eficientes e sem complicações, nossas masseiras são a solução ideal. Unindo alta resistência e praticidade, são fabricadas em materiais de primeira qualidade como plástico virgem reforçado ou aço carbono com proteção anticorrosiva. Disponíveis em múltiplas capacidades (de 40L a 400L), garantem durabilidade mesmo em uso intensivo e oferecem conforto no manuseio para otimizar o trabalho no canteiro de obras ou na indústria.",
-    images: [MasseiraMetalica, MasseiraMetalica100],
-  },
-  {
-    category: "plataformas",
-    title: "Carro Plataforma – Plataforma de Trabalho Segura e Eficiente",
-    description:
-      "Desenvolvidas para oferecer suporte onde você precisa, nossas plataformas de trabalho e carros transportadores são sinônimo de robustez e confiabilidade. Com estruturas em aço carbono, metalon e chapas espessas, suportam desde cargas médias até pesos intensos (até 1000kg nos modelos basculantes). Seja para acesso elevado com segurança, transporte interno ou descarga prática de materiais, oferecem estabilidade, mobilidade e a resistência que sua operação exige.",
-    images: [CarroPlataforma, PlataformaBasculante],
-  },
-];
+// export const textProductType: CategoriaProduto[] = [
+//   {
+//     category: "carro-de-mao",
+//     title: "Carro de Mão para Construção Civil",
+//     description:
+//       "O carrinho de mão que une resistência e praticidade para o dia a dia da sua obra. Fabricado com materiais de alta qualidade, ele garante durabilidade mesmo nas tarefas mais pesadas, oferecendo conforto no manuseio e eficiência no transporte de cargas.",
+//     images: [CarroDeMao, CarroJerica160],
+//   },
+//   {
+//     category: "masseiras",
+//     title: "Masseiras",
+//     description:
+//       "Para misturas eficientes e sem complicações, nossas masseiras são a solução ideal. Unindo alta resistência e praticidade, são fabricadas em materiais de primeira qualidade como plástico virgem reforçado ou aço carbono com proteção anticorrosiva. Disponíveis em múltiplas capacidades (de 40L a 400L), garantem durabilidade mesmo em uso intensivo e oferecem conforto no manuseio para otimizar o trabalho no canteiro de obras ou na indústria.",
+//     images: [MasseiraMetalica, MasseiraMetalica100],
+//   },
+//   {
+//     category: "plataformas",
+//     title: "Carro Plataforma – Plataforma de Trabalho Segura e Eficiente",
+//     description:
+//       "Desenvolvidas para oferecer suporte onde você precisa, nossas plataformas de trabalho e carros transportadores são sinônimo de robustez e confiabilidade. Com estruturas em aço carbono, metalon e chapas espessas, suportam desde cargas médias até pesos intensos (até 1000kg nos modelos basculantes). Seja para acesso elevado com segurança, transporte interno ou descarga prática de materiais, oferecem estabilidade, mobilidade e a resistência que sua operação exige.",
+//     images: [CarroPlataforma, PlataformaBasculante],
+//   },
+// ];
