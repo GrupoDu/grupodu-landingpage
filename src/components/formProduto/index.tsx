@@ -5,7 +5,7 @@ import styles from "./styles.module.scss";
 import ButtonAlt from "../buttonAlt";
 import toast from "react-hot-toast";
 import { usePathname } from "next/navigation";
-import { ProdutoType } from "@/data/types";
+import { Produto } from "@/@types/produto";
 
 const FormProduto = () => {
   const [email, setEmail] = useState<string>("");
@@ -16,11 +16,11 @@ const FormProduto = () => {
   const [modelo, setModelo] = useState<string>("");
   const [quantidade, setQuantidade] = useState<number>(0);
   const pathname = usePathname();
-  const [products, setProducts] = useState<ProdutoType[]>([]);
+  const [products, setProducts] = useState<Produto[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      let produtos: ProdutoType[] = [];
+      let produtos: Produto[] = [];
 
       if (pathname.includes("carro-de-mao")) {
         const response = await fetch("/api/database?produto=carro-de-mao");

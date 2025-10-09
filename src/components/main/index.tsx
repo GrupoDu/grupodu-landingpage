@@ -1,10 +1,11 @@
 "use client";
 
-// import { products } from "@/data/products";
 import React, { useEffect, useState } from "react";
 import Produto from "../produto";
 import styles from "./styles.module.scss";
-import { ProdutoType } from "@/data/types";
+
+// Modificação feita para não dar conflito com o component
+import { Produto as ProdutoType } from "@/@types/produto";
 import Loading from "../loading";
 import { usePathname } from "next/navigation";
 

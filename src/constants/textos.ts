@@ -1,4 +1,4 @@
-import { textsCategory } from "@/data/types";
+import { CategoriaProduto } from "@/@types/categoriaProduto";
 import {
   ChevronUp,
   Headset,
@@ -105,7 +105,7 @@ export const diferencas = [
   "Transparência total nos processos e custos",
 ];
 
-export const textProductType: textsCategory[] = [
+export const textProductType: CategoriaProduto[] = [
   {
     category: "carro-de-mao",
     title: "Carro de mão",
