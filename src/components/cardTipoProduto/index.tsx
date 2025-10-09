@@ -35,7 +35,6 @@ const ImageTemplate = () => {
 const CardTipoProduto = ({
   titulo,
   bullets,
-  // imagem,
   buttonScheme,
   href,
   buttonTxt,
