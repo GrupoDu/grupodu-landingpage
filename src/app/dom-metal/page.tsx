@@ -118,8 +118,8 @@ const DomMetalPage = () => {
           <div className={styles.topContent}>
             <Image src={Logo} alt={"logo dom metal"} className={styles.logo} />
             <h1>
-              Fabricante de Carros de mão, Plataformas de Trabalho e Estruturas
-              Metálicas para Construção Civil
+              Dom Metal - Carros de Mão, Plataformas e Soluções Metálicas para
+              Construção Civil
             </h1>
           </div>
           <div className={styles.bottomContent}>
