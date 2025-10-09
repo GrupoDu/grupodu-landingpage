@@ -86,7 +86,7 @@ export const metadata: Metadata = {
   title:
     "Dom Metal - soluções metálicas, carrinhos industriais e equipamentos sob medida com atendimento no Nordeste.",
   description:
-    "Conheça a Dom Metal do Grupo Du Car: soluções metálicas, carrinhos industriais e equipamentos sob medida com atendimento no Nordeste. Durabilidade, fabricação local e suporte técnico.",
+    "Dom Metal do Grupo Du Car: carros de mão, plataformas e soluções metálicas para construção civil. Produtos de alta durabilidade, fabricação local e suporte técnico especializado no Nordeste.",
 };
 
 const DomMetalPage = () => {
