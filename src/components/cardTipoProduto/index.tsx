@@ -48,11 +48,11 @@ const CardTipoProduto = ({
         const data = await response.json();
 
         if (titulo === "Carro de Mão para Construção Civil") {
-          // setProdutos(
-          //   data.filter(
-          //     (product: Produto) => product.tipo_produto === "carro de mão"
-          //   )
-          // );
+          setProdutos(
+            data.filter(
+              (product: Produto) => product.tipo_produto === "carro de mão"
+            )
+          );
         } else if (titulo === "Masseiras para Obra e Argamassa") {
           setProdutos(
             data.filter(
