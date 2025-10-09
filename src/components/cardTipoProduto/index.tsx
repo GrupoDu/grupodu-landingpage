@@ -92,7 +92,7 @@ const CardTipoProduto = ({
             <SwiperSlide key={index} className={styles.swiperSlide}>
               <Image
                 src={produto.imagem}
-                alt={produto.nome}
+                alt={titulo}
                 className={styles.imagem}
                 width={400}
                 height={400}
