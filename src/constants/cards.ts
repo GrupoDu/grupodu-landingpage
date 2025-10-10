@@ -33,7 +33,7 @@ export const textosCardProdutos = {
           "Disponível em diferentes modelos e pronta entrega",
         ],
         imagens: [],
-        href: "comprar-plataformas-de-trabalho",
+        href: "comprar-plataforma-de-trabalho",
         buttonTxt: "Catalogo Completo de Plataformas de Trabalho",
       },
     ],
