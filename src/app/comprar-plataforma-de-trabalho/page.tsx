@@ -46,7 +46,7 @@ export default function ProdutoPge() {
       </div>
       <ConhecendoProdutos />
       <Suspense fallback={<Loading />}>
-        <Main />
+        <Main id="produtos" />
       </Suspense>
     </div>
   );
