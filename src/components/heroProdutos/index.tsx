@@ -73,7 +73,7 @@ const HeroProdutos = () => {
             borda="#201750"
             theme="#201750"
             color="white"
-            href="#"
+            href="#produtos"
             type="link"
             borderRadius="1em"
           >

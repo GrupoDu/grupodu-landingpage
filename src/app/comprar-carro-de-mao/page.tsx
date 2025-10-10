@@ -64,8 +64,8 @@ export default function ProdutoPge() {
             >
               Catálogo completo
             </ButtonBorder>
-            <Button href="#" theme="#201750" color="white">
-              Linha completa de carros de mão <MdKeyboardArrowDown />
+            <Button href="#produtos" theme="#201750" color="white">
+              Ver Linha Completa de Carros de Mão <MdKeyboardArrowDown />
             </Button>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function ProdutoPge() {
         <h2>Nossa linha completa de Carros de Mão</h2>
       </div>
       <Suspense fallback={<Loading />}>
-        <Main />
+        <Main id="produtos"/>
       </Suspense>
     </div>
   );
