@@ -8,7 +8,7 @@ import PlataformaBasculante from "@/assets/produtos/carro-plataforma-basculante.
 
 export const textosHero: CategoriaProduto[] = [
   {
-    titulo: "Carro de Mão – Robustez e eficiência para obras e jardins",
+    titulo: "Carro de Mão – Robustez e eficiência para suas obras",
     descricao:
       "O carrinho de mão que une resistência e praticidade para o dia a dia da sua obra. Fabricado com materiais de alta qualidade, ele garante durabilidade mesmo nas tarefas mais pesadas, oferecendo conforto no manuseio e eficiência no transporte de cargas.",
     imagens: [CarroDeMao, CarroJerica160],
