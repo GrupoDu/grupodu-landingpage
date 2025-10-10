@@ -15,10 +15,11 @@
   .formulario {
     display: grid;
     grid-template-areas:
-      "nome email"
-      "numero empresa"
-      "modelo quantidade"
-      "mensagem mensagem";
+      "nome nome"
+      "email email"
+      "numero numero"
+      "empresa empresa"
+      "modelo quantidade";
     flex: 1;
     gap: 20px;
 
@@ -80,10 +81,6 @@
         content: " *";
         color: red;
       }
-    }
-
-    .inputMensagem {
-      grid-area: mensagem;
     }
   }
 }
