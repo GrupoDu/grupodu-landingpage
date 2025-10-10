@@ -10,6 +10,9 @@ import { Suspense } from "react";
 import { Metadata } from "next";
 import { contatos } from "@/constants/contatos";
 import { IconType } from "react-icons";
+import Button from "@/components/newButton";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import ButtonBorder from "@/components/buttonBorder";
 
 export const metadata: Metadata = {
   title: "Carro de Mão para Obras - Dom Metal",
@@ -18,13 +21,7 @@ export const metadata: Metadata = {
   // ADICIONAR MARKUP AQUI
 };
 
-const Contatos = ({
-  Icon,
-  contato,
-}: {
-  Icon: IconType;
-  contato: string;
-}) => {
+const Contatos = ({ Icon, contato }: { Icon: IconType; contato: string }) => {
   return (
     <div className={styles.contatosContainer}>
       <Icon className={styles.icon} />
@@ -48,18 +45,6 @@ export default function ProdutoPge() {
           </p>
           <hr />
           <h3>Outras formas de contato</h3>
-          {/* <div className={styles.contatosIcons}>
-            <FaWhatsapp color="white" className={styles.icon} />
-            <span>(81) 99904-0919</span>
-          </div>
-          <div className={styles.contatosIcons}>
-            <LuPhone color="white" className={styles.icon} />
-            <span>(81) 2011-4432</span>
-          </div>
-          <div className={styles.contatosIcons}>
-            <LuMail color="white" className={styles.icon} />
-            <span>dommetalind@gmail.com</span>
-          </div> */}
           {contatos.map((contato, index) => (
             <Contatos
               key={index}
@@ -67,10 +52,30 @@ export default function ProdutoPge() {
               contato={contato.contato}
             />
           ))}
+          <div className={styles.buttons}>
+            <span>Ainda não conhece nossos produtos?</span>
+            <ButtonBorder
+              type="link"
+              href="#"
+              borda="#201750"
+              theme="#201750"
+              color="white"
+              borderRadius="4px"
+            >
+              Catálogo completo
+            </ButtonBorder>
+            <Button href="#" theme="#201750" color="white">
+              Linha completa de carros de mão <MdKeyboardArrowDown />
+            </Button>
+          </div>
         </div>
         <FormProduto />
       </div>
-      <ConhecendoProdutos />
+      <hr className={styles.hr} />
+      <div className={styles.tituloProdutos}>
+        <MdKeyboardArrowDown className={styles.arrow} />
+        <h2>Nossa linha completa de Carros de Mão</h2>
+      </div>
       <Suspense fallback={<Loading />}>
         <Main />
       </Suspense>
