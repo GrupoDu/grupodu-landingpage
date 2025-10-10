@@ -38,9 +38,9 @@ const HeroProdutos = () => {
     if (pathname.includes("carro-de-mao")) {
       produto = textosHero.filter((text) => text.categoria === "Carro de mão");
     } else if (pathname.includes("masseira")) {
-      produto = textosHero.filter((text) => text.categoria === "masseiras");
+      produto = textosHero.filter((text) => text.categoria === "Masseiras");
     } else if (pathname.includes("plataforma")) {
-      produto = textosHero.filter((text) => text.categoria === "plataformas");
+      produto = textosHero.filter((text) => text.categoria === "Plataformas");
     } else {
       setProductTitle(undefined);
       setProductDescription(undefined);
