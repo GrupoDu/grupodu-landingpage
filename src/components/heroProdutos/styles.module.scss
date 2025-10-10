@@ -1,19 +1,29 @@
+.bullets {
+  display: flex;
+  background: linear-gradient(90deg, #e3e0f7 0%, #d5c3ffda 60%, #e3e0f7 100%);
+  padding: 1em;
+  border-radius: 1em;
+  align-items: center;
+  gap: .4em;
+  color: #201750;
+  box-shadow: 0 0 4px 0 rgba($color: #000000, $alpha: 0.2);
+  
+  p {
+    font-size: 14px;
+  }
+}
+
 .heroSection {
-  background: #503e9e;
-  background: radial-gradient(
-    circle at 70% 60%,
-    rgba(80, 62, 158, 1) 0%,
-    rgba(75, 19, 102, 1) 41%,
-    rgba(25, 29, 49, 1) 100%
-  );
-  padding: 180px 54px 90px 54px;
+  padding: 54px;
+  padding-top: 100px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 60px;
+  height: 100vh;
 
   h1 {
-    background: linear-gradient(90deg, #ffffff, #cbb9ff);
+    background: linear-gradient(90deg, #201750, #6550a5);
     color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -22,21 +32,23 @@
     user-select: none;
   }
 
-  
   .textImages {
     flex: 1;
     display: flex;
-    
-    
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+
     .textHeader {
       display: flex;
       flex-direction: column;
-      gap: 8px;
-      flex: 1;
+      gap: 18px;
+      width: 65%;
+      box-sizing: border-box;
 
       h3,
       p {
-        color: white;
+        color: #201750;
       }
 
       h3 {
@@ -48,10 +60,6 @@
         opacity: 0.3;
         color: white;
       }
-
-      p {
-        font-size: 16px;
-      }
     }
 
     .imagesHeader {
@@ -62,13 +70,24 @@
       position: relative;
       box-sizing: border-box;
       user-select: none;
+      position: relative;
+
+      &::after {
+        content: "";
+        background-color: #362694;
+        width: 300px;
+        height: 300px;
+        border-radius: 16em;
+        border: 4em solid #6550a5;
+        box-shadow: 0 0 10px 0 rgba($color: #c9baff, $alpha: 1);
+      }
 
       .imageHeader {
         position: absolute;
         object-fit: contain;
-        width: 50%;
+        width: 70%;
         height: fit-content;
-        right: 4em;
+        right: 0em;
         animation: entrada 1.2s ease-in-out;
 
         @keyframes entrada {
@@ -85,7 +104,7 @@
       }
 
       #jerica {
-        left: 3em;
+        left: 0em;
       }
     }
   }

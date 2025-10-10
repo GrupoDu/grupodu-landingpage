@@ -8,6 +8,19 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { textosHero } from "@/constants/textosHero";
 import Loading from "../loading";
 import { CategoriaProduto } from "@/@types/categoriaProduto";
+import { CheckCheck } from "lucide-react";
+import Button from "../newButton";
+import ButtonBorder from "../buttonBorder";
+import { MdKeyboardArrowDown } from "react-icons/md";
+
+const Bullets = ({ texto }: { texto: string }) => {
+  return (
+    <div className={styles.bullets}>
+      <CheckCheck />
+      <p>{texto}</p>
+    </div>
+  );
+};
 
 const HeroProdutos = () => {
   const [productTitle, setProductTitle] = useState<string | undefined>("");
@@ -16,6 +29,7 @@ const HeroProdutos = () => {
   >();
   const [productImage, setProductImage] = useState<StaticImageData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const [bullets, setBullets] = useState<string[]>([]);
   const searchParams = useSearchParams();
   const pathname = usePathname();
 
@@ -23,24 +37,22 @@ const HeroProdutos = () => {
     let produto: CategoriaProduto[] = [];
 
     if (pathname.includes("carro-de-mao")) {
-      produto = textosHero.filter(
-        (text) => text.categoria === "carro-de-mao"
-      );
+      produto = textosHero.filter((text) => text.categoria === "Carro de mão");
     } else if (pathname.includes("masseira")) {
       produto = textosHero.filter((text) => text.categoria === "masseiras");
     } else if (pathname.includes("plataforma")) {
-      produto = textosHero.filter(
-        (text) => text.categoria === "plataformas"
-      );
+      produto = textosHero.filter((text) => text.categoria === "plataformas");
     } else {
       setProductTitle(undefined);
       setProductDescription(undefined);
       setProductImage([]);
+      setBullets([]);
     }
 
     setProductTitle(produto[0].titulo);
     setProductDescription(produto[0].descricao);
     setProductImage(produto[0].imagens);
+    setBullets(produto[0].bullets);
 
     setTimeout(() => {
       setLoading(false);
@@ -54,6 +66,19 @@ const HeroProdutos = () => {
           {loading ? <Loading /> : <h1>{productTitle}</h1>}
           <hr />
           {loading ? <Loading /> : <p>{productDescription}</p>}
+          {bullets.map((bullet, index) => (
+            <Bullets key={index} texto={bullet} />
+          ))}
+          <ButtonBorder
+            borda="#201750"
+            theme="#201750"
+            color="white"
+            href="#"
+            type="link"
+            borderRadius="1em"
+          >
+            Explore nosso catálogo <MdKeyboardArrowDown />
+          </ButtonBorder>
         </div>
         {loading ? (
           <Loading />
