@@ -9,7 +9,6 @@ import { textosHero } from "@/constants/textosHero";
 import Loading from "../loading";
 import { CategoriaProduto } from "@/@types/categoriaProduto";
 import { CheckCheck } from "lucide-react";
-import Button from "../newButton";
 import ButtonBorder from "../buttonBorder";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
@@ -73,7 +72,7 @@ const HeroProdutos = () => {
             borda="#201750"
             theme="#201750"
             color="white"
-            href="#"
+            href="#produtos"
             type="link"
             borderRadius="1em"
           >

@@ -1,3 +1,27 @@
+.contatosContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  background-color: rgba($color: #dddbff, $alpha: 0.2);
+  border-radius: 1em;
+  box-sizing: border-box;
+  box-shadow: 0 0 4px 0 rgba($color: #000000, $alpha: 0.2);
+
+  .icon {
+    padding: 1em;
+    background-color: #4d49cf;
+    color: white;
+    display: flex;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    justify-content: center;
+    align-items: center;
+    width: 1em;
+    height: fit-content;
+  }
+}
+
 .page {
   flex: 1;
 
@@ -12,33 +36,34 @@
       flex-direction: column;
       gap: 20px;
 
-      h2 {
-        font-size: 40px;
-      }
-
-      p {
-        font-size: 20px;
-      }
-
-      .contatosIcons {
+      .buttons {
+        height: 3em;
         display: flex;
-        gap: 12px;
-        align-items: center;
+        flex-direction: column;
+        gap: .6em;
 
         span {
-          font-size: 18px;
-        }
-
-        .icon {
-          background-color: #4d49cf;
-          object-fit: contain;
-          width: 4em;
-          border-radius: 1em;
-          padding: 1em;
-          box-sizing: border-box;
-          height: fit-content;
+          color: #000000;
+          opacity: .4;
         }
       }
+    }
+  }
+
+  .hr {
+    opacity: .2;
+  }
+
+  .tituloProdutos {
+    display: flex;
+    padding: 1em;
+    padding-top: 2em;
+    padding-left: 2em;
+    align-items: center;
+
+    .arrow {
+      width: 2em;
+      height: 2em;
     }
   }
 }
@@ -120,7 +145,7 @@
         }
       }
     }
-    
+
     .main {
       display: flex;
       flex-direction: column;

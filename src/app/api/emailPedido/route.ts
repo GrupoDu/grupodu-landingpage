@@ -10,7 +10,7 @@ export const POST = async (req: Request) => {
   });
   try {
     const body = await req.json();
-    const { nome, email, telefone, empresa, quantidade, modelo, mensagem } =
+    const { nome, email, telefone, empresa, quantidade, modelo } =
       body;
 
     if (!nome || !email || !telefone || !modelo || !quantidade) {
@@ -40,9 +40,6 @@ export const POST = async (req: Request) => {
         <hr />
         <h3>Empresa</h3>
         <p>${empresa ? empresa : "Empresa não informada"}</p>
-        <hr />
-        <h3>Mensagem adicional</h3>
-        <p>${mensagem ? mensagem : "Nenhuma mensagem adicional"}</p>
         <hr />
         <br />
         <h4>Contato enviado pelo site de produto.</h4>

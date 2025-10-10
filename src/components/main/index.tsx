@@ -9,7 +9,7 @@ import { Produto as ProdutoType } from "@/@types/produto";
 import Loading from "../loading";
 import { usePathname } from "next/navigation";
 
-const Main = () => {
+const Main = ({ id }: { id: string }) => {
   const [produtos, setProdutos] = useState<ProdutoType[]>([]);
   const pathname = usePathname();
 
@@ -46,7 +46,7 @@ const Main = () => {
   return (
     <>
       {produtos.length > 0 ? (
-        <main className={styles.main}>
+        <main className={styles.main} id={id}>
           {produtos.map((product) => (
             <Produto
               key={product.id}

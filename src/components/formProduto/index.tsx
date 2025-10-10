@@ -11,7 +11,6 @@ const FormProduto = () => {
   const [email, setEmail] = useState<string>("");
   const [telefone, setTelefone] = useState<string>("");
   const [nome, setNome] = useState<string>("");
-  const [mensagem, setMensagem] = useState<string>("");
   const [empresa, setEmpresa] = useState<string>("");
   const [modelo, setModelo] = useState<string>("");
   const [quantidade, setQuantidade] = useState<number>(0);
@@ -57,7 +56,6 @@ const FormProduto = () => {
           empresa,
           modelo,
           quantidade,
-          mensagem,
         }),
       });
 
@@ -136,14 +134,6 @@ const FormProduto = () => {
             type="text"
             placeholder="Sua empresa"
             onChange={(e) => setEmpresa(e.target.value)}
-          />
-        </label>
-        <label className={`${styles.inputContainer} ${styles.inputMensagem}`}>
-          <span>Mensagem</span>
-          <textarea
-            className={styles.textarea}
-            placeholder="Sua mensagem"
-            onChange={(e) => setMensagem(e.target.value)}
           />
         </label>
         <ButtonAlt type="submit" gradient={true}>
