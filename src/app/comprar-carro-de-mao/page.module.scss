@@ -36,25 +36,34 @@
       flex-direction: column;
       gap: 20px;
 
-      .contatosIcons {
+      .buttons {
+        height: 3em;
         display: flex;
-        gap: 12px;
-        align-items: center;
+        flex-direction: column;
+        gap: .6em;
 
         span {
-          font-size: 18px;
-        }
-
-        .icon {
-          background-color: #4d49cf;
-          object-fit: contain;
-          width: 4em;
-          border-radius: 1em;
-          padding: 1em;
-          box-sizing: border-box;
-          height: fit-content;
+          color: #000000;
+          opacity: .4;
         }
       }
+    }
+  }
+
+  .hr {
+    opacity: .2;
+  }
+
+  .tituloProdutos {
+    display: flex;
+    padding: 1em;
+    padding-top: 2em;
+    padding-left: 2em;
+    align-items: center;
+
+    .arrow {
+      width: 2em;
+      height: 2em;
     }
   }
 }
