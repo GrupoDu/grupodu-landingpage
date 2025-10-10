@@ -10,8 +10,8 @@ import Loading from "@/components/loading";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Carro de Mão - Grupo Du Car",
-  description: "Há mais de 10 anos no mercado, o Grupo Du Car traz qualidade e inovação em todos os seus segmentos de atuação.",
+  title: "Carro de Mão para Obras - Dom Metal",
+  description: "Compre carros de mão duráveis e eficientes para sua obra. Entre em contato com a Dom Metal e garanta o melhor para sua construção.",
 };
 
 export default function ProdutoPge() {
