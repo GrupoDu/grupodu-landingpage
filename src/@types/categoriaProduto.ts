@@ -5,4 +5,5 @@ export interface CategoriaProduto {
   titulo: string;
   descricao: string;
   imagens: StaticImageData[];
+  bullets: string[];
 }
