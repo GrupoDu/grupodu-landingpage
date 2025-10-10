@@ -1,7 +1,5 @@
 import styles from "./page.module.scss";
 import FormProduto from "@/components/formProduto";
-import { FaWhatsapp } from "react-icons/fa";
-import { LuMail, LuPhone } from "react-icons/lu";
 import Main from "@/components/main";
 import HeroProdutos from "@/components/heroProdutos";
 import Loading from "@/components/loading";
