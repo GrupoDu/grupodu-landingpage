@@ -36,7 +36,7 @@ const Footer = () => {
           <hr />
           <ul>
             <li>
-              <Link href={"#"} className={styles.links}>
+              <Link href={"/dom-metal"} className={styles.links}>
                 Dom Metal
               </Link>
             </li>
