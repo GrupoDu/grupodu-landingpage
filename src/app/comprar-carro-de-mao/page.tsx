@@ -5,13 +5,32 @@ import { LuMail, LuPhone } from "react-icons/lu";
 import ConhecendoProdutos from "@/components/conhecerProdutos";
 import Main from "@/components/main";
 import HeroProdutos from "@/components/heroProdutos";
-import { Suspense } from "react";
 import Loading from "@/components/loading";
+import { Suspense } from "react";
 import { Metadata } from "next";
+import { contatos } from "@/constants/contatos";
+import { IconType } from "react-icons";
 
 export const metadata: Metadata = {
   title: "Carro de Mão para Obras - Dom Metal",
-  description: "Compre carros de mão duráveis e eficientes para sua obra. Entre em contato com a Dom Metal e garanta o melhor para sua construção.",
+  description:
+    "Compre carros de mão duráveis e eficientes para sua obra. Entre em contato com a Dom Metal e garanta o melhor para sua construção.",
+  // ADICIONAR MARKUP AQUI
+};
+
+const Contatos = ({
+  Icon,
+  contato,
+}: {
+  Icon: IconType;
+  contato: string;
+}) => {
+  return (
+    <div className={styles.contatosContainer}>
+      <Icon className={styles.icon} />
+      <span>{contato}</span>
+    </div>
+  );
 };
 
 export default function ProdutoPge() {
@@ -29,7 +48,7 @@ export default function ProdutoPge() {
           </p>
           <hr />
           <h3>Outras formas de contato</h3>
-          <div className={styles.contatosIcons}>
+          {/* <div className={styles.contatosIcons}>
             <FaWhatsapp color="white" className={styles.icon} />
             <span>(81) 99904-0919</span>
           </div>
@@ -40,7 +59,14 @@ export default function ProdutoPge() {
           <div className={styles.contatosIcons}>
             <LuMail color="white" className={styles.icon} />
             <span>dommetalind@gmail.com</span>
-          </div>
+          </div> */}
+          {contatos.map((contato, index) => (
+            <Contatos
+              key={index}
+              Icon={contato.icon}
+              contato={contato.contato}
+            />
+          ))}
         </div>
         <FormProduto />
       </div>
