@@ -2,7 +2,6 @@ import styles from "./page.module.scss";
 import FormProduto from "@/components/formProduto";
 import { FaWhatsapp } from "react-icons/fa";
 import { LuMail, LuPhone } from "react-icons/lu";
-import ConhecendoProdutos from "@/components/conhecerProdutos";
 import Main from "@/components/main";
 import HeroProdutos from "@/components/heroProdutos";
 import { Suspense } from "react";
@@ -38,9 +37,8 @@ export default function ProdutoPge() {
         </div>
         <FormProduto />
       </div>
-      <ConhecendoProdutos />
       <Suspense fallback={<Loading />}>
-        <Main />
+        <Main id="produtos" />
       </Suspense>
     </div>
   );
