@@ -10,6 +10,20 @@ import { Contato } from "@/components/contatos";
 import { contatos } from "@/constants/contatos";
 import Button from "@/components/newButton";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import Script from "next/script";
+
+const jsonLd = {
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  name: "Masseira para Obras",
+  description:
+    "Masseira para obras resistente e durável, ideal para mistura de argamassa, cimento e materiais de construção. Disponível em versões plásticas e metálicas com capacidades de 40L a 400L, oferecendo alta estabilidade e segurança no canteiro de obras.",
+  offers: {
+    "@type": "Offer",
+    priceCurrency: "BRL",
+    availability: "https://schema.org/InStock",
+  },
+};
 
 export const metadata: Metadata = {
   title: "Masseiras - Grupo Du Car",
@@ -19,48 +33,55 @@ export const metadata: Metadata = {
 
 export default function ProdutoPge() {
   return (
-    <div className={styles.page}>
-      <Suspense fallback={<Loading />}>
-        <HeroProdutos paginaAnterior="dom metal" />
-      </Suspense>
-      <div className={styles.formularioContato}>
-        <div className={styles.contatos}>
-          <h2>Solicite seu Produto</h2>
-          <p>
-            Preencha seus dados e nossa equipe entrará em contato para garantir
-            que você receba exatamente o que procura.
-          </p>
-          <hr />
-          <h3>Outras formas de contato</h3>
-          {contatos.map((contato, index) => (
-            <Contato
-              key={index}
-              Icon={contato.icon}
-              contato={contato.contato}
-            />
-          ))}
-          <div className={styles.buttons}>
-            <span>Ainda não conhece nossos produtos?</span>
-            <ButtonBorder
-              type="link"
-              href="#"
-              borda="#201750"
-              theme="#201750"
-              color="white"
-              borderRadius="4px"
-            >
-              Catálogo completo
-            </ButtonBorder>
-            <Button href="#produtos" theme="#201750" color="white">
-              Ver Linha Completa de Carros de Mão <MdKeyboardArrowDown />
-            </Button>
+    <>
+      <Script
+        id="dommetal-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className={styles.page}>
+        <Suspense fallback={<Loading />}>
+          <HeroProdutos paginaAnterior="dom metal" />
+        </Suspense>
+        <div className={styles.formularioContato}>
+          <div className={styles.contatos}>
+            <h2>Solicite seu Produto</h2>
+            <p>
+              Preencha seus dados e nossa equipe entrará em contato para
+              garantir que você receba exatamente o que procura.
+            </p>
+            <hr />
+            <h3>Outras formas de contato</h3>
+            {contatos.map((contato, index) => (
+              <Contato
+                key={index}
+                Icon={contato.icon}
+                contato={contato.contato}
+              />
+            ))}
+            <div className={styles.buttons}>
+              <span>Ainda não conhece nossos produtos?</span>
+              <ButtonBorder
+                type="link"
+                href="#"
+                borda="#201750"
+                theme="#201750"
+                color="white"
+                borderRadius="4px"
+              >
+                Catálogo completo
+              </ButtonBorder>
+              <Button href="#produtos" theme="#201750" color="white">
+                Ver Linha Completa de Carros de Mão <MdKeyboardArrowDown />
+              </Button>
+            </div>
           </div>
+          <FormProduto />
         </div>
-        <FormProduto />
+        <Suspense fallback={<Loading />}>
+          <Main id="produtos" />
+        </Suspense>
       </div>
-      <Suspense fallback={<Loading />}>
-        <Main id="produtos" />
-      </Suspense>
-    </div>
+    </>
   );
 }
