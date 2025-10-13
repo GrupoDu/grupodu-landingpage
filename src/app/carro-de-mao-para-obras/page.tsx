@@ -11,6 +11,7 @@ import Button from "@/components/newButton";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import ButtonBorder from "@/components/buttonBorder";
 import Script from "next/script";
+import { Contato } from "@/components/contatos";
 
 const jsonLd = {
   "@context": "https://schema.org/",
@@ -30,15 +31,6 @@ export const metadata: Metadata = {
   description:
     "Compre carros de mão duráveis e eficientes para sua obra. Entre em contato com a Dom Metal e garanta o melhor para sua construção.",
   // ADICIONAR MARKUP AQUI
-};
-
-const Contatos = ({ Icon, contato }: { Icon: IconType; contato: string }) => {
-  return (
-    <div className={styles.contatosContainer}>
-      <Icon className={styles.icon} />
-      <span>{contato}</span>
-    </div>
-  );
 };
 
 export default function ProdutoPge() {
@@ -63,7 +55,7 @@ export default function ProdutoPge() {
             <hr />
             <h3>Outras formas de contato</h3>
             {contatos.map((contato, index) => (
-              <Contatos
+              <Contato
                 key={index}
                 Icon={contato.icon}
                 contato={contato.contato}
