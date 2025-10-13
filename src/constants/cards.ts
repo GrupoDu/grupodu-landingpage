@@ -11,7 +11,7 @@ export const textosCardProdutos = {
           "Disponível em diferentes modelos e pronta entrega",
         ],
         imagens: [],
-        href: "comprar-carro-de-mao",
+        href: "carro-de-mao-para-obras",
         buttonTxt: "Catalogo Completo de Carros de Mão",
       },
       {
@@ -22,7 +22,7 @@ export const textosCardProdutos = {
           "Disponível em diferentes modelos e pronta entrega",
         ],
         imagens: [],
-        href: "comprar-masseira-para-obras",
+        href: "masseira-para-obras",
         buttonTxt: "Catalogo Completo de Masseiras",
       },
       {
@@ -33,7 +33,7 @@ export const textosCardProdutos = {
           "Disponível em diferentes modelos e pronta entrega",
         ],
         imagens: [],
-        href: "comprar-plataforma-de-trabalho",
+        href: "plataforma-de-trabalho",
         buttonTxt: "Catalogo Completo de Plataformas de Trabalho",
       },
     ],
