@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import styles from "./styles.module.scss";
-import React, { useEffect } from "react";
+import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const Breadcrumbs = ({
   paginaAtual,
@@ -13,7 +13,6 @@ const Breadcrumbs = ({
   paginaAtual: string;
   paginaAnterior: string;
 }) => {
-  const pathname = usePathname();
   const paginaAnteriorHref = `/${paginaAnterior.replace(" ", "-")}`;
   const router = useRouter();
 
