@@ -6,4 +6,5 @@ export interface Produto {
   descricao: string;
   tipo_produto: string;
   imagem: StaticImageData;
+  caracteristicas: string[];
 }
