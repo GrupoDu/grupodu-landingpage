@@ -44,11 +44,11 @@ const Produto = ({
           height={300}
         />
       </div>
-      <h3>{nomeProduto}</h3>
+      <h4>{nomeProduto}</h4>
       <div className={styles.bulletsContainer}>
         {caracteristicas.map((bullet, index) => (
           <div className={styles.bullet} key={index}>
-            <CheckCheck color="" />
+            <CheckCheck />
             <Bullets bullet={bullet} />
           </div>
         ))}
