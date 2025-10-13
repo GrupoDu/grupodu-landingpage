@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import Image, { StaticImageData } from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
+import { CheckCheck } from "lucide-react";
 
 type Props = {
   nomeProduto: string;
@@ -44,11 +45,14 @@ const Produto = ({
         />
       </div>
       <h3>{nomeProduto}</h3>
-      <span>Descrição</span>
-      {/* <p>{descricaoProduto}</p> */}
-      {caracteristicas.map((bullet, index) => (
-        <Bullets key={index} bullet={bullet} />
-      ))}
+      <div className={styles.bulletsContainer}>
+        {caracteristicas.map((bullet, index) => (
+          <div className={styles.bullet} key={index}>
+            <CheckCheck color="" />
+            <Bullets bullet={bullet} />
+          </div>
+        ))}
+      </div>
       <Link
         href={`https://wa.me/${number}?text=${message}`}
         target="_blank"
