@@ -54,6 +54,7 @@ const Main = ({ id }: { id: string }) => {
               imagemProduto={product.imagem}
               descricaoProduto={product.descricao}
               altImagem={product.tipo_produto}
+              caracteristicas={product.caracteristicas}
             />
           ))}
         </main>

@@ -3,19 +3,30 @@ import styles from "./styles.module.scss";
 import Image, { StaticImageData } from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
+import { CheckCheck } from "lucide-react";
 
 type Props = {
   nomeProduto: string;
   imagemProduto: StaticImageData;
   descricaoProduto: string;
   altImagem: string;
+  caracteristicas: string[];
+};
+
+const Bullets = ({ bullet }: { bullet: string }) => {
+  return (
+    <div className={styles.bullets}>
+      <p>{bullet}</p>
+    </div>
+  );
 };
 
 const Produto = ({
   nomeProduto,
   imagemProduto,
-  descricaoProduto,
+  // descricaoProduto,
   altImagem,
+  caracteristicas,
 }: Props) => {
   const message: string = encodeURIComponent(
     `Ola, gostaria de saber mais sobre o produto ${nomeProduto}`
@@ -34,8 +45,14 @@ const Produto = ({
         />
       </div>
       <h3>{nomeProduto}</h3>
-      <span>Descrição</span>
-      <p>{descricaoProduto}</p>
+      <div className={styles.bulletsContainer}>
+        {caracteristicas.map((bullet, index) => (
+          <div className={styles.bullet} key={index}>
+            <CheckCheck color="" />
+            <Bullets bullet={bullet} />
+          </div>
+        ))}
+      </div>
       <Link
         href={`https://wa.me/${number}?text=${message}`}
         target="_blank"
