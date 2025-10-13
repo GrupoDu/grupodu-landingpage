@@ -27,7 +27,7 @@ const Valores = () => {
 
   return (
     <div className={styles.valoresContainer}>
-      <h2>Nossos valores fundamentais</h2>
+      <h3>Nossos valores fundamentais</h3>
       <ul ref={ref}>
         <li>
           <ValorElement
