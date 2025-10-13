@@ -23,17 +23,27 @@ export const textosHero: CategoriaProduto[] = [
   {
     titulo: "Masseiras para Obra e Argamassa",
     descricao:
-      "Para misturas eficientes e sem complicações, nossas masseiras são a solução ideal. Unindo alta resistência e praticidade, são fabricadas em materiais de primeira qualidade como plástico virgem reforçado ou aço carbono com proteção anticorrosiva. Disponíveis em múltiplas capacidades (de 40L a 400L), garantem durabilidade mesmo em uso intensivo e oferecem conforto no manuseio para otimizar o trabalho no canteiro de obras ou na indústria.",
+      "Masseiras para obra e indústria com alta resistência e praticidade. Fabricadas em plástico virgem reforçado ou aço carbono anticorrosivo, disponíveis de 40L a 400L. Garantem durabilidade em uso intensivo com conforto operacional otimizado para canteiro de obras e produção industrial.",
     imagens: [MasseiraMetalica, MasseiraMetalica100],
-    bullets: [],
+    bullets: [
+      "Masseiras para obra e indústria - De 40L a 400L em plástico reforçado e aço carbono anticorrosivo.",
+      "Alta resistência e praticidade - Materiais premium para uso intensivo em canteiro e produção.",
+      "Misturas eficientes e duráveis - Design ergonômico que otimiza o trabalho sem complicações.",
+      "Conforto operacional garantido - Manuseio prático com máxima estabilidade em operações intensivas.",
+    ],
     categoria: "Masseiras",
   },
   {
     titulo: "Carro Plataforma – Plataforma de Trabalho Segura e Eficiente",
     descricao:
-      "Desenvolvidas para oferecer suporte onde você precisa, nossas plataformas de trabalho e carros transportadores são sinônimo de robustez e confiabilidade. Com estruturas em aço carbono, metalon e chapas espessas, suportam desde cargas médias até pesos intensos (até 1000kg nos modelos basculantes). Seja para acesso elevado com segurança, transporte interno ou descarga prática de materiais, oferecem estabilidade, mobilidade e a resistência que sua operação exige.",
+      "Plataformas de trabalho e carros transportadores em aço carbono, metalon e chapas espessas com capacidade até 1000kg. Robustos e confiáveis para acesso elevado, transporte interno e descarga de materiais. Garantem estabilidade, mobilidade e resistência em operações de canteiro e indústria.",
     imagens: [CarroPlataforma, PlataformaBasculante],
-    bullets: [],
+    bullets: [
+      "Plataformas e carros transportadores - Estrutura em aço carbono com capacidade até 1000kg.",
+      "Robustez e confiabilidade - Metalon e chapas espessas para cargas médias e intensas.",
+      "Acesso seguro e mobilidade - Plataformas elevadas com estabilidade para canteiro e indústria.",
+      "Transporte e descarga prática - Modelos basculantes para movimentação eficiente de materiais.",
+    ],
     categoria: "Plataformas",
   },
 ];
