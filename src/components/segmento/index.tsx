@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Image, { StaticImageData } from "next/image";
+import ButtonBorder from "../buttonBorder";
 
 type Props = {
   src: StaticImageData;
@@ -9,13 +10,12 @@ type Props = {
   description: string;
   especialidades: string[];
   variantClass: string;
+  corButton: string;
 };
 
 const Segmento = (props: Props) => {
   return (
-    <div
-      className={`${styles.segmentoContainer} ${props.variantClass}`}
-    >
+    <div className={`${styles.segmentoContainer} ${props.variantClass}`}>
       <Image
         loading="lazy"
         src={props.src}
@@ -38,6 +38,18 @@ const Segmento = (props: Props) => {
             </li>
           ))}
         </ul>
+      </div>
+      <div className={styles.buttonContainer}>
+        <ButtonBorder
+          type="link"
+          href={`/${props.variantClass}`}
+          borda={props.corButton}
+          color="white"
+          theme={props.corButton}
+          borderRadius="14px"
+        >
+          {props.title}
+        </ButtonBorder>
       </div>
     </div>
   );
