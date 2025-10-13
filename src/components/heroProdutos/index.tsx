@@ -35,7 +35,6 @@ const HeroProdutos = ({ paginaAnterior }: { paginaAnterior: string }) => {
   const pathnameFormatado = pathname
     .replace("/", "")
     .replace(/-/g, " ")
-    .replace("comprar", "");
 
   useEffect(() => {
     let produto: CategoriaProduto[] = [];
@@ -71,9 +70,9 @@ const HeroProdutos = ({ paginaAnterior }: { paginaAnterior: string }) => {
             paginaAnterior={paginaAnterior}
             paginaAtual={pathnameFormatado}
           />
-          {loading ? <Loading /> : <h1>{productTitle}</h1>}
+          <h1>{productTitle}</h1>
           <hr />
-          {loading ? <Loading /> : <p>{productDescription}</p>}
+          <p>{productDescription}</p>
           {bullets.map((bullet, index) => (
             <Bullets key={index} texto={bullet} />
           ))}
