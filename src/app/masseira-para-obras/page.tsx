@@ -1,16 +1,20 @@
 import styles from "./page.module.scss";
 import FormProduto from "@/components/formProduto";
-import { FaWhatsapp } from "react-icons/fa";
-import { LuMail, LuPhone } from "react-icons/lu";
 import Main from "@/components/main";
 import HeroProdutos from "@/components/heroProdutos";
 import { Suspense } from "react";
 import Loading from "@/components/loading";
 import { Metadata } from "next";
+import ButtonBorder from "@/components/buttonBorder";
+import { Contato } from "@/components/contatos";
+import { contatos } from "@/constants/contatos";
+import Button from "@/components/newButton";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 export const metadata: Metadata = {
   title: "Masseiras - Grupo Du Car",
-  description: "Há mais de 10 anos no mercado, o Grupo Du Car traz qualidade e inovação em todos os seus segmentos de atuação.",
+  description:
+    "Há mais de 10 anos no mercado, o Grupo Du Car traz qualidade e inovação em todos os seus segmentos de atuação.",
 };
 
 export default function ProdutoPge() {
@@ -28,23 +32,34 @@ export default function ProdutoPge() {
           </p>
           <hr />
           <h3>Outras formas de contato</h3>
-          <div className={styles.contatosIcons}>
-            <FaWhatsapp color="white" className={styles.icon} />
-            <span>(81) 99904-0919</span>
-          </div>
-          <div className={styles.contatosIcons}>
-            <LuPhone color="white" className={styles.icon} />
-            <span>(81) 2011-4432</span>
-          </div>
-          <div className={styles.contatosIcons}>
-            <LuMail color="white" className={styles.icon} />
-            <span>dommetalind@gmail.com</span>
+          {contatos.map((contato, index) => (
+            <Contato
+              key={index}
+              Icon={contato.icon}
+              contato={contato.contato}
+            />
+          ))}
+          <div className={styles.buttons}>
+            <span>Ainda não conhece nossos produtos?</span>
+            <ButtonBorder
+              type="link"
+              href="#"
+              borda="#201750"
+              theme="#201750"
+              color="white"
+              borderRadius="4px"
+            >
+              Catálogo completo
+            </ButtonBorder>
+            <Button href="#produtos" theme="#201750" color="white">
+              Ver Linha Completa de Carros de Mão <MdKeyboardArrowDown />
+            </Button>
           </div>
         </div>
         <FormProduto />
       </div>
       <Suspense fallback={<Loading />}>
-        <Main id="produtos"/>
+        <Main id="produtos" />
       </Suspense>
     </div>
   );
