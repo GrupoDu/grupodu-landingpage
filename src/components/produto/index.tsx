@@ -9,13 +9,23 @@ type Props = {
   imagemProduto: StaticImageData;
   descricaoProduto: string;
   altImagem: string;
+  caracteristicas: string[];
+};
+
+const Bullets = ({ bullet }: { bullet: string }) => {
+  return (
+    <div className={styles.bullets}>
+      <p>{bullet}</p>
+    </div>
+  );
 };
 
 const Produto = ({
   nomeProduto,
   imagemProduto,
-  descricaoProduto,
+  // descricaoProduto,
   altImagem,
+  caracteristicas,
 }: Props) => {
   const message: string = encodeURIComponent(
     `Ola, gostaria de saber mais sobre o produto ${nomeProduto}`
@@ -35,7 +45,10 @@ const Produto = ({
       </div>
       <h3>{nomeProduto}</h3>
       <span>Descrição</span>
-      <p>{descricaoProduto}</p>
+      {/* <p>{descricaoProduto}</p> */}
+      {caracteristicas.map((bullet, index) => (
+        <Bullets key={index} bullet={bullet} />
+      ))}
       <Link
         href={`https://wa.me/${number}?text=${message}`}
         target="_blank"
