@@ -14,7 +14,7 @@ import SwiperComponent from "@/components/swiper";
 export default function Home() {
   return (
     <div className={styles.homePage}>
-      <div className={styles.welcome}>
+      <div className={styles.heroSection}>
         <h1>
           Grupo Du:{" "}
           <span className={styles.textoDestaque}>Inovação em Ação</span>
@@ -31,7 +31,7 @@ export default function Home() {
       </div>
       <div className={styles.sobreSection}>
         <div className={styles.sobreText}>
-          <h1>Nossa História e Propósito</h1>
+          <h2>Nossa História e Propósito</h2>
           <p>
             O Grupo Du nasceu da visão de criar um conglomerado empresarial
             sólido e diversificado, capaz de atender diferentes necessidades do
