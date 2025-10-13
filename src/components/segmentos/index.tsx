@@ -41,6 +41,7 @@ const Segmentos = () => {
         description={domMetal.descricao}
         especialidades={domMetal.especialidades}
         variantClass="dom-metal"
+        corButton="#4347FF"
       />
       <Segmento
         src={DuFerro}
@@ -49,6 +50,7 @@ const Segmentos = () => {
         description={duFerro.descricao}
         especialidades={duFerro.especialidades}
         variantClass="duferro"
+        corButton="#FF5943"
       />
       <Segmento
         src={Carbuilt}
@@ -57,6 +59,7 @@ const Segmentos = () => {
         description={carbuilt.descricao}
         especialidades={carbuilt.especialidades}
         variantClass="carbuilt"
+        corButton="#1E78C2"
       />
     </div>
   );
