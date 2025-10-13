@@ -1,6 +1,6 @@
 .segmentoContainer {
   //   width: 24em;
-  flex: 0 0 25%;
+  flex: 1;
   border-radius: 34px;
   display: flex;
   flex-direction: column;
@@ -76,6 +76,9 @@
       text-align: center;
     }
   }
+  .buttonContainer {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 420px) {
@@ -88,5 +91,4 @@
       margin: 1em 0;
     }
   }
-  
 }
