@@ -1,6 +1,9 @@
 .segmentosContainer {
   display: flex;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
+  gap: 2em;
+  padding: 2em;
+  box-sizing: border-box;
 
   .visible {
     opacity: 1;
