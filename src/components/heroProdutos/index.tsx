@@ -11,6 +11,7 @@ import { CategoriaProduto } from "@/@types/categoriaProduto";
 import { CheckCheck } from "lucide-react";
 import ButtonBorder from "../buttonBorder";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import Breadcrumbs from "../breadcrumbs";
 
 const Bullets = ({ texto }: { texto: string }) => {
   return (
@@ -21,7 +22,7 @@ const Bullets = ({ texto }: { texto: string }) => {
   );
 };
 
-const HeroProdutos = () => {
+const HeroProdutos = ({ paginaAnterior }: { paginaAnterior: string }) => {
   const [productTitle, setProductTitle] = useState<string | undefined>("");
   const [productDescription, setProductDescription] = useState<
     string | undefined
@@ -31,6 +32,10 @@ const HeroProdutos = () => {
   const [bullets, setBullets] = useState<string[]>([]);
   const searchParams = useSearchParams();
   const pathname = usePathname();
+  const pathnameFormatado = pathname
+    .replace("/", "")
+    .replace(/-/g, " ")
+    .replace("comprar", "");
 
   useEffect(() => {
     let produto: CategoriaProduto[] = [];
@@ -62,6 +67,10 @@ const HeroProdutos = () => {
     <div className={styles.heroSection}>
       <div className={styles.textImages}>
         <div className={styles.textHeader}>
+          <Breadcrumbs
+            paginaAnterior={paginaAnterior}
+            paginaAtual={pathnameFormatado}
+          />
           {loading ? <Loading /> : <h1>{productTitle}</h1>}
           <hr />
           {loading ? <Loading /> : <p>{productDescription}</p>}

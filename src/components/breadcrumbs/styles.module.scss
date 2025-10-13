@@ -1,0 +1,10 @@
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: .4em;
+
+    span {
+        cursor: pointer;
+        user-select: none;
+    }
+}

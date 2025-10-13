@@ -51,7 +51,7 @@ export default function ProdutoPge() {
       />
       <div className={styles.page}>
         <Suspense fallback={<Loading />}>
-          <HeroProdutos />
+          <HeroProdutos paginaAnterior="dom metal"/>
         </Suspense>
         <div className={styles.formularioContato}>
           <div className={styles.contatos}>
