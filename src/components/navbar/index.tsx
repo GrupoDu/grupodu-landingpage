@@ -37,7 +37,11 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    if (pathname.includes("produtos")) {
+    if (
+      pathname.includes("carro-de-mao") ||
+      pathname.includes("masseira") ||
+      pathname.includes("plataforma")
+    ) {
       setActualPage("produtos");
     } else if (pathname.includes("sobre")) {
       setActualPage("sobre");
