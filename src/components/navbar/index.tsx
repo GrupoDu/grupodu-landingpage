@@ -65,7 +65,7 @@ const Navbar = () => {
           <Link href={"/"} className={styles.logoLink}>
             <Image src={LogoGrupo} alt="Logo GD" className={styles.logoImage} />
           </Link>
-          <h3>Grupo Du Car</h3>
+          <span>Grupo Du Car</span>
         </div>
         <div className={styles.pagesLinks}>
           <Link
