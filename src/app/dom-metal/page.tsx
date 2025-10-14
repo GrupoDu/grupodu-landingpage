@@ -24,6 +24,7 @@ import Carbuilt from "../../../public/Carbuilt.png";
 import BgHero from "@/assets/backgrounds/shirish-suwal-G3PCD962gXk-unsplash.webp";
 import { textosCardDiferenciais } from "@/constants/cards";
 import Script from "next/script";
+import { FaPlay } from "react-icons/fa";
 
 const ImageTemplate = () => {
   return (
@@ -40,6 +41,16 @@ const ProofPoints = ({ children }: { children: React.ReactNode }) => {
     </div>
   );
 };
+
+const VideoTemplate = () => {
+  return (
+    <div className={styles.videoTemplate}>
+      <div className={styles.playButton}>
+        <FaPlay color="#696969" />
+      </div>
+    </div>
+  )
+}
 
 const Bullet = () => {
   return (
@@ -115,15 +126,13 @@ const DomMetalPage = () => {
               />
             </div>
           </div>
-          <div className={styles.topContent}>
-            <Image src={Logo} alt={"logo dom metal"} className={styles.logo} />
-            <h1>
-              Dom Metal - Carros de Mão, Plataformas e Soluções Metálicas para
-              Construção Civil
-            </h1>
-          </div>
+          <div className={styles.topContent}></div>
           <div className={styles.bottomContent}>
             <div className={styles.leftContent}>
+              <h1>
+                Dom Metal - Carros de Mão, Plataformas e Soluções Metálicas para
+                Construção Civil
+              </h1>
               <div className={styles.proofs}>
                 <ProofPoints>+800 Obras atendidas</ProofPoints>
                 <ProofPoints>+10 anos de experiência</ProofPoints>
@@ -148,20 +157,23 @@ const DomMetalPage = () => {
                   </li>
                 </ul>
               </div>
+              <div className={styles.buttons}>
+                <Button
+                  width="fit-content"
+                  href="#formulario"
+                  theme="#040826"
+                  borda="#fff"
+                  color="#fff"
+                >
+                  Solicitar Orçamento
+                </Button>
+                <Button href="#catalogo" width="fit-content">
+                  Ver Catálogo
+                </Button>
+              </div>
             </div>
             <div className={styles.rightContent}>
-              <Button
-                width="fit-content"
-                href="#formulario"
-                theme="#040826"
-                borda="#fff"
-                color="#fff"
-              >
-                Solicitar Orçamento
-              </Button>
-              <Button href="#catalogo" width="fit-content">
-                Ver Catálogo
-              </Button>
+              <VideoTemplate />
             </div>
           </div>
         </div>
