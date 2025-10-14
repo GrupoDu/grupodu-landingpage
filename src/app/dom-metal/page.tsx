@@ -9,7 +9,7 @@ import { garantiasDomMetal } from "@/constants/garantias";
 import CardGarantia from "@/components/cardGarantia";
 import { sobreDomMetal } from "@/constants/sobre";
 import Link from "next/link";
-import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowRight, MdKeyboardArrowUp } from "react-icons/md";
 import { Metadata } from "next";
 
 // Import de imagens
@@ -165,6 +165,10 @@ const DomMetalPage = () => {
             </div>
           </div>
         </div>
+        <div className={styles.catalogo} id="catalogo">
+          <h2>Nosso Catálogo Disponível</h2>
+          <ListaCatalogo />
+        </div>
         <div className={styles.diferencial}>
           <div className={styles.leftContent}>
             <h2>Por que escolher a Dom Metal</h2>
@@ -186,7 +190,7 @@ const DomMetalPage = () => {
               color="white"
               borda="white"
             >
-              Explorar Catálogo <MdKeyboardArrowDown />
+              Explorar Catálogo <MdKeyboardArrowUp />
             </Button>
           </div>
           <div className={styles.rightContent}>
@@ -199,10 +203,6 @@ const DomMetalPage = () => {
               />
             ))}
           </div>
-        </div>
-        <div className={styles.catalogo} id="catalogo">
-          <h2>Nosso Catálogo Disponível</h2>
-          <ListaCatalogo />
         </div>
         <div className={styles.garantias}>
           <h2>Garantias Industriais</h2>
