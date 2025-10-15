@@ -112,30 +112,26 @@ const DomMetalPage = () => {
       />
       <div className={styles.pageContainer}>
         <div className={styles.heroSection} id="hero">
-          <div className={styles.bgImage}>
-            <div className="imageContainer">
-              <Image
-                src={BgHero}
-                alt="background hero section"
-                fill
-                priority
-                quality={85}
-                className={styles.heroImage}
-                style={{
-                  objectFit: "cover",
-                  objectPosition: "100% 80%",
-                }}
-              />
-            </div>
-          </div>
-          <div className={styles.topContent}>
-            <h1>
-              Carros de mão, plataformas e masseiras profissionais | Aumente a
-              produtividade da obra
-            </h1>
+          <div className={styles.imageContainer}>
+            <Image
+              src={BgHero}
+              alt="background hero section"
+              fill
+              priority
+              quality={85}
+              className={styles.heroImage}
+              style={{
+                objectFit: "cover",
+                objectPosition: "100% 80%",
+              }}
+            />
           </div>
           <div className={styles.bottomContent}>
             <div className={styles.leftContent}>
+              <h1>
+                Carros de mão, plataformas e masseiras profissionais | Aumente a
+                produtividade da obra
+              </h1>
               <div className={styles.bullets}>
                 {bulletsHero.map((bullet, index) => (
                   <Bullet key={index}>{bullet}</Bullet>
