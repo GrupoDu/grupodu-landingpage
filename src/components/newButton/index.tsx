@@ -9,13 +9,22 @@ type Props = {
   color?: string;
   width?: string;
   href: string;
+  className?: string;
 };
 
-const Button = ({ children, theme, borda, color, width, href }: Props) => {
+const Button = ({
+  children,
+  theme,
+  borda,
+  color,
+  width,
+  href,
+  className,
+}: Props) => {
   return (
     <Link
       href={href}
-      className={styles.button}
+      className={`${styles.button} ${className}`}
       style={{
         backgroundColor: theme || "white",
         border: borda ? `1px solid ${borda}` : "none",
