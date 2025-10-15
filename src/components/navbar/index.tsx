@@ -132,7 +132,7 @@ const Navbar = () => {
           <Menu color="black" width={40} height={40} />
         </div>
       </nav>
-      <MenuMobile menu={menu} closeFunc={closeMenu} />
+      {/* <MenuMobile menu={menu} closeFunc={closeMenu} /> */}
     </>
   );
 };
