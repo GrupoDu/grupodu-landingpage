@@ -1,4 +1,4 @@
-import styles from "./page.module.scss";
+import styles from "../styles.module.scss";
 import FormProduto from "@/components/formProduto";
 import Main from "@/components/main";
 import HeroProdutos from "@/components/heroProdutos";
