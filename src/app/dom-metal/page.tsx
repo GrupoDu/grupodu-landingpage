@@ -25,6 +25,7 @@ import BgHero from "@/assets/backgrounds/shirish-suwal-G3PCD962gXk-unsplash.webp
 import { textosCardDiferenciais } from "@/constants/cards";
 import Script from "next/script";
 import { FaPlay } from "react-icons/fa";
+import { bulletsHero } from "@/constants/textosHero";
 
 const ImageTemplate = () => {
   return (
@@ -49,13 +50,14 @@ const VideoTemplate = () => {
         <FaPlay color="#696969" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-const Bullet = () => {
+const Bullet = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className={styles.bulletComponent}>
       <Check className={styles.iconCheck} />
+      {children}
     </div>
   );
 };
@@ -126,16 +128,18 @@ const DomMetalPage = () => {
               />
             </div>
           </div>
-          <div className={styles.topContent}></div>
+          <div className={styles.topContent}>
+            <h1>
+              Carros de mão, plataformas e masseiras profissionais | Aumente a
+              produtividade da obra
+            </h1>
+          </div>
           <div className={styles.bottomContent}>
             <div className={styles.leftContent}>
-              <h1>
-                Dom Metal - Carros de Mão, Plataformas e Soluções Metálicas para
-                Construção Civil
-              </h1>
-              <div className={styles.proofs}>
-                <ProofPoints>+800 Obras atendidas</ProofPoints>
-                <ProofPoints>+10 anos de experiência</ProofPoints>
+              <div className={styles.bullets}>
+                {bulletsHero.map((bullet, index) => (
+                  <Bullet key={index}>{bullet}</Bullet>
+                ))}
               </div>
               <div className={styles.construtorasList}>
                 <span>Construtoras que já colaboramos</span>
@@ -239,8 +243,7 @@ const DomMetalPage = () => {
             <ul>
               {sobreDomMetal.bullets.map((bullet, index) => (
                 <li key={index}>
-                  <Bullet />
-                  <span>{bullet}</span>
+                  <Bullet key={index}>{bullet}</Bullet>
                 </li>
               ))}
             </ul>
