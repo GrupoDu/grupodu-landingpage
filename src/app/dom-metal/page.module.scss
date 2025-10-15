@@ -20,6 +20,20 @@
   }
 }
 
+.videoTemplate {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #181738;
+
+  .playButton {
+    padding: 1em;
+    border-radius: 5em;
+  }
+}
+
 .imageTemplate {
   width: 70px;
   height: 70px;
@@ -44,8 +58,9 @@
 
 .bulletComponent {
   background-color: #e4e9ff;
-  padding: 2px 6px;
+  padding: 4px 1em;
   border-radius: 40px;
+  width: 100%;
   width: fit-content;
   height: fit-content;
   display: flex;
@@ -53,9 +68,11 @@
   align-items: center;
   border: 1px solid #707cff;
   transition: all 0.1s ease-in-out;
+  color: #111827;
+  gap: 0.2em;
 
   .iconCheck {
-    color: #707cff;
+    color: #111827;
     width: 1em;
     transition: all 0.1s ease-in-out;
   }
@@ -94,6 +111,7 @@
     width: 100%;
     height: 100vh;
     padding: 100px 54px 54px 54px;
+    padding-bottom: 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -126,29 +144,13 @@
     }
 
     .topContent {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .logo {
-        object-fit: contain;
-        height: fit-content;
-        width: 60%;
-      }
+      width: 100%;
+      height: 100%;
+      z-index: 11;
 
       h1 {
-        background-image: linear-gradient(
-          to right,
-          #ffffff,
-          rgba(255, 255, 255, 0.3)
-        );
-        background-clip: text;
-        text-align: center;
-        -webkit-background-clip: text;
-        color: transparent;
-        user-select: none;
+        color: white;
+        z-index: 0;
       }
     }
 
@@ -158,18 +160,30 @@
       align-items: center;
       position: relative;
       align-items: end;
+      width: 100%;
       z-index: 2;
 
       .leftContent {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        flex: 1;
+        gap: 1em;
 
-        .proofs {
+        .bullets {
           display: flex;
           flex-direction: column;
           gap: 10px;
-          width: 60%;
+          width: 100%;
+
+          .bulletComponent {
+            background-color: rgba(#e4e9ff, 0.2);
+            color: white;
+            box-shadow: 0 0 4px 0 rgba(#000000, 0.2);
+
+            .iconCheck {
+              color: white;
+            }
+          }
         }
 
         .construtorasList {
@@ -183,13 +197,17 @@
             gap: 10px;
           }
         }
+
+        .buttons {
+          display: flex;
+          gap: 1em;
+          height: 3em;
+        }
       }
 
       .rightContent {
-        display: flex;
-        gap: 10px;
-        padding: 0px;
-        height: 3em;
+        flex: 1;
+        height: 100%;
       }
     }
   }
@@ -312,6 +330,7 @@
           &:hover {
             .bulletComponent {
               background-color: #707cff;
+              color: #e4e9ff;
 
               .iconCheck {
                 color: #e4e9ff;

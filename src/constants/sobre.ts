@@ -8,6 +8,6 @@ export const sobreDomMetal = {
     "Mais de 10 anos de experiência atendendo o setor da construção civil.",
     "Equipamentos reforçados para uso pesado, com alta durabilidade.",
     "Entrega rápida em todo o Nordeste, sem atrasar sua obra.",
-    "Atendimento direto com a fábrica, com suporte e personalização.",  
+    "Atendimento direto com a fábrica, com suporte e personalização.",
   ],
 };

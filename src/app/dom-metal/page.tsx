@@ -24,6 +24,8 @@ import Carbuilt from "../../../public/Carbuilt.png";
 import BgHero from "@/assets/backgrounds/shirish-suwal-G3PCD962gXk-unsplash.webp";
 import { textosCardDiferenciais } from "@/constants/cards";
 import Script from "next/script";
+import { FaPlay } from "react-icons/fa";
+import { bulletsHero } from "@/constants/textosHero";
 
 const ImageTemplate = () => {
   return (
@@ -41,10 +43,21 @@ const ProofPoints = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const Bullet = () => {
+const VideoTemplate = () => {
+  return (
+    <div className={styles.videoTemplate}>
+      <div className={styles.playButton}>
+        <FaPlay color="#696969" />
+      </div>
+    </div>
+  );
+};
+
+const Bullet = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className={styles.bulletComponent}>
       <Check className={styles.iconCheck} />
+      {children}
     </div>
   );
 };
@@ -116,17 +129,17 @@ const DomMetalPage = () => {
             </div>
           </div>
           <div className={styles.topContent}>
-            <Image src={Logo} alt={"logo dom metal"} className={styles.logo} />
             <h1>
-              Dom Metal - Carros de Mão, Plataformas e Soluções Metálicas para
-              Construção Civil
+              Carros de mão, plataformas e masseiras profissionais | Aumente a
+              produtividade da obra
             </h1>
           </div>
           <div className={styles.bottomContent}>
             <div className={styles.leftContent}>
-              <div className={styles.proofs}>
-                <ProofPoints>+800 Obras atendidas</ProofPoints>
-                <ProofPoints>+10 anos de experiência</ProofPoints>
+              <div className={styles.bullets}>
+                {bulletsHero.map((bullet, index) => (
+                  <Bullet key={index}>{bullet}</Bullet>
+                ))}
               </div>
               <div className={styles.construtorasList}>
                 <span>Construtoras que já colaboramos</span>
@@ -148,20 +161,23 @@ const DomMetalPage = () => {
                   </li>
                 </ul>
               </div>
+              <div className={styles.buttons}>
+                <Button
+                  width="fit-content"
+                  href="#formulario"
+                  theme="#040826"
+                  borda="#fff"
+                  color="#fff"
+                >
+                  Solicitar Orçamento
+                </Button>
+                <Button href="#catalogo" width="fit-content">
+                  Ver Catálogo
+                </Button>
+              </div>
             </div>
             <div className={styles.rightContent}>
-              <Button
-                width="fit-content"
-                href="#formulario"
-                theme="#040826"
-                borda="#fff"
-                color="#fff"
-              >
-                Solicitar Orçamento
-              </Button>
-              <Button href="#catalogo" width="fit-content">
-                Ver Catálogo
-              </Button>
+              <VideoTemplate />
             </div>
           </div>
         </div>
@@ -227,8 +243,7 @@ const DomMetalPage = () => {
             <ul>
               {sobreDomMetal.bullets.map((bullet, index) => (
                 <li key={index}>
-                  <Bullet />
-                  <span>{bullet}</span>
+                  <Bullet key={index}>{bullet}</Bullet>
                 </li>
               ))}
             </ul>

@@ -54,7 +54,7 @@ const Form = () => {
 
   return (
     <div className={styles.formContainer}>
-      <h2>Envie sua Mensagem</h2>
+      <h3>Envie sua Mensagem</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="nome" className={styles.nome}>
           <span>Nome completo</span>

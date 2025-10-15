@@ -10,8 +10,7 @@ export const POST = async (req: Request) => {
   });
   try {
     const body = await req.json();
-    const { nome, email, telefone, empresa, quantidade, modelo } =
-      body;
+    const { nome, email, telefone, empresa, quantidade, modelo } = body;
 
     if (!nome || !email || !telefone || !modelo || !quantidade) {
       return NextResponse.json(

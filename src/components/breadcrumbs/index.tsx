@@ -20,7 +20,9 @@ const Breadcrumbs = ({
     <div className={styles.breadcrumbs}>
       <Link href={"/"}>Início</Link>
       <MdKeyboardArrowRight />
-      <span onClick={() => router.push(paginaAnteriorHref)}>{paginaAnterior}</span>
+      <span onClick={() => router.push(paginaAnteriorHref)}>
+        {paginaAnterior}
+      </span>
       <MdKeyboardArrowRight />
       <span>
         <strong>{paginaAtual}</strong>

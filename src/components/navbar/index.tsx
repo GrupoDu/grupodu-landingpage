@@ -2,7 +2,8 @@
 // import Link from "next/link";
 import styles from "./styles.module.scss";
 import LogoGrupo from "../../../public/logo-grupodu.png";
-import Image from "next/image";
+import LogoDomMetal from "../../../public/dom-metal-icon.png";
+import Image, { StaticImageData } from "next/image";
 import { HamburgerIcon, ShoppingCart, Menu, Download } from "lucide-react";
 import Search from "../search";
 import { useEffect, useRef, useState } from "react";
@@ -10,6 +11,7 @@ import { usePathname } from "next/navigation";
 import MenuMobile from "@/components/menu";
 import { useScrollOpacity } from "@/hooks/useScrollOpacity";
 import Link from "next/link";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 const Navbar = () => {
   const [actualPage, setActualPage] = useState("inicio");
@@ -17,6 +19,8 @@ const Navbar = () => {
   const [opacity] = useScrollOpacity();
   const [menu, setMenu] = useState(false);
   const pathname = usePathname();
+  const [logos, setLogos] = useState<StaticImport>(LogoGrupo);
+  const [segmento, setSegmento] = useState<string>("");
 
   const handleDownload = () => {
     const baseUrl = window.location.origin;
@@ -51,8 +55,15 @@ const Navbar = () => {
       setActualPage("");
     } else {
       setActualPage("inicio");
+      setLogos(LogoGrupo);
+      setSegmento("Grupo Du Car");
     }
-  }, [pathname]);
+
+    if (pathname.includes("dom-metal")) {
+      setLogos(LogoDomMetal);
+      setSegmento("Dom Metal");
+    }
+  }, [pathname, logos]);
 
   return (
     <>
@@ -63,9 +74,15 @@ const Navbar = () => {
       >
         <div className={styles.logoContainer}>
           <Link href={"/"} className={styles.logoLink}>
-            <Image src={LogoGrupo} alt="Logo GD" className={styles.logoImage} />
+            <Image
+              src={logos ? logos : LogoGrupo}
+              alt="Logo GD"
+              className={` ${
+                logos !== LogoGrupo ? styles.logoSegmentos : styles.logoImage
+              }`}
+            />
           </Link>
-          <span>Grupo Du Car</span>
+          <span>{segmento ? segmento : "Grupo Du Car"}</span>
         </div>
         <div className={styles.pagesLinks}>
           <Link

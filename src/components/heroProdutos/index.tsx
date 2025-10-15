@@ -32,9 +32,7 @@ const HeroProdutos = ({ paginaAnterior }: { paginaAnterior: string }) => {
   const [bullets, setBullets] = useState<string[]>([]);
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const pathnameFormatado = pathname
-    .replace("/", "")
-    .replace(/-/g, " ")
+  const pathnameFormatado = pathname.replace("/", "").replace(/-/g, " ");
 
   useEffect(() => {
     let produto: CategoriaProduto[] = [];

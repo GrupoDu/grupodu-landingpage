@@ -22,15 +22,21 @@
     span {
       font-weight: bold;
       font-size: 1.2em;
-      
     }
 
     .logoLink {
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 10%;
+      box-sizing: border-box;
+      paddin .logoImage {
+        object-fit: contain;
+        height: fit-content;
+        width: 80%;
+      }
 
-      .logoImage {
+      .logoSegmentos {
         object-fit: contain;
         height: fit-content;
         width: 80%;
