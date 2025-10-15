@@ -11,6 +11,7 @@ import { sobreDomMetal } from "@/constants/sobre";
 import Link from "next/link";
 import { MdKeyboardArrowRight, MdKeyboardArrowUp } from "react-icons/md";
 import { Metadata } from "next";
+import ReactPlayer from "react-player";
 
 // Import de imagens
 import Logo from "../../../public/Logo dom metal.png";
@@ -49,6 +50,7 @@ const VideoTemplate = () => {
       <div className={styles.playButton}>
         <FaPlay color="#696969" />
       </div>
+      <span>vídeo ainda não disponível</span>
     </div>
   );
 };
@@ -129,8 +131,7 @@ const DomMetalPage = () => {
           <div className={styles.bottomContent}>
             <div className={styles.leftContent}>
               <h1>
-                Carros de mão, plataformas e masseiras profissionais | Aumente a
-                produtividade da obra
+                Carros de mão, plataformas e masseiras profissionais para obras
               </h1>
               <div className={styles.bullets}>
                 {bulletsHero.map((bullet, index) => (
@@ -173,6 +174,12 @@ const DomMetalPage = () => {
               </div>
             </div>
             <div className={styles.rightContent}>
+              {/* <ReactPlayer
+                  src="https://youtu.be/dQw4w9WgXcQ?si=Q-r3Sx7NsTAWUHzM"
+                  className={styles.video}
+                  width="100%"
+                  height="100%"
+                /> */}
               <VideoTemplate />
             </div>
           </div>
@@ -201,6 +208,7 @@ const DomMetalPage = () => {
               theme="#040826"
               color="white"
               borda="white"
+              className={styles.buttonCustom}
             >
               Explorar Catálogo <MdKeyboardArrowUp />
             </Button>
@@ -214,6 +222,15 @@ const DomMetalPage = () => {
                 Icon={texto.icon}
               />
             ))}
+            <Button
+              href="#catalogo"
+              theme="#040826"
+              color="white"
+              borda="white"
+              className={styles.buttonCustom}
+            >
+              Explorar Catálogo <MdKeyboardArrowUp />
+            </Button>
           </div>
         </div>
         <div className={styles.garantias}>

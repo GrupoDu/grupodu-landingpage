@@ -86,9 +86,9 @@
       gap: 0.4em;
       animation: pulando 1s ease-in-out;
       animation-iteration-count: 3;
-
-      span {
-        font-size: 14px;
+    
+      .downloadIcon {
+        width: 1.5em;
       }
     }
 
@@ -127,11 +127,15 @@
 
 @media screen and (min-width: 380px) and (max-width: 420px) {
   .ContainerHeaderNav {
-    margin-top: 10px;
+    margin: 20px 1rem;
 
     .logoContainer {
       flex: 1;
       gap: 0.2em;
+
+      .logoLink {
+        display: none;
+      }
 
       h3 {
         width: max-content;

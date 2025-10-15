@@ -119,7 +119,7 @@ const Navbar = () => {
           </span>
           <div className={styles.catalogo} onClick={handleDownload}>
             <span>Nosso Catalogo</span>
-            <Download color="black" />
+            <Download color="black" className={styles.downloadIcon} />
           </div>
           {/* V--- OFF POR ENQUANTO ---V
         <div className={styles.carrinhoIcon}>
@@ -132,7 +132,7 @@ const Navbar = () => {
           <Menu color="black" width={40} height={40} />
         </div>
       </nav>
-      <MenuMobile menu={menu} closeFunc={closeMenu} />
+      {/* <MenuMobile menu={menu} closeFunc={closeMenu} /> */}
     </>
   );
 };

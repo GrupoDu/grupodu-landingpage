@@ -24,15 +24,24 @@
   height: 100%;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #181738;
   border: 1px solid white;
   border-radius: 0.6em;
+  bottom: 0;
+  gap: .2em;
 
   .playButton {
+    background-color: #adadad;
     padding: 1em;
     border-radius: 5em;
+    display: flex;
+  }
+
+  span {
+    color: white;
   }
 }
 
@@ -111,7 +120,7 @@
 
   .heroSection {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     padding: 100px 54px 54px 54px;
     padding-bottom: 20px;
     box-sizing: border-box;
@@ -120,6 +129,7 @@
     justify-content: space-between;
     position: relative;
     overflow: hidden;
+    transition: all 0.2s ease-in-out;
 
     .imageContainer {
       position: absolute;
@@ -153,7 +163,7 @@
 
     .bottomContent {
       display: flex;
-      justify-content: space-between;
+      gap: 2rem;
       align-items: center;
       position: relative;
       width: 100%;
@@ -211,6 +221,15 @@
       .rightContent {
         flex: 1;
         height: 90%;
+        width: 100%;
+        position: relative;
+        display: flex;
+
+        .video {
+          position: absolute;
+          bottom: 0;
+          border: 1px solid white;
+        }
       }
     }
   }
@@ -231,6 +250,10 @@
       flex: 1;
       height: 100%;
 
+      .buttonCustom {
+        display: block;
+      }
+
       h2 {
         color: white;
       }
@@ -247,6 +270,10 @@
       grid-template-rows: 50% 50%;
       height: 100%;
       gap: 1em;
+
+      .buttonCustom {
+        display: none;
+      }
     }
   }
 
@@ -513,6 +540,101 @@
               gap: 2px;
               font-size: 14px;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 380px) and (max-width: 420px) {
+  .pageContainer {
+    .heroSection {
+      padding: 40px 20px 20px 20px;
+      padding-top: 70px;
+
+      .bottomContent {
+        flex-direction: column;
+        gap: 2rem;
+
+        .leftContent {
+          align-items: center;
+
+          .construtorasList {
+            display: none;
+          }
+
+          .buttons {
+            width: 100%;
+          }
+        }
+
+        .rightContent {
+          width: 100%;
+        }
+      }
+    }
+    .diferencial {
+      flex-direction: column;
+      padding: 6em 3em;
+
+      .leftContent {
+        p {
+          font-size: 1.4rem;
+        }
+
+        .buttonCustom {
+          display: none;
+        }
+      }
+
+      .rightContent {
+        // display: flex;
+        display: none;
+        flex-direction: column;
+      }
+    }
+
+    .garantias {
+      padding: 5em 2em;
+
+      ul {
+        flex-direction: column;
+      }
+    }
+
+    .sobre {
+      flex-direction: column;
+      padding: 4em 2em;
+      // height: 100%;
+
+      .leftContent {
+        width: 100%;
+      }
+
+      .rightContent {
+        display: none;
+      }
+    }
+
+    .contatoSection {
+      margin: 5em 0;
+      .formInfos {
+        flex-direction: column;
+        gap: 3em;
+      }
+    }
+
+    .outrosSegmentos {
+      .segmentosContainer {
+        flex-direction: column;
+
+        .segmentos {
+          padding: 1rem;
+
+          .button {
+            width: 100%;
+            box-sizing: border-box;
           }
         }
       }
