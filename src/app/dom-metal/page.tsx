@@ -129,8 +129,7 @@ const DomMetalPage = () => {
           <div className={styles.bottomContent}>
             <div className={styles.leftContent}>
               <h1>
-                Carros de mão, plataformas e masseiras profissionais | Aumente a
-                produtividade da obra
+                Carros de mão, plataformas e masseiras profissionais para obras
               </h1>
               <div className={styles.bullets}>
                 {bulletsHero.map((bullet, index) => (
@@ -201,6 +200,7 @@ const DomMetalPage = () => {
               theme="#040826"
               color="white"
               borda="white"
+              className={styles.buttonCustom}
             >
               Explorar Catálogo <MdKeyboardArrowUp />
             </Button>
@@ -214,6 +214,15 @@ const DomMetalPage = () => {
                 Icon={texto.icon}
               />
             ))}
+            <Button
+              href="#catalogo"
+              theme="#040826"
+              color="white"
+              borda="white"
+              className={styles.buttonCustom}
+            >
+              Explorar Catálogo <MdKeyboardArrowUp />
+            </Button>
           </div>
         </div>
         <div className={styles.garantias}>

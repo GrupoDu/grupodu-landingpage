@@ -111,7 +111,7 @@
 
   .heroSection {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     padding: 100px 54px 54px 54px;
     padding-bottom: 20px;
     box-sizing: border-box;
@@ -120,6 +120,7 @@
     justify-content: space-between;
     position: relative;
     overflow: hidden;
+    transition: all 0.2s ease-in-out;
 
     .imageContainer {
       position: absolute;
@@ -231,6 +232,10 @@
       flex: 1;
       height: 100%;
 
+      .buttonCustom {
+        display: block;
+      }
+
       h2 {
         color: white;
       }
@@ -247,6 +252,10 @@
       grid-template-rows: 50% 50%;
       height: 100%;
       gap: 1em;
+
+      .buttonCustom {
+        display: none;
+      }
     }
   }
 
@@ -513,6 +522,101 @@
               gap: 2px;
               font-size: 14px;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 380px) and (max-width: 420px) {
+  .pageContainer {
+    .heroSection {
+      padding: 40px 20px 20px 20px;
+      padding-top: 70px;
+
+      .bottomContent {
+        flex-direction: column;
+        gap: 2rem;
+
+        .leftContent {
+          align-items: center;
+
+          .construtorasList {
+            display: none;
+          }
+
+          .buttons {
+            width: 100%;
+          }
+        }
+
+        .rightContent {
+          width: 100%;
+        }
+      }
+    }
+    .diferencial {
+      flex-direction: column;
+      padding: 6em 3em;
+
+      .leftContent {
+        p {
+          font-size: 1.4rem;
+        }
+
+        .buttonCustom {
+          display: none;
+        }
+      }
+
+      .rightContent {
+        // display: flex;
+        display: none;
+        flex-direction: column;
+      }
+    }
+
+    .garantias {
+      padding: 5em 2em;
+
+      ul {
+        flex-direction: column;
+      }
+    }
+
+    .sobre {
+      flex-direction: column;
+      padding: 4em 2em;
+      // height: 100%;
+      
+      .leftContent {
+        width: 100%;
+      }
+
+      .rightContent {
+        display: none;
+      }
+    }
+
+    .contatoSection {
+      margin: 5em 0;
+      .formInfos {
+        flex-direction: column;
+        gap: 3em;
+      }
+    }
+
+    .outrosSegmentos {
+      .segmentosContainer {
+        flex-direction: column;
+
+        .segmentos {
+          padding: 1rem;
+
+          .button {
+            width: 100%;
+            box-sizing: border-box;
           }
         }
       }
