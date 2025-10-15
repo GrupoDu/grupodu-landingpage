@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import styles from "./styles.module.scss";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import Link from "next/link";
@@ -12,12 +12,18 @@ const ArrowUp = () => {
   return (
     <Link
       href={"#hero"}
-      style={{ opacity: opacityUp, transition: "opacity 0.3s ease-in-out" }}
+      style={{
+        opacity: opacityUp,
+        transition: "opacity 0.3s ease-in-out",
+      }}
       className={styles.container}
     >
       <MdKeyboardArrowUp
         className={styles.icon}
-        style={{ opacity: opacityUp, transition: "opacity 0.3s ease-in-out" }}
+        style={{
+          opacity: opacityUp,
+          transition: "opacity 0.3s ease-in-out",
+        }}
       />
     </Link>
   );
