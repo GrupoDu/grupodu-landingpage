@@ -16,3 +16,9 @@
     transform: translateY(-4px);
   }
 }
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .button {
+    flex: 1;
+  }
+}
