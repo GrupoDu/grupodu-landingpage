@@ -47,3 +47,10 @@ export const textosHero: CategoriaProduto[] = [
     categoria: "Plataformas",
   },
 ];
+
+export const bulletsHero = [
+  "+800 obras atendidas",
+  "+10 Anos de experiência",
+  "Cobertura em todo o Nordeste brasileiro",
+  " Produtos de qualidade profissional com garantia",
+];

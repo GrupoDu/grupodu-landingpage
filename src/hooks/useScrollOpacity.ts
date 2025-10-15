@@ -11,10 +11,10 @@ export const useScrollOpacity = () => {
       setResult(scrollPosition.toString());
       if (scrollPosition > 700) {
         setOpacity(0.5);
-        setOpacityUp(0.9)
+        setOpacityUp(0.9);
       } else {
         setOpacity(1);
-        setOpacityUp(0)
+        setOpacityUp(0);
       }
     };
 
