@@ -119,7 +119,7 @@ const Navbar = () => {
           </span>
           <div className={styles.catalogo} onClick={handleDownload}>
             <span>Nosso Catalogo</span>
-            <Download color="black" />
+            <Download color="black" className={styles.downloadIcon} />
           </div>
           {/* V--- OFF POR ENQUANTO ---V
         <div className={styles.carrinhoIcon}>
