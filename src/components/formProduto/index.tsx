@@ -73,7 +73,7 @@ const FormProduto = () => {
 
   return (
     <div className={styles.formContainer}>
-      <h2>Formulário para contato</h2>
+      <h3>Formulário para contato</h3>
       <form className={styles.formulario} onSubmit={handleEmail}>
         <label className={`${styles.inputContainer} ${styles.inputNome}`}>
           <span>Nome Completo</span>
