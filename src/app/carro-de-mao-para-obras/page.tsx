@@ -30,7 +30,6 @@ export const metadata: Metadata = {
   title: "Carro de Mão para Obras - Dom Metal",
   description:
     "Compre carros de mão duráveis e eficientes para sua obra. Entre em contato com a Dom Metal e garanta o melhor para sua construção.",
-  // ADICIONAR MARKUP AQUI
 };
 
 export default function ProdutoPge() {
