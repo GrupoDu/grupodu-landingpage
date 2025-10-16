@@ -81,7 +81,7 @@ export default function ProdutoPge() {
         <hr className={styles.hr} />
         <div className={styles.tituloProdutos}>
           <MdKeyboardArrowDown className={styles.arrow} />
-          <h2>Nossa linha completa de Carros de Mão</h2>
+          <h2>Nossa linha completa de Plataformas de Trabalho</h2>
         </div>
         <Suspense fallback={<Loading />}>
           <Main id="produtos" />
