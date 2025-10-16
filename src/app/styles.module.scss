@@ -25,6 +25,22 @@
       }
     }
   }
+
+  .hr {
+    opacity: 0.4;
+  }
+
+  .tituloProdutos {
+    padding: 1em 3em;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    .arrow {
+      height: 2em;
+      width: 2em;
+    }
+  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
@@ -63,7 +79,7 @@
       h1 {
         text-align: center;
       }
-      
+
       .arrow {
         display: none;
       }
