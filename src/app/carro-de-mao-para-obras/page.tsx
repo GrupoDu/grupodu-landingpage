@@ -6,7 +6,6 @@ import Loading from "@/components/loading";
 import { Suspense } from "react";
 import { Metadata } from "next";
 import { contatos } from "@/constants/contatos";
-import { IconType } from "react-icons";
 import Button from "@/components/newButton";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import ButtonBorder from "@/components/buttonBorder";
