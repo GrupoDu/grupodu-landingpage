@@ -10,8 +10,9 @@ type Props = {
   width?: string;
   href?: string;
   className?: string;
-  type: "button" | "link";
+  type: "button" | "link" | "submit";
   click?: () => void;
+  handleForm?: (e: React.FormEvent<HTMLButtonElement>) => void;
 };
 
 const Button = (props: Props) => {
@@ -32,10 +33,11 @@ const Button = (props: Props) => {
     );
   }
 
-  if (props.type === "button") {
+  if (props.type === "button" || "submit") {
     return (
       <button
         onClick={props.click}
+        type={props.type}
         className={`${styles.button} ${props.className}`}
         style={{
           backgroundColor: props.theme || "white",
