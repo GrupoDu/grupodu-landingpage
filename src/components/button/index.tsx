@@ -45,6 +45,8 @@ const Button = (props: Props) => {
           border: props.borda ? `1px solid ${props.borda}` : "none",
           color: props.color || "black",
           width: props.width ? props.width : "100%",
+          cursor: props.desativado ? "not-allowed" : "pointer",
+          opacity: props.desativado ? 0.6 : 1,
         }}
         disabled={props.desativado}
       >
