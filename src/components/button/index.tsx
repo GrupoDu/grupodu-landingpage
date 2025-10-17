@@ -8,50 +8,43 @@ type Props = {
   borda?: string;
   color?: string;
   width?: string;
-  href: string;
+  href?: string;
   className?: string;
   type: "button" | "link";
+  click?: () => void;
 };
 
-const Button = ({
-  children,
-  theme,
-  borda,
-  color,
-  width,
-  href,
-  className,
-  type,
-}: Props) => {
-  if (type === "link") {
+const Button = (props: Props) => {
+  if (props.type === "link") {
     return (
       <Link
-        href={href}
-        className={`${styles.button} ${className}`}
+        href={props.href || "#"}
+        className={`${styles.button} ${props.className}`}
         style={{
-          backgroundColor: theme || "white",
-          border: borda ? `1px solid ${borda}` : "none",
-          color: color || "black",
-          width: width ? width : "100%",
+          backgroundColor: props.theme || "white",
+          border: props.borda ? `1px solid ${props.borda}` : "none",
+          color: props.color || "black",
+          width: props.width ? props.width : "100%",
         }}
       >
-        {children}
+        {props.children}
       </Link>
     );
   }
 
-  if (type === "button") {
+  if (props.type === "button") {
     return (
       <button
-        className={`${styles.button} ${className}`}
+        onClick={props.click}
+        className={`${styles.button} ${props.className}`}
         style={{
-          backgroundColor: theme || "white",
-          border: borda ? `1px solid ${borda}` : "none",
-          color: color || "black",
-          width: width ? width : "100%",
+          backgroundColor: props.theme || "white",
+          border: props.borda ? `1px solid ${props.borda}` : "none",
+          color: props.color || "black",
+          width: props.width ? props.width : "100%",
         }}
       >
-        {children}
+        {props.children}
       </button>
     );
   }
