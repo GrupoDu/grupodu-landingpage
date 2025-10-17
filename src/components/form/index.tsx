@@ -127,12 +127,7 @@ const Form = () => {
             }
           ></textarea>
         </label>
-        <Button
-          type="submit"
-          width="--full-width"
-          bgColor="--blue-light"
-          color="white"
-        >
+        <Button type="submit" className={styles.button}>
           Enviar Mensagem <Send color="white" />
         </Button>
       </form>
