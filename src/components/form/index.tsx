@@ -127,8 +127,8 @@ const Form = () => {
             }
           ></textarea>
         </label>
-        <Button type="submit" className={styles.button}>
-          Enviar Mensagem <Send color="white" />
+        <Button type="submit" theme="#004AAD" color="white" className={styles.button}>
+          Enviar Mensagem <Send color="white" width={16} />
         </Button>
       </form>
     </div>
