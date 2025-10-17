@@ -24,9 +24,9 @@ export default function Home() {
           estratégica em diferentes segmentos, sempre mantendo o foco na
           qualidade, inovação e na satisfação completa dos nossos clientes.
         </p>
-        <Button type="button" desativado={true} width="30%" href="#">
+        <h3>
           Loja em breve!
-        </Button>
+        </h3>
         <ArrowDown className={styles.arrowDown} />
       </div>
       <div className={styles.sobreSection}>
