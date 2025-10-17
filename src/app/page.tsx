@@ -24,7 +24,7 @@ export default function Home() {
           estratégica em diferentes segmentos, sempre mantendo o foco na
           qualidade, inovação e na satisfação completa dos nossos clientes.
         </p>
-        <Button width="--sm" disabled={true} type="button">
+        <Button type="button" desativado={true} width="30%" href="#">
           Loja em breve!
         </Button>
         <ArrowDown className={styles.arrowDown} />
@@ -105,10 +105,12 @@ export default function Home() {
           </p>
           <div className={styles.button}>
             <Button
-              type="button"
-              width="--m"
-              bgColor="--blue-light"
+              type="link"
+              theme="#0e2455ff"
+              borda="white"
               color="white"
+              width="100%"
+              href="#formulario"
             >
               Solicitar Orçamento
             </Button>
@@ -123,17 +125,12 @@ export default function Home() {
           ))}
         </ul>
         <div className={styles.buttonMobile}>
-          <Button
-            type="button"
-            width="--full-width"
-            bgColor="--blue-light"
-            color="white"
-          >
+          <Button type="link" width="10%" href="#">
             Solicitar Orçamento
           </Button>
         </div>
       </div>
-      <div className={styles.contatoSection}>
+      <div className={styles.contatoSection} id="formulario">
         <h1>Entre em Contato</h1>
         <p>Estamos aqui para ajudar você. Entre em contato conosco!</p>
         <div className={styles.formInfos}>
