@@ -1,33 +1,60 @@
-"use client";
-import React, { ReactNode } from "react";
+import Link from "next/link";
 import styles from "./styles.module.scss";
+import React from "react";
 
 type Props = {
-  children: ReactNode;
-  type: "button" | "submit";
-  bgColor?: "--blue-dark" | "--blue-light";
-  disabled?: boolean;
-  width: "--sm" | "--m" | "--l" | "--full-width";
-  align?: "left" | "center" | "right";
-  color?: "white" | "var(--blue-dark)";
+  children: React.ReactNode;
+  theme?: string;
+  borda?: string;
+  color?: string;
+  width?: string;
+  href: string;
+  className?: string;
+  type: "button" | "link";
 };
 
-const Button = (props: Props) => {
-  return (
-    <button
-      type={props.type}
-      className={styles.button}
-      style={{
-        backgroundColor: `var(${props.bgColor})`,
-        width: props.width,
-        textAlign: props.align || "center",
-        color: props.color || "var(--blue-dark)",
-      }}
-      disabled={props.disabled ?? false}
-    >
-      {props.children}
-    </button>
-  );
+const Button = ({
+  children,
+  theme,
+  borda,
+  color,
+  width,
+  href,
+  className,
+  type,
+}: Props) => {
+  if (type === "link") {
+    return (
+      <Link
+        href={href}
+        className={`${styles.button} ${className}`}
+        style={{
+          backgroundColor: theme || "white",
+          border: borda ? `1px solid ${borda}` : "none",
+          color: color || "black",
+          width: width ? width : "100%",
+        }}
+      >
+        {children}
+      </Link>
+    );
+  }
+
+  if (type === "button") {
+    return (
+      <button
+        className={`${styles.button} ${className}`}
+        style={{
+          backgroundColor: theme || "white",
+          border: borda ? `1px solid ${borda}` : "none",
+          color: color || "black",
+          width: width ? width : "100%",
+        }}
+      >
+        {children}
+      </button>
+    );
+  }
 };
 
 export default Button;
