@@ -14,7 +14,6 @@ import { Metadata } from "next";
 import ReactPlayer from "react-player";
 
 // Import de imagens
-import Logo from "../../../public/Logo dom metal.png";
 import ButtonBorder from "@/components/buttonBorder";
 import ImgObra from "@/assets/backgrounds/construindo-novas-casas-de-concreto.jpg";
 import ImgEletricista from "@/assets/backgrounds/instalador-eletricista-com-uma-ferramenta-nas-maos-trabalhando-com-cabo-no-canteiro-de-obras.jpg";
@@ -32,14 +31,6 @@ const ImageTemplate = () => {
   return (
     <div className={styles.imageTemplate}>
       <ImageIcon opacity={0.4} />
-    </div>
-  );
-};
-
-const ProofPoints = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div className={styles.proofPoints}>
-      <p>{children}</p>
     </div>
   );
 };
