@@ -71,7 +71,12 @@ export default function ProdutoPge() {
               >
                 Catálogo completo
               </ButtonBorder>
-              <Button href="#produtos" theme="#201750" color="white">
+              <Button
+                type="link"
+                href="#produtos"
+                theme="#201750"
+                color="white"
+              >
                 Ver Linha Completa de Carros de Mão <MdKeyboardArrowDown />
               </Button>
             </div>

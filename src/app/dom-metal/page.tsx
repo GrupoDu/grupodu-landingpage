@@ -160,6 +160,7 @@ const DomMetalPage = () => {
               </div>
               <div className={styles.buttons}>
                 <Button
+                  type="link"
                   width="fit-content"
                   href="#formulario"
                   theme="#040826"
@@ -168,7 +169,7 @@ const DomMetalPage = () => {
                 >
                   Solicitar Orçamento
                 </Button>
-                <Button href="#catalogo" width="fit-content">
+                <Button type="link" href="#catalogo" width="fit-content">
                   Ver Catálogo
                 </Button>
               </div>
@@ -204,6 +205,7 @@ const DomMetalPage = () => {
               segurança e eficiência em cada etapa da construção.
             </p>
             <Button
+              type="link"
               href="#catalogo"
               theme="#040826"
               color="white"
@@ -223,6 +225,7 @@ const DomMetalPage = () => {
               />
             ))}
             <Button
+              type="link"
               href="#catalogo"
               theme="#040826"
               color="white"
