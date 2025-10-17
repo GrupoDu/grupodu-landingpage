@@ -13,6 +13,7 @@ type Props = {
   type: "button" | "link" | "submit";
   click?: () => void;
   handleForm?: (e: React.FormEvent<HTMLButtonElement>) => void;
+  desativado?: boolean;
 };
 
 const Button = (props: Props) => {
@@ -45,6 +46,7 @@ const Button = (props: Props) => {
           color: props.color || "black",
           width: props.width ? props.width : "100%",
         }}
+        disabled={props.desativado}
       >
         {props.children}
       </button>
