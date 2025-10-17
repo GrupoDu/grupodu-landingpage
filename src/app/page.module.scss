@@ -19,11 +19,16 @@
       rgba(89, 114, 167, 1) 64%,
       rgba(17, 51, 124, 1) 100%
     );
+    transition: all 0.3s ease-in-out;
 
     h1 {
       text-align: center;
       animation: entrando 1s ease-in-out;
       color: white;
+    }
+
+    h3 {
+      animation: entrando 4s ease-in-out;
     }
 
     p {
@@ -269,8 +274,7 @@
 
 @media screen and (min-width: 380px) and (max-width: 420px) {
   .homePage {
-    .welcome {
-      min-height: 90vh;
+    .heroSection {
       width: 100%;
 
       h1 {
