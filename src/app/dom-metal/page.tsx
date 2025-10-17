@@ -3,7 +3,7 @@ import React, { ForwardRefExoticComponent } from "react";
 import styles from "./page.module.scss";
 import Image from "next/image";
 import { Check, ImageIcon, LucideProps } from "lucide-react";
-import Button from "@/components/newButton";
+import Button from "@/components/button";
 import ListaCatalogo from "@/components/listaCatalogo";
 import { garantiasDomMetal } from "@/constants/garantias";
 import CardGarantia from "@/components/cardGarantia";
