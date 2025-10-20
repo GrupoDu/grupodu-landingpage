@@ -12,7 +12,6 @@ type Props = {
   className?: string;
   type: "button" | "link" | "submit";
   click?: () => void;
-  handleForm?: (e: React.FormEvent<HTMLButtonElement>) => void;
   desativado?: boolean;
 };
 
