@@ -31,7 +31,7 @@
   border: 1px solid white;
   border-radius: 0.6em;
   bottom: 0;
-  gap: .2em;
+  gap: 0.2em;
 
   .playButton {
     background-color: #adadad;
@@ -496,6 +496,7 @@
               align-items: center;
               gap: 2px;
               font-size: 14px;
+              box-sizing: border-box;
             }
           }
         }
@@ -539,6 +540,7 @@
               align-items: center;
               gap: 2px;
               font-size: 14px;
+              box-sizing: border-box;
             }
           }
         }
