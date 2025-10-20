@@ -438,9 +438,9 @@
         padding: 2em;
         border-radius: 16px;
         flex: 1;
-        gap: 10px;
         display: flex;
         flex-direction: column;
+        justify-content: space-evenly;
 
         h2 {
           color: white;
