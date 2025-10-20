@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
-import ButtonAlt from "../buttonAlt";
 import toast from "react-hot-toast";
 import { usePathname } from "next/navigation";
 import { Produto } from "@/@types/produto";
+import Button from "../button";
 
 const FormProduto = () => {
   const [email, setEmail] = useState<string>("");
@@ -136,9 +136,9 @@ const FormProduto = () => {
             onChange={(e) => setEmpresa(e.target.value)}
           />
         </label>
-        <ButtonAlt type="submit" gradient={true}>
+        <Button type="submit" theme="#37349aff" color="white">
           Solicitar produto
-        </ButtonAlt>
+        </Button>
       </form>
     </div>
   );
