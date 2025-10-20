@@ -66,6 +66,7 @@ const Form = () => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setNome(e.target.value)
             }
+            required
           />
         </label>
         <label htmlFor="email" className={styles.email}>
@@ -78,6 +79,7 @@ const Form = () => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setEmail(e.target.value)
             }
+            required
           />
         </label>
         <label htmlFor="telefone" className={styles.telefone}>
@@ -90,6 +92,7 @@ const Form = () => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setTelefone(e.target.value)
             }
+            required
           />
         </label>
         <label htmlFor="empresa" className={styles.empresa}>
@@ -102,6 +105,7 @@ const Form = () => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setEmpresa(e.target.value)
             }
+            required
           />
         </label>
         <label htmlFor="assunto" className={styles.assunto}>
@@ -114,6 +118,7 @@ const Form = () => {
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setAssunto(e.target.value)
             }
+            required
           />
         </label>
         <label htmlFor="mensagem" className={styles.mensagem}>
@@ -125,6 +130,7 @@ const Form = () => {
             onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
               setMensagem(e.target.value)
             }
+            required
           ></textarea>
         </label>
         <Button type="submit" theme="#004AAD" color="white" className={styles.button}>

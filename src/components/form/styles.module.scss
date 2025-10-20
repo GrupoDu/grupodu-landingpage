@@ -30,6 +30,12 @@
     flex-direction: column;
     gap: 0.4em;
 
+    span::after {
+      content: "*";
+      color: red;
+      margin-left: 0.2em;
+    }
+
     input,
     textarea {
       outline: none;
