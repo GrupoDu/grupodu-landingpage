@@ -21,7 +21,11 @@ export const GET = async (request: NextRequest) => {
   if (!produto) {
     const { data, error } = await supabase.from("produtos").select("*");
     if (error) return NextResponse.error();
-    return NextResponse.json(data);
+    return NextResponse.json(data, {
+      headers: {
+        "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+      },
+    });
   }
 
   const { data, error } = await supabase
@@ -36,5 +40,9 @@ export const GET = async (request: NextRequest) => {
     normalizandoTexto(item.tipo_produto).includes(produtoNormalizado)
   );
 
-  return NextResponse.json(dataFiltrada);
+  return NextResponse.json(dataFiltrada, {
+    headers: {
+      "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+    },
+  });
 };

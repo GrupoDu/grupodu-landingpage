@@ -27,6 +27,8 @@ import Script from "next/script";
 import { FaPlay } from "react-icons/fa";
 import { bulletsHero } from "@/constants/textosHero";
 
+export const revalidate = 7200;
+
 const ImageTemplate = () => {
   return (
     <div className={styles.imageTemplate}>

@@ -12,6 +12,8 @@ import { Contato } from "@/components/contatos";
 import { contatos } from "@/constants/contatos";
 import Script from "next/script";
 
+export const revalidate = 7200;
+
 const jsonLd = {
   "@context": "https://schema.org/",
   "@type": "Product",

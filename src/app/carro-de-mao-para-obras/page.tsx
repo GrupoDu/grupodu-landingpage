@@ -12,6 +12,8 @@ import ButtonBorder from "@/components/buttonBorder";
 import Script from "next/script";
 import { Contato } from "@/components/contatos";
 
+export const revalidate = 7200;
+
 const jsonLd = {
   "@context": "https://schema.org/",
   "@type": "Product",

@@ -11,6 +11,8 @@ import Valores from "@/components/valores";
 import Segmentos from "@/components/segmentos";
 import SwiperComponent from "@/components/swiper";
 
+export const revalidate = false;
+
 export default function Home() {
   return (
     <div className={styles.homePage}>

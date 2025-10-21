@@ -12,6 +12,8 @@ import Button from "@/components/button";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import Script from "next/script";
 
+export const revalidate = 7200;
+
 const jsonLd = {
   "@context": "https://schema.org/",
   "@type": "Product",
