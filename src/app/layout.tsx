@@ -7,6 +7,7 @@ import Toast from "@/components/toast";
 import WsIcon from "@/components/wsicon";
 import ArrowUp from "@/components/arrowUp";
 import Script from "next/script";
+import Image from "next/image";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -48,9 +49,10 @@ export default function RootLayout({
           }}
         />
         <noscript>
-          <img
+          <Image
             height="1"
             width="1"
+            alt="meta pixel"
             style={{ display: "none" }}
             src="https://www.facebook.com/tr?id=1528143071557219&ev=PageView&noscript=1"
           />
