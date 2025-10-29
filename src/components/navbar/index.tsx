@@ -1,7 +1,7 @@
 "use client";
 // import Link from "next/link";
 import styles from "./styles.module.scss";
-import LogoGrupo from "../../../public/logo-grupodu.png";
+import LogoGrupo from "../../../public/grupodu_new_logo.png";
 import LogoDomMetal from "../../../public/dom-metal-icon.png";
 import Image, { StaticImageData } from "next/image";
 import { HamburgerIcon, ShoppingCart, Menu, Download } from "lucide-react";
