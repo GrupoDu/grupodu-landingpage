@@ -3,6 +3,30 @@ import Mailgun from "mailgun.js";
 import FormData from "form-data";
 
 export const POST = async (req: Request) => {
+  const htmlTemplate = `
+        <h1>Informações do contato</h1>
+        <h3>Nome completo</h3>
+        <p>${nome}</p>
+        <hr />
+        <h3>Email</h3>
+        <p>${email}</p>
+        <hr />
+        <h3>Telefon</h3>
+        <p>${telefone}</p>
+        <hr />
+        <h3>Empresa</h3>
+        <p>${empresa}</p>
+        <hr />
+        <h2>Assunto</h2>
+        <p>${assunto}</p>
+        <hr />
+        <h3>Mensagem</h3>
+        <p>${mensagem}</p>
+        <hr />
+        <br />
+        <h4>Contato enviado pelo site.</h4>
+        `
+
   const mailgun = new Mailgun(FormData);
   const mg = mailgun.client({
     username: "api",
@@ -24,28 +48,7 @@ export const POST = async (req: Request) => {
       to: ["Dom Metal<dommetalind@gmail.com>"],
       subject: "Email enviado pelo site",
       text: `Solicitação de contato`,
-      html: `<h1>Informações do contato</h1>
-        <h3>Nome completo</h3>
-        <p>${nome}</p>
-        <hr />
-        <h3>Email</h3>
-        <p>${email}</p>
-        <hr />
-        <h3>Telefon</h3>
-        <p>${telefone}</p>
-        <hr />
-        <h3>Empresa</h3>
-        <p>${empresa}</p>
-        <hr />
-        <h2>Assunto</h2>
-        <p>${assunto}</p>
-        <hr />
-        <h3>Mensagem</h3>
-        <p>${mensagem}</p>
-        <hr />
-        <br />
-        <h4>Contato enviado pelo site.</h4>
-        `,
+      html: htmlTemplate,
     });
 
     console.log(data);

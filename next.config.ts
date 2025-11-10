@@ -5,6 +5,11 @@ const nextConfig: NextConfig = {
   reactStrictMode: false,
   images: {
     domains: ["hlzfhmneaphariqoewir.supabase.co"],
+    remotePatterns: [
+      {
+        hostname: "www.facebook.com"
+      }
+    ],
   },
 };
 
