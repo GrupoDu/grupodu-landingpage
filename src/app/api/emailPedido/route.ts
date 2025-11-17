@@ -3,6 +3,9 @@ import Mailgun from "mailgun.js";
 import FormData from "form-data";
 
 export const POST = async (req: Request) => {
+  const body = await req.json();
+  const { nome, email, telefone, empresa, quantidade, modelo } = body;
+
   const emailTemplate = `
         <h1>Informações do contato</h1>
         <h3>Nome completo</h3>
@@ -22,7 +25,7 @@ export const POST = async (req: Request) => {
         <hr />
         <br />
         <h4>Contato enviado pelo site de produto.</h4>
-        ` 
+        `;
 
   const mailgun = new Mailgun(FormData);
   const mg = mailgun.client({
@@ -30,9 +33,6 @@ export const POST = async (req: Request) => {
     key: process.env.API_KEY || "API_KEY",
   });
   try {
-    const body = await req.json();
-    const { nome, email, telefone, empresa, quantidade, modelo } = body;
-
     if (!nome || !email || !telefone || !modelo || !quantidade) {
       return NextResponse.json(
         { error: "Por favor, preencha todos os campos" },
@@ -45,7 +45,7 @@ export const POST = async (req: Request) => {
       to: ["Dom Metal<dommetalind@gmail.com>"],
       subject: "Email enviado pelo site",
       text: `Solicitação de contato`,
-      html: ,
+      html: emailTemplate,
     });
 
     console.log(data);

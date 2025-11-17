@@ -3,6 +3,9 @@ import Mailgun from "mailgun.js";
 import FormData from "form-data";
 
 export const POST = async (req: Request) => {
+  const body = await req.json();
+  const { nome, email, telefone, empresa, assunto, mensagem } = body;
+
   const htmlTemplate = `
         <h1>Informações do contato</h1>
         <h3>Nome completo</h3>
@@ -33,8 +36,6 @@ export const POST = async (req: Request) => {
     key: process.env.API_KEY || "API_KEY",
   });
   try {
-    const body = await req.json();
-    const { nome, email, telefone, empresa, assunto, mensagem } = body;
 
     if (!nome || !email || !telefone || !empresa || !assunto || !mensagem) {
       return NextResponse.json(
