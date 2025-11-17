@@ -14,7 +14,6 @@ import { Metadata } from "next";
 import ReactPlayer from "react-player";
 
 // Import de imagens
-import IlustracaoCarroDeMao from "@/assets/ilustracoes/hector-emilio-gonzalez-DZyFaNe2xeo-unsplash.jpg";
 import ButtonBorder from "@/components/buttonBorder";
 import ImgObra from "@/assets/backgrounds/construindo-novas-casas-de-concreto.jpg";
 import ImgEletricista from "@/assets/backgrounds/instalador-eletricista-com-uma-ferramenta-nas-maos-trabalhando-com-cabo-no-canteiro-de-obras.jpg";
@@ -99,6 +98,8 @@ export const metadata: Metadata = {
 };
 
 const DomMetalPage = () => {
+  const imagensPlaceholder = ["https://hlzfhmneaphariqoewir.supabase.co/storage/v1/object/public/produtos/carro-de-mao/carro-jerica-160.png", "https://hlzfhmneaphariqoewir.supabase.co/storage/v1/object/public/produtos/carro-de-mao/carro-transporte-bloco.png", "https://hlzfhmneaphariqoewir.supabase.co/storage/v1/object/public/produtos/masseiras/masseira-metalica.png"];
+
   return (
     <>
       <Script
@@ -168,7 +169,7 @@ const DomMetalPage = () => {
                 </Button>
               </div>
             </div>
-            <div className={styles.rightContent}>
+            <div className={`${styles.rightContent} ${styles.rightContentPlaceholder}`}>
               {/* <ReactPlayer
                   src="https://youtu.be/dQw4w9WgXcQ?si=Q-r3Sx7NsTAWUHzM"
                   className={styles.video}
@@ -176,12 +177,17 @@ const DomMetalPage = () => {
                   height="100%"
                 /> */}
               {/* <VideoTemplate /> */}
-              <Image
-                src={IlustracaoCarroDeMao}
-                alt={`Foto de <a href="https://unsplash.com/pt-br/@hectoremilio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Héctor Emilio Gonzalez</a> na <a href="https://unsplash.com/pt-br/fotografias/um-carrinho-de-mao-cheio-de-sujeira-na-frente-de-um-edificio-DZyFaNe2xeo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-                `}
-                className={styles.ilustracao}
-              />
+              {imagensPlaceholder.map((image, index) => (
+                <Image 
+                  src={image}
+                  key={index}
+                  alt="ilustracoes"
+                  width={500}
+                  height={100}
+                  className={styles.ilustracoes}
+                />
+              ))}
+              
             </div>
           </div>
         </div>
