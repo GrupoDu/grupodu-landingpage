@@ -14,6 +14,7 @@ import { Metadata } from "next";
 import ReactPlayer from "react-player";
 
 // Import de imagens
+import IlustracaoCarroDeMao from "@/assets/ilustracoes/hector-emilio-gonzalez-DZyFaNe2xeo-unsplash.jpg";
 import ButtonBorder from "@/components/buttonBorder";
 import ImgObra from "@/assets/backgrounds/construindo-novas-casas-de-concreto.jpg";
 import ImgEletricista from "@/assets/backgrounds/instalador-eletricista-com-uma-ferramenta-nas-maos-trabalhando-com-cabo-no-canteiro-de-obras.jpg";
@@ -131,7 +132,7 @@ const DomMetalPage = () => {
                   <Bullet key={index}>{bullet}</Bullet>
                 ))}
               </div>
-              <div className={styles.construtorasList}>
+              {/* <div className={styles.construtorasList}>
                 <span>Construtoras que já colaboramos</span>
                 <ul>
                   <li>
@@ -150,7 +151,7 @@ const DomMetalPage = () => {
                     <ImageTemplate />
                   </li>
                 </ul>
-              </div>
+              </div> */}
               <div className={styles.buttons}>
                 <Button
                   type="link"
@@ -174,7 +175,13 @@ const DomMetalPage = () => {
                   width="100%"
                   height="100%"
                 /> */}
-              <VideoTemplate />
+              {/* <VideoTemplate /> */}
+              <Image
+                src={IlustracaoCarroDeMao}
+                alt={`Foto de <a href="https://unsplash.com/pt-br/@hectoremilio?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Héctor Emilio Gonzalez</a> na <a href="https://unsplash.com/pt-br/fotografias/um-carrinho-de-mao-cheio-de-sujeira-na-frente-de-um-edificio-DZyFaNe2xeo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+                `}
+                className={styles.ilustracao}
+              />
             </div>
           </div>
         </div>
