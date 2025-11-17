@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import { Metadata } from "next";
 import { contatos } from "@/constants/contatos";
 import Button from "@/components/button";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import ButtonBorder from "@/components/buttonBorder";
 import Script from "next/script";
 import { Contato } from "@/components/contatos";
@@ -45,6 +45,13 @@ export default function ProdutoPge() {
         <Suspense fallback={<Loading />}>
           <HeroProdutos paginaAnterior="dom metal" />
         </Suspense>
+        <div className={styles.tituloProdutos}>
+          <MdKeyboardArrowDown className={styles.arrow} />
+          <h2>Nossa linha completa de Carros de Mão</h2>
+        </div>
+        <Suspense fallback={<Loading />}>
+          <Main id="produtos" />
+        </Suspense>
         <div className={styles.formularioContato}>
           <div className={styles.contatos}>
             <h2>Solicite seu Produto</h2>
@@ -73,21 +80,19 @@ export default function ProdutoPge() {
               >
                 Catálogo completo
               </ButtonBorder>
-              <Button type="link" href="#produtos" theme="#201750" color="white">
-                Ver Linha Completa de Carros de Mão <MdKeyboardArrowDown />
+              <Button
+                type="link"
+                href="#produtos"
+                theme="#201750"
+                color="white"
+              >
+                Ver Linha Completa de Carros de Mão <MdKeyboardArrowUp />
               </Button>
             </div>
           </div>
           <FormProduto />
         </div>
         <hr className={styles.hr} />
-        <div className={styles.tituloProdutos}>
-          <MdKeyboardArrowDown className={styles.arrow} />
-          <h2>Nossa linha completa de Carros de Mão</h2>
-        </div>
-        <Suspense fallback={<Loading />}>
-          <Main id="produtos" />
-        </Suspense>
       </div>
     </>
   );
