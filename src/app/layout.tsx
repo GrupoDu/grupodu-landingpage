@@ -54,8 +54,7 @@ export default function RootLayout({
             width="1"
             alt="meta pixel"
             style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=1528143071557219&ev=PageView&noscript=1"
-          />
+            src={`https://www.facebook.com/tr?id=1528143071557219&ev=PageView&noscript=1`} />
         </noscript>
       </head>
       <body className={`${poppins.variable}`}>
