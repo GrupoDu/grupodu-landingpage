@@ -622,6 +622,14 @@
         display: none;
         flex-direction: column;
       }
+
+      .rightContentPlaceholder {
+        display: none;
+
+        .ilustracoes {
+          display: none;
+        }
+      }
     }
 
     .garantias {
@@ -643,14 +651,6 @@
 
       .rightContent {
         display: none;
-      }
-
-      .rightContentPlaceholder {
-        display: none;
-
-        .ilustracoes {
-          display: none;
-        }
       }
     }
 
