@@ -46,7 +46,7 @@ export default function InfoContatos() {
           <Mail color="#2563EB" className={styles.icons} />
           <div className={styles.textInfos}>
             <h4>Email</h4>
-            <span>duferrom@gmail.com</span>
+            <span>dommetalind@gmail.com</span>
           </div>
         </div>
         <div className={styles.social}>
