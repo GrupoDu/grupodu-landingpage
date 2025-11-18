@@ -56,7 +56,7 @@ const Navbar = () => {
     } else {
       setActualPage("inicio");
       setLogos(LogoGrupo);
-      setSegmento("Grupo Du Car");
+      setSegmento("Grupo Du");
     }
 
     if (pathname.includes("dom-metal")) {
