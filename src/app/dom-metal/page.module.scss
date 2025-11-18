@@ -601,6 +601,14 @@
         .rightContent {
           width: 100%;
         }
+
+.rightContentPlaceholder {
+        display: none;
+
+        .ilustracoes {
+          display: none;
+        }
+      }
       }
     }
     .diferencial {
@@ -623,13 +631,7 @@
         flex-direction: column;
       }
 
-      .rightContentPlaceholder {
-        display: none;
-
-        .ilustracoes {
-          display: none;
-        }
-      }
+      
     }
 
     .garantias {
