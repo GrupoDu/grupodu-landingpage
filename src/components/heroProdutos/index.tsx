@@ -2,21 +2,20 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
-// import { products } from "@/data/products";
 import Image, { StaticImageData } from "next/image";
 import { usePathname, useSearchParams } from "next/navigation";
 import { textosHero } from "@/constants/textosHero";
 import Loading from "../loading";
 import { CategoriaProduto } from "@/@types/categoriaProduto";
-import { CheckCheck } from "lucide-react";
-import ButtonBorder from "../buttonBorder";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { LuCheckCheck } from "react-icons/lu";
+import ButtonBorder from "../buttonBorder";
 import Breadcrumbs from "../breadcrumbs";
 
 const Bullets = ({ texto }: { texto: string }) => {
   return (
     <div className={styles.bullets}>
-      <CheckCheck />
+      <LuCheckCheck />
       <p>{texto}</p>
     </div>
   );
