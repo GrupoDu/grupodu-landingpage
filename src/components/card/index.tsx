@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "./styles.module.scss";
-import { LucideIcon } from "lucide-react";
+import { IconType } from "react-icons";
 
 type Props = {
   title: string;
   description: string;
-  icon: LucideIcon;
+  icon: IconType;
 };
 
 const Card = ({ title, description, icon: Icon }: Props) => {
