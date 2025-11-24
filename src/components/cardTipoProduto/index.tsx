@@ -2,11 +2,10 @@
 
 import styles from "./styles.module.scss";
 import React, { useEffect, useState } from "react";
-import { ImageIcon } from "lucide-react";
-import Image from "next/image";
-import { Check } from "lucide-react";
-import ButtonBorder from "../buttonBorder";
+import { LuImage, LuCheck } from "react-icons/lu";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import Image from "next/image";
+import ButtonBorder from "../buttonBorder";
 import { Produto } from "@/@types/produto";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -17,7 +16,6 @@ import { Autoplay } from "swiper/modules";
 type Props = {
   titulo: string;
   bullets: string[];
-  // imagem?: StaticImageData;
   buttonScheme: string;
   href: string;
   buttonTxt: string;
@@ -26,7 +24,7 @@ type Props = {
 const ImageTemplate = () => {
   return (
     <div className={styles.imagemTemplate}>
-      <ImageIcon opacity={0.4} width={80} height={80} />
+      <LuImage opacity={0.4} width={80} height={80} />
       <span>Não foi possível carregar os produtos</span>
     </div>
   );
@@ -66,7 +64,6 @@ const CardTipoProduto = ({
             )
           );
         }
-        // console.log(data);
       } catch (err) {
         console.log(err);
       }
@@ -106,7 +103,7 @@ const CardTipoProduto = ({
         <ul>
           {bullets.map((bullet, index) => (
             <li key={index}>
-              <Check color="#515151" />
+              <LuCheck color="#515151" />
               <p>{bullet}</p>
             </li>
           ))}
