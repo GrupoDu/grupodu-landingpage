@@ -1,14 +1,14 @@
 "use client";
 
-import React, { MouseEventHandler, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import {
-  HomeIcon,
-  MailIcon,
-  PanelLeftCloseIcon,
-  ShoppingBasketIcon,
-  UsersRoundIcon,
-} from "lucide-react";
+  LuMail,
+  LuPanelLeftClose,
+  LuShoppingBasket,
+  LuUsersRound,
+} from "react-icons/lu";
+import { MdHomeFilled } from "react-icons/md";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -40,7 +40,7 @@ const MenuMobile = (props: Props) => {
       }`}
     >
       <button className={styles.closeButton} onClick={() => props.closeFunc()}>
-        <PanelLeftCloseIcon color="white" width={30} height={30} />
+        <LuPanelLeftClose color="white" width={30} height={30} />
         <span>Menu</span>
       </button>
       <div className={styles.pagesLinks}>
@@ -49,7 +49,7 @@ const MenuMobile = (props: Props) => {
           className={styles.link}
           onClick={() => props.closeFunc()}
         >
-          <HomeIcon
+          <MdHomeFilled
             color={actualPage === "inicio" ? "var(--blue-light)" : "black"}
           />
           <span
@@ -63,15 +63,15 @@ const MenuMobile = (props: Props) => {
           </span>
         </Link>
         <div className={styles.link} style={{ opacity: 0.2 }}>
-          <ShoppingBasketIcon color="black" />
+          <LuShoppingBasket color="black" />
           <span>Produtos</span>
         </div>
         <div className={styles.link} style={{ opacity: 0.2 }}>
-          <UsersRoundIcon color="black" />
+          <LuUsersRound color="black" />
           <span>Sobre</span>
         </div>
         <div className={styles.link} style={{ opacity: 0.2 }}>
-          <MailIcon color="black" />
+          <LuMail color="black" />
           <span>Entre em contato</span>
         </div>
       </div>
