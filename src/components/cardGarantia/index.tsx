@@ -1,11 +1,11 @@
-import React, { ForwardRefExoticComponent } from "react";
+import React from "react";
 import styles from "./styles.module.scss";
-import { LucideProps } from "lucide-react";
+import { IconType } from "react-icons";
 
 type Props = {
   titulo: string;
   descricao: string;
-  Icon: ForwardRefExoticComponent<LucideProps>;
+  Icon: IconType;
   borderColor: string;
 };
 
