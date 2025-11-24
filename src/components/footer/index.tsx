@@ -1,8 +1,7 @@
 "use client";
 
-import { Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
-import Whatsapp from "../../../public/whatsapp.svg";
-import Image from "next/image";
+import { LuInstagram, LuLinkedin, LuMail, LuMapPin, LuPhone } from "react-icons/lu";
+import { FaWhatsapp } from "react-icons/fa";
 import styles from "./styles.module.scss";
 import React from "react";
 import Link from "next/link";
@@ -21,13 +20,13 @@ const Footer = () => {
           </p>
           <div className={styles.socialsIcons}>
             <Link href={""} target="_blank">
-              <Instagram color="white" />
+              <LuInstagram color="white" />
             </Link>
             <Link href={""} target="_blank">
-              <Linkedin color="white" />
+              <LuLinkedin color="white" />
             </Link>
             <Link href={"https://wa.me/5581999040919"} target="_blank">
-              <Image src={Whatsapp} alt={"whatsappIcon"} />
+              <FaWhatsapp color="white" />
             </Link>
           </div>
         </div>
@@ -75,15 +74,15 @@ const Footer = () => {
           <h3>Informações de Contato</h3>
           <hr />
           <div className={styles.contato}>
-            <Phone color="#6592f1ff" className={styles.icon} />
+            <LuPhone color="#6592f1ff" className={styles.icon} />
             <span>(81) 99904-0919</span>
           </div>
           <div className={styles.contato}>
-            <Mail color="#6592f1ff" className={styles.icon} />
+            <LuMail color="#6592f1ff" className={styles.icon} />
             <span>duferrom@gmail.com</span>
           </div>
           <div className={styles.contato}>
-            <MapPin color="#6592f1ff" className={styles.icon} />
+            <LuMapPin color="#6592f1ff" className={styles.icon} />
             <span>Av. Pan Nordestina, 655</span>
           </div>
         </div>
