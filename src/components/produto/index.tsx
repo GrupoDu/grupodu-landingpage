@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import Image, { StaticImageData } from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
-import { CheckCheck } from "lucide-react";
+import { LuCheckCheck } from "react-icons/lu";
 
 type Props = {
   nomeProduto: string;
@@ -48,7 +48,7 @@ const Produto = ({
       <div className={styles.bulletsContainer}>
         {caracteristicas.map((bullet, index) => (
           <div className={styles.bullet} key={index}>
-            <CheckCheck />
+            <LuCheckCheck />
             <Bullets bullet={bullet} />
           </div>
         ))}
