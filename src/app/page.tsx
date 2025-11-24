@@ -4,7 +4,7 @@ import SectionTitle from "@/components/sectionTitle";
 import Card from "@/components/card";
 import Estados from "@/components/estados";
 import { cards, diferencas } from "@/constants/textos";
-import { ArrowDown, CircleCheckBig } from "lucide-react";
+import { LuArrowDown, LuCircleCheckBig } from "react-icons/lu";
 import InfoContatos from "@/components/infosContatos";
 import Form from "@/components/form";
 import Valores from "@/components/valores";
@@ -29,7 +29,7 @@ export default function Home() {
         <h3>
           Loja em breve!
         </h3>
-        <ArrowDown className={styles.arrowDown} />
+        <LuArrowDown className={styles.arrowDown} />
       </div>
       <div className={styles.sobreSection}>
         <div className={styles.sobreText}>
@@ -121,7 +121,7 @@ export default function Home() {
         <ul>
           {diferencas.map((diferenca, index) => (
             <li key={index}>
-              <CircleCheckBig color="white" className={styles.checkIcon} />
+              <LuCircleCheckBig color="white" className={styles.checkIcon} />
               <span>{diferenca}</span>
             </li>
           ))}
