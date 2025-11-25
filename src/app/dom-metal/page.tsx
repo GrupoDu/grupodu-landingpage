@@ -1,8 +1,9 @@
-// libs
-import React, { ForwardRefExoticComponent } from "react";
+// libs e componentes
+import React from "react";
 import styles from "./page.module.scss";
 import Image from "next/image";
-import { Check, ImageIcon, LucideProps } from "lucide-react";
+import { LuCheck, LuImage } from "react-icons/lu";
+import { IconType } from "react-icons";
 import Button from "@/components/button";
 import ListaCatalogo from "@/components/listaCatalogo";
 import { garantiasDomMetal } from "@/constants/garantias";
@@ -11,47 +12,29 @@ import { sobreDomMetal } from "@/constants/sobre";
 import Link from "next/link";
 import { MdKeyboardArrowRight, MdKeyboardArrowUp } from "react-icons/md";
 import { Metadata } from "next";
-import ReactPlayer from "react-player";
+import Form from "@/components/form";
+import InfoContatos from "@/components/infosContatos";
+import ButtonBorder from "@/components/buttonBorder";
+import { FaPlay } from "react-icons/fa";
+import { bulletsHero } from "@/constants/textosHero";
+import { textosCardDiferenciais } from "@/constants/cards";
+import Script from "next/script";
+// import ReactPlayer from "react-player";
+// import ImageTemplate from "@/components/imageTemplate";
 
 // Import de imagens
-import ButtonBorder from "@/components/buttonBorder";
 import ImgObra from "@/assets/backgrounds/construindo-novas-casas-de-concreto.jpg";
 import ImgEletricista from "@/assets/backgrounds/instalador-eletricista-com-uma-ferramenta-nas-maos-trabalhando-com-cabo-no-canteiro-de-obras.jpg";
-import InfoContatos from "@/components/infosContatos";
-import Form from "@/components/form";
 import DuFerro from "../../../public/DuFerro.png";
 import Carbuilt from "../../../public/Carbuilt.png";
 import BgHero from "@/assets/backgrounds/shirish-suwal-G3PCD962gXk-unsplash.webp";
-import { textosCardDiferenciais } from "@/constants/cards";
-import Script from "next/script";
-import { FaPlay } from "react-icons/fa";
-import { bulletsHero } from "@/constants/textosHero";
 
 export const revalidate = 7200;
-
-const ImageTemplate = () => {
-  return (
-    <div className={styles.imageTemplate}>
-      <ImageIcon opacity={0.4} />
-    </div>
-  );
-};
-
-const VideoTemplate = () => {
-  return (
-    <div className={styles.videoTemplate}>
-      <div className={styles.playButton}>
-        <FaPlay color="#696969" />
-      </div>
-      <span>vídeo ainda não disponível</span>
-    </div>
-  );
-};
 
 const Bullet = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className={styles.bulletComponent}>
-      <Check className={styles.iconCheck} />
+      <LuCheck className={styles.iconCheck} />
       {children}
     </div>
   );
@@ -64,7 +47,7 @@ const CardDiferencial = ({
 }: {
   titulo: string;
   descricao: string;
-  Icon: ForwardRefExoticComponent<LucideProps>;
+  Icon: IconType;
 }) => {
   return (
     <div className={styles.cardDiferencial}>
