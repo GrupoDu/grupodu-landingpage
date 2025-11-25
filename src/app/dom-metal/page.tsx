@@ -14,7 +14,7 @@ import { MdKeyboardArrowRight, MdKeyboardArrowUp } from "react-icons/md";
 import { Metadata } from "next";
 import Form from "@/components/form";
 import InfoContatos from "@/components/infosContatos";
-import ButtonBorder from "@/components/buttonBorder";
+import ButtonDecoration from "@/components/buttonDecoration";
 import { bulletsHero } from "@/constants/textosHero";
 import { textosCardDiferenciais } from "@/constants/cards";
 import Script from "next/script";
@@ -246,7 +246,7 @@ const DomMetalPage = () => {
                 </li>
               ))}
             </ul>
-            <ButtonBorder
+            <ButtonDecoration
               href="#formulario"
               borda="#5D6BFF"
               color="white"
@@ -255,7 +255,7 @@ const DomMetalPage = () => {
               type="link"
             >
               Solicitar Orçamento
-            </ButtonBorder>
+            </ButtonDecoration>
           </div>
           <div className={styles.rightContent}>
             <Image

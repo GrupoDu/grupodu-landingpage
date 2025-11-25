@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { LuImage, LuCheck } from "react-icons/lu";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Image from "next/image";
-import ButtonBorder from "../buttonBorder";
+import ButtonBorder from "../buttonDecoration";
 import { Produto } from "@/@types/produto";
 import "swiper/css";
 import "swiper/css/navigation";

@@ -5,7 +5,7 @@ import HeroProdutos from "@/components/heroProdutos";
 import { Suspense } from "react";
 import Loading from "@/components/loading";
 import { Metadata } from "next";
-import ButtonBorder from "@/components/buttonBorder";
+import ButtonDecoration from "@/components/buttonDecoration";
 import { Contato } from "@/components/contatos";
 import { contatos } from "@/constants/contatos";
 import Button from "@/components/button";
@@ -63,7 +63,7 @@ export default function ProdutoPge() {
             ))}
             <div className={styles.buttons}>
               <span>Ainda não conhece nossos produtos?</span>
-              <ButtonBorder
+              <ButtonDecoration
                 type="link"
                 href="#"
                 borda="#201750"
@@ -72,7 +72,7 @@ export default function ProdutoPge() {
                 borderRadius="4px"
               >
                 Catálogo completo
-              </ButtonBorder>
+              </ButtonDecoration>
               <Button
                 type="link"
                 href="#produtos"
