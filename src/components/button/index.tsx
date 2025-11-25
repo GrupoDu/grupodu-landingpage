@@ -4,9 +4,7 @@ import React from "react";
 
 type Props = {
   children: React.ReactNode;
-  theme?: string;
   borda?: string;
-  color?: string;
   width?: string;
   href?: string;
   className?: string;
@@ -22,9 +20,7 @@ const Button = (props: Props) => {
         href={props.href || "#"}
         className={`${styles.button} ${props.className}`}
         style={{
-          backgroundColor: props.theme || "white",
           border: props.borda ? `1px solid ${props.borda}` : "none",
-          color: props.color || "black",
           width: props.width ? props.width : "100%",
         }}
       >
@@ -40,9 +36,8 @@ const Button = (props: Props) => {
         type={props.type}
         className={`${styles.button} ${props.className}`}
         style={{
-          backgroundColor: props.theme || "white",
+          backgroundColor: "#040826f", 
           border: props.borda ? `1px solid ${props.borda}` : "none",
-          color: props.color || "black",
           width: props.width ? props.width : "100%",
           cursor: props.desativado ? "not-allowed" : "pointer",
           opacity: props.desativado ? 0.6 : 1,
