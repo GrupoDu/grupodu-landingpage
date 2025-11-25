@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./page.module.scss";
 import Image from "next/image";
-import { LuCheck, LuImage } from "react-icons/lu";
+import { LuCheck } from "react-icons/lu";
 import { IconType } from "react-icons";
 import Button from "@/components/button";
 import ListaCatalogo from "@/components/listaCatalogo";
