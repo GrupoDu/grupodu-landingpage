@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { LuImage, LuCheck } from "react-icons/lu";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Image from "next/image";
-import ButtonBorder from "../buttonDecoration";
+import ButtonDecoration from "../buttonDecoration";
 import { Produto } from "@/@types/produto";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -108,7 +108,7 @@ const CardTipoProduto = ({
             </li>
           ))}
         </ul>
-        <ButtonBorder
+        <ButtonDecoration
           type="link"
           href={href}
           borda={buttonScheme}
@@ -117,7 +117,7 @@ const CardTipoProduto = ({
           borderRadius="6px"
         >
           {buttonTxt} <MdKeyboardArrowRight />
-        </ButtonBorder>
+        </ButtonDecoration>
       </div>
     </div>
   );
