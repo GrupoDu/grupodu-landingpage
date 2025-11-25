@@ -3,12 +3,12 @@
 import styles from "./styles.module.scss";
 import LogoGrupo from "../../../public/grupodu_new_logo.png";
 import LogoDomMetal from "../../../public/dom-metal-icon.png";
-import Image, { StaticImageData } from "next/image";
-import { HamburgerIcon, ShoppingCart, Menu, Download } from "lucide-react";
-import Search from "../search";
+import Image from "next/image";
+import { LuShoppingCart, LuMenu, LuDownload } from "react-icons/lu";
+// import Search from "../search";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
-import MenuMobile from "@/components/menu";
+// import MenuMobile from "@/components/menu";
 import { useScrollOpacity } from "@/hooks/useScrollOpacity";
 import Link from "next/link";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
@@ -36,9 +36,9 @@ const Navbar = () => {
     setMenu(true);
   };
 
-  const closeMenu = () => {
-    setMenu(false);
-  };
+  // const closeMenu = () => {
+  //   setMenu(false);
+  // };
 
   useEffect(() => {
     if (
@@ -119,7 +119,7 @@ const Navbar = () => {
           </span>
           <div className={styles.catalogo} onClick={handleDownload}>
             <span>Nosso Catalogo</span>
-            <Download color="black" className={styles.downloadIcon} />
+            <LuDownload color="black" className={styles.downloadIcon} />
           </div>
           {/* V--- OFF POR ENQUANTO ---V
         <div className={styles.carrinhoIcon}>
@@ -129,7 +129,7 @@ const Navbar = () => {
           {/* <Search /> */}
         </div>
         <div className={styles.menuIcon} onClick={openMenu}>
-          <Menu color="black" width={40} height={40} />
+          <LuMenu color="black" width={40} height={40} />
         </div>
       </nav>
       {/* <MenuMobile menu={menu} closeFunc={closeMenu} /> */}

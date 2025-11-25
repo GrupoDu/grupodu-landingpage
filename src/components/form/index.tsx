@@ -3,7 +3,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Button from "../button";
-import { Send } from "lucide-react";
+import { LuSend } from "react-icons/lu";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -134,7 +134,7 @@ const Form = () => {
           ></textarea>
         </label>
         <Button type="submit" theme="#004AAD" color="white" className={styles.button}>
-          Enviar Mensagem <Send color="white" width={16} />
+          Enviar Mensagem <LuSend color="white" width={16} />
         </Button>
       </form>
     </div>

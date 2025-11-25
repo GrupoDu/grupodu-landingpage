@@ -1,10 +1,10 @@
-import { SearchIcon } from "lucide-react";
+import { LuSearch } from "react-icons/lu";
 import styles from "./styles.module.scss";
 
 const Search = () => {
   return (
     <div className={styles.searchContainer}>
-      <SearchIcon className={styles.searchIcon} />
+      <LuSearch className={styles.searchIcon} />
       <input type="search" name="inputSearch" placeholder="Procure no site" />
     </div>
   );

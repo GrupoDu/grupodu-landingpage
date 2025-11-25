@@ -1,20 +1,11 @@
-import { CategoriaProduto } from "@/@types/categoriaProduto";
 import {
-  ChevronUp,
-  Headset,
-  Shield,
-  Smile,
-  TrendingUp,
-  UsersRound,
-} from "lucide-react";
-
-// imagens
-import CarroDeMao from "@/assets/produtos/Carro de mao.png";
-import CarroJerica160 from "@/assets/produtos/Carro jerica 160L.png";
-import MasseiraMetalica from "@/assets/produtos/masseira-metalica.png";
-import MasseiraMetalica100 from "@/assets/produtos/masseira-metalica-100.png";
-import CarroPlataforma from "@/assets/produtos/carro-plataforma.png";
-import PlataformaBasculante from "@/assets/produtos/carro-plataforma-basculante.png";
+  LuChevronUp,
+  LuHeadset,
+  LuShield,
+  LuSmile,
+  LuTrendingUp,
+  LuUsersRound,
+} from "react-icons/lu";
 
 export const domMetal = {
   nome: "Dom Metal",
@@ -60,37 +51,37 @@ export const cards = [
     title: "Qualidade Garantida",
     description:
       "Todos os nossos serviços seguem rigorosos padrões de qualidade e contam com garantia.",
-    icon: Shield,
+    icon: LuShield,
   },
   {
     title: "Agilidade",
     description:
       "Processos otimizados para entregar resultados no menor tempo possível sem comprometer a qualidade.",
-    icon: ChevronUp,
+    icon: LuChevronUp,
   },
   {
     title: "Equipe Especializada",
     description:
       "Profissionais altamente qualificados e em constante atualização técnica.",
-    icon: UsersRound,
+    icon: LuUsersRound,
   },
   {
     title: "Suport Completo",
     description:
       "Atendimento personalizado e suporte contínuo para todas as necessidades dos clientes.",
-    icon: Headset,
+    icon: LuHeadset,
   },
   {
     title: "Experiência Comprovada",
     description:
       "Mais de uma década de experiência atendendo clientes com excelência.",
-    icon: Smile,
+    icon: LuSmile,
   },
   {
     title: "Soluções Inovadoras",
     description:
       "Sempre em busca de novas tecnologias e metodologias para oferecer o melhor.",
-    icon: TrendingUp,
+    icon: LuTrendingUp,
   },
 ];
 
