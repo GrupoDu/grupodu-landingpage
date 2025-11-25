@@ -15,10 +15,10 @@ import { Metadata } from "next";
 import Form from "@/components/form";
 import InfoContatos from "@/components/infosContatos";
 import ButtonBorder from "@/components/buttonBorder";
-import { FaPlay } from "react-icons/fa";
 import { bulletsHero } from "@/constants/textosHero";
 import { textosCardDiferenciais } from "@/constants/cards";
 import Script from "next/script";
+// import { FaPlay } from "react-icons/fa";
 // import ReactPlayer from "react-player";
 // import ImageTemplate from "@/components/imageTemplate";
 
