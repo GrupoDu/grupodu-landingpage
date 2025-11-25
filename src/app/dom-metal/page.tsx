@@ -141,9 +141,7 @@ const DomMetalPage = () => {
                   type="link"
                   width="fit-content"
                   href="#formulario"
-                  theme="#040826"
                   borda="#fff"
-                  color="#fff"
                 >
                   Solicitar Orçamento
                 </Button>
@@ -196,8 +194,6 @@ const DomMetalPage = () => {
             <Button
               type="link"
               href="#catalogo"
-              theme="#040826"
-              color="white"
               borda="white"
               className={styles.buttonCustom}
             >
@@ -216,8 +212,6 @@ const DomMetalPage = () => {
             <Button
               type="link"
               href="#catalogo"
-              theme="#040826"
-              color="white"
               borda="white"
               className={styles.buttonCustom}
             >

@@ -136,7 +136,7 @@ const FormProduto = () => {
             onChange={(e) => setEmpresa(e.target.value)}
           />
         </label>
-        <Button type="submit" theme="#37349aff" color="white">
+        <Button type="submit">
           Solicitar produto
         </Button>
       </form>

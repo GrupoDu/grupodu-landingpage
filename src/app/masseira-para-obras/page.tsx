@@ -76,8 +76,6 @@ export default function ProdutoPge() {
               <Button
                 type="link"
                 href="#produtos"
-                theme="#201750"
-                color="white"
               >
                 Ver Linha Completa de Carros de Mão <MdKeyboardArrowDown />
               </Button>
