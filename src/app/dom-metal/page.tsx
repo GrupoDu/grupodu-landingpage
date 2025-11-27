@@ -145,7 +145,7 @@ const DomMetalPage = () => {
                 >
                   Solicitar Orçamento
                 </Button>
-                <Button type="link" href="#catalogo" width="fit-content">
+                <Button type="link" href="#catalogo" width="fit-content" borda="#fff">
                   Ver Catálogo
                 </Button>
               </div>

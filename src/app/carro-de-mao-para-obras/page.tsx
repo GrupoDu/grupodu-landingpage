@@ -1,16 +1,12 @@
 import styles from "../styles.module.scss";
-import FormProduto from "@/components/formProduto";
 import Main from "@/components/main";
 import HeroProdutos from "@/components/heroProdutos";
 import Loading from "@/components/loading";
 import { Suspense } from "react";
 import { Metadata } from "next";
-import { contatos } from "@/constants/contatos";
-import Button from "@/components/button";
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
-import ButtonDecoration from "@/components/buttonDecoration";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import Script from "next/script";
-import { Contato } from "@/components/contatos";
+import ContatosSection from "@/components/contatosSection";
 
 export const revalidate = 7200;
 
@@ -52,45 +48,8 @@ export default function ProdutoPge() {
         <Suspense fallback={<Loading />}>
           <Main id="produtos" />
         </Suspense>
-        <div className={styles.formularioContato}>
-          <div className={styles.contatos}>
-            <h2>Solicite seu Produto</h2>
-            <p>
-              Preencha seus dados e nossa equipe entrará em contato para
-              garantir que você receba exatamente o que procura.
-            </p>
-            <hr />
-            <h3>Outras formas de contato</h3>
-            {contatos.map((contato, index) => (
-              <Contato
-                key={index}
-                Icon={contato.icon}
-                contato={contato.contato}
-              />
-            ))}
-            <div className={styles.buttons}>
-              <span>Ainda não conhece nossos produtos?</span>
-              <ButtonDecoration
-                type="link"
-                href="#"
-                borda="#201750"
-                theme="#201750"
-                color="white"
-                borderRadius="4px"
-              >
-                Catálogo completo
-              </ButtonDecoration>
-              <Button
-                type="link"
-                href="#produtos"
-              >
-                Ver Linha Completa de Carros de Mão <MdKeyboardArrowUp />
-              </Button>
-            </div>
-          </div>
-          <FormProduto />
-        </div>
         <hr className={styles.hr} />
+        <ContatosSection />
       </div>
     </>
   );

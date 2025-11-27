@@ -1,16 +1,12 @@
 import styles from "../styles.module.scss";
-import FormProduto from "@/components/formProduto";
 import Main from "@/components/main";
 import HeroProdutos from "@/components/heroProdutos";
 import { Suspense } from "react";
 import Loading from "@/components/loading";
 import { Metadata } from "next";
-import ButtonDecoration from "@/components/buttonDecoration";
-import Button from "@/components/button";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { Contato } from "@/components/contatos";
-import { contatos } from "@/constants/contatos";
 import Script from "next/script";
+import ContatosSection from "@/components/contatosSection";
 
 export const revalidate = 7200;
 
@@ -45,45 +41,6 @@ export default function ProdutoPge() {
         <Suspense fallback={<Loading />}>
           <HeroProdutos paginaAnterior="dom metal" />
         </Suspense>
-        <div className={styles.formularioContato}>
-          <div className={styles.contatos}>
-            <h2>Solicite seu Produto</h2>
-            <p>
-              Preencha seus dados e nossa equipe entrará em contato para
-              garantir que você receba exatamente o que procura.
-            </p>
-            <hr />
-            <h3>Outras formas de contato</h3>
-            {contatos.map((contato, index) => (
-              <Contato
-                key={index}
-                Icon={contato.icon}
-                contato={contato.contato}
-              />
-            ))}
-            <div className={styles.buttons}>
-              <span>Ainda não conhece nossos produtos?</span>
-              <ButtonDecoration
-                type="link"
-                href="#"
-                borda="#201750"
-                theme="#201750"
-                color="white"
-                borderRadius="4px"
-              >
-                Catálogo completo
-              </ButtonDecoration>
-              <Button
-                type="link"
-                href="#produtos"
-              >
-                Ver Linha Completa de Carros de Mão <MdKeyboardArrowDown />
-              </Button>
-            </div>
-          </div>
-          <FormProduto />
-        </div>
-        <hr className={styles.hr} />
         <div className={styles.tituloProdutos}>
           <MdKeyboardArrowDown className={styles.arrow} />
           <h2>Nossa linha completa de Plataformas de Trabalho</h2>
@@ -91,6 +48,8 @@ export default function ProdutoPge() {
         <Suspense fallback={<Loading />}>
           <Main id="produtos" />
         </Suspense>
+        <hr className={styles.hr} />
+        <ContatosSection />
       </div>
     </>
   );
