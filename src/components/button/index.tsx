@@ -36,7 +36,7 @@ const Button = (props: Props) => {
         type={props.type}
         className={`${styles.button} ${props.className}`}
         style={{
-          backgroundColor: "#040826f", 
+          backgroundColor: "#040826f",
           border: props.borda ? `1px solid ${props.borda}` : "none",
           width: props.width ? props.width : "100%",
           cursor: props.desativado ? "not-allowed" : "pointer",
