@@ -108,9 +108,7 @@ export default function Home() {
           <div className={styles.button}>
             <Button
               type="link"
-              theme="#0e2455ff"
               borda="white"
-              color="white"
               width="100%"
               href="#formulario"
             >

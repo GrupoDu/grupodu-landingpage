@@ -12,6 +12,8 @@
   transition: all 0.1s ease-in-out;
   user-select: none;
   gap: .4rem;
+  color: white;
+  background-color: #040826;
 
   &:hover {
     transform: translateY(-4px);

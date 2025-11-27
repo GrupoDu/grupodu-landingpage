@@ -133,7 +133,7 @@ const Form = () => {
             required
           ></textarea>
         </label>
-        <Button type="submit" theme="#004AAD" color="white" className={styles.button}>
+        <Button type="submit" className={styles.button}>
           Enviar Mensagem <LuSend color="white" width={16} />
         </Button>
       </form>

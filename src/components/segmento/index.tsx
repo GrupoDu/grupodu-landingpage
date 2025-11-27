@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Image, { StaticImageData } from "next/image";
-import ButtonBorder from "../buttonBorder";
+import ButtonDecoration from "../buttonDecoration";
 
 type Props = {
   src: StaticImageData;
@@ -40,7 +40,7 @@ const Segmento = (props: Props) => {
         </ul>
       </div>
       <div className={styles.buttonContainer}>
-        <ButtonBorder
+        <ButtonDecoration
           type="link"
           href={`/${props.variantClass}`}
           borda={props.corButton}
@@ -49,7 +49,7 @@ const Segmento = (props: Props) => {
           borderRadius="14px"
         >
           {props.title}
-        </ButtonBorder>
+        </ButtonDecoration>
       </div>
     </div>
   );

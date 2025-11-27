@@ -9,7 +9,7 @@ import Loading from "../loading";
 import { CategoriaProduto } from "@/@types/categoriaProduto";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { LuCheckCheck } from "react-icons/lu";
-import ButtonBorder from "../buttonBorder";
+import ButtonDecoration from "../buttonDecoration";
 import Breadcrumbs from "../breadcrumbs";
 
 const Bullets = ({ texto }: { texto: string }) => {
@@ -73,7 +73,7 @@ const HeroProdutos = ({ paginaAnterior }: { paginaAnterior: string }) => {
           {bullets.map((bullet, index) => (
             <Bullets key={index} texto={bullet} />
           ))}
-          <ButtonBorder
+          <ButtonDecoration
             borda="#201750"
             theme="#201750"
             color="white"
@@ -82,7 +82,7 @@ const HeroProdutos = ({ paginaAnterior }: { paginaAnterior: string }) => {
             borderRadius="1em"
           >
             Explore nosso catálogo <MdKeyboardArrowDown />
-          </ButtonBorder>
+          </ButtonDecoration>
         </div>
         {loading ? (
           <Loading />
