@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./styles.module.scss";
-import React, { useEffect } from "react";
 import { contatos } from "@/constants/contatos";
 import { Contato } from "@/components/contatos";
 import ButtonDecoration from "@/components/buttonDecoration";
