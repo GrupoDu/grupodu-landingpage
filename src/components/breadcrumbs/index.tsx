@@ -6,13 +6,12 @@ import React from "react";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useRouter } from "next/navigation";
 
-const Breadcrumbs = ({
-  paginaAtual,
-  paginaAnterior,
-}: {
+type Props = {
   paginaAtual: string;
   paginaAnterior: string;
-}) => {
+};
+
+const Breadcrumbs = ({ paginaAtual, paginaAnterior }: Props) => {
   const paginaAnteriorHref = `/${paginaAnterior.replace(" ", "-")}`;
   const router = useRouter();
 
