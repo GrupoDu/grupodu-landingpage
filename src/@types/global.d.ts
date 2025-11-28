@@ -22,3 +22,5 @@ declare global {
     type: "button" | "link" | "submit";
   }
 }
+
+export {};
