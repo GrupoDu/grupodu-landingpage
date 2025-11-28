@@ -141,11 +141,11 @@ const DomMetalPage = () => {
                   type="link"
                   width="fit-content"
                   href="#formulario"
-                  borda="#fff"
+                  border="#fff"
                 >
                   Solicitar Orçamento
                 </Button>
-                <Button type="link" href="#catalogo" width="fit-content" borda="#fff">
+                <Button type="link" href="#catalogo" width="fit-content" border="#fff">
                   Ver Catálogo
                 </Button>
               </div>
@@ -194,7 +194,7 @@ const DomMetalPage = () => {
             <Button
               type="link"
               href="#catalogo"
-              borda="white"
+              border="white"
               className={styles.buttonCustom}
             >
               Explorar Catálogo <MdKeyboardArrowUp />
@@ -212,7 +212,7 @@ const DomMetalPage = () => {
             <Button
               type="link"
               href="#catalogo"
-              borda="white"
+              border="white"
               className={styles.buttonCustom}
             >
               Explorar Catálogo <MdKeyboardArrowUp />
@@ -248,7 +248,7 @@ const DomMetalPage = () => {
             </ul>
             <ButtonDecoration
               href="#formulario"
-              borda="#5D6BFF"
+              border="#5D6BFF"
               color="white"
               borderRadius="6px"
               theme="#5D6BFF"
