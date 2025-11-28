@@ -4,8 +4,8 @@ import React from "react";
 
 interface Props extends baseButton {
   width: string;
-  className: string;
-  desativado: boolean;
+  className?: string;
+  desativado?: boolean;
 };
 
 const Button = (props: Props) => {
