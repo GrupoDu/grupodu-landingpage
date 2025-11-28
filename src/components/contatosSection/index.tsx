@@ -37,7 +37,7 @@ const ContatosSection = () => {
           <ButtonDecoration
             type="button"
             href="#"
-            borda="#201750"
+            border="#201750"
             theme="#201750"
             color="white"
             borderRadius="4px"

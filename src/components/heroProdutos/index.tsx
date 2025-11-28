@@ -74,7 +74,7 @@ const HeroProdutos = ({ paginaAnterior }: { paginaAnterior: string }) => {
             <Bullets key={index} texto={bullet} />
           ))}
           <ButtonDecoration
-            borda="#201750"
+            border="#201750"
             theme="#201750"
             color="white"
             href="#produtos"
