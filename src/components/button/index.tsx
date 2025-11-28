@@ -9,14 +9,18 @@ interface Props extends baseButton {
 };
 
 const Button = (props: Props) => {
+  const href = props.href || "#"; 
+  const border = props.borda ? `1px solid ${props.borda}` : "none";
+  const width = props.width ? props.width : "100%";
+
   if (props.type === "link") {
     return (
       <Link
-        href={props.href || "#"}
+        href={href}
         className={`${styles.button} ${props.className}`}
         style={{
-          border: props.borda ? `1px solid ${props.borda}` : "none",
-          width: props.width ? props.width : "100%",
+          border: border,
+          width: width,
         }}
       >
         {props.children}
