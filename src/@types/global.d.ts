@@ -16,9 +16,9 @@ declare module "@/app/globals.scss" {
 declare global {
   interface baseButton {
     children: React.ReactNode;
-    borda: string;
-    href: string;
-    click: () => void;
+    border?: string;
+    href?: string;
+    click?: () => void;
     type: "button" | "link" | "submit";
   }
 }
