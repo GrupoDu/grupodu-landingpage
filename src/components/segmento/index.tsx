@@ -43,7 +43,7 @@ const Segmento = (props: Props) => {
         <ButtonDecoration
           type="link"
           href={`/${props.variantClass}`}
-          borda={props.corButton}
+          border={props.corButton}
           color="white"
           theme={props.corButton}
           borderRadius="14px"
