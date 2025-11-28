@@ -108,7 +108,7 @@ export default function Home() {
           <div className={styles.button}>
             <Button
               type="link"
-              borda="white"
+              border="white"
               width="100%"
               href="#formulario"
             >
