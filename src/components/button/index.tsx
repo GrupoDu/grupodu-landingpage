@@ -2,15 +2,10 @@ import Link from "next/link";
 import styles from "./styles.module.scss";
 import React from "react";
 
-type Props = {
-  children: React.ReactNode;
-  borda?: string;
-  width?: string;
-  href?: string;
-  className?: string;
-  type: "button" | "link" | "submit";
-  click?: () => void;
-  desativado?: boolean;
+interface Props extends baseButton {
+  width: string;
+  className: string;
+  desativado: boolean;
 };
 
 const Button = (props: Props) => {
