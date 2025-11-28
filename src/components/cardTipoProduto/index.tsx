@@ -111,7 +111,7 @@ const CardTipoProduto = ({
         <ButtonDecoration
           type="link"
           href={href}
-          borda={buttonScheme}
+          border={buttonScheme}
           color="white"
           theme={buttonScheme}
           borderRadius="6px"
