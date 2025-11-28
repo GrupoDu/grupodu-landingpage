@@ -4,15 +4,10 @@ import Link from "next/link";
 import styles from "./styles.module.scss";
 import React, { useState } from "react";
 
-type Props = {
-  children: React.ReactNode;
-  theme?: string;
-  borda?: string;
-  color?: string;
+interface Props extends baseButton {
+  theme: string;
+  color: string;
   borderRadius?: string;
-  href: string;
-  type: "button" | "link";
-  click?: () => void;
 };
 
 const ButtonDecoration = (props: Props) => {
@@ -24,7 +19,7 @@ const ButtonDecoration = (props: Props) => {
   if (props.type === "link") {
     return (
       <Link
-        href={props.href}
+        href={props.href ? props.href : "#"}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         className={styles.button}
