@@ -9,9 +9,11 @@ interface Props extends baseButton {
 };
 
 const Button = (props: Props) => {
-  const href = props.href || "#"; 
-  const border = props.borda ? `1px solid ${props.borda}` : "none";
+  const href = props.href ? props.href : "#"; 
+  const border = props.border ? `1px solid ${props.border}` : "none";
   const width = props.width ? props.width : "100%";
+  const cursorPointer = props.desativado ? "not-allowed" : "pointer";
+  const opacity = props.desativado ? 0.6 : 1;
 
   if (props.type === "link") {
     return (
@@ -35,11 +37,10 @@ const Button = (props: Props) => {
         type={props.type}
         className={`${styles.button} ${props.className}`}
         style={{
-          backgroundColor: "#040826f",
-          border: props.borda ? `1px solid ${props.borda}` : "none",
-          width: props.width ? props.width : "100%",
-          cursor: props.desativado ? "not-allowed" : "pointer",
-          opacity: props.desativado ? 0.6 : 1,
+          border: border,
+          width: width,
+          cursor: cursorPointer,
+          opacity: opacity,
         }}
         disabled={props.desativado}
       >
