@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import React from "react";
 
 interface Props extends baseButton {
-  width: string;
+  width?: string;
   className?: string;
   desativado?: boolean;
 };
