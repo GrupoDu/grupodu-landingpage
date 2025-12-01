@@ -1,0 +1,27 @@
+.button {
+  padding: 14px 38px;
+  height: 4rem;
+  width: fit-content;
+  text-align: center;
+  display: flex;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  transition: all 0.1s ease-in-out;
+  user-select: none;
+  gap: .4rem;
+  color: white;
+  background-color: #040826;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .button {
+    flex: 1;
+  }
+}

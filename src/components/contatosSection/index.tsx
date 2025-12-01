@@ -3,9 +3,9 @@
 import styles from "./styles.module.scss";
 import { contatos } from "@/constants/contatos";
 import { Contato } from "@/components/contatos";
-import ButtonDecoration from "@/components/buttonDecoration";
-import Button from "@/components/button";
-import FormProduto from "@/components/formProduto";
+import ButtonDecoration from "@/components/ui/buttonDecoration";
+import Button from "@/components/ui/button";
+import FormProduto from "@/components/ui/formProduto";
 import { MdKeyboardArrowUp } from "react-icons/md";
 
 const ContatosSection = () => {

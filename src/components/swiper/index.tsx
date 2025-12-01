@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { cards } from "@/constants/textos";
 import "swiper/css";
 import "swiper/css/pagination";
-import Card from "../card";
+import Card from "../ui/card";
 import { Autoplay, Pagination } from "swiper/modules";
 
 const SwiperComponent = () => {

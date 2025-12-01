@@ -3,9 +3,9 @@ import { Poppins } from "next/font/google";
 import "@/app/globals.scss";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import Toast from "@/components/toast";
-import WsIcon from "@/components/wsicon";
-import ArrowUp from "@/components/arrowUp";
+import Toast from "@/components/ui/toast";
+import WsIcon from "@/components/ui/wsicon";
+import ArrowUp from "@/components/ui/arrowUp";
 import Script from "next/script";
 import Image from "next/image";
 
