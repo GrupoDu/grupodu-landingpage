@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 
 const Form = () => {
   const [nome, setNome] = useState<string>("");
+  const [sending, setSending] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [telefone, setTelefone] = useState<string>("");
   const [empresa, setEmpresa] = useState<string>("");
@@ -17,6 +18,7 @@ const Form = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSending(true);
 
     try {
       if (!nome || !email || !telefone || !empresa || !assunto || !mensagem) {
@@ -49,6 +51,8 @@ const Form = () => {
     } catch (err) {
       toast.error("Erro de conexão. Tenta novamente mais tarde.");
       console.log(err);
+    } finally {
+      setSending(false);
     }
   };
 
