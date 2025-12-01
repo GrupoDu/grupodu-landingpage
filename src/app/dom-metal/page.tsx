@@ -12,7 +12,7 @@ import { sobreDomMetal } from "@/constants/sobre";
 import Link from "next/link";
 import { MdKeyboardArrowRight, MdKeyboardArrowUp } from "react-icons/md";
 import { Metadata } from "next";
-import FormContact from "@/components/ui/formContact";
+import FormContact from "@/components/form/formContact";
 import InfoContatos from "@/components/infosContatos";
 import ButtonDecoration from "@/components/ui/buttonDecoration";
 import { bulletsHero } from "@/constants/textosHero";

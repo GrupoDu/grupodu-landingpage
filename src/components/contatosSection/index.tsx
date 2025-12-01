@@ -5,7 +5,7 @@ import { contatos } from "@/constants/contatos";
 import { Contato } from "@/components/contatos";
 import ButtonDecoration from "@/components/ui/buttonDecoration";
 import Button from "@/components/ui/button";
-import FormProduto from "@/components/ui/formProduto";
+import FormProduto from "@/components/form/formProduto";
 import { MdKeyboardArrowUp } from "react-icons/md";
 
 const ContatosSection = () => {

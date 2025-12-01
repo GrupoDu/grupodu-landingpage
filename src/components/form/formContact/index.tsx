@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "./styles.module.scss";
-import Button from "../button";
+import Button from "../../ui/button";
 import { LuSend } from "react-icons/lu";
 import { useState } from "react";
 import toast from "react-hot-toast";

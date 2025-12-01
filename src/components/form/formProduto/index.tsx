@@ -5,7 +5,7 @@ import styles from "./styles.module.scss";
 import toast from "react-hot-toast";
 import { usePathname } from "next/navigation";
 import { Produto } from "@/@types/produto";
-import Button from "../button";
+import Button from "../../ui/button";
 
 const FormProduto = () => {
   const [email, setEmail] = useState<string>("");
