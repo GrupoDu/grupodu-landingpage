@@ -21,6 +21,18 @@ declare global {
     click?: () => void;
     type: "button" | "link" | "submit";
   }
+
+  interface IContactInfos {
+    email: string;
+    name: string;
+    phone: string;
+    company: string;
+  }
+
+  interface IUserInfos extends IContactInfos {
+    message: string;
+    subject: string;
+  }
 }
 
 export {};
