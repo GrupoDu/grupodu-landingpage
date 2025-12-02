@@ -7,10 +7,10 @@ import Button from "../../ui/button";
 import { LuSend } from "react-icons/lu";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { usePostContactRequest } from "@/hooks/usePostContactRequest";
+import { postContactRequest } from "@/services/postContactRequest";
 
 const FormContact = () => {
-  const [userInfos, setUserInfos] = useState<IUserInfos>({
+  const [userInfos, setUserInfos] = useState<IContactInfos>({
     email: "",
     name: "",
     phone: "",
@@ -27,9 +27,8 @@ const FormContact = () => {
     setSending(true);
 
     try {
-      const [response] = usePostContactRequest({ userInfos, "email" });
-
-      if (emailRequestResponse.ok) {
+      const emailRequestResponse = await postContactRequest(userInfos, "email");
+      if (emailRequestResponse?.status === 200) {
         toast.success("Email recebido com sucesso!");
       } else {
         toast.error("Ocorreu um erro ao enviar o email.");
@@ -41,8 +40,6 @@ const FormContact = () => {
       setSending(false);
     }
   };
-
-  
 
   return (
     <div className={styles.formContainer}>
@@ -56,7 +53,10 @@ const FormContact = () => {
             placeholder="Seu nome completo"
             value={userInfos.name}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setUserInfos(prevUserInfos => ({...prevUserInfos, name: e.target.value}))
+              setUserInfos((prevUserInfos) => ({
+                ...prevUserInfos,
+                name: e.target.value,
+              }))
             }
             required
           />
@@ -69,7 +69,10 @@ const FormContact = () => {
             placeholder="seu@email.com"
             value={userInfos.email}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setUserInfos(prevUserInfos => ({...prevUserInfos, email: e.target.value}))
+              setUserInfos((prevUserInfos) => ({
+                ...prevUserInfos,
+                email: e.target.value,
+              }))
             }
             required
           />
@@ -82,7 +85,10 @@ const FormContact = () => {
             placeholder="(81) 99999-9999"
             value={userInfos.phone}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setUserInfos(prevUserInfos => ({...prevUserInfos, phone: e.target.value}))
+              setUserInfos((prevUserInfos) => ({
+                ...prevUserInfos,
+                phone: e.target.value,
+              }))
             }
             required
           />
@@ -95,7 +101,10 @@ const FormContact = () => {
             placeholder="Nome da sua empresa"
             value={userInfos.company}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setUserInfos(prevUserInfos => ({...prevUserInfos, company: e.target.value}))
+              setUserInfos((prevUserInfos) => ({
+                ...prevUserInfos,
+                company: e.target.value,
+              }))
             }
             required
           />
@@ -108,7 +117,10 @@ const FormContact = () => {
             placeholder="Sobre o que você gostaria de falar"
             value={userInfos.subject}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setUserInfos(prevUserInfos => ({...prevUserInfos, subject: e.target.value}))
+              setUserInfos((prevUserInfos) => ({
+                ...prevUserInfos,
+                subject: e.target.value,
+              }))
             }
             required
           />
@@ -120,12 +132,15 @@ const FormContact = () => {
             placeholder="Digite sua mensagem aqui"
             value={userInfos.message}
             onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-              setUserInfos(prevUserInfos => ({...prevUserInfos, message: e.target.value}))
+              setUserInfos((prevUserInfos) => ({
+                ...prevUserInfos,
+                message: e.target.value,
+              }))
             }
             required
           ></textarea>
         </label>
-        <Button type="submit" className={styles.button} desativado={!sending}>
+        <Button type="submit" className={styles.button} desativado={sending}>
           Enviar Mensagem <LuSend color="white" width={16} />
         </Button>
       </form>
