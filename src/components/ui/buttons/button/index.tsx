@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./styles.module.scss";
 import React from "react";
+import { baseButton } from "../types";
 
 interface Props extends baseButton {
   width?: string;

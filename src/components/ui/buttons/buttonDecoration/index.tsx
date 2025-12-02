@@ -3,6 +3,7 @@
 import Link from "next/link";
 import styles from "./styles.module.scss";
 import React, { useState } from "react";
+import { baseButton } from "../types";
 
 interface Props extends baseButton {
   theme: string;
