@@ -5,17 +5,23 @@ import styles from "./styles.module.scss";
 import toast from "react-hot-toast";
 import { usePathname } from "next/navigation";
 import { Produto } from "@/@types/produto";
-import Button from "../../ui/button";
+import Button from "../../ui/buttons/button";
+import { IProductRequest } from "../types";
+import { showToast } from "@/utils/showToast";
 
 const FormProduto = () => {
-  const [email, setEmail] = useState<string>("");
-  const [telefone, setTelefone] = useState<string>("");
-  const [nome, setNome] = useState<string>("");
-  const [empresa, setEmpresa] = useState<string>("");
-  const [modelo, setModelo] = useState<string>("");
-  const [quantidade, setQuantidade] = useState<number>(0);
+  const [productRequestInfos, setProductRequestInfos] =
+    useState<IProductRequest>({
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      quantity: 0,
+      model: "",
+    });
   const pathname = usePathname();
   const [products, setProducts] = useState<Produto[]>([]);
+  const [isSending, setIsSending] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,29 +51,29 @@ const FormProduto = () => {
 
   const handleEmail = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSending(true);
 
     try {
       const res = await fetch("/api/emailPedido", {
         method: "POST",
-        body: JSON.stringify({
-          nome,
-          email,
-          telefone,
-          empresa,
-          modelo,
-          quantidade,
-        }),
+        body: JSON.stringify(productRequestInfos),
       });
 
       if (res.status === 400)
-        return toast.error(
-          "Algo deu errado, lembre-se de preencher todos os campos!"
-        );
+        showToast({
+          toastType: "error",
+          message: "Por favor, preencha todos os campos.",
+        });
 
-      toast.success("Recebemos seu pedido com sucesso!");
+      showToast({
+        toastType: "success",
+        message: "Recebemos seu pedido com sucesso!",
+      });
     } catch (error) {
       console.log(error);
       toast.error("Algo deu errado, tente novamente!");
+    } finally {
+      setIsSending(false);
     }
   };
 
@@ -80,7 +86,12 @@ const FormProduto = () => {
           <input
             type="text"
             placeholder="Seu nome"
-            onChange={(e) => setNome(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setProductRequestInfos((prevProductRequestInfos) => ({
+                ...prevProductRequestInfos,
+                name: e.target.value,
+              }))
+            }
             required
           />
         </label>
@@ -89,7 +100,12 @@ const FormProduto = () => {
           <input
             type="email"
             placeholder="Seu email"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setProductRequestInfos((prevProductRequestInfos) => ({
+                ...prevProductRequestInfos,
+                email: e.target.value,
+              }))
+            }
             required
           />
         </label>
@@ -98,14 +114,24 @@ const FormProduto = () => {
           <input
             type="text"
             placeholder="Seu celular"
-            onChange={(e) => setTelefone(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setProductRequestInfos((prevProductRequestInfos) => ({
+                ...prevProductRequestInfos,
+                phone: e.target.value,
+              }))
+            }
             required
           />
         </label>
         <label className={`${styles.inputContainer} ${styles.inputModelo}`}>
           <span>Modelo do produto</span>
           <select
-            onChange={(e) => setModelo(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+              setProductRequestInfos((prevProductRequestInfos) => ({
+                ...prevProductRequestInfos,
+                model: e.target.value,
+              }))
+            }
             defaultValue=""
             required
           >
@@ -124,7 +150,12 @@ const FormProduto = () => {
           <input
             type="number"
             placeholder="Quantidade"
-            onChange={(e) => setQuantidade(Number(e.target.value))}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setProductRequestInfos((prevProductRequestInfos) => ({
+                ...prevProductRequestInfos,
+                quantity: Number(e.target.value),
+              }))
+            }
             required
           />
         </label>
@@ -133,12 +164,15 @@ const FormProduto = () => {
           <input
             type="text"
             placeholder="Sua empresa"
-            onChange={(e) => setEmpresa(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setProductRequestInfos((prevProductRequestInfos) => ({
+                ...prevProductRequestInfos,
+                company: e.target.value,
+              }))
+            }
           />
         </label>
-        <Button type="submit">
-          Solicitar produto
-        </Button>
+        <Button type="submit" desativado={isSending}>Solicitar produto</Button>
       </form>
     </div>
   );
