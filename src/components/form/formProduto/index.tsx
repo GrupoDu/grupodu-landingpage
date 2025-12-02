@@ -22,25 +22,29 @@ const FormProduto = () => {
   const pathname = usePathname();
   const [products, setProducts] = useState<Produto[]>([]);
   const [isSending, setIsSending] = useState<boolean>(false);
-  const [endpointForFetch, setEndPointForFetch] = useState<string>("");
+  const endpoint = getEndpoint();
+  const productsData = useFetchProductsData(endpoint);
 
   useEffect(() => {
-    if (pathname.includes("carro-de-mao")) {
-      setEndPointForFetch("produto=carro-de-mao");
-    } else if (pathname.includes("masseira")) {
-      setEndPointForFetch("produto=masseira");
-    } else if (pathname.includes("plataforma")) {
-      setEndPointForFetch("produto=plataforma");
-    } else {
-      setEndPointForFetch("");
-    }
-  }, [pathname]);
+    if (productsData) {
+      setProducts(productsData);
+    } 
 
-  const productsData = useFetchProductsData(endpointForFetch);
-  setProducts(productsData);
-  products.forEach(product => {
-    console.log(`Produto carregado: ${product}`)
-  })
+    console.log(productsData[0]);
+
+  }, [productsData, products]);
+
+  function getEndpoint() {
+    if (pathname.includes("carro-de-mao")) {
+      return "carro-de-mao";
+    } else if (pathname.includes("masseira")) {
+      return "masseira";
+    } else if (pathname.includes("plataforma")) {
+      return "plataforma";
+    } else {
+      return "";
+    }
+  }
 
   const handleEmail = async (e: React.FormEvent) => {
     e.preventDefault();
