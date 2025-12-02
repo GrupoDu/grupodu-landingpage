@@ -4,10 +4,10 @@ import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import toast from "react-hot-toast";
 import { usePathname } from "next/navigation";
-import { Produto } from "@/@types/produto";
 import Button from "../../ui/buttons/button";
 import { IProductRequest } from "../types";
 import { showToast } from "@/utils/showToast";
+import { useFetchProductsData } from "@/hooks/fetchProductsData";
 
 const FormProduto = () => {
   const [productRequestInfos, setProductRequestInfos] =
@@ -22,32 +22,25 @@ const FormProduto = () => {
   const pathname = usePathname();
   const [products, setProducts] = useState<Produto[]>([]);
   const [isSending, setIsSending] = useState<boolean>(false);
+  const [endpointForFetch, setEndPointForFetch] = useState<string>("");
 
   useEffect(() => {
-    const fetchData = async () => {
-      let produtos: Produto[] = [];
-
-      if (pathname.includes("carro-de-mao")) {
-        const response = await fetch("/api/database?produto=carro-de-mao");
-        const data = await response.json();
-        produtos = data;
-      } else if (pathname.includes("masseira")) {
-        const response = await fetch("/api/database?produto=masseira");
-        const data = await response.json();
-        produtos = data;
-      } else if (pathname.includes("plataforma")) {
-        const response = await fetch("/api/database?produto=plataforma");
-        const data = await response.json();
-        produtos = data;
-      } else {
-        produtos = [];
-      }
-
-      setProducts(produtos);
-    };
-
-    fetchData();
+    if (pathname.includes("carro-de-mao")) {
+      setEndPointForFetch("produto=carro-de-mao");
+    } else if (pathname.includes("masseira")) {
+      setEndPointForFetch("produto=masseira");
+    } else if (pathname.includes("plataforma")) {
+      setEndPointForFetch("produto=plataforma");
+    } else {
+      setEndPointForFetch("");
+    }
   }, [pathname]);
+
+  const productsData = useFetchProductsData(endpointForFetch);
+  setProducts(productsData);
+  products.forEach(product => {
+    console.log(`Produto carregado: ${product}`)
+  })
 
   const handleEmail = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -139,8 +132,8 @@ const FormProduto = () => {
               Escolha o modelo
             </option>
             {products.map((product) => (
-              <option key={product.nome} value={product.nome}>
-                {product.nome}
+              <option key={product.name} value={product.name}>
+                {product.name}
               </option>
             ))}
           </select>
@@ -172,7 +165,9 @@ const FormProduto = () => {
             }
           />
         </label>
-        <Button type="submit" desativado={isSending}>Solicitar produto</Button>
+        <Button type="submit" desativado={isSending}>
+          Solicitar produto
+        </Button>
       </form>
     </div>
   );
