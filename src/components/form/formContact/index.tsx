@@ -1,13 +1,12 @@
-// Primeiro preciso resolver os problemas do usePostContactRequest
-
 "use client";
 import React from "react";
 import styles from "./styles.module.scss";
-import Button from "../../ui/button";
+import Button from "../../ui/buttons/button";
 import { LuSend } from "react-icons/lu";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { postContactRequest } from "@/services/postContactRequest";
+import { IContactInfos } from "../types";
 
 const FormContact = () => {
   const [userInfos, setUserInfos] = useState<IContactInfos>({
