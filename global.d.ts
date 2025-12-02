@@ -23,11 +23,11 @@ declare global {
 
   interface Produto {
     id: number;
-    nome: string;
-    descricao: string;
-    tipo_produto: string;
-    imagem: StaticImageData;
-    caracteristicas: string[];
+    name: string;
+    description: string;
+    product_type: string;
+    image: StaticImageData;
+    features: string[];
   }
 }
 
