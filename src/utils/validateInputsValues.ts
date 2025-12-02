@@ -1,3 +1,5 @@
+import { IContactInfos } from "@/components/form/types";
+
 export function validateInputsValues(inputsValues: IContactInfos) {
   const { email, name, phone, company, message, subject } = inputsValues;
   let toastMessage = "";
