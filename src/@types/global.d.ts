@@ -22,14 +22,14 @@ declare global {
     type: "button" | "link" | "submit";
   }
 
-  interface IContactInfos {
+  interface IUserInfos {
     email: string;
     name: string;
     phone: string;
     company: string;
   }
 
-  interface IUserInfos extends IContactInfos {
+  interface IContactInfos extends IUserInfos {
     message: string;
     subject: string;
   }
