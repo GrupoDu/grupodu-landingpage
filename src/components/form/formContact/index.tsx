@@ -1,50 +1,34 @@
 "use client";
-
 import React from "react";
 import styles from "./styles.module.scss";
-import Button from "../../ui/button";
+import Button from "../../ui/buttons/button";
 import { LuSend } from "react-icons/lu";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { postContactRequest } from "@/services/postContactRequest";
+import { IContactInfos } from "../types";
 
 const FormContact = () => {
-  const [nome, setNome] = useState<string>("");
+  const [userInfos, setUserInfos] = useState<IContactInfos>({
+    email: "",
+    name: "",
+    phone: "",
+    company: "",
+    message: "",
+    subject: "",
+  });
   const [sending, setSending] = useState<boolean>(false);
-  const [email, setEmail] = useState<string>("");
-  const [telefone, setTelefone] = useState<string>("");
-  const [empresa, setEmpresa] = useState<string>("");
-  const [assunto, setAssunto] = useState<string>("");
-  const [mensagem, setMensagem] = useState<string>("");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleEmailContactSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
     setSending(true);
 
     try {
-      if (!nome || !email || !telefone || !empresa || !assunto || !mensagem) {
-        toast.error("Por favor, preencha todos os campos.");
-        return;
-      }
-
-      const res = await fetch("/api/email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          nome,
-          email,
-          telefone,
-          empresa,
-          assunto,
-          mensagem,
-        }),
-      });
-
-      if (res.ok) {
+      const emailRequestResponse = await postContactRequest(userInfos, "email");
+      if (emailRequestResponse?.status === 200) {
         toast.success("Email recebido com sucesso!");
-      } else if (res.status == 400) {
-        toast.error("Ocorreu um erro ao enviar o email.");
       } else {
         toast.error("Ocorreu um erro ao enviar o email.");
       }
@@ -59,16 +43,19 @@ const FormContact = () => {
   return (
     <div className={styles.formContainer}>
       <h3>Envie sua Mensagem</h3>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleEmailContactSubmit}>
         <label htmlFor="nome" className={styles.nome}>
           <span>Nome completo</span>
           <input
             type="text"
             name="nome-completo"
             placeholder="Seu nome completo"
-            value={nome}
+            value={userInfos.name}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setNome(e.target.value)
+              setUserInfos((prevUserInfos) => ({
+                ...prevUserInfos,
+                name: e.target.value,
+              }))
             }
             required
           />
@@ -79,9 +66,12 @@ const FormContact = () => {
             type="email"
             name="email"
             placeholder="seu@email.com"
-            value={email}
+            value={userInfos.email}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setEmail(e.target.value)
+              setUserInfos((prevUserInfos) => ({
+                ...prevUserInfos,
+                email: e.target.value,
+              }))
             }
             required
           />
@@ -92,9 +82,12 @@ const FormContact = () => {
             type="text"
             name="telefone"
             placeholder="(81) 99999-9999"
-            value={telefone}
+            value={userInfos.phone}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setTelefone(e.target.value)
+              setUserInfos((prevUserInfos) => ({
+                ...prevUserInfos,
+                phone: e.target.value,
+              }))
             }
             required
           />
@@ -105,9 +98,12 @@ const FormContact = () => {
             type="text"
             name="empresa"
             placeholder="Nome da sua empresa"
-            value={empresa}
+            value={userInfos.company}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setEmpresa(e.target.value)
+              setUserInfos((prevUserInfos) => ({
+                ...prevUserInfos,
+                company: e.target.value,
+              }))
             }
             required
           />
@@ -118,9 +114,12 @@ const FormContact = () => {
             type="text"
             name="assunto"
             placeholder="Sobre o que você gostaria de falar"
-            value={assunto}
+            value={userInfos.subject}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setAssunto(e.target.value)
+              setUserInfos((prevUserInfos) => ({
+                ...prevUserInfos,
+                subject: e.target.value,
+              }))
             }
             required
           />
@@ -130,14 +129,17 @@ const FormContact = () => {
           <textarea
             name="mensage"
             placeholder="Digite sua mensagem aqui"
-            value={mensagem}
+            value={userInfos.message}
             onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-              setMensagem(e.target.value)
+              setUserInfos((prevUserInfos) => ({
+                ...prevUserInfos,
+                message: e.target.value,
+              }))
             }
             required
           ></textarea>
         </label>
-        <Button type="submit" className={styles.button}>
+        <Button type="submit" className={styles.button} desativado={sending}>
           Enviar Mensagem <LuSend color="white" width={16} />
         </Button>
       </form>

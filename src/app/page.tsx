@@ -1,5 +1,5 @@
 import styles from "./page.module.scss";
-import Button from "@/components/ui/button";
+import Button from "@/components/ui/buttons/button";
 import SectionTitle from "@/components/sectionTitle";
 import Card from "@/components/ui/card";
 import Estados from "@/components/estados";

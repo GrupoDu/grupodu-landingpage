@@ -4,27 +4,27 @@ import FormData from "form-data";
 
 export const POST = async (req: Request) => {
   const body = await req.json();
-  const { nome, email, telefone, empresa, assunto, mensagem } = body;
+  const { name, email, phone, company, subject, message } = body;
 
   const htmlTemplate = `
         <h1>Informações do contato</h1>
         <h3>Nome completo</h3>
-        <p>${nome}</p>
+        <p>${name}</p>
         <hr />
         <h3>Email</h3>
         <p>${email}</p>
         <hr />
         <h3>Telefon</h3>
-        <p>${telefone}</p>
+        <p>${phone}</p>
         <hr />
         <h3>Empresa</h3>
-        <p>${empresa}</p>
+        <p>${company}</p>
         <hr />
         <h2>Assunto</h2>
-        <p>${assunto}</p>
+        <p>${subject}</p>
         <hr />
         <h3>Mensagem</h3>
-        <p>${mensagem}</p>
+        <p>${message}</p>
         <hr />
         <br />
         <h4>Contato enviado pelo site.</h4>
@@ -37,7 +37,7 @@ export const POST = async (req: Request) => {
   });
   try {
 
-    if (!nome || !email || !telefone || !empresa || !assunto || !mensagem) {
+    if (!name || !email || !phone || !company || !subject || !message) {
       return NextResponse.json(
         { error: "Por favor, preencha todos os campos" },
         { status: 400 }
@@ -46,7 +46,7 @@ export const POST = async (req: Request) => {
 
     const data = await mg.messages.create("grupodu.com.br", {
       from: "Grupodu Contato<email@grupodu.com.br>",
-      to: ["Dom Metal<dommetalind@gmail.com>"],
+      to: ["Dom Metal<joaolucasdev@grupodu.com.br>"],
       subject: "Email enviado pelo site",
       text: `Solicitação de contato`,
       html: htmlTemplate,

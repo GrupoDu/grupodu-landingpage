@@ -14,12 +14,11 @@ declare module "@/app/globals.scss" {
 }
 
 declare global {
-  interface baseButton {
-    children: React.ReactNode;
-    border?: string;
-    href?: string;
-    click?: () => void;
-    type: "button" | "link" | "submit";
+  interface IUserInfos {
+    email: string;
+    name: string;
+    phone: string;
+    company: string;
   }
 }
 
