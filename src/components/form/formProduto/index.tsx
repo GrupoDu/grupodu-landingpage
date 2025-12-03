@@ -28,9 +28,7 @@ const FormProduto = () => {
   useEffect(() => {
     if (productsData) {
       setProducts(productsData);
-    } 
-
-    console.log(productsData[0]);
+    }
 
   }, [productsData, products]);
 
