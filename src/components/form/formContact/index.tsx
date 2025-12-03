@@ -24,13 +24,15 @@ const FormContact = () => {
   ) => {
     e.preventDefault();
     setSending(true);
+    const contactResponse = await postContactRequest(userInfos, "email");
 
     try {
-      const emailRequestResponse = await postContactRequest(userInfos, "email");
-      if (emailRequestResponse?.status === 200) {
-        toast.success("Email recebido com sucesso!");
+      const contactRequestResponse = contactResponse?.contactRequestResponse;
+      const emailRequestResponseJson = contactResponse?.contactRequestResponseJson;
+      if (contactRequestResponse?.ok) {
+        toast.success(emailRequestResponseJson.message);
       } else {
-        toast.error("Ocorreu um erro ao enviar o email.");
+        toast.error(emailRequestResponseJson.error);
       }
     } catch (err) {
       toast.error("Erro de conexão. Tenta novamente mais tarde.");
