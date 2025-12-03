@@ -1,6 +1,4 @@
 import { IContactInfos } from "@/components/form/types";
-import { showToast } from "../utils/showToast";
-import { validateInputsValues } from "../utils/validateInputsValues";
 
 export async function postContactRequest(
   props: IContactInfos,
