@@ -6,14 +6,6 @@ export async function postContactRequest(
   props: IContactInfos,
   endpoint: string
 ) {
-  if (!validateInputsValues(props)) {
-    showToast({
-      toastType: "error",
-      message: "Todos os campos devem ser preenchidos!",
-    });
-    return null;
-  }
-
   try {
     const contactRequestResponse = await fetch(`/api/${endpoint}`, {
       method: "POST",
@@ -23,7 +15,9 @@ export async function postContactRequest(
       body: JSON.stringify(props),
     });
 
-    return contactRequestResponse;
+    const contactRequestResponseJson = await contactRequestResponse.json();
+
+    return {contactRequestResponse, contactRequestResponseJson};
   } catch (err) {
     console.log(`Erro na tentativa de contato: ${(err as Error).message}`);
     return null;
