@@ -6,12 +6,12 @@ import { LuImage, LuCheck } from "react-icons/lu";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Image from "next/image";
 import ButtonDecoration from "../buttons/buttonDecoration";
-import { Produto } from "@/@types/produto";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import { useFetchProductsData } from "@/hooks/useFetchProductsData";
 
 type Props = {
   titulo: string;
@@ -31,39 +31,32 @@ const ImageTemplate = () => {
 };
 
 const CardProdutos = (props: Props) => {
-  const [produtos, setProdutos] = useState<Produto[]>([]);
+  const [produtos, setProdutos] = useState<IProduct[]>([]);
+  const productsData = useFetchProductsData();
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("/api/database");
-        const data = await response.json();
+    if (productsData) {
+      setProdutos(productsData);
+    }
 
-        if (props.titulo === "Carro de Mão para Construção Civil") {
-          setProdutos(
-            data.filter(
-              (product: Produto) => product.tipo_produto === "carro de mão"
-            )
-          );
-        } else if (props.titulo === "Masseiras para Obra e Argamassa") {
-          setProdutos(
-            data.filter(
-              (product: Produto) => product.tipo_produto === "masseira"
-            )
-          );
-        } else if (props.titulo === "Plataforma de Trabalho para Construção") {
-          setProdutos(
-            data.filter(
-              (product: Produto) => product.tipo_produto === "plataforma"
-            )
-          );
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchData();
-  }, [props.titulo]);
+    if (props.titulo === "Carro de Mão para Construção Civil") {
+      setProdutos(
+        productsData.filter(
+          (product: IProduct) => product.product_type === "carro de mão"
+        )
+      );
+    } else if (props.titulo === "Masseiras para Obra e Argamassa") {
+      setProdutos(
+        productsData.filter((product: IProduct) => product.product_type === "masseira")
+      );
+    } else if (props.titulo === "Plataforma de Trabalho para Construção") {
+      setProdutos(
+        productsData.filter(
+          (product: IProduct) => product.product_type === "plataforma"
+        )
+      );
+    }
+  }, [props.titulo, productsData]);
 
   return (
     <div className={styles.container}>
@@ -81,7 +74,7 @@ const CardProdutos = (props: Props) => {
           {produtos.map((produto, index) => (
             <SwiperSlide key={index} className={styles.swiperSlide}>
               <Image
-                src={produto.imagem}
+                src={produto.image}
                 alt={props.titulo}
                 className={styles.imagem}
                 width={400}
