@@ -3,58 +3,33 @@
 import React, { useEffect, useState } from "react";
 import Produto from "../produto";
 import styles from "./styles.module.scss";
-
-// Modificação feita para não dar conflito com o component
-import { Produto as ProdutoType } from "@/@types/produto";
 import Loading from "../loading";
-import { usePathname } from "next/navigation";
+import { useCheckPathnameProduct } from "@/hooks/useCheckPathnameProduct";
+import { useFetchProductsData } from "@/hooks/useFetchProductsData";
 
 const Main = ({ id }: { id: string }) => {
-  const [produtos, setProdutos] = useState<ProdutoType[]>([]);
-  const pathname = usePathname();
+  const [products, setProducts] = useState<IProduct[]>([]);
+  const productType = useCheckPathnameProduct();
+  const productsData = useFetchProductsData(productType);
 
   useEffect(() => {
-    // const carrosDeMao = products.filter(
-    //   (product) => product.category === "carro de mao"
-    // );
-
-    // setProdutos(carrosDeMao);
-
-    const fetchData = async () => {
-      try {
-        if (pathname.includes("carro-de-mao")) {
-          const response = await fetch("/api/database?produto=carro-de-mao");
-          const data = await response.json();
-          setProdutos(data);
-        } else if (pathname.includes("masseira")) {
-          const response = await fetch("/api/database?produto=masseira");
-          const data = await response.json();
-          setProdutos(data);
-        } else if (pathname.includes("plataforma")) {
-          const response = await fetch("/api/database?produto=plataforma");
-          const data = await response.json();
-          setProdutos(data);
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    };
-
-    fetchData();
-  }, [pathname]);
+    if (productsData) {
+      setProducts(productsData);
+    }
+  }, [productsData]);
 
   return (
     <>
-      {produtos.length > 0 ? (
+      {products.length > 0 ? (
         <main className={styles.main} id={id}>
-          {produtos.map((product) => (
+          {productsData.map((product) => (
             <Produto
               key={product.id}
-              nomeProduto={product.nome}
-              imagemProduto={product.imagem}
-              descricaoProduto={product.descricao}
-              altImagem={product.tipo_produto}
-              caracteristicas={product.caracteristicas}
+              nomeProduto={product.name}
+              imagemProduto={product.image}
+              descricaoProduto={product.description}
+              altImagem={product.product_type}
+              caracteristicas={product.features}
             />
           ))}
         </main>

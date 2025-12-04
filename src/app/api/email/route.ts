@@ -4,31 +4,31 @@ import FormData from "form-data";
 
 export const POST = async (req: Request) => {
   const body = await req.json();
-  const { nome, email, telefone, empresa, assunto, mensagem } = body;
+  const { name, email, phone, company, subject, message } = body;
 
   const htmlTemplate = `
         <h1>Informações do contato</h1>
         <h3>Nome completo</h3>
-        <p>${nome}</p>
+        <p>${name}</p>
         <hr />
         <h3>Email</h3>
         <p>${email}</p>
         <hr />
         <h3>Telefon</h3>
-        <p>${telefone}</p>
+        <p>${phone}</p>
         <hr />
         <h3>Empresa</h3>
-        <p>${empresa}</p>
+        <p>${company}</p>
         <hr />
         <h2>Assunto</h2>
-        <p>${assunto}</p>
+        <p>${subject}</p>
         <hr />
         <h3>Mensagem</h3>
-        <p>${mensagem}</p>
+        <p>${message}</p>
         <hr />
         <br />
         <h4>Contato enviado pelo site.</h4>
-        `
+        `;
 
   const mailgun = new Mailgun(FormData);
   const mg = mailgun.client({
@@ -36,12 +36,11 @@ export const POST = async (req: Request) => {
     key: process.env.API_KEY || "API_KEY",
   });
   try {
-
-    if (!nome || !email || !telefone || !empresa || !assunto || !mensagem) {
-      return NextResponse.json(
-        { error: "Por favor, preencha todos os campos" },
-        { status: 400 }
-      );
+    if (!name || !email || !phone || !company || !subject || !message) {
+      return NextResponse.json({
+        error: "Por favor, preencha todos os campos",
+        status: 400,
+      });
     }
 
     const data = await mg.messages.create("grupodu.com.br", {
@@ -54,10 +53,7 @@ export const POST = async (req: Request) => {
 
     console.log(data);
 
-    return NextResponse.json(
-      { message: "Enviado com sucesso" },
-      { status: 200 }
-    );
+    return NextResponse.json({ message: "Enviado com sucesso", status: 200 });
   } catch (err) {
     console.log(err);
   }

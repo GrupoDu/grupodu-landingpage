@@ -4,17 +4,17 @@ import styles from "./page.module.scss";
 import Image from "next/image";
 import { LuCheck } from "react-icons/lu";
 import { IconType } from "react-icons";
-import Button from "@/components/button";
+import Button from "@/components/ui/buttons/button";
 import ListaCatalogo from "@/components/listaCatalogo";
 import { garantiasDomMetal } from "@/constants/garantias";
-import CardGarantia from "@/components/cardGarantia";
+import CardGarantia from "@/components/ui/cardGarantia";
 import { sobreDomMetal } from "@/constants/sobre";
 import Link from "next/link";
 import { MdKeyboardArrowRight, MdKeyboardArrowUp } from "react-icons/md";
 import { Metadata } from "next";
-import Form from "@/components/form";
+import FormContact from "@/components/form/formContact";
 import InfoContatos from "@/components/infosContatos";
-import ButtonDecoration from "@/components/buttonDecoration";
+import ButtonDecoration from "@/components/ui/buttons/buttonDecoration";
 import { bulletsHero } from "@/constants/textosHero";
 import { textosCardDiferenciais } from "@/constants/cards";
 import Script from "next/script";
@@ -278,14 +278,14 @@ const DomMetalPage = () => {
           <p>Estamos aqui para ajudar você. Entre em contato conosco!</p>
           <div className={styles.formInfos}>
             <InfoContatos />
-            <Form />
+            <FormContact />
           </div>
         </div>
         <div className={styles.outrosSegmentos}>
           <h2>Conheça nossos outros segmentos</h2>
           <div className={styles.segmentosContainer}>
             <div className={styles.grupodu}>
-              <h2>Grupo Du Car</h2>
+              <h2>Grupo Du</h2>
               <p>
                 Somos um grupo empresarial consolidado, com atuação estratégica
                 em diferentes segmentos e compromisso constante com qualidade,

@@ -1,13 +1,13 @@
 import styles from "./page.module.scss";
-import Button from "@/components/button";
+import Button from "@/components/ui/buttons/button";
 import SectionTitle from "@/components/sectionTitle";
-import Card from "@/components/card";
+import Card from "@/components/ui/card";
 import Estados from "@/components/estados";
 import { cards, diferencas } from "@/constants/textos";
 import { LuArrowDown, LuCircleCheckBig } from "react-icons/lu";
 import InfoContatos from "@/components/infosContatos";
-import Form from "@/components/form";
-import Valores from "@/components/valores";
+import FormContact from "@/components/form/formContact";
+import Valores from "@/components/ui/valores";
 import Segmentos from "@/components/segmentos";
 import SwiperComponent from "@/components/swiper";
 
@@ -135,7 +135,7 @@ export default function Home() {
         <p>Estamos aqui para ajudar você. Entre em contato conosco!</p>
         <div className={styles.formInfos}>
           <InfoContatos />
-          <Form />
+          <FormContact />
         </div>
       </div>
     </div>
