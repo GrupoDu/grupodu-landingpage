@@ -4,10 +4,12 @@ import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import toast from "react-hot-toast";
 import { usePathname } from "next/navigation";
-import { Produto } from "@/@types/produto";
 import Button from "../../ui/buttons/button";
 import { IProductRequest } from "../types";
 import { showToast } from "@/utils/showToast";
+import { useFetchProductsData } from "@/hooks/useFetchProductsData";
+import { useCheckPathnameProduct } from "@/hooks/useCheckPathnameProduct";
+import { sendProductRequest } from "@/services/sendProductRequest";
 
 const FormProduto = () => {
   const [productRequestInfos, setProductRequestInfos] =
@@ -19,61 +21,32 @@ const FormProduto = () => {
       quantity: 0,
       model: "",
     });
-  const pathname = usePathname();
-  const [products, setProducts] = useState<Produto[]>([]);
+  const [products, setProducts] = useState<IProduct[]>([]);
   const [isSending, setIsSending] = useState<boolean>(false);
+  const productType = useCheckPathnameProduct();
+  const productsData = useFetchProductsData(productType);
 
   useEffect(() => {
-    const fetchData = async () => {
-      let produtos: Produto[] = [];
-
-      if (pathname.includes("carro-de-mao")) {
-        const response = await fetch("/api/database?produto=carro-de-mao");
-        const data = await response.json();
-        produtos = data;
-      } else if (pathname.includes("masseira")) {
-        const response = await fetch("/api/database?produto=masseira");
-        const data = await response.json();
-        produtos = data;
-      } else if (pathname.includes("plataforma")) {
-        const response = await fetch("/api/database?produto=plataforma");
-        const data = await response.json();
-        produtos = data;
-      } else {
-        produtos = [];
-      }
-
-      setProducts(produtos);
-    };
-
-    fetchData();
-  }, [pathname]);
+    if (productsData) {
+      setProducts(productsData);
+    }
+  }, [productsData]);
 
   const handleEmail = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
+    const productRequest = await sendProductRequest(productRequestInfos);
 
     try {
-      const res = await fetch("/api/emailPedido", {
-        method: "POST",
-        body: JSON.stringify(productRequestInfos),
-      });
-
-      if (res.status === 400)
-        showToast({
-          toastType: "error",
-          message: "Por favor, preencha todos os campos.",
-        });
-
-      showToast({
-        toastType: "success",
-        message: "Recebemos seu pedido com sucesso!",
-      });
-    } catch (error) {
-      console.log(error);
-      toast.error("Algo deu errado, tente novamente!");
-    } finally {
-      setIsSending(false);
+      if (productRequest.status === 200) {
+        toast.success(productRequest.message);
+      } else {
+        toast.error(productRequest.message);
+      }
+    } catch (err) {
+      console.log(
+        `Ocorreu uma erro ao enviar o solicitação: ${(err as Error).message}`
+      );
     }
   };
 
@@ -139,8 +112,8 @@ const FormProduto = () => {
               Escolha o modelo
             </option>
             {products.map((product) => (
-              <option key={product.nome} value={product.nome}>
-                {product.nome}
+              <option key={product.name} value={product.name}>
+                {product.name}
               </option>
             ))}
           </select>
@@ -172,7 +145,9 @@ const FormProduto = () => {
             }
           />
         </label>
-        <Button type="submit" desativado={isSending}>Solicitar produto</Button>
+        <Button type="submit" desativado={isSending}>
+          Solicitar produto
+        </Button>
       </form>
     </div>
   );

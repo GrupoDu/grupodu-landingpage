@@ -5,7 +5,7 @@ import Button from "../../ui/buttons/button";
 import { LuSend } from "react-icons/lu";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { postContactRequest } from "@/services/postContactRequest";
+import { sendEmailContact } from "@/services/sendEmailContact";
 import { IContactInfos } from "../types";
 
 const FormContact = () => {
@@ -19,21 +19,24 @@ const FormContact = () => {
   });
   const [sending, setSending] = useState<boolean>(false);
 
+  // Talvez separar essa lógica em um hook ou função
   const handleEmailContactSubmit = async (
     e: React.FormEvent<HTMLFormElement>
   ) => {
     e.preventDefault();
     setSending(true);
+    const emailContact = await sendEmailContact(userInfos);
 
     try {
-      const emailRequestResponse = await postContactRequest(userInfos, "email");
-      if (emailRequestResponse?.status === 200) {
-        toast.success("Email recebido com sucesso!");
+      if (emailContact.status === 200) {
+        console.log(`status do reponse: ${emailContact.status}`);
+        toast.success(emailContact.message);
       } else {
-        toast.error("Ocorreu um erro ao enviar o email.");
+        console.log(`status do reponse: ${emailContact.status}`);
+        toast.error(emailContact.message);
       }
     } catch (err) {
-      toast.error("Erro de conexão. Tenta novamente mais tarde.");
+      toast.error("Erro de conexão. Tente novamente mais tarde.");
       console.log(err);
     } finally {
       setSending(false);
