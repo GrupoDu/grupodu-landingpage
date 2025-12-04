@@ -82,7 +82,7 @@ const Navbar = () => {
               }`}
             />
           </Link>
-          <span>{segmento ? segmento : "Grupo Du Car"}</span>
+          <span>{segmento ? segmento : "Grupo Du"}</span>
         </div>
         <div className={styles.pagesLinks}>
           <Link
