@@ -21,7 +21,7 @@ declare global {
     company: string;
   }
 
-  interface Produto {
+  interface IProduct {
     id: number;
     name: string;
     description: string;
