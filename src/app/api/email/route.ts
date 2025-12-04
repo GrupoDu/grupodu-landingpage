@@ -45,7 +45,7 @@ export const POST = async (req: Request) => {
 
     const data = await mg.messages.create("grupodu.com.br", {
       from: "Grupodu Contato<email@grupodu.com.br>",
-      to: ["Dom Metal<lgbr212@gmail.com>"],
+      to: ["Dom Metal<dommetalind@gmail.com>"],
       subject: "Email enviado pelo site",
       text: `Solicitação de contato`,
       html: htmlTemplate,

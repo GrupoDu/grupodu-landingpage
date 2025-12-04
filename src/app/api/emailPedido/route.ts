@@ -34,10 +34,10 @@ export const POST = async (req: Request) => {
   });
   try {
     if (!nome || !email || !telefone || !modelo || !quantidade) {
-      return NextResponse.json(
-        { error: "Por favor, preencha todos os campos" },
-        { status: 400 }
-      );
+      return NextResponse.json({
+        error: "Por favor, preencha todos os campos",
+        status: 400,
+      });
     }
 
     const data = await mg.messages.create("grupodu.com.br", {
@@ -50,10 +50,7 @@ export const POST = async (req: Request) => {
 
     console.log(data);
 
-    return NextResponse.json(
-      { message: "Enviado com sucesso" },
-      { status: 200 }
-    );
+    return NextResponse.json({ message: "Enviado com sucesso", status: 200 });
   } catch (err) {
     console.log(err);
   }
