@@ -1,9 +1,9 @@
 .filterBlock {
-  flex: 1;
   background-color: white;
   box-shadow: 0 0 6px 0 rgba($color: #000000, $alpha: 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+  height: fit-content;
 
   h4 {
     background-color: #fbfbfb;
