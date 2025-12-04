@@ -28,7 +28,7 @@ export const POST = async (req: Request) => {
         <hr />
         <br />
         <h4>Contato enviado pelo site.</h4>
-        `
+        `;
 
   const mailgun = new Mailgun(FormData);
   const mg = mailgun.client({
@@ -36,17 +36,16 @@ export const POST = async (req: Request) => {
     key: process.env.API_KEY || "API_KEY",
   });
   try {
-
     if (!name || !email || !phone || !company || !subject || !message) {
-      return NextResponse.json(
-        { error: "Por favor, preencha todos os campos" },
-        { status: 400 }
-      );
+      return NextResponse.json({
+        error: "Por favor, preencha todos os campos",
+        status: 400,
+      });
     }
 
     const data = await mg.messages.create("grupodu.com.br", {
       from: "Grupodu Contato<email@grupodu.com.br>",
-      to: ["Dom Metal<dommetalind@gmail.com>"],
+      to: ["Dom Metal<lgbr212@gmail.com>"],
       subject: "Email enviado pelo site",
       text: `Solicitação de contato`,
       html: htmlTemplate,
@@ -54,10 +53,7 @@ export const POST = async (req: Request) => {
 
     console.log(data);
 
-    return NextResponse.json(
-      { message: "Enviado com sucesso" },
-      { status: 200 }
-    );
+    return NextResponse.json({ message: "Enviado com sucesso", status: 200 });
   } catch (err) {
     console.log(err);
   }
