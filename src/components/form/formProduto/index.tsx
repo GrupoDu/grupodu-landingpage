@@ -7,7 +7,9 @@ import { usePathname } from "next/navigation";
 import Button from "../../ui/buttons/button";
 import { IProductRequest } from "../types";
 import { showToast } from "@/utils/showToast";
-import { useFetchProductsData } from "@/hooks/fetchProductsData";
+import { useFetchProductsData } from "@/hooks/useFetchProductsData";
+import { useCheckPathnameProduct } from "@/hooks/useCheckPathnameProduct";
+import { sendProductRequest } from "@/services/sendProductRequest";
 
 const FormProduto = () => {
   const [productRequestInfos, setProductRequestInfos] =
@@ -19,56 +21,32 @@ const FormProduto = () => {
       quantity: 0,
       model: "",
     });
-  const pathname = usePathname();
-  const [products, setProducts] = useState<Produto[]>([]);
+  const [products, setProducts] = useState<IProduct[]>([]);
   const [isSending, setIsSending] = useState<boolean>(false);
-  const endpoint = getEndpoint();
-  const productsData = useFetchProductsData(endpoint);
+  const productType = useCheckPathnameProduct();
+  const productsData = useFetchProductsData(productType);
 
   useEffect(() => {
     if (productsData) {
       setProducts(productsData);
     }
-
-  }, [productsData, products]);
-
-  function getEndpoint() {
-    if (pathname.includes("carro-de-mao")) {
-      return "carro-de-mao";
-    } else if (pathname.includes("masseira")) {
-      return "masseira";
-    } else if (pathname.includes("plataforma")) {
-      return "plataforma";
-    } else {
-      return "";
-    }
-  }
+  }, [productsData]);
 
   const handleEmail = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
+    const productRequest = await sendProductRequest(productRequestInfos);
 
     try {
-      const res = await fetch("/api/emailPedido", {
-        method: "POST",
-        body: JSON.stringify(productRequestInfos),
-      });
-
-      if (res.status === 400)
-        showToast({
-          toastType: "error",
-          message: "Por favor, preencha todos os campos.",
-        });
-
-      showToast({
-        toastType: "success",
-        message: "Recebemos seu pedido com sucesso!",
-      });
-    } catch (error) {
-      console.log(error);
-      toast.error("Algo deu errado, tente novamente!");
-    } finally {
-      setIsSending(false);
+      if (productRequest.status === 200) {
+        toast.success(productRequest.message);
+      } else {
+        toast.error(productRequest.message);
+      }
+    } catch (err) {
+      console.log(
+        `Ocorreu uma erro ao enviar o solicitação: ${(err as Error).message}`
+      );
     }
   };
 
