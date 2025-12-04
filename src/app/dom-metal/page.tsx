@@ -285,7 +285,7 @@ const DomMetalPage = () => {
           <h2>Conheça nossos outros segmentos</h2>
           <div className={styles.segmentosContainer}>
             <div className={styles.grupodu}>
-              <h2>Grupo Du Car</h2>
+              <h2>Grupo Du</h2>
               <p>
                 Somos um grupo empresarial consolidado, com atuação estratégica
                 em diferentes segmentos e compromisso constante com qualidade,
