@@ -16,9 +16,9 @@ const normalizandoTexto = (text: string) => {
 
 export const GET = async (request: NextRequest) => {
   const searchParams = request.nextUrl.searchParams;
-  const produto = searchParams.get("produto");
+  const produtoEndpoint = searchParams.get("produto");
 
-  if (!produto) {
+  if (!produtoEndpoint) {
     const { data, error } = await supabase.from("produtos").select("*");
     if (error) return NextResponse.error();
     return NextResponse.json(data, {
@@ -35,7 +35,7 @@ export const GET = async (request: NextRequest) => {
 
   if (error) return NextResponse.error();
 
-  const produtoNormalizado = normalizandoTexto(produto);
+  const produtoNormalizado = normalizandoTexto(produtoEndpoint);
   const dataFiltrada = data.filter((item) =>
     normalizandoTexto(item.tipo_produto).includes(produtoNormalizado)
   );
