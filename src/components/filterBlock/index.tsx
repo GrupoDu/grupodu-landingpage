@@ -1,4 +1,8 @@
+"use client";
+
 import styles from "./styles.module.scss";
+import React from "react";
+import { InputCheckbox } from "../inputCheckbox";
 
 interface IFilter {
   company: string;
@@ -12,7 +16,7 @@ export const FilterBlock = ({ filters }: { filters: IFilter }) => {
       <ul>
         {filters.products.map((product, index) => (
           <li key={index}>
-            <input type="checkbox" value={product} />
+            <InputCheckbox value={product} />
             <span>{product}</span>
           </li>
         ))}
