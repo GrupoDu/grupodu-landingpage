@@ -16,6 +16,7 @@ export const infoSegmentos = [
     variantClass: "dom-metal",
     corButton: "#4347FF",
     gradient: "linear-gradient(90deg, #6D91DF 0%, #4B50A9 66%, #42358C 100%)",
+    disabled: false,
     page: "/dom-metal",
   },
   {
@@ -30,6 +31,7 @@ export const infoSegmentos = [
     variantClass: "duferro",
     corButton: "#FF5943",
     gradient: "linear-gradient(90deg, #F9A0A0 0%, #FFD4D4 66%, #EF6262 100%)",
+    disabled: true,
     page: "/duferro",
   },
   {
@@ -44,6 +46,7 @@ export const infoSegmentos = [
     variantClass: "carbuilt",
     corButton: "#1E78C2",
     gradient: "linear-gradient(90deg, #A0DBF9 0%, #D4FCFF 66%, #2C9DA1 100%)",
+    disabled: true,
     page: "/carbuilt",
   },
 ];
