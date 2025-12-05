@@ -1,10 +1,7 @@
 import CardSegmento from "@/components/cardSegmento";
 import styles from "./page.module.scss";
 import { infoSegmentos } from "@/constants/segmentos";
-import { FilterBlock } from "@/components/filterBlock";
 import Main from "@/components/main";
-import Button from "@/components/ui/buttons/button";
-import { clearProductsFilter } from "@/utils/clearProductsFilter";
 import { FiltersSidebar } from "@/components/filtersSidebar";
 
 const ProdutosPage = () => {
