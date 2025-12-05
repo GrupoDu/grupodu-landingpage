@@ -1,28 +1,28 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 
 export const InputCheckbox = ({ value }: { value: string }) => {
-  const [filteredValue, setFilteredValue] = useState<string>("");
   const router = useRouter();
   const pathname = usePathname();
+  const encodedValue = encodeURIComponent(value);
 
-  useEffect(() => {
-    const encodedValue = encodeURIComponent(value);
+  function handleCheckValue(e: React.ChangeEvent<HTMLInputElement>) {
+    const filterParams = new URLSearchParams();
 
-    if (filteredValue !== "") {
-      router.push(`${pathname}?filter=${encodedValue}`);
+    if (e.target.checked) {
+      filterParams.set("filter", encodedValue);
+      router.push(`${pathname}?${filterParams}`);
     }
-  }, [filteredValue, router, pathname, value]);
+  }
 
   return (
     <input
-      type="checkbox"
+      type="radio"
       value={value}
-      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-        setFilteredValue(e.target.value)
-      }
+      name="product-filter"
+      className="checkbox-product-type"
+      onChange={handleCheckValue}
     />
   );
 };
