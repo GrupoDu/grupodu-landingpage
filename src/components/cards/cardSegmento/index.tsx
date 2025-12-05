@@ -10,16 +10,19 @@ interface Props {
   text: string;
   gradient: string;
   link: string;
+  disabled: boolean;
 }
 
-const CardSegmentos = ({ src, alt, text, gradient, link }: Props) => {
+const CardSegmentos = ({ src, alt, text, gradient, link, disabled }: Props) => {
   return (
     <Link
-      href={link}
+      href={disabled ? "" : link}
       className={styles.cardContainer}
       style={{
         background: gradient,
         color: text === "Dom Metal" ? "white" : "",
+        cursor: disabled ? "not-allowed" : "pointer",
+        opacity: disabled ? 0.5 : 1,
       }}
     >
       <Image loading="lazy" src={src} alt={alt} className={styles.logoImage} />
