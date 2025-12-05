@@ -10,9 +10,9 @@ const filters = [
   {
     company: "Dom Metal",
     products: [
-      "Carros de mão",
-      "Plataformas de trabalho",
-      "Estruturas metálicas",
+      "Carro de mão",
+      "Plataforma de trabalho",
+      "Masseira",
       "Carrinhos industriais",
     ],
   },
