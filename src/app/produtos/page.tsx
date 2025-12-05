@@ -3,6 +3,8 @@ import styles from "./page.module.scss";
 import { infoSegmentos } from "@/constants/segmentos";
 import Main from "@/components/main";
 import { FiltersSidebar } from "@/components/filtersSidebar";
+import { Suspense } from "react";
+import Loading from "@/components/loading";
 
 const ProdutosPage = () => {
   return (
@@ -34,7 +36,9 @@ const ProdutosPage = () => {
       <div className={styles.main}>
         <FiltersSidebar />
         <div className={styles.productsContainer}>
-          <Main id="produtos" />
+          <Suspense fallback={<Loading />}>
+            <Main id="produtos" />
+          </Suspense>
         </div>
       </div>
     </div>
