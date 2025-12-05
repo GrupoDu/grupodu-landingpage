@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import { usePathname } from "next/navigation";
 import { textosCardProdutos } from "@/constants/cards";
-import CardProdutos from "../ui/cardProdutos";
+import CardProdutos from "../cards/cardProdutos";
 
 type cardTexts = {
   titulo: string;

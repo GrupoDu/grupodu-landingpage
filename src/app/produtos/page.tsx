@@ -1,4 +1,4 @@
-import CardSegmento from "@/components/cardSegmento";
+import CardSegmento from "@/components/cards/cardSegmento";
 import styles from "./page.module.scss";
 import { infoSegmentos } from "@/constants/segmentos";
 import Main from "@/components/main";

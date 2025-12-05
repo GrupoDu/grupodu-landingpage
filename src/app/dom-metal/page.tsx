@@ -7,7 +7,7 @@ import { IconType } from "react-icons";
 import Button from "@/components/ui/buttons/button";
 import ListaCatalogo from "@/components/listaCatalogo";
 import { garantiasDomMetal } from "@/constants/garantias";
-import CardGarantia from "@/components/ui/cardGarantia";
+import CardGarantia from "@/components/cards/cardGarantia";
 import { sobreDomMetal } from "@/constants/sobre";
 import Link from "next/link";
 import { MdKeyboardArrowRight, MdKeyboardArrowUp } from "react-icons/md";
