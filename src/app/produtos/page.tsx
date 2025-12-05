@@ -3,38 +3,11 @@ import styles from "./page.module.scss";
 import { infoSegmentos } from "@/constants/segmentos";
 import { FilterBlock } from "@/components/filterBlock";
 import Main from "@/components/main";
+import Button from "@/components/ui/buttons/button";
+import { clearProductsFilter } from "@/utils/clearProductsFilter";
+import { FiltersSidebar } from "@/components/filtersSidebar";
 
 const ProdutosPage = () => {
-  const filters = [
-    {
-      company: "Dom Metal",
-      products: [
-        "Carros de mão",
-        "Plataformas de trabalho",
-        "Estruturas metálicas",
-        "Carrinhos industriais",
-      ],
-    },
-    {
-      company: "DuFerro",
-      products: [
-        "Móveis planejados",
-        "Estruturas metálicas",
-        "Estruturas metálicas",
-        "Estruturas metálicas",
-      ],
-    },
-    {
-      company: "CarBuilt",
-      products: [
-        "Estruturas metálicas",
-        "Estruturas metálicas",
-        "Estruturas metálicas",
-        "Estruturas metálicas",
-      ],
-    },
-  ];
-
   return (
     <div className={styles.pageContainer}>
       <div className={styles.header}>
@@ -62,14 +35,9 @@ const ProdutosPage = () => {
         </div>
       </div>
       <div className={styles.main}>
-        <div className={styles.filtersContainer}>
-          <h3>Filtros</h3>
-          {filters.map((filter, index) => (
-            <FilterBlock key={index} filters={filter} />
-          ))}
-        </div>
+        <FiltersSidebar />
         <div className={styles.productsContainer}>
-          <Main id="produtos"/>
+          <Main id="produtos" />
         </div>
       </div>
     </div>
