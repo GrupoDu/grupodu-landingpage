@@ -28,6 +28,7 @@ const ProdutosPage = () => {
                 gradient={info.gradient}
                 text={info.title}
                 link={info.page}
+                disabled={info.disabled}
               />
             ))}
           </div>
