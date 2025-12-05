@@ -1,0 +1,47 @@
+.pageContainer {
+  flex: 1;
+
+  .header {
+    padding: 8rem 2rem 2rem 2rem;
+
+    .contentContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 4rem;
+      background: linear-gradient(
+        90deg,
+        #0c3674 35%,
+        #089ad9 59%,
+        #5b4078 100%
+      );
+      border-radius: 0.6rem;
+
+      h1 {
+        color: white;
+      }
+
+      p {
+        color: white;
+        font-size: 1.1rem;
+      }
+
+      .segmentos {
+        display: flex;
+        gap: 1rem;
+      }
+    }
+  }
+
+  .main {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    background-color: rgb(245, 245, 245);
+
+    .productsContainer {
+      margin: 70px 0;
+      padding: 0 0.8rem 0 0;
+    }
+  }
+}

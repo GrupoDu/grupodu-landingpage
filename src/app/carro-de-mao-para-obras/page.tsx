@@ -37,20 +37,20 @@ export default function ProdutoPge() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className={styles.page}>
-        <Suspense fallback={<Loading />}>
+      <Suspense fallback={<Loading />}>
+        <div className={styles.page}>
           <HeroProdutos paginaAnterior="dom metal" />
-        </Suspense>
-        <div className={styles.tituloProdutos}>
-          <MdKeyboardArrowDown className={styles.arrow} />
-          <h2>Nossa linha completa de Carros de Mão</h2>
+          <div className={styles.tituloProdutos}>
+            <MdKeyboardArrowDown className={styles.arrow} />
+            <h2>Nossa linha completa de Carros de Mão</h2>
+          </div>
+          <div className={styles.products}>
+            <Main id="produtos" />
+          </div>
+          <hr className={styles.hr} />
+          <ContatosSection />
         </div>
-        <Suspense fallback={<Loading />}>
-          <Main id="produtos" />
-        </Suspense>
-        <hr className={styles.hr} />
-        <ContatosSection />
-      </div>
+      </Suspense>
     </>
   );
 }

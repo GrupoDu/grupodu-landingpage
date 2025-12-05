@@ -93,14 +93,15 @@ const Navbar = () => {
           >
             Início
           </Link>
-          <span
-            style={{ opacity: 0.2, cursor: "not-allowed" }}
+          <Link
+            // style={{ opacity: 0.2, cursor: "not-allowed" }}
+            href={"/produtos"}
             className={`${actualPage === "produtos" ? styles.actualPage : ""} ${
               styles.pageLink
             }`}
           >
             Produtos
-          </span>
+          </Link>
           <span
             style={{ opacity: 0.2, cursor: "not-allowed" }}
             className={`${actualPage === "sobre" ? styles.actualPage : ""} ${

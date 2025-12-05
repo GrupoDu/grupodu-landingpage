@@ -1,19 +1,33 @@
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export const useCheckPathnameProduct = () => {
-  const pathname = usePathname();
   const [productType, setProductType] = useState<string>("");
+  const pathnameProduct = usePathname();
+  const searchParams = useSearchParams();
+  const actualFilter = searchParams.get("filter") || "";
+  const actualFilterDecoded = decodeURIComponent(actualFilter);
 
   useEffect(() => {
-    if (pathname.includes("carro-de-mao")) {
+    if (
+      pathnameProduct.includes("carro-de-mao") ||
+      actualFilterDecoded === "Carro de mão"
+    ) {
       setProductType("carro de mão");
-    } else if (pathname.includes("masseira")) {
+    } else if (
+      pathnameProduct.includes("masseira") ||
+      actualFilterDecoded === "Masseira"
+    ) {
       setProductType("masseira");
-    } else if (pathname.includes("plataforma")) {
+    } else if (
+      pathnameProduct.includes("plataforma") ||
+      actualFilterDecoded === "Plataforma de trabalho"
+    ) {
       setProductType("plataforma");
+    } else {
+      setProductType("");
     }
-  }, [pathname]);
+  }, [pathnameProduct, searchParams, actualFilterDecoded]);
 
   return productType;
 };

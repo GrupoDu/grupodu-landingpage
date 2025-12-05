@@ -3,40 +3,7 @@
 import React, { useEffect } from "react";
 import styles from "./styles.module.scss";
 import Segmento from "../segmento";
-import { carbuilt, domMetal, duFerro } from "@/constants/textos";
-import DomMetal from "../../../public/Logo dom metal.png";
-import DuFerro from "../../../public/DuFerro.png";
-import Carbuilt from "../../../public/Carbuilt.png";
-
-const infoSegmentos = [
-  {
-    src: DomMetal,
-    title: domMetal.nome,
-    subtitle: domMetal.subtitulo,
-    description: domMetal.descricao,
-    especialidades: domMetal.especialidades,
-    variantClass: "dom-metal",
-    corButton: "#4347FF",
-  },
-  {
-    src: DuFerro,
-    title: duFerro.nome,
-    subtitle: duFerro.subtitulo,
-    description: duFerro.descricao,
-    especialidades: duFerro.especialidades,
-    variantClass: "duferro",
-    corButton: "#FF5943",
-  },
-  {
-    src: Carbuilt,
-    title: carbuilt.nome,
-    subtitle: carbuilt.subtitulo,
-    description: carbuilt.descricao,
-    especialidades: carbuilt.especialidades,
-    variantClass: "carbuilt",
-    corButton: "#1E78C2",
-  },
-]
+import { infoSegmentos } from "@/constants/segmentos";
 
 const Segmentos = () => {
   useEffect(() => {
@@ -67,7 +34,7 @@ const Segmentos = () => {
       {infoSegmentos.map((info, index) => (
         <Segmento
           key={index}
-          src={info.src}
+          src={info.img.src}
           title={info.title}
           subtitle={info.subtitle}
           description={info.description}
