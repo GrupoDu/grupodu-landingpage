@@ -4,6 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { LuCheckCheck } from "react-icons/lu";
+import { BulletProduct } from "../bullets/bulletProduct";
 
 type Props = {
   nomeProduto: string;
@@ -11,14 +12,6 @@ type Props = {
   descricaoProduto: string;
   altImagem: string;
   caracteristicas: string[];
-};
-
-const Bullets = ({ bullet }: { bullet: string }) => {
-  return (
-    <div className={styles.bullets}>
-      <p>{bullet}</p>
-    </div>
-  );
 };
 
 const Produto = ({
@@ -49,7 +42,7 @@ const Produto = ({
         {caracteristicas.map((bullet, index) => (
           <div className={styles.bullet} key={index}>
             <LuCheckCheck />
-            <Bullets bullet={bullet} />
+            <BulletProduct bullet={bullet} />
           </div>
         ))}
       </div>
