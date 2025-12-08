@@ -5,7 +5,7 @@ import { contatos } from "@/constants/contatos";
 import { Contato } from "@/components/contatos";
 import ButtonDecoration from "@/components/ui/buttons/buttonDecoration";
 import Button from "@/components/ui/buttons/button";
-import FormProduto from "@/components/form/formProduto";
+import FormProduto from "@/components/formsComponents/formProduto";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { downloadFullCatalog } from "@/utils/downloadFullCatalog";
 

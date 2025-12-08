@@ -1,4 +1,4 @@
-import { IContactInfos } from "@/components/form/types";
+import { IContactInfos } from "@/components/formsComponents/types";
 
 export function validateInputsValues(inputsValues: IContactInfos) {
   const { email, name, phone, company, message, subject } = inputsValues;

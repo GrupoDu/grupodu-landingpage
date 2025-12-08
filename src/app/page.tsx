@@ -6,7 +6,7 @@ import Estados from "@/components/estados";
 import { cards, diferencas } from "@/constants/textos";
 import { LuArrowDown, LuCircleCheckBig } from "react-icons/lu";
 import InfoContatos from "@/components/infosContatos";
-import FormContact from "@/components/form/formContact";
+import FormContact from "@/components/formsComponents/formContact";
 import Valores from "@/components/ui/valores";
 import Segmentos from "@/components/segmentos";
 import SwiperComponent from "@/components/swiper";

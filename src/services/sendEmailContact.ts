@@ -1,4 +1,4 @@
-import { IContactInfos } from "@/components/form/types";
+import { IContactInfos } from "@/components/formsComponents/types";
 import { IResponseAPI } from "./types";
 
 export async function sendEmailContact(

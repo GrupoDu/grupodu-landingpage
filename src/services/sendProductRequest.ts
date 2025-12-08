@@ -1,4 +1,4 @@
-import { IProductRequest } from "@/components/form/types";
+import { IProductRequest } from "@/components/formsComponents/types";
 import { IResponseAPI } from "./types";
 
 export async function sendProductRequest(
