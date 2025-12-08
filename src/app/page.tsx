@@ -8,7 +8,7 @@ import { LuArrowDown, LuCircleCheckBig } from "react-icons/lu";
 import InfoContatos from "@/components/infosContatos";
 import FormContact from "@/components/formsComponents/formContact";
 import Valores from "@/components/ui/valores";
-import Segmentos from "@/components/segmentos";
+import { SegmentsContainer } from "@/components/segmentsContainer";
 import SwiperComponent from "@/components/swiper";
 
 export const revalidate = false;
@@ -70,7 +70,7 @@ export default function Home() {
           unidas por valores compartilhados de inovação, qualidade e compromisso
           com resultados excepcionais.
         </p>
-        <Segmentos />
+        <SegmentsContainer />
       </div>
       <div className={styles.motivoEscolha}>
         <h1>Por quê Escolher o Grupo Du?</h1>
