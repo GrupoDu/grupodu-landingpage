@@ -1,13 +1,12 @@
 "use client";
 
-import React from "react";
 import styles from "./styles.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { cards } from "@/constants/textos";
 import "swiper/css";
 import "swiper/css/pagination";
-import Card from "../cardsComponents/card";
 import { Autoplay, Pagination } from "swiper/modules";
+import CardReasonToChoose from "../cardsComponents/cardReasonToChoose";
 
 const SwiperComponent = () => {
   return (
@@ -22,7 +21,7 @@ const SwiperComponent = () => {
     >
       {cards.map((card, index) => (
         <SwiperSlide key={index} className={styles.swiperSlide}>
-          <Card
+          <CardReasonToChoose
             title={card.title}
             description={card.description}
             icon={card.icon}
