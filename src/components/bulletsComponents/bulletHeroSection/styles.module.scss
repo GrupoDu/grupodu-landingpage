@@ -1,0 +1,18 @@
+.bullets {
+  display: flex;
+  background: linear-gradient(90deg, #e3e0f7 0%, #d5c3ffda 60%, #e3e0f7 100%);
+  padding: 1em;
+  border-radius: 1em;
+  align-items: center;
+  gap: 0.4em;
+  color: #201750;
+  box-shadow: 0 0 4px 0 rgba($color: #000000, $alpha: 0.2);
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .bullets {
+    p {
+      text-align: start;
+    }
+  }
+}
