@@ -13,7 +13,7 @@ type Props = {
   corButton: string;
 };
 
-export const CardSegmento = (props: Props) => {
+const CardSegmento = (props: Props) => {
   return (
     <div className={`${styles.segmentoContainer} ${props.variantClass}`}>
       <Image
@@ -54,3 +54,5 @@ export const CardSegmento = (props: Props) => {
     </div>
   );
 };
+
+export default CardSegmento;

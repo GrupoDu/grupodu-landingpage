@@ -2,10 +2,10 @@
 
 import React, { useEffect } from "react";
 import styles from "./styles.module.scss";
-import { CardSegmento } from "../cardsComponents/cardSegmento";
+import CardSegmento from "../cardsComponents/cardSegmento";
 import { infoSegmentos } from "@/constants/segmentos";
 
-export const SegmentsContainer = () => {
+const SegmentsContainer = () => {
   useEffect(() => {
     const elements = [
       ...document.getElementsByClassName("dom-metal"),
@@ -46,3 +46,5 @@ export const SegmentsContainer = () => {
     </div>
   );
 };
+
+export default SegmentsContainer;

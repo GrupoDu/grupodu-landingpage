@@ -2,14 +2,14 @@
 
 import styles from "./styles.module.scss";
 import React from "react";
-import { InputCheckbox } from "../inputCheckbox";
+import InputCheckbox from "../inputCheckbox";
 
 interface IFilter {
   company: string;
   products: string[];
 }
 
-export const FilterBlock = ({ filters }: { filters: IFilter }) => {
+const FilterBlock = ({ filters }: { filters: IFilter }) => {
   return (
     <div className={styles.filterBlock}>
       <h4>{filters.company}</h4>
@@ -24,3 +24,5 @@ export const FilterBlock = ({ filters }: { filters: IFilter }) => {
     </div>
   );
 };
+
+export default FilterBlock;

@@ -1,7 +1,7 @@
 import { IconType } from "react-icons";
 import styles from "./styles.module.scss";
 
-export const Contato = ({
+const Contato = ({
   Icon,
   contato,
 }: {
@@ -15,3 +15,5 @@ export const Contato = ({
     </div>
   );
 };
+
+export default Contato;

@@ -1,7 +1,7 @@
 import styles from "./styles.module.scss";
 import { LuCheckCheck } from "react-icons/lu";
 
-export const BulletHeroSection = ({ texto }: { texto: string }) => {
+const BulletHeroSection = ({ texto }: { texto: string }) => {
   return (
     <div className={styles.bullets}>
       <LuCheckCheck />
@@ -9,3 +9,5 @@ export const BulletHeroSection = ({ texto }: { texto: string }) => {
     </div>
   );
 };
+
+export default BulletHeroSection;

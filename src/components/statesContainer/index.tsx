@@ -6,7 +6,7 @@ import { statesList } from "@/constants/statesList";
 //Imagem
 import MapaEstados from "../../../public/mapa-estados.png";
 
-export const StatesContainer = () => {
+const StatesContainer = () => {
   return (
     <div className={styles.estadosContainer}>
       <Image
@@ -26,3 +26,5 @@ export const StatesContainer = () => {
     </div>
   );
 };
+
+export default StatesContainer;

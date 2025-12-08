@@ -2,13 +2,13 @@ import styles from "./page.module.scss";
 import Button from "@/components/ui/buttons/button";
 import SectionTitle from "@/components/sectionTitle";
 import Card from "@/components/cardsComponents/card";
-import { StatesContainer } from "@/components/statesContainer";
+import StatesContainer from "@/components/statesContainer";
 import { cards, diferencas } from "@/constants/textos";
 import { LuArrowDown, LuCircleCheckBig } from "react-icons/lu";
 import InfoContatos from "@/components/infosContatos";
 import FormContact from "@/components/formsComponents/formContact";
 import Valores from "@/components/ui/valores";
-import { SegmentsContainer } from "@/components/segmentsContainer";
+import SegmentsContainer from "@/components/segmentsContainer";
 import SwiperComponent from "@/components/swiper";
 
 export const revalidate = false;

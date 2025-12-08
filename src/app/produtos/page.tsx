@@ -1,8 +1,8 @@
-import { SegmentsRedirectionButton } from "@/components/segmentsRedirectionButton";
+import SegmentsRedirectionButton from "@/components/segmentsRedirectionButton";
 import styles from "./page.module.scss";
 import { infoSegmentos } from "@/constants/segmentos";
 import Main from "@/components/main";
-import { FiltersSidebar } from "@/components/filtersSidebar";
+import FiltersSidebar from "@/components/filtersSidebar";
 import { Suspense } from "react";
 import Loading from "@/components/loading";
 

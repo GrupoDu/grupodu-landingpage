@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from "next/navigation";
 
-export const InputCheckbox = ({ value }: { value: string }) => {
+const InputCheckbox = ({ value }: { value: string }) => {
   const router = useRouter();
   const pathname = usePathname();
   const encodedValue = encodeURIComponent(value);
@@ -26,3 +26,5 @@ export const InputCheckbox = ({ value }: { value: string }) => {
     />
   );
 };
+
+export default InputCheckbox;

@@ -1,13 +1,13 @@
 "use client";
 
 import styles from "./styles.module.scss";
-import { FilterBlock } from "../filterBlock";
+import FilterBlock from "../filterBlock";
 import Button from "../ui/buttons/button";
 import { clearProductsFilter } from "@/utils/clearProductsFilter";
 import { usePathname } from "next/navigation";
 import { productsFiltersList } from "@/constants/productsFiltersList";
 
-export const FiltersSidebar = () => {
+const FiltersSidebar = () => {
   const pathname = usePathname();
 
   return (
@@ -22,3 +22,5 @@ export const FiltersSidebar = () => {
     </div>
   );
 };
+
+export default FiltersSidebar;
