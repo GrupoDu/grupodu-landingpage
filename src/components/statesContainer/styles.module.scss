@@ -1,0 +1,81 @@
+.estadosContainer {
+  background: #0b1326;
+  background: linear-gradient(
+    121deg,
+    rgba(11, 19, 38, 1) 0%,
+    rgba(64, 97, 168, 1) 26%,
+    rgba(11, 19, 38, 1) 100%
+  );
+  padding: 2em;
+  border-radius: 16px;
+  display: flex;
+  box-shadow: 0 0 6px 0 rgba($color: #000000, $alpha: 1);
+
+  .mapaEstados {
+    object-fit: contain;
+    width: 40%;
+    height: fit-content;
+  }
+
+  .listContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10%;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      color: white;
+      font-size: 40px;
+    }
+
+    ul {
+      width: 100%;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4em;
+      cursor: default;
+
+      li {
+        transition: all 0.1s ease-in;
+        width: fit-content;
+
+        &:hover {
+          transform: translateX(20);
+          list-style: circle;
+          color: rgb(155, 202, 255);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 380px) and (max-width: 420px) {
+  .estadosContainer {
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+
+    .mapaEstados {
+      width: 100%;
+      height: fit-content;
+    }
+
+    .listContainer {
+      padding: 0;
+      gap: 0.8em;
+      h1 {
+        font-size: 30px;
+        text-align: center;
+      }
+
+      ul {
+        li {
+          text-align: center;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

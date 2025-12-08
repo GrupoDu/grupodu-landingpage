@@ -2,7 +2,7 @@ import styles from "./page.module.scss";
 import Button from "@/components/ui/buttons/button";
 import SectionTitle from "@/components/sectionTitle";
 import Card from "@/components/cardsComponents/card";
-import Estados from "@/components/estados";
+import { StatesContainer } from "@/components/statesContainer";
 import { cards, diferencas } from "@/constants/textos";
 import { LuArrowDown, LuCircleCheckBig } from "react-icons/lu";
 import InfoContatos from "@/components/infosContatos";
@@ -26,9 +26,7 @@ export default function Home() {
           estratégica em diferentes segmentos, sempre mantendo o foco na
           qualidade, inovação e na satisfação completa dos nossos clientes.
         </p>
-        <h3>
-          Loja em breve!
-        </h3>
+        <h3>Loja em breve!</h3>
         <LuArrowDown className={styles.arrowDown} />
       </div>
       <div className={styles.sobreSection}>
@@ -55,7 +53,7 @@ export default function Home() {
         <Valores />
       </div>
       <div className={styles.estadosSection}>
-        <Estados />
+        <StatesContainer />
       </div>
       <div className={styles.segmentsSection}>
         <SectionTitle>Nossas Empresas</SectionTitle>
@@ -106,12 +104,7 @@ export default function Home() {
             soluções completas e eficientes.
           </p>
           <div className={styles.button}>
-            <Button
-              type="link"
-              border="white"
-              width="100%"
-              href="#formulario"
-            >
+            <Button type="link" border="white" width="100%" href="#formulario">
               Solicitar Orçamento
             </Button>
           </div>
