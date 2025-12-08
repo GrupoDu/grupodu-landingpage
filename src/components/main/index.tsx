@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Produto from "../produto";
+import CardProduto from "../cardsComponents/cardProduto";
 import styles from "./styles.module.scss";
 import Loading from "../loading";
 import { useCheckPathnameProduct } from "@/hooks/useCheckPathnameProduct";
@@ -23,7 +23,7 @@ const Main = ({ id }: { id: string }) => {
       {products.length > 0 ? (
         <main className={styles.main} id={id}>
           {productsData.map((product) => (
-            <Produto
+            <CardProduto
               key={product.id}
               nomeProduto={product.name}
               imagemProduto={product.image}
