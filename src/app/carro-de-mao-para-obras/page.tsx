@@ -1,6 +1,6 @@
 import styles from "../styles.module.scss";
 import Main from "@/components/main";
-import HeroProdutos from "@/components/heroProdutos";
+import HeroSectionProductsPage from "@/components/heroSectionProdutcsPage";
 import Loading from "@/components/loading";
 import { Suspense } from "react";
 import { Metadata } from "next";
@@ -39,7 +39,7 @@ export default function ProdutoPge() {
       />
       <Suspense fallback={<Loading />}>
         <div className={styles.page}>
-          <HeroProdutos paginaAnterior="dom metal" />
+          <HeroSectionProductsPage paginaAnterior="dom metal" />
           <div className={styles.tituloProdutos}>
             <MdKeyboardArrowDown className={styles.arrow} />
             <h2>Nossa linha completa de Carros de Mão</h2>

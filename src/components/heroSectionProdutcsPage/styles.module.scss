@@ -1,0 +1,157 @@
+.bullets {
+  display: flex;
+  background: linear-gradient(90deg, #e3e0f7 0%, #d5c3ffda 60%, #e3e0f7 100%);
+  padding: 1em;
+  border-radius: 1em;
+  align-items: center;
+  gap: 0.4em;
+  color: #201750;
+  box-shadow: 0 0 4px 0 rgba($color: #000000, $alpha: 0.2);
+}
+
+.heroSection {
+  padding: 54px;
+  padding-top: 8rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  height: 100dvh;
+  transition: all 0.3s ease-in-out;
+
+  h1 {
+    background: linear-gradient(90deg, #201750, #6550a5);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    width: 100%;
+    text-align: left;
+    user-select: none;
+  }
+
+  .textImages {
+    flex: 1;
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+
+    .textHeader {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 65%;
+      box-sizing: border-box;
+
+      h3,
+      p {
+        color: #201750;
+      }
+
+      h3 {
+        font-size: 48px;
+        font-weight: 500;
+      }
+
+      hr {
+        opacity: 0.3;
+        color: white;
+      }
+    }
+
+    .imagesHeader {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      box-sizing: border-box;
+      user-select: none;
+      position: relative;
+
+      &::after {
+        content: "";
+        background-color: #362694;
+        width: 300px;
+        height: 300px;
+        border-radius: 16em;
+        border: 4em solid #6550a5;
+        box-shadow: 0 0 10px 0 rgba($color: #c9baff, $alpha: 1);
+      }
+
+      .imageHeader {
+        position: absolute;
+        object-fit: contain;
+        width: 70%;
+        height: fit-content;
+        right: 0em;
+        animation: entrada 1.2s ease-in-out;
+
+        @keyframes entrada {
+          0% {
+            opacity: 0;
+            transform: translateY(-2em);
+          }
+
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+
+      #jerica {
+        left: 0em;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .heroSection {
+    padding: 90px 20px 80px 20px;
+    gap: 18px;
+
+    h1 {
+      text-align: center;
+    }
+
+    .textImages {
+      flex-direction: column-reverse;
+
+      .textHeader {
+        width: 100%;
+
+        h3 {
+          text-align: center;
+        }
+
+        p {
+          text-align: left;
+        }
+
+        .bullets {
+          p {
+            text-align: start;
+          }
+        }
+      }
+
+      .imagesHeader {
+        min-height: 12em;
+        display: none;
+
+        .imageHeader {
+          width: 60%;
+          right: 1em;
+          bottom: 2em;
+        }
+
+        #jerica {
+          left: 2em;
+          top: 0;
+        }
+      }
+    }
+  }
+}
