@@ -13,7 +13,7 @@ interface Props {
   disabled: boolean;
 }
 
-const CardSegmentos = ({ src, alt, text, gradient, link, disabled }: Props) => {
+export const SegmentoRedirectionButton = ({ src, alt, text, gradient, link, disabled }: Props) => {
   return (
     <Link
       href={disabled ? "" : link}
@@ -30,5 +30,3 @@ const CardSegmentos = ({ src, alt, text, gradient, link, disabled }: Props) => {
     </Link>
   );
 };
-
-export default CardSegmentos;
