@@ -2,7 +2,7 @@
 
 import styles from "./styles.module.scss";
 import { contatos } from "@/constants/contatos";
-import { Contato } from "@/components/contatos";
+import Contato from "@/components/contatos";
 import ButtonDecoration from "@/components/ui/buttons/buttonDecoration";
 import Button from "@/components/ui/buttons/button";
 import FormProduto from "@/components/formsComponents/formProduto";

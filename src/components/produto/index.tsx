@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { LuCheckCheck } from "react-icons/lu";
-import { BulletProduct } from "../bulletsComponents/bulletProduct";
+import BulletProduct from "../bulletsComponents/bulletProduct";
 
 type Props = {
   nomeProduto: string;
