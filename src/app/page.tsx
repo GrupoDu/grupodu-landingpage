@@ -1,7 +1,7 @@
 import styles from "./page.module.scss";
 import Button from "@/components/ui/buttons/button";
 import SectionTitle from "@/components/sectionTitle";
-import Card from "@/components/cards/card";
+import Card from "@/components/cardsComponents/card";
 import Estados from "@/components/estados";
 import { cards, diferencas } from "@/constants/textos";
 import { LuArrowDown, LuCircleCheckBig } from "react-icons/lu";
