@@ -8,18 +8,9 @@ import { textosHero } from "@/constants/textosHero";
 import Loading from "../loading";
 import { CategoriaProduto } from "@/@types/categoriaProduto";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { LuCheckCheck } from "react-icons/lu";
 import ButtonDecoration from "../ui/buttons/buttonDecoration";
 import Breadcrumbs from "../ui/breadcrumbs";
-
-const Bullets = ({ texto }: { texto: string }) => {
-  return (
-    <div className={styles.bullets}>
-      <LuCheckCheck />
-      <p>{texto}</p>
-    </div>
-  );
-};
+import { BulletHeroSection } from "../bullets/bulletHeroSection";
 
 const HeroProdutos = ({ paginaAnterior }: { paginaAnterior: string }) => {
   const [productTitle, setProductTitle] = useState<string | undefined>("");
@@ -71,7 +62,7 @@ const HeroProdutos = ({ paginaAnterior }: { paginaAnterior: string }) => {
           <hr />
           <p>{productDescription}</p>
           {bullets.map((bullet, index) => (
-            <Bullets key={index} texto={bullet} />
+            <BulletHeroSection key={index} texto={bullet} />
           ))}
           <ButtonDecoration
             border="#201750"
