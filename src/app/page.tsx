@@ -4,7 +4,7 @@ import SectionTitle from "@/components/sectionTitle";
 import StatesContainer from "@/components/statesContainer";
 import { cards, diferencas } from "@/constants/textos";
 import { LuArrowDown, LuCircleCheckBig } from "react-icons/lu";
-import InfoContatos from "@/components/infosContatos";
+import ContactsSectionMainPages from "@/components/contactsSectionMainPages";
 import FormContact from "@/components/formsComponents/formContact";
 import Valores from "@/components/ui/valores";
 import SegmentsContainer from "@/components/segmentsContainer";
@@ -127,7 +127,7 @@ export default function Home() {
         <h1>Entre em Contato</h1>
         <p>Estamos aqui para ajudar você. Entre em contato conosco!</p>
         <div className={styles.formInfos}>
-          <InfoContatos />
+          <ContactsSectionMainPages />
           <FormContact />
         </div>
       </div>

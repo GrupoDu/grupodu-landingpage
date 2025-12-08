@@ -13,7 +13,7 @@ import Link from "next/link";
 import { MdKeyboardArrowRight, MdKeyboardArrowUp } from "react-icons/md";
 import { Metadata } from "next";
 import FormContact from "@/components/formsComponents/formContact";
-import InfoContatos from "@/components/infosContatos";
+import ContactsSectionMainPages from "@/components/contactsSectionMainPages";
 import ButtonDecoration from "@/components/ui/buttons/buttonDecoration";
 import { bulletsHero } from "@/constants/textosHero";
 import { textosCardDiferenciais } from "@/constants/cards";
@@ -277,7 +277,7 @@ const DomMetalPage = () => {
           <h1>Entre em Contato</h1>
           <p>Estamos aqui para ajudar você. Entre em contato conosco!</p>
           <div className={styles.formInfos}>
-            <InfoContatos />
+            <ContactsSectionMainPages />
             <FormContact />
           </div>
         </div>
