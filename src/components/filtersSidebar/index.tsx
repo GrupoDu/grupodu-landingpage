@@ -5,28 +5,20 @@ import { FilterBlock } from "../filterBlock";
 import Button from "../ui/buttons/button";
 import { clearProductsFilter } from "@/utils/clearProductsFilter";
 import { usePathname } from "next/navigation";
-
-const filters = [
-  {
-    company: "Dom Metal",
-    products: [
-      "Carro de mão",
-      "Plataforma de trabalho",
-      "Masseira",
-    ],
-  },
-];
+import { productsFiltersList } from "@/constants/productsFiltersList";
 
 export const FiltersSidebar = () => {
   const pathname = usePathname();
-  
+
   return (
     <div className={styles.filtersContainer}>
       <h3>Filtros</h3>
-      {filters.map((filter, index) => (
+      {productsFiltersList.map((filter, index) => (
         <FilterBlock key={index} filters={filter} />
       ))}
-      <Button type="button" click={() => clearProductsFilter(pathname)}>Limpar filtros</Button>
+      <Button type="button" click={() => clearProductsFilter(pathname)}>
+        Limpar filtros
+      </Button>
     </div>
   );
 };
