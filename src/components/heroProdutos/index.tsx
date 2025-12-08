@@ -10,7 +10,7 @@ import { CategoriaProduto } from "@/@types/categoriaProduto";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import ButtonDecoration from "../ui/buttons/buttonDecoration";
 import Breadcrumbs from "../ui/breadcrumbs";
-import { BulletHeroSection } from "../bullets/bulletHeroSection";
+import { BulletHeroSection } from "../bulletsComponents/bulletHeroSection";
 
 const HeroProdutos = ({ paginaAnterior }: { paginaAnterior: string }) => {
   const [productTitle, setProductTitle] = useState<string | undefined>("");
