@@ -44,7 +44,8 @@ const Navbar = () => {
     if (
       pathname.includes("carro-de-mao") ||
       pathname.includes("masseira") ||
-      pathname.includes("plataforma")
+      pathname.includes("plataforma") ||
+      pathname.includes("produtos")
     ) {
       setActualPage("produtos");
     } else if (pathname.includes("sobre")) {
