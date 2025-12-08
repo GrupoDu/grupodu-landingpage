@@ -6,7 +6,7 @@ import { cards, diferencas } from "@/constants/textos";
 import { LuArrowDown, LuCircleCheckBig } from "react-icons/lu";
 import ContactsSectionMainPages from "@/components/contactsSectionMainPages";
 import FormContact from "@/components/formsComponents/formContact";
-import Valores from "@/components/ui/valores";
+import FundamentalValuesContainer from "@/components/ui/fundamentalValuesContainer";
 import SegmentsContainer from "@/components/segmentsContainer";
 import SwiperComponent from "@/components/swiper";
 import CardReasonToChoose from "@/components/cardsComponents/cardReasonToChoose";
@@ -50,7 +50,7 @@ export default function Home() {
             compromisso com resultados excepcionais.
           </p>
         </div>
-        <Valores />
+        <FundamentalValuesContainer />
       </div>
       <div className={styles.estadosSection}>
         <StatesContainer />
