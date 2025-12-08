@@ -6,7 +6,7 @@ import Loading from "@/components/loading";
 import { Metadata } from "next";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import Script from "next/script";
-import ContatosSection from "@/components/contatosSection";
+import ContactsProductsPageSection from "@/components/contactsProductsPageSection";
 
 export const revalidate = 7200;
 
@@ -46,7 +46,7 @@ export default function ProdutoPge() {
           </div>
           <Main id="produtos" />
           <hr className={styles.hr} />
-          <ContatosSection />
+          <ContactsProductsPageSection />
         </div>
       </Suspense>
     </>
