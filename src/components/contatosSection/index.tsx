@@ -7,18 +7,9 @@ import ButtonDecoration from "@/components/ui/buttons/buttonDecoration";
 import Button from "@/components/ui/buttons/button";
 import FormProduto from "@/components/form/formProduto";
 import { MdKeyboardArrowUp } from "react-icons/md";
+import { downloadFullCatalog } from "@/utils/downloadFullCatalog";
 
 const ContatosSection = () => {
-  const downloadCatalogo = () => {
-    const baseUrl = window.location.origin;
-    const link = document.createElement("a");
-    link.href = `${baseUrl}/catalogo.pdf`;
-    link.download = "Catálogo Grupo Du.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <div className={styles.formularioContato}>
       <div className={styles.contatos}>
@@ -41,7 +32,7 @@ const ContatosSection = () => {
             theme="#201750"
             color="white"
             borderRadius="4px"
-            click={downloadCatalogo}
+            click={downloadFullCatalog}
           >
             Catálogo completo
           </ButtonDecoration>
