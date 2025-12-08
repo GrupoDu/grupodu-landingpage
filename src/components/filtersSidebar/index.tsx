@@ -13,25 +13,6 @@ const filters = [
       "Carro de mão",
       "Plataforma de trabalho",
       "Masseira",
-      "Carrinhos industriais",
-    ],
-  },
-  {
-    company: "DuFerro",
-    products: [
-      "Móveis planejados",
-      "Estruturas metálicas",
-      "Estruturas metálicas",
-      "Estruturas metálicas",
-    ],
-  },
-  {
-    company: "CarBuilt",
-    products: [
-      "Estruturas metálicas",
-      "Estruturas metálicas",
-      "Estruturas metálicas",
-      "Estruturas metálicas",
     ],
   },
 ];
