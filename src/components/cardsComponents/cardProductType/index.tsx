@@ -30,7 +30,7 @@ const ImageTemplate = () => {
   );
 };
 
-const CardProdutos = (props: Props) => {
+const CardProductType = (props: Props) => {
   const [produtos, setProdutos] = useState<IProduct[]>([]);
   const productsData = useFetchProductsData();
 
@@ -110,4 +110,4 @@ const CardProdutos = (props: Props) => {
   );
 };
 
-export default CardProdutos;
+export default CardProductType;

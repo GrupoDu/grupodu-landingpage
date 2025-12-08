@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import { usePathname } from "next/navigation";
 import { textosCardProdutos } from "@/constants/cards";
-import CardProdutos from "../cardsComponents/cardProdutos";
+import CardProductType from "../cardsComponents/cardProductType";
 
 type cardTexts = {
   titulo: string;
@@ -34,7 +34,7 @@ const ListaCatalogo = () => {
     <ul className={styles.container}>
       {catalogo.map((card, index) => (
         <li key={index}>
-          <CardProdutos
+          <CardProductType
             href={card.href}
             titulo={card.titulo}
             bullets={card.bullets}
