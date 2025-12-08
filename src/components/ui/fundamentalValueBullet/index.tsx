@@ -8,7 +8,7 @@ type Props = {
   variant: keyof typeof styles;
 };
 
-const ValorElement = ({ title, description, variant }: Props) => {
+const FundamentalValueBullet = ({ title, description, variant }: Props) => {
   return (
     <div className={`${styles.valorContainer} ${styles[variant]}`}>
       <CircleCheck color="white" />
@@ -20,4 +20,4 @@ const ValorElement = ({ title, description, variant }: Props) => {
   );
 };
 
-export default ValorElement;
+export default FundamentalValueBullet;
