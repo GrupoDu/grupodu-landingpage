@@ -13,7 +13,7 @@ interface Props {
   disabled: boolean;
 }
 
-export const SegmentoRedirectionButton = ({ src, alt, text, gradient, link, disabled }: Props) => {
+export const SegmentsRedirectionButton = ({ src, alt, text, gradient, link, disabled }: Props) => {
   return (
     <Link
       href={disabled ? "" : link}

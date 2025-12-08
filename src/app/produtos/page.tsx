@@ -1,4 +1,4 @@
-import { SegmentoRedirectionButton } from "@/components/segmentoRedirectionButton";
+import { SegmentsRedirectionButton } from "@/components/segmentsRedirectionButton";
 import styles from "./page.module.scss";
 import { infoSegmentos } from "@/constants/segmentos";
 import Main from "@/components/main";
@@ -21,7 +21,7 @@ const ProdutosPage = () => {
           </p>
           <div className={styles.segmentos}>
             {infoSegmentos.map((info, index) => (
-              <SegmentoRedirectionButton
+              <SegmentsRedirectionButton
                 key={index}
                 src={info.img.src}
                 alt={info.img.alt}
