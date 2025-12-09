@@ -2,7 +2,6 @@
 
 import { FaFilter } from "react-icons/fa";
 import styles from "./styles.module.scss";
-import { useState } from "react";
 
 const FiltersMobile = ({
   openFilterClickEvent,
