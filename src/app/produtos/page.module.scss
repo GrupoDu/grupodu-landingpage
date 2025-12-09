@@ -39,6 +39,10 @@
     flex: 1;
     background-color: rgb(245, 245, 245);
 
+    .filterBlockMobile {
+      display: none;
+    }
+
     .productsContainer {
       margin: 70px 0;
       padding: 0 0.8rem 0 0;
@@ -61,10 +65,11 @@
         }
       }
     }
-  }
-  .main {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+    .main {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
