@@ -1,0 +1,19 @@
+.filterBlockMobile {
+  display: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .filterBlockMobile {
+    flex-direction: column;
+    width: 90%;
+    height: fit-content;
+    padding: 0 1rem;
+    gap: .6rem;
+    transition: all 0.3s ease-in-out;
+
+    &.filterMobileOpen {
+      display: flex;
+      opacity: 1;
+    }
+  }
+}
