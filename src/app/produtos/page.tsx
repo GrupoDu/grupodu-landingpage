@@ -5,7 +5,7 @@ import Main from "@/components/main";
 import FiltersSidebar from "@/components/filtersComponents/filtersSidebar";
 import { Suspense } from "react";
 import Loading from "@/components/loading";
-import FilterMobileContainer from "@/components/filterMobileContainer";
+import FilterMobileContainer from "@/components/filtersComponents/filterMobileContainer";
 
 const ProdutosPage = () => {
   return (
