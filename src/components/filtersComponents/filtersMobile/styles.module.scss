@@ -1,0 +1,30 @@
+.filtersMobileContainer {
+  display: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .filtersMobileContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 0.6em;
+    padding: 1rem;
+
+    .filterButton {
+      span {
+        color: white;
+      }
+    }
+
+    .filterButton {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4em;
+      background-color: #2871f2f0;
+      padding: 1rem;
+      border-radius: 0.4em;
+    }
+  }
+}
