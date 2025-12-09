@@ -5,7 +5,7 @@ import Main from "@/components/main";
 import FiltersSidebar from "@/components/filtersComponents/filtersSidebar";
 import { Suspense } from "react";
 import Loading from "@/components/loading";
-// import FiltersMobile from "@/components/filtersComponents/filtersMobile";
+import FiltersMobile from "@/components/filtersComponents/filtersMobile";
 
 const ProdutosPage = () => {
   return (
@@ -36,7 +36,7 @@ const ProdutosPage = () => {
         </div>
       </div>
       <div className={styles.main}>
-        {/* <FiltersMobile /> */}
+        <FiltersMobile />
         <FiltersSidebar />
         <div className={styles.productsContainer}>
           <Suspense fallback={<Loading />}>
