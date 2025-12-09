@@ -45,3 +45,24 @@
     }
   }
 }
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .pageContainer {
+    .header {
+      .contentContainer {
+        padding: 2rem;
+
+        h1 {
+          text-align: center;
+        }
+
+        .segmentos {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+  .main {
+    flex-direction: column;
+  }
+}

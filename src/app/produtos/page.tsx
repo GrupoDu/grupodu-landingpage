@@ -2,9 +2,10 @@ import SegmentsRedirectionButton from "@/components/segmentsRedirectionButton";
 import styles from "./page.module.scss";
 import { infoSegmentos } from "@/constants/segmentos";
 import Main from "@/components/main";
-import FiltersSidebar from "@/components/filtersSidebar";
+import FiltersSidebar from "@/components/filtersComponents/filtersSidebar";
 import { Suspense } from "react";
 import Loading from "@/components/loading";
+// import FiltersMobile from "@/components/filtersComponents/filtersMobile";
 
 const ProdutosPage = () => {
   return (
@@ -35,6 +36,7 @@ const ProdutosPage = () => {
         </div>
       </div>
       <div className={styles.main}>
+        {/* <FiltersMobile /> */}
         <FiltersSidebar />
         <div className={styles.productsContainer}>
           <Suspense fallback={<Loading />}>
