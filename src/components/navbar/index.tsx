@@ -12,6 +12,7 @@ import { usePathname } from "next/navigation";
 import { useScrollOpacity } from "@/hooks/useScrollOpacity";
 import Link from "next/link";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { checkNavbarOptions } from "@/utils/checkNavbarOptions";
 
 const Navbar = () => {
   const [actualPage, setActualPage] = useState("inicio");
@@ -41,28 +42,14 @@ const Navbar = () => {
   // };
 
   useEffect(() => {
-    if (
-      pathname.includes("carro-de-mao") ||
-      pathname.includes("masseira") ||
-      pathname.includes("plataforma") ||
-      pathname.includes("produtos")
-    ) {
-      setActualPage("produtos");
-    } else if (pathname.includes("sobre")) {
-      setActualPage("sobre");
-    } else if (pathname.includes("contato")) {
-      setActualPage("contatos");
-    } else if (pathname.includes("comprar-carro-de-mao")) {
-      setActualPage("");
-    } else {
-      setActualPage("inicio");
-      setLogos(LogoGrupo);
-      setSegmento("Grupo Du");
-    }
+    setActualPage(checkNavbarOptions(pathname));
 
     if (pathname.includes("dom-metal")) {
       setLogos(LogoDomMetal);
       setSegmento("Dom Metal");
+    } else {
+      setLogos(LogoGrupo);
+      setSegmento("Grupo Du");
     }
   }, [pathname, logos]);
 
