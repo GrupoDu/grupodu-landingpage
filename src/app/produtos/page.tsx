@@ -1,13 +1,10 @@
 import styles from "./page.module.scss";
 import SegmentsRedirectionButton from "@/components/segmentsRedirectionButton";
-import { productsFiltersList } from "@/constants/productsFiltersList";
 import { infoSegmentos } from "@/constants/segmentos";
 import Main from "@/components/main";
 import FiltersSidebar from "@/components/filtersComponents/filtersSidebar";
 import { Suspense } from "react";
 import Loading from "@/components/loading";
-import FiltersMobile from "@/components/filtersComponents/filtersMobile";
-import FilterBlock from "@/components/filtersComponents/filterBlock";
 import FilterMobileContainer from "@/components/filterMobileContainer";
 
 const ProdutosPage = () => {
