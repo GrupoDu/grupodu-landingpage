@@ -1,6 +1,12 @@
 "use client";
 
-import { LuInstagram, LuLinkedin, LuMail, LuMapPin, LuPhone } from "react-icons/lu";
+import {
+  LuInstagram,
+  LuLinkedin,
+  LuMail,
+  LuMapPin,
+  LuPhone,
+} from "react-icons/lu";
 import { FaWhatsapp } from "react-icons/fa";
 import styles from "./styles.module.scss";
 import React from "react";
@@ -19,7 +25,12 @@ const Footer = () => {
             evolução!
           </p>
           <div className={styles.socialsIcons}>
-            <Link href={""} target="_blank">
+            <Link
+              href={
+                "https://www.instagram.com/grupoduoficial?igsh=MXcxNzEzNWo5cW1idg=="
+              }
+              target="_blank"
+            >
               <LuInstagram color="white" />
             </Link>
             <Link href={""} target="_blank">
