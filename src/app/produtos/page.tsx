@@ -36,8 +36,10 @@ const ProdutosPage = () => {
         </div>
       </div>
       <div className={styles.main}>
-        <FilterMobileContainer />
-        <FiltersSidebar />
+        <Suspense fallback={<Loading />}>
+          <FilterMobileContainer />
+          <FiltersSidebar />
+        </Suspense>
         <div className={styles.productsContainer}>
           <Suspense fallback={<Loading />}>
             <Main id="produtos" />
