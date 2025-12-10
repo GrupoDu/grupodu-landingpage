@@ -1,13 +1,13 @@
 .ContainerHeaderNav {
   position: fixed;
   top: 0;
-  width: 95dvw;
+  width: 94dvw;
   height: fit-content;
   margin: 20px 2.5%;
   border-radius: 5px;
   display: flex;
   align-items: center;
-  z-index: 2000;
+  z-index: 10;
   background-color: rgba($color: #ffffff, $alpha: 1);
   padding: 1em;
   box-sizing: border-box;
@@ -120,7 +120,7 @@
     }
   }
 
-  .menuIcon {
+  .menuIconContainer {
     display: none;
   }
 }
@@ -153,11 +153,21 @@
       .pageLink {
         display: none;
       }
+
+      .catalogo {
+        display: none;
+      }
     }
 
-    .menuIcon {
-      // display: flex;
-      opacity: 0.2;
+    .menuIconContainer {
+      display: flex;
+      width: fit-content;
+      height: fit-content;
+
+      .icon {
+        width: 2em;
+        height: 2em;
+      }
     }
   }
 }

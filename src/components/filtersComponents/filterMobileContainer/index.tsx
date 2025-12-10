@@ -7,12 +7,19 @@ import FiltersMobile from "../../filtersComponents/filtersMobile";
 import { useHandleOpenFilterMobile } from "@/hooks/useHandleOpenFilterMobile";
 import Button from "../../ui/buttons/button";
 import { clearProductsFilter } from "@/utils/clearProductsFilter";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
 const FilterMobileContainer = () => {
   const { filterIsOpen, openFilterMobile, closeFilterMobile } =
     useHandleOpenFilterMobile();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const actualFilter = searchParams.get("filter") || "";
+
+  useEffect(() => {
+    closeFilterMobile();
+  }, [actualFilter]);
 
   return (
     <>
