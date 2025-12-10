@@ -31,13 +31,13 @@ const Footer = () => {
               }
               target="_blank"
             >
-              <LuInstagram color="white" />
+              <LuInstagram color="white" className={styles.socialLinkIcons} />
             </Link>
             <Link href={""} target="_blank">
-              <LuLinkedin color="white" />
+              <LuLinkedin color="white" className={styles.socialLinkIcons} />
             </Link>
             <Link href={"https://wa.me/5581999040919"} target="_blank">
-              <FaWhatsapp color="white" />
+              <FaWhatsapp color="white" className={styles.socialLinkIcons} />
             </Link>
           </div>
         </div>
