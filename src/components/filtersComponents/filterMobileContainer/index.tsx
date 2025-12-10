@@ -9,6 +9,7 @@ import Button from "../../ui/buttons/button";
 import { clearProductsFilter } from "@/utils/clearProductsFilter";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
+import ButtonDecoration from "@/components/ui/buttons/buttonDecoration";
 
 const FilterMobileContainer = () => {
   const { filterIsOpen, openFilterMobile, closeFilterMobile } =
@@ -28,9 +29,16 @@ const FilterMobileContainer = () => {
         className={`${styles.filterBlockMobile} ${filterIsOpen && styles.filterMobileOpen}`}
       >
         <FilterBlock filters={productsFiltersList[0]} />
-        <Button type="button" click={() => clearProductsFilter(pathname)}>
+        <ButtonDecoration
+          theme="#040826"
+          border="#040826"
+          color="white"
+          borderRadius="4px"
+          type="button"
+          click={() => clearProductsFilter(pathname)}
+        >
           Limpar Filtros
-        </Button>
+        </ButtonDecoration>
         <Button type="button" click={() => closeFilterMobile()}>
           Fechar filtros
         </Button>
