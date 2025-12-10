@@ -43,6 +43,11 @@
       .socialsIcons {
         display: flex;
         gap: 0.4em;
+
+        .socialLinkIcons {
+          width: 1.8em;
+          height: 1.8em;
+        }
       }
     }
 
