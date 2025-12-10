@@ -13,6 +13,7 @@ import { useScrollOpacity } from "@/hooks/useScrollOpacity";
 import Link from "next/link";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { checkNavbarOptions } from "@/utils/checkNavbarOptions";
+import MenuMobile from "../menu";
 
 const Navbar = () => {
   const [actualPage, setActualPage] = useState("inicio");
@@ -37,9 +38,9 @@ const Navbar = () => {
     setMenu(true);
   };
 
-  // const closeMenu = () => {
-  //   setMenu(false);
-  // };
+  const closeMenu = () => {
+    setMenu(false);
+  };
 
   useEffect(() => {
     setActualPage(checkNavbarOptions(pathname));
@@ -117,11 +118,11 @@ const Navbar = () => {
         </div> */}
           {/* <Search /> */}
         </div>
-        <div className={styles.menuIcon} onClick={openMenu}>
-          <LuMenu color="black" width={40} height={40} />
+        <div className={styles.menuIconContainer} onClick={openMenu}>
+          <LuMenu color="black" className={styles.icon} />
         </div>
       </nav>
-      {/* <MenuMobile menu={menu} closeFunc={closeMenu} /> */}
+      <MenuMobile menu={menu} closeFunc={closeMenu} />
     </>
   );
 };
