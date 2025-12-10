@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname, useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const InputCheckbox = ({ value }: { value: string }) => {
   const router = useRouter();
@@ -13,6 +14,7 @@ const InputCheckbox = ({ value }: { value: string }) => {
     if (e.target.checked) {
       filterParams.set("filter", encodedValue);
       router.push(`${pathname}?${filterParams}`);
+      toast.success("Filtro aplicado.");
     }
   }
 
