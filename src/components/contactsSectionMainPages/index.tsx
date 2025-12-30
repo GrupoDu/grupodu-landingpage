@@ -38,14 +38,14 @@ const ContactsSectionMainPages = () => {
           <LuPhone color="#2563EB" className={styles.icons} />
           <div className={styles.textInfos}>
             <h4>Telefone</h4>
-            <span>(81) 99904-0919</span>
+            <span>(81) 2011-4432 / (81) 99904-0919</span>
           </div>
         </div>
         <div className={styles.contato}>
           <LuMail color="#2563EB" className={styles.icons} />
           <div className={styles.textInfos}>
             <h4>Email</h4>
-            <span>vendasdommetal@grupodu.com</span>
+            <span>dommetalind@gmail.com / vendasdommetal@grupodu.com</span>
           </div>
         </div>
         <div className={styles.social}>

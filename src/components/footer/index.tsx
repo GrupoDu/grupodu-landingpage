@@ -86,11 +86,11 @@ const Footer = () => {
           <hr />
           <div className={styles.contato}>
             <LuPhone color="#6592f1ff" className={styles.icon} />
-            <span>(81) 99904-0919</span>
+            <span>(81) 2011-4432 / (81) 99904-0919</span>
           </div>
           <div className={styles.contato}>
             <LuMail color="#6592f1ff" className={styles.icon} />
-            <span>duferrom@gmail.com</span>
+            <span>dommetalind@gmail.com / vendasdommetal@grupodu.com.br</span>
           </div>
           <div className={styles.contato}>
             <LuMapPin color="#6592f1ff" className={styles.icon} />
