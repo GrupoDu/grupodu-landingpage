@@ -4,25 +4,20 @@ import styles from "./page.module.scss";
 import Image from "next/image";
 import { LuCheck } from "react-icons/lu";
 import { IconType } from "react-icons";
-import Button from "@/components/ui/buttons/button";
+import { Button } from "@/components/ui/buttons/button";
 import ListaCatalogo from "@/components/listaCatalogo";
 import { garantiasDomMetal } from "@/constants/garantias";
-import CardGarantia from "@/components/cardsComponents/cardGarantia";
+import { CardGarantia } from "@/components/cardsComponents/cardGarantia";
 import { sobreDomMetal } from "@/constants/sobre";
 import Link from "next/link";
 import { MdKeyboardArrowRight, MdKeyboardArrowUp } from "react-icons/md";
 import { Metadata } from "next";
-import FormContact from "@/components/formsComponents/formContact";
-import ContactsSectionMainPages from "@/components/contactsSectionMainPages";
-import ButtonDecoration from "@/components/ui/buttons/buttonDecoration";
+import { FormContact } from "@/components/formsComponents/formContact";
+import { ContactsSectionMainPages } from "@/components/contactsSectionMainPages";
+import { ButtonDecoration } from "@/components/ui/buttons/buttonDecoration";
 import { bulletsHero } from "@/constants/textosHero";
 import { textosCardDiferenciais } from "@/constants/cards";
 import Script from "next/script";
-// import { FaPlay } from "react-icons/fa";
-// import ReactPlayer from "react-player";
-// import ImageTemplate from "@/components/imageTemplate";
-
-// Import de imagens
 import ImgObra from "@/assets/backgrounds/construindo-novas-casas-de-concreto.jpg";
 import ImgEletricista from "@/assets/backgrounds/instalador-eletricista-com-uma-ferramenta-nas-maos-trabalhando-com-cabo-no-canteiro-de-obras.jpg";
 import DuFerro from "../../../public/DuFerro.png";
@@ -40,24 +35,10 @@ const Bullet = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const CardDiferencial = ({
-  titulo,
-  descricao,
-  Icon,
-}: {
+type CardProps = {
   titulo: string;
   descricao: string;
   Icon: IconType;
-}) => {
-  return (
-    <div className={styles.cardDiferencial}>
-      <div className={styles.titulo}>
-        <Icon />
-        <h4>{titulo}</h4>
-      </div>
-      <p>{descricao}</p>
-    </div>
-  );
 };
 
 const jsonLd = {
@@ -80,8 +61,32 @@ export const metadata: Metadata = {
     "Dom Metal do Grupo Du Car: carros de mão, plataformas e soluções metálicas para construção civil. Produtos de alta durabilidade, fabricação local e suporte técnico especializado no Nordeste.",
 };
 
+/**
+ * Componente do card diferencial
+ *
+ * @param {CardProps} props
+ * @param {string} props.titulo - Título do card
+ * @param {string} props.descricao - Descrição do card
+ * @param {IconType} props.Icon - Ícone do card
+ */
+const CardDiferencial = ({ titulo, descricao, Icon }: CardProps) => {
+  return (
+    <div className={styles.cardDiferencial}>
+      <div className={styles.titulo}>
+        <Icon />
+        <h4>{titulo}</h4>
+      </div>
+      <p>{descricao}</p>
+    </div>
+  );
+};
+
 const DomMetalPage = () => {
-  const imagensPlaceholder = ["https://hlzfhmneaphariqoewir.supabase.co/storage/v1/object/public/produtos/carro-de-mao/carro-jerica-160.png", "https://hlzfhmneaphariqoewir.supabase.co/storage/v1/object/public/produtos/carro-de-mao/carro-transporte-bloco.png", "https://hlzfhmneaphariqoewir.supabase.co/storage/v1/object/public/produtos/masseiras/masseira-metalica.png"];
+  const imagensPlaceholder = [
+    "https://hlzfhmneaphariqoewir.supabase.co/storage/v1/object/public/produtos/carro-de-mao/carro-jerica-160.png",
+    "https://hlzfhmneaphariqoewir.supabase.co/storage/v1/object/public/produtos/carro-de-mao/carro-transporte-bloco.png",
+    "https://hlzfhmneaphariqoewir.supabase.co/storage/v1/object/public/produtos/masseiras/masseira-metalica.png",
+  ];
 
   return (
     <>
@@ -116,27 +121,6 @@ const DomMetalPage = () => {
                   <Bullet key={index}>{bullet}</Bullet>
                 ))}
               </div>
-              {/* Lista de construtoras */}
-              {/* <div className={styles.construtorasList}>
-                <span>Construtoras que já colaboramos</span>
-                <ul>
-                  <li>
-                    <ImageTemplate />
-                  </li>
-                  <li>
-                    <ImageTemplate />
-                  </li>
-                  <li>
-                    <ImageTemplate />
-                  </li>
-                  <li>
-                    <ImageTemplate />
-                  </li>
-                  <li>
-                    <ImageTemplate />
-                  </li>
-                </ul>
-              </div> */}
               <div className={styles.buttons}>
                 <Button
                   type="link"
@@ -146,21 +130,21 @@ const DomMetalPage = () => {
                 >
                   Solicitar Orçamento
                 </Button>
-                <Button type="link" href="#catalogo" width="fit-content" border="#fff">
+                <Button
+                  type="link"
+                  href="#catalogo"
+                  width="fit-content"
+                  border="#fff"
+                >
                   Ver Catálogo
                 </Button>
               </div>
             </div>
-            <div className={`${styles.rightContent} ${styles.rightContentPlaceholder}`}>
-              {/* <ReactPlayer
-                  src="https://youtu.be/dQw4w9WgXcQ?si=Q-r3Sx7NsTAWUHzM"
-                  className={styles.video}
-                  width="100%"
-                  height="100%"
-                /> */}
-              {/* <VideoTemplate /> */}
+            <div
+              className={`${styles.rightContent} ${styles.rightContentPlaceholder}`}
+            >
               {imagensPlaceholder.map((image, index) => (
-                <Image 
+                <Image
                   src={image}
                   key={index}
                   alt="ilustracoes"
@@ -169,7 +153,6 @@ const DomMetalPage = () => {
                   className={styles.ilustracoes}
                 />
               ))}
-              
             </div>
           </div>
         </div>

@@ -1,12 +1,12 @@
 import styles from "../styles.module.scss";
-import Main from "@/components/main";
-import HeroSectionProductsPage from "@/components/heroSectionProdutcsPage";
+import { Main } from "@/components/main";
+import { HeroSectionProductsPage } from "@/components/heroSectionProdutcsPage";
 import Loading from "@/components/loading";
 import { Suspense } from "react";
 import { Metadata } from "next";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import Script from "next/script";
-import ContactsProductsPageSection from "@/components/contactsProductsPageSection";
+import { ContactProductsPageSection } from "@/components/contactsProductsPageSection";
 
 export const revalidate = 7200;
 
@@ -48,7 +48,7 @@ export default function ProdutoPge() {
             <Main id="produtos" />
           </div>
           <hr className={styles.hr} />
-          <ContactsProductsPageSection />
+          <ContactProductsPageSection />
         </div>
       </Suspense>
     </>

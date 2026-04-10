@@ -1,15 +1,15 @@
 import styles from "./page.module.scss";
-import Button from "@/components/ui/buttons/button";
-import SectionTitle from "@/components/sectionTitle";
-import StatesContainer from "@/components/statesContainer";
+import { Button } from "@/components/ui/buttons/button";
+import { SectionTitle } from "@/components/sectionTitle";
+import { StatesContainer } from "@/components/statesContainer";
 import { cards, diferencas } from "@/constants/textos";
 import { LuArrowDown, LuCircleCheckBig } from "react-icons/lu";
-import ContactsSectionMainPages from "@/components/contactsSectionMainPages";
-import FormContact from "@/components/formsComponents/formContact";
-import FundamentalValuesContainer from "@/components/ui/fundamentalValuesContainer";
-import SegmentsContainer from "@/components/segmentsContainer";
-import SwiperComponent from "@/components/swiper";
-import CardReasonToChoose from "@/components/cardsComponents/cardReasonToChoose";
+import { ContactsSectionMainPages } from "@/components/contactsSectionMainPages";
+import { FormContact } from "@/components/formsComponents/formContact";
+import { FundamentalValuesContainer } from "@/components/ui/fundamentalValuesContainer";
+import { SegmentsContainer } from "@/components/segmentsContainer";
+import { SwiperComponent } from "@/components/swiper";
+import { CardReasonToChoose } from "@/components/cardsComponents/cardReasonToChoose";
 
 export const revalidate = false;
 
@@ -109,7 +109,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <ul>
+        <ul className={styles.diferencasList}>
           {diferencas.map((diferenca, index) => (
             <li key={index}>
               <LuCircleCheckBig color="white" className={styles.checkIcon} />

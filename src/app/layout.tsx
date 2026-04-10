@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "@/app/globals.scss";
 import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+import { Footer } from "@/components/footer";
 import Toast from "@/components/ui/toast";
 import WsIcon from "@/components/ui/wsicon";
 import ArrowUp from "@/components/ui/arrowUp";
 import Script from "next/script";
 import Image from "next/image";
+import { ReactNode } from "react";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="pt-br">
@@ -54,8 +55,10 @@ export default function RootLayout({
             width="1"
             alt="meta pixel"
             style={{ display: "none" }}
-            src={`https://www.facebook.com/tr?id=1528143071557219&ev=PageView&noscript=1`} />
+            src={`https://www.facebook.com/tr?id=1528143071557219&ev=PageView&noscript=1`}
+          />
         </noscript>
+        <title>Grupo Du</title>
       </head>
       <body className={`${poppins.variable}`}>
         <Toast />
