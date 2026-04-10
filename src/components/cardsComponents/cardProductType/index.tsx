@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { LuImage, LuCheck } from "react-icons/lu";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Image from "next/image";
-import ButtonDecoration from "../../ui/buttons/buttonDecoration";
+import { ButtonDecoration } from "../../ui/buttons/buttonDecoration";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -13,7 +13,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { useFetchProductsData } from "@/hooks/useFetchProductsData";
 
-type Props = {
+type CardProductTypeProps = {
   titulo: string;
   bullets: string[];
   buttonScheme: string;
@@ -30,26 +30,37 @@ const ImageTemplate = () => {
   );
 };
 
-const CardProductType = (props: Props) => {
+/**
+ * Componente de card para cada tipo de produto
+ *
+ * @param {CardProductTypeProps} props
+ * @see {CardProductTypeProps}
+ */
+export const CardProductType = (props: CardProductTypeProps) => {
+  const { titulo, href, buttonTxt, buttonScheme, bullets } = props;
   const [produtos, setProdutos] = useState<IProduct[]>([]);
   const productsData = useFetchProductsData();
+  const isPlatformTitle = titulo === "Plataforma de Trabalho para Construção";
+  const isCarTitle = titulo === "Carro de Mão para Construção Civil";
+  const isMasseiraTitle = titulo === "Masseiras para Obra e Argamassa";
+  const hasNoProducts = produtos.length === 0;
 
   useEffect(() => {
-    if (productsData) {
-      setProdutos(productsData);
-    }
+    if (productsData) setProdutos(productsData);
 
-    if (props.titulo === "Carro de Mão para Construção Civil") {
+    if (isCarTitle) {
       setProdutos(
         productsData.filter(
           (product: IProduct) => product.product_type === "carro de mão"
         )
       );
-    } else if (props.titulo === "Masseiras para Obra e Argamassa") {
+    } else if (isMasseiraTitle) {
       setProdutos(
-        productsData.filter((product: IProduct) => product.product_type === "masseira")
+        productsData.filter(
+          (product: IProduct) => product.product_type === "masseira"
+        )
       );
-    } else if (props.titulo === "Plataforma de Trabalho para Construção") {
+    } else if (isPlatformTitle) {
       setProdutos(
         productsData.filter(
           (product: IProduct) => product.product_type === "plataforma"
@@ -60,7 +71,7 @@ const CardProductType = (props: Props) => {
 
   return (
     <div className={styles.container}>
-      {produtos.length === 0 ? (
+      {hasNoProducts ? (
         <ImageTemplate />
       ) : (
         <Swiper
@@ -75,7 +86,7 @@ const CardProductType = (props: Props) => {
             <SwiperSlide key={index} className={styles.swiperSlide}>
               <Image
                 src={produto.image}
-                alt={props.titulo}
+                alt={titulo}
                 className={styles.imagem}
                 width={400}
                 height={400}
@@ -86,9 +97,9 @@ const CardProductType = (props: Props) => {
         </Swiper>
       )}
       <div className={styles.content}>
-        <h4>{props.titulo}</h4>
+        <h4>{titulo}</h4>
         <ul>
-          {props.bullets.map((bullet, index) => (
+          {bullets.map((bullet, index) => (
             <li key={index}>
               <LuCheck color="#515151" />
               <p>{bullet}</p>
@@ -97,17 +108,15 @@ const CardProductType = (props: Props) => {
         </ul>
         <ButtonDecoration
           type="link"
-          href={props.href}
-          border={props.buttonScheme}
+          href={href}
+          border={buttonScheme}
           color="white"
-          theme={props.buttonScheme}
+          theme={buttonScheme}
           borderRadius="6px"
         >
-          {props.buttonTxt} <MdKeyboardArrowRight />
+          {buttonTxt} <MdKeyboardArrowRight />
         </ButtonDecoration>
       </div>
     </div>
   );
 };
-
-export default CardProductType;

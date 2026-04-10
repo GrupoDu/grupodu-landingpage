@@ -1,65 +1,65 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.scss";
-import FundamentalValueBullet from "../fundamentalValueBullet";
+import { FundamentalValueBullet } from "../fundamentalValueBullet";
 
-const FundamentalValuesContainer = () => {
-  const [visible, setVisible] = useState<boolean>(false);
+type FundamentalValues = {
+  title: string;
+  text: string;
+};
+
+/**
+ * Componente que exibe os valores fundamentais do grupo.
+ */
+export const FundamentalValuesContainer = () => {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
   const ref = useRef(null);
+  const fundamentalValues: FundamentalValues[] = [
+    {
+      title: "Excelência Operacional",
+      text: "Busca constante pela perfeição em cada processo, projeto e entrega.",
+    },
+    {
+      title: "Inovação Contínua",
+      text: "Investimento em tecnologia e metodologias para superar expectativas.",
+    },
+    {
+      title: "Relacionamentos Duradouros",
+      text: "Construção de parcerias baseadas em confiança e transparência.",
+    },
+    {
+      title: "Responsabilidade Social",
+      text: "Compromisso com impacto positivo na sociedade e meio ambiente.",
+    },
+  ];
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-        }
-      });
-    });
+    const observer = new IntersectionObserver((entries) =>
+      entries.forEach((entry) => entry.isIntersecting && setIsVisible(true))
+    );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+    if (ref.current) observer.observe(ref.current);
 
-    return () => {
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   });
+
+  /** Exibe os valores fundamentais */
+  const DisplayValues = () => {
+    return fundamentalValues.map((value) => (
+      <li>
+        <FundamentalValueBullet isVisible={isVisible} title={value.title}>
+          {value.text}
+        </FundamentalValueBullet>
+      </li>
+    ));
+  };
 
   return (
     <div className={styles.valoresContainer}>
       <h3>Nossos valores fundamentais</h3>
-      <ul ref={ref}>
-        <li>
-          <FundamentalValueBullet
-            variant={visible ? "visible" : ""}
-            title="Excelência Operacional"
-            description="Busca constante pela perfeição em cada processo, projeto e entrega."
-          />
-        </li>
-        <li>
-          <FundamentalValueBullet
-            variant={visible ? "visible" : ""}
-            title="Inovação Contínua"
-            description="Investimento em tecnologia e metodologias para superar expectativas."
-          />
-        </li>
-        <li>
-          <FundamentalValueBullet
-            variant={visible ? "visible" : ""}
-            title="Relacionamentos Duradouros"
-            description="Construção de parcerias baseadas em confiança e transparência."
-          />
-        </li>
-        <li>
-          <FundamentalValueBullet
-            variant={visible ? "visible" : ""}
-            title="Responsabilidade Social"
-            description="Compromisso com impacto positivo na sociedade e meio ambiente."
-          />
-        </li>
+      <ul className={styles.fundamentalValuesList} ref={ref}>
+        <DisplayValues />
       </ul>
     </div>
   );
 };
-
-export default FundamentalValuesContainer;

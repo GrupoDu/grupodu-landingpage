@@ -2,11 +2,16 @@ import React from "react";
 import styles from "./styles.module.scss";
 import Image from "next/image";
 import { statesList } from "@/constants/statesList";
-
-//Imagem
 import MapaEstados from "../../../public/mapa-estados.png";
 
-const StatesContainer = () => {
+/**
+ * Componente que exibe o mapa de estados e a lista de estados.
+ */
+export const StatesContainer = () => {
+  const displayStatesList = statesList.map((estado, index) => (
+    <li key={index}>{estado}</li>
+  ));
+
   return (
     <div className={styles.estadosContainer}>
       <Image
@@ -17,14 +22,8 @@ const StatesContainer = () => {
       />
       <div className={styles.listContainer}>
         <h1>Atendemos em todo o nordeste</h1>
-        <ul>
-          {statesList.map((estado, index) => (
-            <li key={index}>{estado}</li>
-          ))}
-        </ul>
+        <ul className={styles.statesList}>{displayStatesList}</ul>
       </div>
     </div>
   );
 };
-
-export default StatesContainer;

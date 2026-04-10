@@ -418,6 +418,7 @@
 
     .segmentosContainer {
       display: flex;
+      flex: 1;
       gap: 2em;
 
       .grupodu {
@@ -430,6 +431,7 @@
         padding: 2em;
         border-radius: 16px;
         flex: 1;
+        height: 20rem;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -457,7 +459,7 @@
           .logoSegmentos {
             object-fit: contain;
             height: fit-content;
-            width: 30%;
+            width: 20%;
           }
 
           .content {
@@ -501,7 +503,7 @@
           .logoSegmentos {
             object-fit: contain;
             height: fit-content;
-            width: 30%;
+            width: 20%;
           }
 
           .content {

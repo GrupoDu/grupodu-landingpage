@@ -2,13 +2,21 @@ import React from "react";
 import styles from "./styles.module.scss";
 import { IconType } from "react-icons";
 
-type Props = {
+type ReasonToChooseProps = {
   title: string;
   description: string;
   icon: IconType;
 };
 
-const CardReasonToChoose = ({ title, description, icon: Icon }: Props) => {
+/**
+ * Componente que renderiza um card de motivo de escolha
+ *
+ * @param {ReasonToChooseProps} props - Props do componente
+ * @see {ReasonToChooseProps}
+ */
+export const CardReasonToChoose = (props: ReasonToChooseProps) => {
+  const { icon: Icon, description, title } = props;
+
   return (
     <div className={styles.cardContainer}>
       <div className={styles.titleCard}>
@@ -21,5 +29,3 @@ const CardReasonToChoose = ({ title, description, icon: Icon }: Props) => {
     </div>
   );
 };
-
-export default CardReasonToChoose;

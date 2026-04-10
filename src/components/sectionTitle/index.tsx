@@ -1,12 +1,16 @@
-import React from "react";
+import { ReactNode } from "react";
 import styles from "./styles.module.scss";
 
-const SectionTitle = ({ children }: { children: React.ReactNode }) => {
+/**
+ *
+ * @param prop
+ * @param {ReactNode} prop.children - Texto do título
+ * @constructor
+ */
+export const SectionTitle = ({ children }: { children: ReactNode }) => {
   return (
     <div className={styles.sectionTitleContainer}>
       <span>{children}</span>
     </div>
   );
 };
-
-export default SectionTitle;

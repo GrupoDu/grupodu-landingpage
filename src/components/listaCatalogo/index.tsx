@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import { usePathname } from "next/navigation";
 import { textosCardProdutos } from "@/constants/cards";
-import CardProductType from "../cardsComponents/cardProductType";
+import { CardProductType } from "../cardsComponents/cardProductType";
 
 type cardTexts = {
   titulo: string;
@@ -17,21 +17,18 @@ type cardTexts = {
 const ListaCatalogo = () => {
   const [catalogo, setCatalogo] = useState<cardTexts[]>([]);
   const pathname = usePathname();
+  const isDomMetalPage = pathname.includes("dom-metal");
 
   useEffect(() => {
-    if (pathname.includes("dom-metal")) {
+    if (isDomMetalPage) {
       setCatalogo(textosCardProdutos.segmentos["dom-metal"]);
-    } else if (pathname.includes("duferro")) {
-      //   setCatalogo(textosCardProdutos.segmentos["duferro"]);
-    } else if (pathname.includes("carbuilt")) {
-      //   setCatalogo(textosCardProdutos.segmentos["carbuilt"]);
     } else {
       setCatalogo([]);
     }
   }, [pathname]);
 
   return (
-    <ul className={styles.container}>
+    <ul className={styles.catalogListContainer}>
       {catalogo.map((card, index) => (
         <li key={index}>
           <CardProductType

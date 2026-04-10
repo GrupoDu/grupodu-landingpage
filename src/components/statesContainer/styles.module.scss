@@ -1,12 +1,16 @@
+:root {
+  --dark-blue: #0b1326;
+}
+
 .estadosContainer {
-  background: #0b1326;
+  background: var(--dark-blue);
   background: linear-gradient(
     121deg,
-    rgba(11, 19, 38, 1) 0%,
+    var(--dark-blue) 0%,
     rgba(64, 97, 168, 1) 26%,
-    rgba(11, 19, 38, 1) 100%
+    var(--dark-blue) 100%
   );
-  padding: 2em;
+  padding: 2rem;
   border-radius: 16px;
   display: flex;
   box-shadow: 0 0 6px 0 rgba($color: #000000, $alpha: 1);
@@ -29,12 +33,12 @@
       font-size: 40px;
     }
 
-    ul {
+    .statesList {
       width: 100%;
       color: white;
       display: flex;
       flex-direction: column;
-      gap: 0.4em;
+      gap: 0.4rem;
       cursor: default;
 
       li {
@@ -42,7 +46,7 @@
         width: fit-content;
 
         &:hover {
-          transform: translateX(20);
+          transform: translateX(1rem);
           list-style: circle;
           color: rgb(155, 202, 255);
         }
@@ -54,7 +58,7 @@
 @media screen and (min-width: 380px) and (max-width: 420px) {
   .estadosContainer {
     flex-direction: column;
-    padding: 1em;
+    padding: 1rem;
     align-items: center;
 
     .mapaEstados {
@@ -64,7 +68,7 @@
 
     .listContainer {
       padding: 0;
-      gap: 0.8em;
+      gap: 0.8rem;
       h1 {
         font-size: 30px;
         text-align: center;

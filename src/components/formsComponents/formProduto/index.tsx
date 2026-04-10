@@ -1,17 +1,17 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import toast from "react-hot-toast";
 import { usePathname } from "next/navigation";
-import Button from "../../ui/buttons/button";
+import { Button } from "../../ui/buttons/button";
 import { IProductRequest } from "../types";
 import { showToast } from "@/utils/showToast";
 import { useFetchProductsData } from "@/hooks/useFetchProductsData";
 import { useCheckPathnameProduct } from "@/hooks/useCheckPathnameProduct";
 import { sendProductRequest } from "@/services/sendProductRequest";
 
-const FormProduto = () => {
+export const FormProduto = () => {
   const [productRequestInfos, setProductRequestInfos] =
     useState<IProductRequest>({
       name: "",
@@ -26,27 +26,18 @@ const FormProduto = () => {
   const productType = useCheckPathnameProduct();
   const productsData = useFetchProductsData(productType);
 
-  useEffect(() => {
-    if (productsData) {
-      setProducts(productsData);
-    }
-  }, [productsData]);
+  useEffect(() => productsData && setProducts(productsData), [productsData]);
 
-  const handleEmail = async (e: React.FormEvent) => {
+  const handleEmail = async (e: FormEvent) => {
     e.preventDefault();
     setIsSending(true);
-    const productRequest = await sendProductRequest(productRequestInfos);
 
     try {
-      if (productRequest.status === 200) {
-        toast.success(productRequest.message);
-      } else {
-        toast.error(productRequest.message);
-      }
+      const productRequest = await sendProductRequest(productRequestInfos);
+      toast.success(productRequest.message);
     } catch (err) {
-      console.log(
-        `Ocorreu uma erro ao enviar o solicitação: ${(err as Error).message}`
-      );
+      const error = err as Error;
+      console.log(`Ocorreu uma erro ao enviar o solicitação: ${error.message}`);
     }
   };
 
@@ -59,7 +50,7 @@ const FormProduto = () => {
           <input
             type="text"
             placeholder="Seu nome"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setProductRequestInfos((prevProductRequestInfos) => ({
                 ...prevProductRequestInfos,
                 name: e.target.value,
@@ -73,7 +64,7 @@ const FormProduto = () => {
           <input
             type="email"
             placeholder="Seu email"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setProductRequestInfos((prevProductRequestInfos) => ({
                 ...prevProductRequestInfos,
                 email: e.target.value,
@@ -87,7 +78,7 @@ const FormProduto = () => {
           <input
             type="text"
             placeholder="Seu celular"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setProductRequestInfos((prevProductRequestInfos) => ({
                 ...prevProductRequestInfos,
                 phone: e.target.value,
@@ -99,7 +90,7 @@ const FormProduto = () => {
         <label className={`${styles.inputContainer} ${styles.inputModelo}`}>
           <span>Modelo do produto</span>
           <select
-            onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+            onChange={(e: ChangeEvent<HTMLSelectElement>) =>
               setProductRequestInfos((prevProductRequestInfos) => ({
                 ...prevProductRequestInfos,
                 model: e.target.value,
@@ -123,7 +114,7 @@ const FormProduto = () => {
           <input
             type="number"
             placeholder="Quantidade"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setProductRequestInfos((prevProductRequestInfos) => ({
                 ...prevProductRequestInfos,
                 quantity: Number(e.target.value),
@@ -137,7 +128,7 @@ const FormProduto = () => {
           <input
             type="text"
             placeholder="Sua empresa"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setProductRequestInfos((prevProductRequestInfos) => ({
                 ...prevProductRequestInfos,
                 company: e.target.value,
@@ -152,5 +143,3 @@ const FormProduto = () => {
     </div>
   );
 };
-
-export default FormProduto;

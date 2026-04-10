@@ -5,7 +5,8 @@
   flex-direction: column;
   position: fixed;
   right: 0;
-  background-color: white;
+  background-color: rgba($color: white, $alpha: 0.8);
+  backdrop-filter: blur(10px);
   z-index: 22;
   padding: 0.6em;
   gap: 0.6em;

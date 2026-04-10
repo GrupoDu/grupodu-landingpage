@@ -3,9 +3,9 @@ import Image, { StaticImageData } from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { LuCheckCheck } from "react-icons/lu";
-import BulletProduct from "../../bulletsComponents/bulletProduct";
+import { BulletProduct } from "../../bulletsComponents/bulletProduct";
 
-type Props = {
+type CardProdutoProps = {
   nomeProduto: string;
   imagemProduto: StaticImageData;
   descricaoProduto: string;
@@ -13,13 +13,9 @@ type Props = {
   caracteristicas: string[];
 };
 
-const CardProduto = ({
-  nomeProduto,
-  imagemProduto,
-  // descricaoProduto,
-  altImagem,
-  caracteristicas,
-}: Props) => {
+export const CardProduto = (props: CardProdutoProps) => {
+  const { altImagem, imagemProduto, nomeProduto, caracteristicas } = props;
+
   const message: string = encodeURIComponent(
     `Ola, gostaria de saber mais sobre o produto ${nomeProduto}`
   );
@@ -41,7 +37,7 @@ const CardProduto = ({
         {caracteristicas.map((bullet, index) => (
           <div className={styles.bullet} key={index}>
             <LuCheckCheck />
-            <BulletProduct bullet={bullet} />
+            <BulletProduct text={bullet} />
           </div>
         ))}
       </div>
@@ -56,5 +52,3 @@ const CardProduto = ({
     </div>
   );
 };
-
-export default CardProduto;

@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import Image, { StaticImageData } from "next/image";
-import ButtonDecoration from "../../ui/buttons/buttonDecoration";
+import { ButtonDecoration } from "../../ui/buttons/buttonDecoration";
 
-type Props = {
+type CardProps = {
   src: StaticImageData;
   title: string;
   subtitle: string;
@@ -13,46 +13,61 @@ type Props = {
   corButton: string;
 };
 
-const CardSegmento = (props: Props) => {
+/**
+ * Componente de card de segmento
+ *
+ * @param {CardProps} props
+ * @see {CardProps}
+ */
+export const CardSegmento = (props: CardProps) => {
+  const {
+    src,
+    description,
+    especialidades,
+    corButton,
+    title,
+    variantClass,
+    subtitle,
+  } = props;
+
+  /** Renderiza as especialidades do segmento */
+  const displaySpecialties = especialidades.map((espec, index) => (
+    <li key={index}>
+      <div className={styles.circle} />
+      <span>{espec}</span>
+    </li>
+  ));
+
   return (
-    <div className={`${styles.segmentoContainer} ${props.variantClass}`}>
+    <div className={`${styles.segmentoContainer} ${variantClass}`}>
       <Image
         loading="lazy"
-        src={props.src}
+        src={src}
         alt="segmento-imagem"
         className={styles.logoImage}
       />
-      <h1>{props.title}</h1>
-      <h4 className={styles.subtitle}>{props.subtitle}</h4>
-      <p>{props.description}</p>
+      <h1>{title}</h1>
+      <h4 className={styles.subtitle}>{subtitle}</h4>
+      <p>{description}</p>
       <div className={styles.especialidadeContainer}>
         <div className={styles.especialidadeTitle}>
           <div className={styles.circle} />
           <h4>Especialidades</h4>
         </div>
-        <ul>
-          {props.especialidades.map((espec, index) => (
-            <li key={index}>
-              <div className={styles.circle} />
-              <span>{espec}</span>
-            </li>
-          ))}
-        </ul>
+        <ul className={styles.specialtiesList}>{displaySpecialties}</ul>
       </div>
       <div className={styles.buttonContainer}>
         <ButtonDecoration
           type="link"
-          href={`/${props.variantClass}`}
-          border={props.corButton}
+          href={`/${variantClass}`}
+          border={corButton}
           color="white"
-          theme={props.corButton}
+          theme={corButton}
           borderRadius="14px"
         >
-          {props.title}
+          {title}
         </ButtonDecoration>
       </div>
     </div>
   );
 };
-
-export default CardSegmento;

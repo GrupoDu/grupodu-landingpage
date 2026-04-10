@@ -2,10 +2,11 @@
 
 import React, { useEffect } from "react";
 import styles from "./styles.module.scss";
-import CardSegmento from "../cardsComponents/cardSegmento";
+import { CardSegmento } from "../cardsComponents/cardSegmento";
 import { infoSegmentos } from "@/constants/segmentos";
 
-const SegmentsContainer = () => {
+/** Componente que renderiza os cards de segmentos */
+export const SegmentsContainer = () => {
   useEffect(() => {
     const elements = [
       ...document.getElementsByClassName("dom-metal"),
@@ -13,16 +14,23 @@ const SegmentsContainer = () => {
       ...document.getElementsByClassName("carbuilt"),
     ];
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const index = elements.indexOf(entry.target);
-          setTimeout(() => {
-            entry.target.classList.add(styles.visible);
-          }, index * 400);
-        }
-      });
-    });
+    /**
+     * Timeout para adicionar a classe de visibilidade aos elementos
+     *
+     * @param {IntersectionObserver} entry - Instancia do IntersectionObserverEntry
+     */
+    const timeoutToShow = (entry: IntersectionObserverEntry) => {
+      const index = elements.indexOf(entry.target);
+      const ms = 400;
+
+      setTimeout(() => {
+        entry.target.classList.add(styles.visible);
+      }, index * ms);
+    };
+
+    const observer = new IntersectionObserver((entries) =>
+      entries.forEach((entry) => timeoutToShow(entry))
+    );
 
     elements.forEach((el) => el && observer.observe(el));
 
@@ -46,5 +54,3 @@ const SegmentsContainer = () => {
     </div>
   );
 };
-
-export default SegmentsContainer;

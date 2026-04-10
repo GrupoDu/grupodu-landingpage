@@ -6,9 +6,12 @@ import { cards } from "@/constants/textos";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
-import CardReasonToChoose from "../cardsComponents/cardReasonToChoose";
+import { CardReasonToChoose } from "../cardsComponents/cardReasonToChoose";
 
-const SwiperComponent = () => {
+/** Componente que renderiza o swiper */
+export const SwiperComponent = () => {
+  const ms = 5000;
+
   return (
     <Swiper
       spaceBetween={50}
@@ -16,7 +19,7 @@ const SwiperComponent = () => {
       modules={[Autoplay, Pagination]}
       loop={true}
       pagination={{ clickable: true }}
-      autoplay={{ delay: 5000 }}
+      autoplay={{ delay: ms }}
       className={styles.swiperContainer}
     >
       {cards.map((card, index) => (
@@ -31,5 +34,3 @@ const SwiperComponent = () => {
     </Swiper>
   );
 };
-
-export default SwiperComponent;

@@ -13,14 +13,16 @@ import {
 import Whatsapp from "../../../public/whatsapp.svg";
 import Link from "next/link";
 
+/** Componente que importa o mapa do Leaflet de forma lazy */
 const MapaLeaflet = dynamic(() => import("../mapaLeaflet/index"), {
   ssr: false,
 });
 
-const ContactsSectionMainPages = () => {
+/** Componente que exibe a seção de contatos */
+export const ContactsSectionMainPages = () => {
   return (
     <div className={styles.infoContatosContainer}>
-      <div style={{ height: "300px", width: "100%", borderRadius: "100px" }}>
+      <div className={styles.mapContainer}>
         <MapaLeaflet />
       </div>
       <div className={styles.contatos}>
@@ -78,5 +80,3 @@ const ContactsSectionMainPages = () => {
     </div>
   );
 };
-
-export default ContactsSectionMainPages;

@@ -1,12 +1,18 @@
 import { useState, useEffect } from "react";
 
-export const useScrollOpacity = () => {
+/**
+ * Altera a opacidade do navbar ao rolar a pagina
+ *
+ * @returns {number[]} - Array com a opacidade do navbar e a opacidade do texto
+ */
+export const useScrollOpacity = (): number[] => {
   const [opacity, setOpacity] = useState(1);
   const [opacityUp, setOpacityUp] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
+
       if (scrollPosition > 700) {
         setOpacity(0.5);
         setOpacityUp(0.9);

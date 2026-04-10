@@ -1,14 +1,15 @@
 "use client";
-import React from "react";
+import React, { ChangeEvent, FormEvent } from "react";
 import styles from "./styles.module.scss";
-import Button from "../../ui/buttons/button";
+import { Button } from "../../ui/buttons/button";
 import { LuSend } from "react-icons/lu";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { sendEmailContact } from "@/services/sendEmailContact";
 import { IContactInfos } from "../types";
 
-const FormContact = () => {
+/** Componente que exibe o formulário de contato */
+export const FormContact = () => {
   const [userInfos, setUserInfos] = useState<IContactInfos>({
     email: "",
     name: "",
@@ -19,22 +20,13 @@ const FormContact = () => {
   });
   const [sending, setSending] = useState<boolean>(false);
 
-  // Talvez separar essa lógica em um hook ou função
-  const handleEmailContactSubmit = async (
-    e: React.FormEvent<HTMLFormElement>
-  ) => {
+  const handleEmailContactSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSending(true);
-    const emailContact = await sendEmailContact(userInfos);
 
     try {
-      if (emailContact.status === 200) {
-        console.log(`status do reponse: ${emailContact.status}`);
-        toast.success(emailContact.message);
-      } else {
-        console.log(`status do reponse: ${emailContact.status}`);
-        toast.error(emailContact.message);
-      }
+      const emailContact = await sendEmailContact(userInfos);
+      toast.success(emailContact.message);
     } catch (err) {
       toast.error("Erro de conexão. Tente novamente mais tarde.");
       console.log(err);
@@ -54,7 +46,7 @@ const FormContact = () => {
             name="nome-completo"
             placeholder="Seu nome completo"
             value={userInfos.name}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setUserInfos((prevUserInfos) => ({
                 ...prevUserInfos,
                 name: e.target.value,
@@ -70,7 +62,7 @@ const FormContact = () => {
             name="email"
             placeholder="seu@email.com"
             value={userInfos.email}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setUserInfos((prevUserInfos) => ({
                 ...prevUserInfos,
                 email: e.target.value,
@@ -86,7 +78,7 @@ const FormContact = () => {
             name="telefone"
             placeholder="(81) 99999-9999"
             value={userInfos.phone}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setUserInfos((prevUserInfos) => ({
                 ...prevUserInfos,
                 phone: e.target.value,
@@ -102,7 +94,7 @@ const FormContact = () => {
             name="empresa"
             placeholder="Nome da sua empresa"
             value={userInfos.company}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setUserInfos((prevUserInfos) => ({
                 ...prevUserInfos,
                 company: e.target.value,
@@ -118,7 +110,7 @@ const FormContact = () => {
             name="assunto"
             placeholder="Sobre o que você gostaria de falar"
             value={userInfos.subject}
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
               setUserInfos((prevUserInfos) => ({
                 ...prevUserInfos,
                 subject: e.target.value,
@@ -133,7 +125,7 @@ const FormContact = () => {
             name="mensage"
             placeholder="Digite sua mensagem aqui"
             value={userInfos.message}
-            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
               setUserInfos((prevUserInfos) => ({
                 ...prevUserInfos,
                 message: e.target.value,
@@ -149,5 +141,3 @@ const FormContact = () => {
     </div>
   );
 };
-
-export default FormContact;
