@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import toast from "react-hot-toast";
 
 export const useFetchProductsData = (productType?: string) => {
   const [productsData, setProductsData] = useState<IProduct[]>([]);
@@ -12,11 +13,15 @@ export const useFetchProductsData = (productType?: string) => {
 
         if (productType) {
           setProductsData(
-            data.filter((product: IProduct) => product.product_type === productType)
+            data.filter(
+              (product: IProduct) => product.product_type === productType
+            )
           );
         }
       } catch (err) {
-        console.log(`Erro ao buscar dados: ${(err as Error).message}`);
+        const error = err as Error;
+        toast.error(`Erro ao buscar dados: ${error.message}`);
+        console.log(`Erro ao buscar dados: ${error.message}`);
       }
     };
 
