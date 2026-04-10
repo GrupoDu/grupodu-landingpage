@@ -2,62 +2,70 @@
 
 import Link from "next/link";
 import styles from "./styles.module.scss";
-import React, { useState } from "react";
-import { baseButton } from "../types";
+import React, { CSSProperties, useState } from "react";
+import { BaseButton } from "../types";
 
-interface Props extends baseButton {
+/**
+ * Props do botão decorado
+ *
+ * @see {BaseButton}
+ */
+interface ButtonDecorationProps extends BaseButton {
   theme: string;
   color: string;
   borderRadius?: string;
-};
+}
 
-const ButtonDecoration = (props: Props) => {
+/**
+ * Componente de botão decorado
+ *
+ * @param {ButtonDecorationProps} props
+ * @see {ButtonDecorationProps}
+ */
+export const ButtonDecoration = (props: ButtonDecorationProps) => {
+  const { theme, borderRadius, color, href, border, children, type, click } =
+    props;
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
 
-  const href = props.href ? props.href : "#"; 
-  const border = props.border ? `1px solid ${props.border}` : "none";
-  const borderRadius = props.borderRadius ? props.borderRadius : "0px";
+  const hrefValue = href ? href : "#";
+  const borderValue = border ? `1px solid ${border}` : "none";
+  const borderRadiusValue = borderRadius ? borderRadius : "0px";
 
-  if (props.type === "link") {
-    return (
-      <Link
-        href={href}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className={styles.button}
-        style={{
-          backgroundColor: isHovered ? props.theme : "white",
-          border: border,
-          color: isHovered ? props.color : "black",
-          borderRadius: borderRadius,
-        }}
-      >
-        {props.children}
-      </Link>
-    );
-  }
+  const buttonDynamicStyles: CSSProperties = {
+    backgroundColor: isHovered ? theme : "white",
+    border: borderValue,
+    color: isHovered ? color : "black",
+    borderRadius: borderRadiusValue,
+  };
 
-  if (props.type === "button") {
-    return (
-      <button
-        onClick={props.click}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className={styles.button}
-        style={{
-          backgroundColor: isHovered ? props.theme : "white",
-          border: border,
-          color: isHovered ? props.color : "black",
-          borderRadius: borderRadius, 
-        }}
-      >
-        {props.children}
-      </button>
-    );
-  }
+  const linkButton = (
+    <Link
+      href={hrefValue}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className={styles.button}
+      style={buttonDynamicStyles}
+    >
+      {children}
+    </Link>
+  );
+
+  const normalButton = (
+    <button
+      onClick={click}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className={styles.button}
+      style={buttonDynamicStyles}
+    >
+      {children}
+    </button>
+  );
+
+  if (type === "link") return linkButton;
+
+  if (type === "button") return normalButton;
 };
-
-export default ButtonDecoration;
