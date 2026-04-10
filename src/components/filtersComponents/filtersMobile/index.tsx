@@ -1,9 +1,13 @@
-"use client";
-
 import { FaFilter } from "react-icons/fa";
 import styles from "./styles.module.scss";
 
-const FiltersMobile = ({
+/**
+ * Componente que renderiza o botão de filtros para dispositivos móveis
+ *
+ * @param props
+ * @param {() => void} props.openFilterClickEvent - Evento de clique para abrir os filtros
+ */
+export const FiltersMobile = ({
   openFilterClickEvent,
 }: {
   openFilterClickEvent: () => void;
@@ -20,5 +24,3 @@ const FiltersMobile = ({
     </div>
   );
 };
-
-export default FiltersMobile;

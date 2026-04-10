@@ -2,14 +2,14 @@
 
 import styles from "./styles.module.scss";
 import { contatos } from "@/constants/contatos";
-import ContactIformationItem from "@/components/contactInformationItem";
-import ButtonDecoration from "@/components/ui/buttons/buttonDecoration";
-import Button from "@/components/ui/buttons/button";
+import { ContactInformationItem } from "@/components/contactInformationItem";
+import { ButtonDecoration } from "@/components/ui/buttons/buttonDecoration";
+import { Button } from "@/components/ui/buttons/button";
 import FormProduto from "@/components/formsComponents/formProduto";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { downloadFullCatalog } from "@/utils/downloadFullCatalog";
 
-const ContactProductsPageSection = () => {
+export const ContactProductsPageSection = () => {
   return (
     <div className={styles.formularioContato}>
       <div className={styles.contatos}>
@@ -21,7 +21,11 @@ const ContactProductsPageSection = () => {
         <hr />
         <h3>Outras formas de contato</h3>
         {contatos.map((contato, index) => (
-          <ContactIformationItem key={index} Icon={contato.icon} contato={contato.contato} />
+          <ContactInformationItem
+            key={index}
+            Icon={contato.icon}
+            contato={contato.contato}
+          />
         ))}
         <div className={styles.buttons}>
           <span>Ainda não conhece nossos produtos?</span>
@@ -45,5 +49,3 @@ const ContactProductsPageSection = () => {
     </div>
   );
 };
-
-export default ContactProductsPageSection;

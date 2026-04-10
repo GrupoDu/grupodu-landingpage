@@ -2,13 +2,20 @@
 
 import { usePathname, useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import { ChangeEvent } from "react";
 
-const InputCheckbox = ({ value }: { value: string }) => {
+/**
+ * Componente de input checkbox
+ *
+ * @param props
+ * @param {string} props.value - valor do checkbox
+ */
+export const InputCheckbox = ({ value }: { value: string }) => {
   const router = useRouter();
   const pathname = usePathname();
   const encodedValue = encodeURIComponent(value);
 
-  function handleCheckValue(e: React.ChangeEvent<HTMLInputElement>) {
+  function handleCheckValue(e: ChangeEvent<HTMLInputElement>) {
     const filterParams = new URLSearchParams();
 
     if (e.target.checked) {
@@ -28,5 +35,3 @@ const InputCheckbox = ({ value }: { value: string }) => {
     />
   );
 };
-
-export default InputCheckbox;

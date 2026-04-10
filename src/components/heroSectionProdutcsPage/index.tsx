@@ -8,11 +8,21 @@ import { textosHero } from "@/constants/textosHero";
 import Loading from "../loading";
 import { CategoriaProduto } from "@/@types/categoriaProduto";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import ButtonDecoration from "../ui/buttons/buttonDecoration";
+import { ButtonDecoration } from "../ui/buttons/buttonDecoration";
 import Breadcrumbs from "../ui/breadcrumbs";
-import BulletHeroSection from "../bulletsComponents/bulletHeroSection";
+import { BulletHeroSection } from "../bulletsComponents/bulletHeroSection";
 
-const HeroSectionProductsPage = ({ paginaAnterior }: { paginaAnterior: string }) => {
+/**
+ * Componente de hero section para páginas de produtos
+ *
+ * @param props
+ * @param {string} props.paginaAnterior - URL da página anterior
+ */
+export const HeroSectionProductsPage = ({
+  paginaAnterior,
+}: {
+  paginaAnterior: string;
+}) => {
   const [productTitle, setProductTitle] = useState<string | undefined>("");
   const [productDescription, setProductDescription] = useState<
     string | undefined
@@ -26,13 +36,19 @@ const HeroSectionProductsPage = ({ paginaAnterior }: { paginaAnterior: string })
 
   useEffect(() => {
     let produto: CategoriaProduto[] = [];
+    const isCarPage = pathname.includes("carro-de-mao");
+    const isMasseiraPage = pathname.includes("masseira");
+    const timeoutMs = 1000;
+    const isPlatformPage = pathname.includes("plataforma");
+    const filterTextByCategory = (category: string) =>
+      textosHero.filter((text) => text.categoria === category);
 
-    if (pathname.includes("carro-de-mao")) {
-      produto = textosHero.filter((text) => text.categoria === "Carro de mão");
-    } else if (pathname.includes("masseira")) {
-      produto = textosHero.filter((text) => text.categoria === "Masseiras");
-    } else if (pathname.includes("plataforma")) {
-      produto = textosHero.filter((text) => text.categoria === "Plataformas");
+    if (isCarPage) {
+      produto = filterTextByCategory("Carro de mão");
+    } else if (isMasseiraPage) {
+      produto = filterTextByCategory("Masseiras");
+    } else if (isPlatformPage) {
+      produto = filterTextByCategory("Plataformas");
     } else {
       setProductTitle(undefined);
       setProductDescription(undefined);
@@ -45,9 +61,7 @@ const HeroSectionProductsPage = ({ paginaAnterior }: { paginaAnterior: string })
     setProductImage(produto[0].imagens);
     setBullets(produto[0].bullets);
 
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
+    setTimeout(() => setLoading(false), timeoutMs);
   }, [searchParams, pathname]);
 
   return (
@@ -96,5 +110,3 @@ const HeroSectionProductsPage = ({ paginaAnterior }: { paginaAnterior: string })
     </div>
   );
 };
-
-export default HeroSectionProductsPage;

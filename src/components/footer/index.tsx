@@ -13,7 +13,8 @@ import React from "react";
 import Link from "next/link";
 import toast from "react-hot-toast";
 
-const Footer = () => {
+/** Componente que renderiza o footer */
+export const Footer = () => {
   return (
     <div className={styles.footerContainer}>
       <div className={styles.upper}>
@@ -143,5 +144,3 @@ const Footer = () => {
     </div>
   );
 };
-
-export default Footer;

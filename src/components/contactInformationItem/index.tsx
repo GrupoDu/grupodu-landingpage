@@ -1,7 +1,14 @@
 import { IconType } from "react-icons";
 import styles from "./styles.module.scss";
 
-const ContactInformationItem = ({
+/**
+ * Componente que renderiza um item de contato
+ *
+ * @param props
+ * @param {IconType} props.Icon
+ * @param {string} props.contato
+ */
+export const ContactInformationItem = ({
   Icon,
   contato,
 }: {
@@ -15,5 +22,3 @@ const ContactInformationItem = ({
     </div>
   );
 };
-
-export default ContactInformationItem;

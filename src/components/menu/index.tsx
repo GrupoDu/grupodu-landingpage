@@ -13,36 +13,32 @@ import { MdHomeFilled } from "react-icons/md";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { downloadFullCatalog } from "@/utils/downloadFullCatalog";
-import ButtonDecoration from "../ui/buttons/buttonDecoration";
+import { ButtonDecoration } from "../ui/buttons/buttonDecoration";
+import { checkURLContext } from "@/utils/checkURLContext";
 
-type Props = {
+type MenuMobileProps = {
   menu: boolean;
-  closeFunc: () => void;
+  closeFuncAction: () => void;
 };
 
-const MenuMobile = (props: Props) => {
+/**
+ * Componente que renderiza o menu para dispositivos móveis
+ *
+ * @param props
+ * @see {MenuMobileProps}
+ */
+export const MenuMobile = (props: MenuMobileProps) => {
+  const { menu, closeFuncAction } = props;
+
   const [actualPage, setActualPage] = useState("inicio");
   const pathname = usePathname();
+  const isHomePage = actualPage === "inicio";
 
-  useEffect(() => {
-    if (pathname.includes("produtos")) {
-      setActualPage("produtos");
-    } else if (pathname.includes("sobre")) {
-      setActualPage("sobre");
-    } else if (pathname.includes("contato")) {
-      setActualPage("contato");
-    } else {
-      setActualPage("inicio");
-    }
-  }, [pathname]);
+  useEffect(() => setActualPage(checkURLContext(pathname)), [pathname]);
 
   return (
-    <nav
-      className={`${styles.menuContainer} ${
-        props.menu === true ? styles.showMenu : ""
-      }`}
-    >
-      <button className={styles.closeButton} onClick={() => props.closeFunc()}>
+    <nav className={`${styles.menuContainer} ${menu && styles.showMenu}`}>
+      <button className={styles.closeButton} onClick={() => closeFuncAction()}>
         <LuPanelRightClose
           color="white"
           width={40}
@@ -55,15 +51,15 @@ const MenuMobile = (props: Props) => {
         <Link
           href="/"
           className={styles.link}
-          onClick={() => props.closeFunc()}
+          onClick={() => closeFuncAction()}
         >
           <MdHomeFilled
-            color={actualPage === "inicio" ? "var(--blue-light)" : "black"}
+            color={isHomePage ? "var(--blue-light)" : "black"}
             className={styles.linkIcons}
           />
           <span
             style={
-              actualPage === "inicio"
+              isHomePage
                 ? { color: "var(--blue-light)", fontWeight: "bold" }
                 : { color: "var(--blue-dark)" }
             }
@@ -72,8 +68,17 @@ const MenuMobile = (props: Props) => {
           </span>
         </Link>
         <Link href={"/produtos"} className={styles.link}>
-          <LuShoppingBasket color={actualPage === "produtos" ? "var(--blue-light)" : "black"} className={styles.linkIcons} />
-          <span style={actualPage === "produtos" ? { fontWeight: "bold", color: "var(--blue-light)" } : {}}>
+          <LuShoppingBasket
+            color={actualPage === "produtos" ? "var(--blue-light)" : "black"}
+            className={styles.linkIcons}
+          />
+          <span
+            style={
+              actualPage === "produtos"
+                ? { fontWeight: "bold", color: "var(--blue-light)" }
+                : {}
+            }
+          >
             Produtos
           </span>
         </Link>
@@ -102,5 +107,3 @@ const MenuMobile = (props: Props) => {
     </nav>
   );
 };
-
-export default MenuMobile;
