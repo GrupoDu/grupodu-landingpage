@@ -6,8 +6,22 @@ import {
   LuTrendingUp,
   LuUsersRound,
 } from "react-icons/lu";
+import { IconType } from "react-icons";
 
-export const domMetal = {
+type SegmentInfos = {
+  nome: string;
+  subtitulo: string;
+  descricao: string;
+  especialidades: string[];
+};
+
+type CardInfos = {
+  title: string;
+  description: string;
+  icon: IconType;
+};
+
+export const domMetal: SegmentInfos = {
   nome: "Dom Metal",
   subtitulo: "Soluções e Carrinhos",
   descricao:
@@ -20,7 +34,7 @@ export const domMetal = {
   ],
 };
 
-export const duFerro = {
+export const duFerro: SegmentInfos = {
   nome: "DuFerro",
   subtitulo: "Soluções em Estruturas Metálicas",
   descricao:
@@ -33,7 +47,7 @@ export const duFerro = {
   ],
 };
 
-export const carbuilt = {
+export const carbuilt: SegmentInfos = {
   nome: "Carbuilt",
   subtitulo: "Equipando sua evolução.",
   descricao:
@@ -46,7 +60,7 @@ export const carbuilt = {
   ],
 };
 
-export const cards = [
+export const cards: CardInfos[] = [
   {
     title: "Qualidade Garantida",
     description:

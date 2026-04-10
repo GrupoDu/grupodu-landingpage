@@ -2,8 +2,27 @@ import DomMetal from "../../public/Logo dom metal.png";
 import DuFerro from "../../public/DuFerro.png";
 import Carbuilt from "../../public/Carbuilt.png";
 import { carbuilt, domMetal, duFerro } from "@/constants/textos";
+import { StaticImageData } from "next/image";
 
-export const infoSegmentos = [
+type Image = {
+  src: StaticImageData;
+  alt: string;
+};
+
+type Segmento = {
+  title: string;
+  subtitle: string;
+  description: string;
+  img: Image;
+  especialidades: string[];
+  variantClass: string;
+  corButton: string;
+  gradient: string;
+  disabled: boolean;
+  page: string;
+};
+
+export const infoSegmentos: Segmento[] = [
   {
     title: domMetal.nome,
     subtitle: domMetal.subtitulo,
