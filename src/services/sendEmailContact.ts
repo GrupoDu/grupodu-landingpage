@@ -12,8 +12,9 @@ export async function sendEmailContact(
 
     return postContactResponse.json();
   } catch (err) {
+    const error = err as Error;
     const responseError = Response.json({
-      message: (err as Error).message,
+      message: error.message,
       status: 500,
     });
 
