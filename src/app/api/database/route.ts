@@ -1,20 +1,24 @@
 import { createClient } from "@supabase/supabase-js";
 import { NextRequest, NextResponse } from "next/server";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "SUPABASE_URL";
-const supabaseKey = process.env.SUPABASE_API_KEY || "SUPABASE_API_KEY";
-
-const supabase = createClient(supabaseUrl, supabaseKey);
-
-const normalizandoTexto = (text: string) => {
-  return text
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/-/g, " ");
-};
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_API_KEY;
 
 export const GET = async (request: NextRequest) => {
+  if (!supabaseUrl || !supabaseKey) {
+    return NextResponse.json({ error: "Supabase configuration is missing" }, { status: 500 });
+  }
+
+  const supabase = createClient(supabaseUrl, supabaseKey);
+
+  const normalizandoTexto = (text: string) => {
+    return text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/-/g, " ");
+  };
+
   try {
     const searchParams = request.nextUrl.searchParams;
     const produtoEndpoint = searchParams.get("produto");
