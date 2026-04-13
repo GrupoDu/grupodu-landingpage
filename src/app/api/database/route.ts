@@ -5,8 +5,12 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_API_KEY;
 
 export const GET = async (request: NextRequest) => {
-  if (!supabaseUrl || !supabaseKey) {
-    return NextResponse.json({ error: "Supabase configuration is missing" }, { status: 500 });
+  const isMissingEnvValue = !supabaseUrl || !supabaseKey;
+  if (isMissingEnvValue) {
+    return NextResponse.json(
+      { error: "Supabase configuration is missing" },
+      { status: 500 }
+    );
   }
 
   const supabase = createClient(supabaseUrl, supabaseKey);
