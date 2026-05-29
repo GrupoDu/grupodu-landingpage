@@ -9,12 +9,33 @@ import {
 } from "react-icons/lu";
 import { FaWhatsapp } from "react-icons/fa";
 import styles from "./styles.module.scss";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import toast from "react-hot-toast";
 
 /** Componente que renderiza o footer */
 export const Footer = () => {
+  const [contactEmail, setContactEmail] = useState("");
+
+  const handleSignEmail = async () => {
+    try {
+      await fetch("/api/sign-email", {
+        method: "POST",
+        body: JSON.stringify({
+          listId: [13],
+          email: contactEmail,
+        }),
+      });
+
+      toast.success("Obrigado pelo interesse!");
+    } catch (err) {
+      const error = err as Error;
+      toast.error(error.message);
+    } finally {
+      setContactEmail("");
+    }
+  };
+
   return (
     <div className={styles.footerContainer}>
       <div className={styles.upper}>
@@ -129,12 +150,14 @@ export const Footer = () => {
           <hr />
           <p>Receba atualizações sobre nossos projetos e novidades do grupo</p>
           <div className={styles.inputEmail}>
-            <input type="email" name="email" placeholder="Seu e-mail" />
-            <button
-              onClick={() => toast.error("funciolidade em desenvolvimento")}
-            >
-              Inscrever
-            </button>
+            <input
+              type="email"
+              name="email"
+              onChange={(e) => setContactEmail(e.target.value)}
+              value={contactEmail}
+              placeholder="Seu e-mail"
+            />
+            <button onClick={() => handleSignEmail()}>Inscrever</button>
           </div>
         </div>
       </div>
