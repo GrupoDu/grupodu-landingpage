@@ -1,0 +1,25 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /api/src
+        - action: rebuild
+          path: ./package.json
+        - action: rebuild
+          path: ./next.config.ts
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+      - NODE_ENV=development
+    env_file:
+      - .env
+    ports:
+      - "${DEV_PORT}:3000"
+    expose:
+      - "3000"
