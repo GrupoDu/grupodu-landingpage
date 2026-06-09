@@ -7,8 +7,16 @@ const nextConfig: NextConfig = {
     domains: ["hlzfhmneaphariqoewir.supabase.co"],
     remotePatterns: [
       {
-        hostname: "www.facebook.com"
-      }
+        hostname: "www.facebook.com",
+      },
+      {
+        protocol: "https",
+        hostname: "hlzfhmneaphariqoewir.supabase.co",
+      },
+      {
+        protocol: "https",
+        hostname: "placehold.net",
+      },
     ],
   },
 };
