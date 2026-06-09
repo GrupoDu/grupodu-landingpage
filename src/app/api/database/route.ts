@@ -29,7 +29,8 @@ export const GET = async (request: NextRequest) => {
 
     if (!produtoEndpoint) {
       const { data, error } = await supabase.from("products").select("*");
-      if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+      if (error)
+        return NextResponse.json({ error: error.message }, { status: 500 });
       return NextResponse.json(data, {
         headers: {
           "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
@@ -40,9 +41,10 @@ export const GET = async (request: NextRequest) => {
     const { data, error } = await supabase
       .from("products")
       .select("*")
-      .order("uuid");
+      .order("product_uuid");
 
-    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+    if (error)
+      return NextResponse.json({ error: error.message }, { status: 500 });
 
     const produtoNormalizado = normalizandoTexto(produtoEndpoint);
     const dataFiltrada = data.filter((item) =>
@@ -59,5 +61,4 @@ export const GET = async (request: NextRequest) => {
     console.error(error);
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
-
 };
