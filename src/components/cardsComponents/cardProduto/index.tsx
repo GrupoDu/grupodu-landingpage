@@ -34,12 +34,13 @@ export const CardProduto = (props: CardProdutoProps) => {
       </div>
       <h4>{nomeProduto}</h4>
       <div className={styles.bulletsContainer}>
-        {caracteristicas.map((bullet, index) => (
-          <div className={styles.bullet} key={index}>
-            <LuCheckCheck />
-            <BulletProduct text={bullet} />
-          </div>
-        ))}
+        {caracteristicas &&
+          caracteristicas.map((bullet, index) => (
+            <div className={styles.bullet} key={index}>
+              <LuCheckCheck />
+              <BulletProduct text={bullet} />
+            </div>
+          ))}
       </div>
       <Link
         href={`https://wa.me/${number}?text=${message}`}
