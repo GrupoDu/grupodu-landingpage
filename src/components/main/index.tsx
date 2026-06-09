@@ -17,7 +17,7 @@ export const Main = ({ id }: { id: string }) => {
         <main className={styles.main} id={id}>
           {productsData.map((product) => (
             <CardProduto
-              key={product.id}
+              key={product.product_uuid}
               nomeProduto={product.name}
               imagemProduto={product.image}
               descricaoProduto={product.description}
