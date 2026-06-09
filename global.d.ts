@@ -22,7 +22,7 @@ declare global {
   }
 
   interface IProduct {
-    id: number;
+    product_uuid: string;
     name: string;
     description: string;
     product_type: string;
